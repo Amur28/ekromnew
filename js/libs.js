@@ -142,8 +142,10 @@ videosList.addEventListener('click', (event) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const questionPhoneInput = document.getElementById('questionPhoneInput');
+    const registerPhoneInput = document.getElementById('registerPhone');
     const questionPhoneMaskOptions = {
         mask: '+{7} (000) 000-00-00'
     };
-    IMask(questionPhoneInput, questionPhoneMaskOptions)
+    IMask(questionPhoneInput, questionPhoneMaskOptions);
+    IMask(registerPhoneInput, questionPhoneMaskOptions);
 })

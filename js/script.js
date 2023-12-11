@@ -50,7 +50,7 @@ document.addEventListener('click', (event) => {
     checkClassAndClick(allCategoriesWrapper, 'active', target, allCategoriesBtn);
 
     checkClassAndClick(headerTopInfoDropdown, 'active', target, headerTopInfoDropdown);
-    
+
     checkClassAndClick(authPopup, 'active', target, authPopup);
 
     const itsFaqInner = target == faqInner || faqInner.contains(target);
@@ -81,12 +81,13 @@ headerTopInfoLink.addEventListener('click', (event) => {
 const authBtn = document.querySelector('.auth-btn');
 const authPopup = document.querySelector('.auth-popup')
 
-
 authBtn.addEventListener('click', (event) => {
     event.stopPropagation();
     toggleClass(authPopup, 'active');
-})
+});
 
+/* Форма авторизации */
+document.createElement('div');
 
 /* FAQ section */
 
@@ -159,15 +160,3 @@ fastViewPopup.addEventListener('click', (event) => {
     const fastViewCloseBtn = fastViewPopup.querySelector('.close-btn--fastview');
     checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup)
 });
-
-const skeletons = document.querySelectorAll('.skeleton');
-const hiddenElements = document.querySelectorAll('.hidden');
-
-setTimeout(() => {
-    skeletons.forEach(skeleton => {
-        skeleton.classList.add('hidden');
-    });
-    hiddenElements.forEach(hiddenElement => {
-        hiddenElement.classList.remove('hidden')
-    })
-}, 3000)

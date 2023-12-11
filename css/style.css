@@ -2384,16 +2384,6 @@ a.footer__nav-link--show {
 
 /* QUESTION FORM END */
 
-/* AUTH FORM START */
-
-#authForm {
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-/* AUTH FORM END */
-
 /* FANCYBOX START */
 
 .fancybox__slide.has-image>.fancybox__content {
