@@ -160,3 +160,6 @@ fastViewPopup.addEventListener('click', (event) => {
     const fastViewCloseBtn = fastViewPopup.querySelector('.close-btn--fastview');
     checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup)
 });
+
+
+

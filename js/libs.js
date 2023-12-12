@@ -18,10 +18,10 @@ const bannerSlider = new Swiper('.banner-slider', {
         perSlideOffset: 5,
         perSlideRotate: 2,
     },
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: true,
-    },
+    // autoplay: {
+    //     delay: 3000,
+    //     disableOnInteraction: true,
+    // },
     speed: 500,
     spaceBetween: 0,
 });
