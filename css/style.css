@@ -970,6 +970,7 @@ section.banner {
     position: absolute;
     right: 0;
     transition: var(--default-transition);
+    max-width: 100%;
 }
 
 .popular__text {
