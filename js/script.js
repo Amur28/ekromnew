@@ -115,6 +115,18 @@ authLoginBtn.addEventListener('click', () => {
     removeClass(authPopup, 'active');
 });
 
+authRegister.addEventListener('click', (event) => {
+    const authInner = authRegister.querySelector('.auth__inner');
+    let target = event.target;
+    checkClassAndClick(authInner, 'active', target, authRegister);
+});
+
+authLogin.addEventListener('click', (event) => {
+    const authInner = authLogin.querySelector('.auth__inner');
+    let target = event.target;
+    checkClassAndClick(authInner, 'active', target, authLogin);
+});
+
 /* FAQ section */
 
 const faqInner = document.querySelector('.faq__inner');

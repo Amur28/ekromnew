@@ -622,7 +622,8 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="catalog__categories-banner" style="background-image: url('./img/catalog-banner.png');">
+                            <div class="catalog__categories-banner"
+                                style="background-image: url('./img/catalog-banner.png');">
                                 <p class="catalog__categories-text">
                                     Не можете выбрать?
                                 </p>
@@ -3005,158 +3006,171 @@
     </div>
 
     <div id="authRegister" class="modal">
-        <div class="auth__box auth__box--register">
-            <h4 class="auth__title">
-                Регистрация
-            </h4>
-            <p class="auth__text">
-                Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
-            </p>
-            <form class="auth__form auth__form--register" action="">
-                <div class="auth__form-group">
-                    <label for="registerFormEmail">
-                        Email
-                    </label>
-                    <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru" style="background-image: url('./img/icons/auth-form/email.svg');">
-                </div>
-                <div class="auth__form-group">
-                    <label for="registerFormPhone">
-                        Телефон
-                    </label>
-                    <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx" style="background-image: url('./img/icons/auth-form/phone.svg');">
-                </div>
-                <div class="auth__form-group">
-                    <label for="registerFormName">
-                        Ваше имя
-                    </label>
-                    <input id="registerFormName" type="text" required placeholder="Иван Иванов" style="background-image: url('./img/icons/auth-form/user.svg');">
-                </div>
-                <div class="auth__form-group">
-                    <label for="registerFormPassword">
-                        Пароль
-                    </label>
-                    <input id="registerFormPassword" type="password" required placeholder="••••••" style="background-image: url('./img/icons/auth-form/lock.svg');">
-                </div>
-                <div class="auth__form-group">
-                    <label for="registerFormConfirmPassword">
-                        Подтвердите пароль
-                    </label>
-                    <input id="registerFormConfirmPassword" type="password" required placeholder="••••••" style="background-image: url('./img/icons/auth-form/lock.svg');">
-                </div>
-                <div class="auth__form-group auth__form-group--checkbox">
-                    <input id="registerFormEntity" type="checkbox">
-                    <label for="registerFormEntity">
-                    </label>
-                    <p>
-                        Хочу зарегистрироваться как юридическое лицо
-                    </p>
-                </div>
-                <button class="rect-btn rect-btn--auth-register" type="submit">
-                    Зарегистрироваться
-                </button>
-            </form>
-            <div class="auth__footer">
-                <span>Уже есть аккаунт?</span>
-                <a href="#">Войти</a>
-            </div>
-        </div>
-        <div class="auth__box auth__box--verify">
-            <div class="auth__header">
-                <button class="round-btn round-btn--auth">
-                    <img src="./img/icons/arrow-back.svg" alt="">
-                </button>
-            </div>
-            <h4 class="auth__title auth__title--verify">
-                Регистрация
-            </h4>
-            <p class="auth__text">
-                Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
-            </p>
-            <form class="auth__form auth__form--verify" action="">
-                <div class="auth__form-group">
-                    <label for="verifyFormInput">
-                        Верификационный код
-                    </label>
-                    <input id="verifyFormInput" type="text" required placeholder="______">
-                    <div class="auth__form-subtext">
-                        <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+        <div class="auth__inner">
+            <div class="auth__box auth__box--register">
+                <h4 class="auth__title">
+                    Регистрация
+                </h4>
+                <p class="auth__text">
+                    Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
+                </p>
+                <form class="auth__form auth__form--register" action="">
+                    <div class="auth__form-group">
+                        <label for="registerFormEmail">
+                            Email
+                        </label>
+                        <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru"
+                            style="background-image: url('./img/icons/auth-form/email.svg');">
                     </div>
+                    <div class="auth__form-group">
+                        <label for="registerFormPhone">
+                            Телефон
+                        </label>
+                        <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx"
+                            style="background-image: url('./img/icons/auth-form/phone.svg');">
+                    </div>
+                    <div class="auth__form-group">
+                        <label for="registerFormName">
+                            Ваше имя
+                        </label>
+                        <input id="registerFormName" type="text" required placeholder="Иван Иванов"
+                            style="background-image: url('./img/icons/auth-form/user.svg');">
+                    </div>
+                    <div class="auth__form-group">
+                        <label for="registerFormPassword">
+                            Пароль
+                        </label>
+                        <input id="registerFormPassword" type="password" required placeholder="••••••"
+                            style="background-image: url('./img/icons/auth-form/lock.svg');">
+                    </div>
+                    <div class="auth__form-group">
+                        <label for="registerFormConfirmPassword">
+                            Подтвердите пароль
+                        </label>
+                        <input id="registerFormConfirmPassword" type="password" required placeholder="••••••"
+                            style="background-image: url('./img/icons/auth-form/lock.svg');">
+                    </div>
+                    <div class="auth__form-group auth__form-group--checkbox">
+                        <input id="registerFormEntity" type="checkbox">
+                        <label for="registerFormEntity">
+                        </label>
+                        <p>
+                            Хочу зарегистрироваться как юридическое лицо
+                        </p>
+                    </div>
+                    <button class="rect-btn rect-btn--auth-register" type="submit">
+                        Зарегистрироваться
+                    </button>
+                </form>
+                <div class="auth__footer">
+                    <span>Уже есть аккаунт?</span>
+                    <a href="#">Войти</a>
                 </div>
-                <button class="rect-btn rect-btn--auth-register" type="submit">
-                    Зарегистрироваться
-                </button>
-            </form>
-            <div class="auth__footer">
-                <span>Уже есть аккаунт?</span>
-                <a href="#">Войти</a>
+            </div>
+            <div class="auth__box auth__box--verify">
+                <div class="auth__header">
+                    <button class="round-btn round-btn--auth">
+                        <img src="./img/icons/arrow-back.svg" alt="">
+                    </button>
+                </div>
+                <h4 class="auth__title auth__title--verify">
+                    Регистрация
+                </h4>
+                <p class="auth__text">
+                    Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
+                </p>
+                <form class="auth__form auth__form--verify" action="">
+                    <div class="auth__form-group">
+                        <label for="verifyFormInput">
+                            Верификационный код
+                        </label>
+                        <input id="verifyFormInput" type="text" required placeholder="______">
+                        <div class="auth__form-subtext">
+                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+                        </div>
+                    </div>
+                    <button class="rect-btn rect-btn--auth-register" type="submit">
+                        Зарегистрироваться
+                    </button>
+                </form>
+                <div class="auth__footer">
+                    <span>Уже есть аккаунт?</span>
+                    <a href="#">Войти</a>
+                </div>
             </div>
         </div>
+
     </div>
 
     <div id="authLogin" class="modal">
-        <div class="auth__box auth__box--login">
-            <h4 class="auth__title auth__title--login">
-                Вход
-            </h4>
-            <p class="auth__text">
-                Войдите в аккаунт, чтобы воспользоваться личным кабинетом
-            </p>
-            <form class="auth__form auth__form--login" action="">
-                <div class="auth__form-group">
-                    <label for="loginFormEmail">
-                        Email
-                    </label>
-                    <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru" style="background-image: url('./img/icons/auth-form/email.svg');">
-                </div>
-                <div class="auth__form-group">
-                    <label for="loginFormPassword">
-                        Пароль
-                    </label>
-                    <input id="loginFormPassword" type="password" required placeholder="••••••" style="background-image: url('./img/icons/auth-form/lock.svg');">
-                </div>
-                <a class="auth__form-forgot" href="#">
-                    Забыли пароль?
-                </a>
-                <button class="rect-btn rect-btn--auth-register" type="submit">
-                    Войти
-                </button>
-            </form>
-            <div class="auth__footer">
-                <span>Еще нет аккаунта?</span>
-                <a href="#">Зарегистрироваться</a>
-            </div>
-        </div>
-        <div class="auth__box auth__box--recover">
-            <div class="auth__header">
-                <button class="round-btn round-btn--auth">
-                    <img src="./img/icons/arrow-back.svg" alt="">
-                </button>
-            </div>
-            <h4 class="auth__title auth__title--recover">
-                Восстановление пароля
-            </h4>
-            <p class="auth__text">
-                Восстановите пароль, чтобы воспользоваться личным кабинетом
-            </p>
-            <form class="auth__form auth__form--recover" action="">
-                <div class="auth__form-group">
-                    <label for="recoverFormInput">
-                        Верификационный код
-                    </label>
-                    <input id="recoverFormInput" type="text" required placeholder="______">
-                    <div class="auth__form-subtext">
-                        <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+        <div class="auth__inner">
+            <div class="auth__box auth__box--login">
+                <h4 class="auth__title auth__title--login">
+                    Вход
+                </h4>
+                <p class="auth__text">
+                    Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                </p>
+                <form class="auth__form auth__form--login" action="">
+                    <div class="auth__form-group">
+                        <label for="loginFormEmail">
+                            Email
+                        </label>
+                        <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru"
+                            style="background-image: url('./img/icons/auth-form/email.svg');">
                     </div>
+                    <div class="auth__form-group">
+                        <label for="loginFormPassword">
+                            Пароль
+                        </label>
+                        <input id="loginFormPassword" type="password" required placeholder="••••••"
+                            style="background-image: url('./img/icons/auth-form/lock.svg');">
+                    </div>
+                    <a class="auth__form-forgot" href="#">
+                        Забыли пароль?
+                    </a>
+                    <button class="rect-btn rect-btn--auth-register" type="submit">
+                        Войти
+                    </button>
+                </form>
+                <div class="auth__footer">
+                    <span>Еще нет аккаунта?</span>
+                    <a href="#">Зарегистрироваться</a>
                 </div>
-                <button class="rect-btn rect-btn--auth-register" type="submit">
-                    Сбросить пароль
-                </button>
-            </form>
-            <div class="auth__footer">
-                <span>Уже есть аккаунт?</span>
-                <a href="#">Войти</a>
+            </div>
+            <div class="auth__box auth__box--recover">
+                <div class="auth__header">
+                    <button class="round-btn round-btn--auth">
+                        <img src="./img/icons/arrow-back.svg" alt="">
+                    </button>
+                </div>
+                <h4 class="auth__title auth__title--recover">
+                    Восстановление пароля
+                </h4>
+                <p class="auth__text">
+                    Восстановите пароль, чтобы воспользоваться личным кабинетом
+                </p>
+                <form class="auth__form auth__form--recover" action="">
+                    <div class="auth__form-group">
+                        <label for="recoverFormInput">
+                            Верификационный код
+                        </label>
+                        <input id="recoverFormInput" type="text" required placeholder="______">
+                        <div class="auth__form-subtext">
+                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+                        </div>
+                    </div>
+                    <button class="rect-btn rect-btn--auth-register" type="submit">
+                        Сбросить пароль
+                    </button>
+                </form>
+                <div class="auth__footer">
+                    <span>Уже есть аккаунт?</span>
+                    <a href="#">Войти</a>
+                </div>
             </div>
         </div>
+        
     </div>
 
     <script>
