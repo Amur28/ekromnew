@@ -7,6 +7,26 @@ const addClass = (el, className) => el.classList.add(`${className}`);
 const removeClass = (el, className) => el.classList.remove(`${className}`);
 const toggleClass = (el, className) => el.classList.toggle(`${className}`);
 
+/* Проверка и скрытие элемента при клике вне его или по кнопке "Закрыть" */
+const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl) => {
+    const itsEl = target == targetEl || targetEl.contains(target);
+    const itsCloseBtn = target == closeBtn || closeBtn.contains(target);
+
+    if (!itsEl || itsCloseBtn) {
+        removeClass(parentEl, className);
+    }
+};
+
+/* Проверка и скрытие элемента при клике вне его */
+const checkClassAndClick = (targetEl, className, target, parentEl) => {
+    const itsEl = target == targetEl || targetEl.contains(target);
+    const elHasClass = containClass(parentEl, className);
+
+    if (!itsEl && elHasClass) {
+        removeClass(parentEl, className);
+    }
+};
+
 /* Липкий HEADER */
 
 let lastScrollPos = 0;
@@ -56,15 +76,6 @@ document.addEventListener('click', (event) => {
     const itsFaqInner = target == faqInner || faqInner.contains(target);
     if (!itsFaqInner) hideOtherFaqItems(faqItems);
 });
-
-const checkClassAndClick = (el, className, target, el2) => {
-    const itsEl = target == el || el.contains(target);
-    const elHasClass = containClass(el2, className);
-
-    if (!itsEl && elHasClass) {
-        removeClass(el2, className);
-    }
-};
 
 /* Header dropdown */
 
@@ -134,15 +145,6 @@ questionForm.addEventListener('click', (event) => {
     checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, questionForm);
 });
 
-const checkClickWithCloseBtn = (el, className, target, closeBtn, el2) => {
-    const itsEl = target == el || el.contains(target);
-    const itsCloseBtn = target == closeBtn || closeBtn.contains(target);
-
-    if (!itsEl || itsCloseBtn) {
-        removeClass(el2, className);
-    }
-};
-
 /* Окно быстрого просмотра */
 
 const fastViewPopup = document.getElementById('fastView');
@@ -161,5 +163,43 @@ fastViewPopup.addEventListener('click', (event) => {
     checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup)
 });
 
+/* Попап сравнения/избранного */
 
+const compareBtns = document.querySelectorAll('.round-btn--compare');
+const comparePopup = document.getElementById('popupCompare');
+const favBtns = document.querySelectorAll('.round-btn--fav');
+const favPopup = document.getElementById('popupFav');
 
+compareBtns.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        addClass(comparePopup, 'active');
+        setTimeout(() => {
+            removeClass(comparePopup, 'active')
+        }, 3000)
+    })
+});
+
+favBtns.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        addClass(favPopup, 'active');
+        setTimeout(() => {
+            removeClass(favPopup, 'active')
+        }, 3000)
+    })
+});
+
+/*Выбор города*/
+
+const citySelect = document.getElementById('citySelect');
+const citySelectCloseBtn = citySelect.querySelector('.close-btn--city-select');
+const headerCityButton = document.querySelector('.header-city__button');
+
+headerCityButton.addEventListener('click', () => {
+    addClass(citySelect, 'active');
+});
+
+citySelect.addEventListener('click', (event) => {
+    let target = event.target;
+    const citySelectInner = citySelect.querySelector('.city-select');
+    checkClickWithCloseBtn(citySelectInner, 'active', target, citySelectCloseBtn, citySelect);
+});
