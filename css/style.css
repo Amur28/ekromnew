@@ -829,6 +829,10 @@ a.header__categories-link:hover span {
     height: 20px;
 }
 
+.cart-popup__delete path {
+    transition: var(--default-transition);
+}
+
 .cart-popup__delete:hover path {
     fill: var(--main-blue);
 }
