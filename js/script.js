@@ -40,7 +40,7 @@ window.addEventListener('scroll', () => {
     } else if (scrollPosition() < lastScrollPos && containClass(stickyHeader, 'scroll')) {
         removeClass(stickyHeader, 'scroll')
     }
-    if (containClass(allCategoriesPopup, 'active')) {
+    if (containClass(catalogPopup, 'active')) {
         addClass(stickyHeader, 'popup-active')
     } else {
         removeClass(stickyHeader, 'popup-active')
@@ -54,19 +54,19 @@ const scrollPosition = () => window.scrollY || document.documentElement.scrollTo
 /* Показ/скрытие попапа со всеми категориями */
 
 const allCategoriesBtn = document.getElementById('allCategoriesBtn');
-const allCategoriesPopup = document.getElementById('allCategoriesPopup');
+const catalogPopup = document.getElementById('catalogPopup');
 
 allCategoriesBtn.addEventListener('click', (event) => {
     event.stopPropagation()
-    toggleClass(allCategoriesPopup, 'active')
+    toggleClass(catalogPopup, 'active')
     toggleClass(allCategoriesBtn, 'active')
 });
 
 document.addEventListener('click', (event) => {
     const target = event.target;
-    const allCategoriesWrapper = allCategoriesPopup.querySelector('.all-categories__wrapper');
+    const allCategoriesWrapper = catalogPopup.querySelector('.catalog__wrapper');
 
-    checkClassAndClick(allCategoriesWrapper, 'active', target, allCategoriesPopup);
+    checkClassAndClick(allCategoriesWrapper, 'active', target, catalogPopup);
     checkClassAndClick(allCategoriesWrapper, 'active', target, allCategoriesBtn);
 
     checkClassAndClick(headerTopInfoDropdown, 'active', target, headerTopInfoDropdown);
