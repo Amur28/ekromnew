@@ -80,6 +80,7 @@ h6,
 p {
     padding: 0;
     margin: 0;
+    font-weight: 400;
 }
 
 ul {
@@ -889,18 +890,18 @@ a.header__categories-link:hover span {
     color: var(--text-grey-color);
 }
 
-.rect-btn--auth-login,
-.rect-btn--auth-register {
+.rect-btn--login,
+.rect-btn--register {
     padding: 5px 0;
     max-width: 255px;
     width: 100%;
 }
 
-.rect-btn--auth-login {
+.rect-btn--login {
     margin-top: 30px;
 }
 
-.rect-btn--auth-register {
+.rect-btn--register {
     margin-top: 10px;
 }
 
@@ -1879,14 +1880,26 @@ a.footer__nav-link--show {
 
 /* FASTVIEW START */
 
-#fastView {
+#fastView,
+#questionForm,
+#popupCompare,
+#popupFav,
+#citySelect,
+#authRegister,
+#authLogin {
     display: flex;
     visibility: hidden;
     opacity: 0;
     transition: var(--alt-transition);
 }
 
-#fastView.active {
+#fastView.active,
+#questionForm.active,
+#popupCompare.active,
+#popupFav.active,
+#citySelect.active,
+#authRegister.active,
+#authLogin.active {
     visibility: visible;
     opacity: 1;
 }
@@ -1901,6 +1914,7 @@ a.footer__nav-link--show {
     height: 50px;
     background-color: var(--main-blue);
     padding: 15px;
+    position: relative;
 }
 
 .close-btn--fastview {
@@ -2395,19 +2409,6 @@ a.footer__nav-link--show {
 
 /* QUESTION FORM START */
 
-#questionForm {
-    display: flex;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--alt-transition);
-}
-
-#questionForm.active {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
-}
-
 .question-form {
     max-width: 1280px;
     width: 100%;
@@ -2555,12 +2556,6 @@ a.footer__nav-link--show {
     transition: var(--default-transition);
 }
 
-#popupCompare.active,
-#popupFav.active {
-    visibility: visible;
-    opacity: 1;
-}
-
 .popup {
     background-color: #fff;
     border-radius: 10px;
@@ -2602,17 +2597,6 @@ a.footer__nav-link--show {
 /* POPUP END*/
 
 /* CITY-SELECT START */
-
-#citySelect {
-    visibility: hidden;
-    opacity: 0;
-    transition: var(--default-transition);
-}
-
-#citySelect.active {
-    visibility: visible;
-    opacity: 1;
-}
 
 .city-select {
     background-color: #fff;
@@ -2685,6 +2669,182 @@ a.footer__nav-link--show {
 }
 
 /* CITY-SELECT END */
+
+/* AUTH REGISTER START */
+
+.auth__box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 25px;
+    max-width: 305px;
+}
+
+.auth__title {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.auth__text {
+    font-size: 10px;
+    line-height: 1.5;
+    color: var(--text-grey-color);
+    margin-top: 10px;
+}
+
+form.auth__form {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+    position: relative;
+}
+
+.auth__form-group + .auth__form-group {
+    margin-top: 10px;
+}
+
+.auth__form-group--checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.auth__form-group label,
+.auth__form-group--checkbox p {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.auth__form-group input {
+    width: 100%;
+    padding: 5px 15px 5px 45px;
+    border: 1px solid var(--main-blue);
+    position: relative;
+    background-position: 10px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.auth__form-group input::placeholder {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#registerFormEntity {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+}
+
+#registerFormEntity + label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#registerFormEntity + label::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--subtitle-color);
+    border-radius: 2px;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3px;
+}
+
+#registerFormEntity:checked + label::after {
+    background-image: url('../img/icons/check.svg');
+}
+
+.rect-btn--auth-register,
+.rect-btn--auth-login {
+    width: 100%;
+    padding: 5px;
+}
+
+.rect-btn--auth-register {
+    margin-top: 25px;
+}
+
+.auth__footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth__footer span,
+.auth__footer a {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.auth__footer a {
+    color: var(--main-blue);
+}
+
+/* AUTH REGISTER END */
+
+/* AUTH VERIFY START */
+
+.round-btn--auth {
+    background-color: var(--main-blue);
+    width: 30px;
+    height: 30px;
+}
+
+.auth__title--verify,
+.auth__title--recover {
+    margin-top: 20px;
+}
+
+#verifyFormInput,
+#recoverFormInput {
+    text-align: center;
+    padding-left: 0;
+}
+
+.auth__form-subtext {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.auth__form-subtext span {
+    font-size: 10px;
+    line-height: 1.5;
+    color: var(--text-grey-color);
+}
+
+.auth__form-subtext .verify-phone {
+    color: var(--text-black-color);
+}
+
+/* AUTH VERIFY END */
+
+/* AUTH LOGIN START */
+.auth__form-forgot {
+    display: block;
+    color: var(--main-blue);
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+/* AUTH LOGIN END */
+
+/* AUTH
 
 /* FANCYBOX START */
 

@@ -8,6 +8,7 @@ const removeClass = (el, className) => el.classList.remove(`${className}`);
 const toggleClass = (el, className) => el.classList.toggle(`${className}`);
 
 /* Проверка и скрытие элемента при клике вне его или по кнопке "Закрыть" */
+
 const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl) => {
     const itsEl = target == targetEl || targetEl.contains(target);
     const itsCloseBtn = target == closeBtn || closeBtn.contains(target);
@@ -98,7 +99,21 @@ authBtn.addEventListener('click', (event) => {
 });
 
 /* Форма авторизации */
-document.createElement('div');
+
+const authRegister = document.getElementById('authRegister');
+const authRegisterBtn = document.querySelector('.rect-btn--register');
+const authLogin = document.getElementById('authLogin');
+const authLoginBtn = document.querySelector('.rect-btn--login');
+
+authRegisterBtn.addEventListener('click', () => {
+    addClass(authRegister, 'active');
+    removeClass(authPopup, 'active');
+});
+
+authLoginBtn.addEventListener('click', () => {
+    addClass(authLogin, 'active');
+    removeClass(authPopup, 'active');
+});
 
 /* FAQ section */
 
