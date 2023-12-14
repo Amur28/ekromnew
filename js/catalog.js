@@ -73,9 +73,6 @@ document.addEventListener('click', (event) => {
     checkClassAndClick(headerTopInfoDropdown, 'active', target, headerTopInfoDropdown);
 
     checkClassAndClick(authPopup, 'active', target, authPopup);
-
-    const itsFaqInner = target == faqInner || faqInner.contains(target);
-    if (!itsFaqInner) hideOtherFaqItems(faqItems);
 });
 
 /* Header dropdown */
@@ -127,51 +124,6 @@ authLogin.addEventListener('click', (event) => {
     checkClassAndClick(authInner, 'active', target, authLogin);
 });
 
-/* FAQ section */
-
-const faqInner = document.querySelector('.faq__inner');
-const faqItems = document.querySelectorAll('.faq__item');
-
-const hideOtherFaqItems = (parentEl) => {
-    parentEl.forEach(faqItem => {
-        removeClass(faqItem, 'active')
-    });
-};
-
-faqInner.addEventListener('click', (event) => {
-    const currentFaqItem = event.target.closest('.faq__item');
-
-    if (!currentFaqItem) return;
-
-    if (containClass(currentFaqItem, 'active')) {
-        removeClass(currentFaqItem, 'active');
-        return;
-    };
-
-    hideOtherFaqItems(faqItems);
-
-    addClass(currentFaqItem, 'active');
-});
-
-/* Форма "Задать свой вопрос" */
-
-const faqBtn = document.getElementById('rectBtnFaq');
-const questionForm = document.getElementById('questionForm');
-
-
-faqBtn.addEventListener('click', (event) => {
-    event.stopPropagation()
-    addClass(questionForm, 'active');
-});
-
-questionForm.addEventListener('click', (event) => {
-    const target = event.target;
-    const questionFormContainer = questionForm.querySelector('form.question-form');
-    const closeQuestionFormBtn = questionForm.querySelector('.close-btn--question');
-
-    checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, questionForm);
-});
-
 /* Окно быстрого просмотра */
 
 const fastViewPopup = document.getElementById('fastView');
@@ -192,28 +144,28 @@ fastViewPopup.addEventListener('click', (event) => {
 
 /* Попап сравнения/избранного */
 
-const compareBtns = document.querySelectorAll('.round-btn--compare');
-const comparePopup = document.getElementById('popupCompare');
-const favBtns = document.querySelectorAll('.round-btn--fav');
-const favPopup = document.getElementById('popupFav');
+// const compareBtns = document.querySelectorAll('.round-btn--compare');
+// const comparePopup = document.getElementById('popupCompare');
+// const favBtns = document.querySelectorAll('.round-btn--fav');
+// const favPopup = document.getElementById('popupFav');
 
-compareBtns.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        addClass(comparePopup, 'active');
-        setTimeout(() => {
-            removeClass(comparePopup, 'active')
-        }, 3000)
-    })
-});
+// compareBtns.forEach(btn => {
+//     btn.addEventListener('click', (event) => {
+//         addClass(comparePopup, 'active');
+//         setTimeout(() => {
+//             removeClass(comparePopup, 'active')
+//         }, 3000)
+//     })
+// });
 
-favBtns.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        addClass(favPopup, 'active');
-        setTimeout(() => {
-            removeClass(favPopup, 'active')
-        }, 3000)
-    })
-});
+// favBtns.forEach(btn => {
+//     btn.addEventListener('click', (event) => {
+//         addClass(favPopup, 'active');
+//         setTimeout(() => {
+//             removeClass(favPopup, 'active')
+//         }, 3000)
+//     })
+// });
 
 /*Выбор города*/
 
