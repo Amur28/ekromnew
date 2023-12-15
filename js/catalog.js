@@ -182,3 +182,83 @@ citySelect.addEventListener('click', (event) => {
     const citySelectInner = citySelect.querySelector('.city-select');
     checkClickWithCloseBtn(citySelectInner, 'active', target, citySelectCloseBtn, citySelect);
 });
+
+/* Скрытие/показ фильтров */
+const filterItems = document.querySelector('.filter-items');
+
+filterItems.addEventListener('click', (event) => {
+    let target = event.target;
+    const filterItem = event.target.closest('.filter-item')
+    const filterItemHeader = filterItem.querySelector('.filter-item__header');
+
+    if (!filterItemHeader) return;
+
+    const filterItemProps = filterItemHeader.nextElementSibling;
+    if (target == filterItemHeader || filterItemHeader.contains(target)) {
+        toggleClass(filterItemHeader, 'hidden');
+        toggleClass(filterItemProps, 'hidden');
+    }
+
+});
+
+/* Ползунок в каталоге */
+
+const rangeSliders = document.querySelectorAll('.filter-item__slider');
+
+rangeSliders.forEach(rangeSlider => {
+    noUiSlider.create(rangeSlider, {
+        start: [0, 1000000],
+        connect: true,
+        step: 100,
+        range: {
+            'min': 0,
+            'max': 1000000,
+        },
+    });
+    const inputs = rangeSlider.nextElementSibling;
+    const inputMin = inputs.firstElementChild;
+    const inputMax = inputs.lastElementChild;
+    const inputsRange = [inputMin, inputMax];
+
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+        inputsRange[handle].value = Math.round(values[handle]);
+    });
+
+    const setRangeSlider = (i, value) => {
+        let arr = [null, null];
+        arr[i] = value;
+        rangeSlider.noUiSlider.set(arr);
+    }
+
+    inputsRange.forEach((input, index) => {
+        input.addEventListener('change', (event) => {
+            setRangeSlider(index, event.currentTarget.value)
+        });
+    })
+});
+
+/* Анимация наведения для кнопок */
+
+// const resetBtn = document.querySelector('button.reset');
+
+// resetBtn.addEventListener('mouseenter', (event) => {
+//     let parentOffsetY = resetBtn.offsetTop,
+//         parentOffsetX = resetBtn.offsetLeft,
+//         relX = event.pageX - parentOffsetX,
+//         relY = event.pageY - parentOffsetY;
+
+//     const resetBtnSpan = resetBtn.querySelector('span');
+//     resetBtnSpan.style.top = relY + 'px';
+//     resetBtnSpan.style.left = relX + 'px';
+// });
+
+// resetBtn.addEventListener('mouseout', (event) => {
+//     let parentOffsetY = resetBtn.offsetTop,
+//         parentOffsetX = resetBtn.offsetLeft,
+//         relX = event.pageX - parentOffsetX,
+//         relY = event.pageY - parentOffsetY;
+//     const resetBtnSpan = resetBtn.querySelector('span');
+
+//     resetBtnSpan.style.top = relY + 'px';
+//     resetBtnSpan.style.left = relX + 'px';
+// });

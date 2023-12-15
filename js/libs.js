@@ -148,4 +148,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     IMask(questionPhoneInput, questionPhoneMaskOptions);
     // IMask(registerPhoneInput, questionPhoneMaskOptions);
-})
+});
