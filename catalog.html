@@ -708,137 +708,215 @@
         <div class="catalog">
             <div class="container">
                 <div class="catalog__inner">
-                    <aside class="filter">
-                        <h3 class="filter-title">
-                            Фильтр
-                        </h3>
-                        <div class="filter-items">
-                            <div class="filter-item check">
-                                <div class="filter-item__props">
-                                    <ul class="filter-item__list">
-                                        <li class="filter-item__value">
-                                            <input type="checkbox" id="filter1">
-                                            <label class="filter-item__label" for="filter1">
-                                                <span>В наличии - доставим сегодня</span>
-                                                <span class="filter-count"></span>
-                                            </label>
-                                        </li>
-                                    </ul>
+                    <aside class="aside">
+                        <div class="filter">
+                            <h3 class="filter-title">
+                                Фильтр
+                            </h3>
+                            <div class="filter-items">
+                                <div class="filter-item check">
+                                    <div class="filter-item__props">
+                                        <ul class="filter-item__list">
+                                            <li class="filter-item__value">
+                                                <input type="checkbox" id="filter1">
+                                                <label class="filter-item__label" for="filter1">
+                                                    <span>В наличии - доставим сегодня</span>
+                                                    <span class="filter-count"></span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
+                                <div class="filter-item check">
+                                    <div class="filter-item__props">
+                                        <ul class="filter-item__list">
+                                            <li class="filter-item__value">
+                                                <input type="checkbox" id="filter8">
+                                                <label class="filter-item__label" for="filter8">
+                                                    <span>Новинка</span>
+                                                    <span class="filter-count"></span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="filter-item range">
+                                    <button class="filter-item__header">
+                                        Цена
+                                    </button>
+                                    <div class="filter-item__props">
+                                        <ul class="filter-item__list">
+                                            <li class="filter-item__value">
+                                                <div class="filter-item__slider"></div>
+                                                <div class="filter-item__inputs">
+                                                    <input class="filter-item__input" type="number" min="0"
+                                                        max="99999999" placeholder="">
+                                                    <div class="divider">—</div>
+                                                    <input class="filter-item__input" type="number" min="0"
+                                                        max="99999999" placeholder="">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="filter-item filter-item">
+                                    <button class="filter-item__header">
+                                        Тип монтажа
+                                    </button>
+                                    <div class="filter-item__props">
+                                        <ul class="filter-item__list">
+                                            <li class="filter-item__value">
+                                                <input type="checkbox" id="filter2">
+                                                <label class="filter-item__label" for="filter2">
+                                                    <span>Врезная</span>
+                                                    <span class="filter-count">391</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item__value">
+                                                <input type="checkbox" id="filter3">
+                                                <label class="filter-item__label" for="filter3">
+                                                    <span>Под столешницу</span>
+                                                    <span class="filter-count">187</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item__value">
+                                                <input type="checkbox" id="filter4">
+                                                <label class="filter-item__label" for="filter4">
+                                                    <span>Накладная</span>
+                                                    <span class="filter-count">101</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="filter-item filter-item">
+                                    <button class="filter-item__header">
+                                        Цвет
+                                    </button>
+                                    <div class="filter-item__props">
+                                        <ul class="filter-item__list">
+                                            <li class="filter-item__value">
+                                                <input type="checkbox" id="filter5">
+                                                <label class="filter-item__label" for="filter5">
+                                                    <span>Черный</span>
+                                                    <span class="filter-count">391</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item__value">
+                                                <input type="checkbox" id="filter6">
+                                                <label class="filter-item__label" for="filter6">
+                                                    <span>Белый</span>
+                                                    <span class="filter-count">187</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item__value">
+                                                <input type="checkbox" id="filter7">
+                                                <label class="filter-item__label" for="filter7">
+                                                    <span>Бежевый</span>
+                                                    <span class="filter-count">101</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="filter-item range">
+                                    <button class="filter-item__header">
+                                        Ширина встраивания
+                                    </button>
+                                    <div class="filter-item__props">
+                                        <ul class="filter-item__list">
+                                            <li class="filter-item__value">
+                                                <div class="filter-item__slider"></div>
+                                                <div class="filter-item__inputs">
+                                                    <input class="filter-item__input" type="number" min="0"
+                                                        max="99999999" placeholder="">
+                                                    <div class="divider">—</div>
+                                                    <input class="filter-item__input" type="number" min="0"
+                                                        max="99999999" placeholder="">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="filter-item range">
+                                    <button class="filter-item__header">
+                                        Ширина встраивания
+                                    </button>
+                                    <div class="filter-item__props">
+                                        <ul class="filter-item__list">
+                                            <li class="filter-item__value">
+                                                <div class="filter-item__slider"></div>
+                                                <div class="filter-item__inputs">
+                                                    <input class="filter-item__input" type="number" min="0"
+                                                        max="99999999" placeholder="">
+                                                    <div class="divider">—</div>
+                                                    <input class="filter-item__input" type="number" min="0"
+                                                        max="99999999" placeholder="">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="filter-item range">
+                                    <button class="filter-item__header">
+                                        Ширина встраивания
+                                    </button>
+                                    <div class="filter-item__props">
+                                        <ul class="filter-item__list">
+                                            <li class="filter-item__value">
+                                                <div class="filter-item__slider"></div>
+                                                <div class="filter-item__inputs">
+                                                    <input class="filter-item__input" type="number" min="0"
+                                                        max="99999999" placeholder="">
+                                                    <div class="divider">—</div>
+                                                    <input class="filter-item__input" type="number" min="0"
+                                                        max="99999999" placeholder="">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
-                            </div>
-                            <div class="filter-item range">
-                                <button class="filter-item__header">
-                                    Цена
+                            <div class="filter-items-btn">
+                                <button class="filter-items-show-filters">
+                                    Показать все фильтры
                                 </button>
-                                <div class="filter-item__props">
-                                    <ul class="filter-item__list">
-                                        <li class="filter-item__value">
-                                            <div class="filter-item__slider"></div>
-                                            <div class="filter-item__inputs">
-                                                <input class="filter-item__input" type="number" min="0" max="99999999"
-                                                    placeholder="">
-                                                <div class="divider">—</div>
-                                                <input class="filter-item__input" type="number" min="0" max="99999999"
-                                                    placeholder="">
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
-                            <div class="filter-item filter-item">
-                                <button class="filter-item__header">
-                                    Тип монтажа
-                                </button>
-                                <div class="filter-item__props">
-                                    <ul class="filter-item__list">
-                                        <li class="filter-item__value">
-                                            <input type="checkbox" id="filter2">
-                                            <label class="filter-item__label" for="filter2">
-                                                <span>Врезная</span>
-                                                <span class="filter-count">391</span>
-                                            </label>
-                                        </li>
-                                        <li class="filter-item__value">
-                                            <input type="checkbox" id="filter3">
-                                            <label class="filter-item__label" for="filter3">
-                                                <span>Под столешницу</span>
-                                                <span class="filter-count">187</span>
-                                            </label>
-                                        </li>
-                                        <li class="filter-item__value">
-                                            <input type="checkbox" id="filter4">
-                                            <label class="filter-item__label" for="filter4">
-                                                <span>Накладная</span>
-                                                <span class="filter-count">101</span>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="filter-item filter-item">
-                                <button class="filter-item__header">
-                                    Цвет
-                                </button>
-                                <div class="filter-item__props">
-                                    <ul class="filter-item__list">
-                                        <li class="filter-item__value">
-                                            <input type="checkbox" id="filter5">
-                                            <label class="filter-item__label" for="filter5">
-                                                <span>Черный</span>
-                                                <span class="filter-count">391</span>
-                                            </label>
-                                        </li>
-                                        <li class="filter-item__value">
-                                            <input type="checkbox" id="filter6">
-                                            <label class="filter-item__label" for="filter6">
-                                                <span>Белый</span>
-                                                <span class="filter-count">187</span>
-                                            </label>
-                                        </li>
-                                        <li class="filter-item__value">
-                                            <input type="checkbox" id="filter7">
-                                            <label class="filter-item__label" for="filter7">
-                                                <span>Бежевый</span>
-                                                <span class="filter-count">101</span>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="filter-item range">
-                                <button class="filter-item__header">
-                                    Ширина встраивания
-                                </button>
-                                <div class="filter-item__props">
-                                    <ul class="filter-item__list">
-                                        <li class="filter-item__value">
-                                            <div class="filter-item__slider"></div>
-                                            <div class="filter-item__inputs">
-                                                <input class="filter-item__input" type="number" min="0" max="99999999"
-                                                    placeholder="">
-                                                <div class="divider">—</div>
-                                                <input class="filter-item__input" type="number" min="0" max="99999999"
-                                                    placeholder="">
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="filter__items-btn">
-                            <button class="filter__items-show-filters">
-                                Показать все фильтры
+
+                            <button class="oval-btn oval-btn--filter show">
+                                Показать
+                            </button>
+                            <button class="oval-btn oval-btn--filter reset">
+                                Сбросить
                             </button>
                         </div>
-                        
-                        <button class="oval-btn oval-btn--filter show">
-                            Показать
-                        </button>
-                        <button class="oval-btn oval-btn--filter reset">
-                            Сбросить
-                        </button>
+                        <div class="catalog__promo">
+                            <div class="promo-box">
+                                <div class="promo-box__header">
+                                    <h4 class="promo-box__title">
+                                        Товар месяца
+                                    </h4>
+                                </div>
+                                <div class="promo-box__content">
+                                    <div class="promo-box__img">
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="promo-box__descr">
+                                        <p>
+                                            GERDA 6045G
+                                        </p>
+                                        <p class="promo-box__price">
+                                            29 900 ₽
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="promo-feedback">
+                                <img src="./img/woman.png" alt="">
+                                <p>Задать вопрос менеджеру</p>
+                            </div>
+                        </div>
                     </aside>
                 </div>
             </div>

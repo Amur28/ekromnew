@@ -201,6 +201,21 @@ filterItems.addEventListener('click', (event) => {
 
 });
 
+const filterShowFiltersBtn = document.querySelector('.filter-items-show-filters');
+filterShowFiltersBtn.addEventListener('click', () => {
+    
+    if (containClass(filterItems, 'expand')) {
+        filterShowFiltersBtn.textContent = 'Показать все фильтры';
+        removeClass(filterShowFiltersBtn, 'expand');
+        removeClass(filterItems, 'expand');
+    } else {
+        filterShowFiltersBtn.textContent = 'Скрыть фильтры';
+        addClass(filterShowFiltersBtn, 'expand');
+        addClass(filterItems, 'expand');
+    }
+    
+})
+
 /* Ползунок в каталоге */
 
 const rangeSliders = document.querySelectorAll('.filter-item__slider');
@@ -262,3 +277,4 @@ rangeSliders.forEach(rangeSlider => {
 //     resetBtnSpan.style.top = relY + 'px';
 //     resetBtnSpan.style.left = relX + 'px';
 // });
+
