@@ -187,7 +187,14 @@ fastViewPopup.addEventListener('click', (event) => {
     const target = event.target;
     const fastViewContainer = fastViewPopup.querySelector('.fast-view__container');
     const fastViewCloseBtn = fastViewPopup.querySelector('.close-btn--fastview');
-    checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup)
+    checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup);
+    
+    const currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
+    const currentSlideImg = currentSlide.firstElementChild;
+    const isSlide = target == zoomImg || zoomImg.contains(target);
+    if (isSlide) {
+        currentSlideImg.click()
+    }
 });
 
 /* Попап сравнения/избранного */
@@ -229,4 +236,62 @@ citySelect.addEventListener('click', (event) => {
     let target = event.target;
     const citySelectInner = citySelect.querySelector('.city-select');
     checkClickWithCloseBtn(citySelectInner, 'active', target, citySelectCloseBtn, citySelect);
+});
+
+/* ZOOM */
+let globalX = 0;
+let globalY = 0;
+
+document.addEventListener('mousemove', (event) => {
+    globalX = event.pageX;
+    globalY = event.pageY;
+
+});
+
+const zoomImg = document.querySelector('.zoom-img');
+
+zoomImg.addEventListener('mousemove', (event) => {
+    let zoom = 5;
+    let currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
+    let currentImg = currentSlide.firstElementChild;
+    let currentImgSrc = currentImg.getAttribute('data-src');
+    let imgWidth = currentImg.offsetWidth;
+    let imgHeight = currentImg.offsetHeight;
+    const zoomOverlay = zoomImg.nextElementSibling;
+    const cursor = zoomImg.firstElementChild;
+    cursor.style.width = `${zoomOverlay.offsetWidth / zoom}px`
+    cursor.style.height = `${zoomOverlay.offsetHeight / zoom}px`
+    let cursorWidth = cursor.offsetWidth;
+    let cursorHeight = cursor.offsetHeight;
+    let posX = globalX - zoomImg.getBoundingClientRect().left - cursorWidth / 2;
+    let posY = globalY - zoomImg.getBoundingClientRect().top - cursorHeight / 2;
+    if (posX < 0) {
+        posX = 0
+    }
+    if (posY < 0) {
+        posY = 0
+    }
+    if (posX > (imgWidth - cursorWidth)) {
+        posX = imgWidth - cursorWidth
+    }
+    if (posY > (imgHeight - cursorHeight)) {
+        posY = imgHeight - cursorHeight
+    }
+    cursor.style.display = 'block';
+    cursor.style.left = posX + 'px';
+    cursor.style.top = posY + 'px';
+
+    posX *= zoom
+    posY *= zoom
+    zoomOverlay.style.display = 'block';
+    zoomOverlay.style.backgroundImage = `url(${currentImgSrc})`;
+    zoomOverlay.style.backgroundSize = `${imgWidth * zoom}px`;
+    zoomOverlay.style.backgroundPosition = `-${posX}px -${posY}px`;
+});
+
+zoomImg.addEventListener('mouseleave', (event) => {
+    const cursor = zoomImg.firstElementChild;
+    const zoomOverlay = zoomImg.nextElementSibling;
+    cursor.style.display = 'none';
+    zoomOverlay.style.display = 'none';
 });

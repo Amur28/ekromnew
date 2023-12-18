@@ -190,31 +190,38 @@ filterItems.addEventListener('click', (event) => {
     let target = event.target;
     const filterItem = event.target.closest('.filter-item')
     const filterItemHeader = filterItem.querySelector('.filter-item__header');
+    const filterItemFooter = filterItem.querySelector('.filter-item__footer');
 
-    if (!filterItemHeader) return;
-
-    const filterItemProps = filterItemHeader.nextElementSibling;
     if (target == filterItemHeader || filterItemHeader.contains(target)) {
-        toggleClass(filterItemHeader, 'hidden');
-        toggleClass(filterItemProps, 'hidden');
+        toggleClass(filterItem, 'hidden');
+
+    } else if (target == filterItemFooter || filterItemFooter.contains(target)) {
+        if (!containClass(filterItem, 'expand')) {
+            filterItemFooter.textContent = 'Скрыть';
+            addClass(filterItem, 'expand');
+        } else {
+            filterItemFooter.textContent = 'Больше';
+            removeClass(filterItem, 'expand')
+        }
+    } else {
+        return;
     }
 
 });
 
-const filterShowFiltersBtn = document.querySelector('.filter-items-show-filters');
-filterShowFiltersBtn.addEventListener('click', () => {
-    
-    if (containClass(filterItems, 'expand')) {
-        filterShowFiltersBtn.textContent = 'Показать все фильтры';
-        removeClass(filterShowFiltersBtn, 'expand');
-        removeClass(filterItems, 'expand');
-    } else {
-        filterShowFiltersBtn.textContent = 'Скрыть фильтры';
-        addClass(filterShowFiltersBtn, 'expand');
-        addClass(filterItems, 'expand');
-    }
-    
-})
+// const filterShowFiltersBtn = document.querySelector('.filter-items-show-filters');
+// filterShowFiltersBtn.addEventListener('click', () => {
+
+//     if (containClass(filterItems, 'expand')) {
+//         filterShowFiltersBtn.textContent = 'Показать все фильтры';
+//         removeClass(filterShowFiltersBtn, 'expand');
+//         removeClass(filterItems, 'expand');
+//     } else {
+//         filterShowFiltersBtn.textContent = 'Скрыть фильтры';
+//         addClass(filterShowFiltersBtn, 'expand');
+//         addClass(filterItems, 'expand');
+//     }
+// });
 
 /* Ползунок в каталоге */
 
