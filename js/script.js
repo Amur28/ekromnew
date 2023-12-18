@@ -188,7 +188,7 @@ fastViewPopup.addEventListener('click', (event) => {
     const fastViewContainer = fastViewPopup.querySelector('.fast-view__container');
     const fastViewCloseBtn = fastViewPopup.querySelector('.close-btn--fastview');
     checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup);
-    
+
     const currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
     const currentSlideImg = currentSlide.firstElementChild;
     const isSlide = target == zoomImg || zoomImg.contains(target);
@@ -245,7 +245,6 @@ let globalY = 0;
 document.addEventListener('mousemove', (event) => {
     globalX = event.pageX;
     globalY = event.pageY;
-
 });
 
 const zoomImg = document.querySelector('.zoom-img');
@@ -263,8 +262,8 @@ zoomImg.addEventListener('mousemove', (event) => {
     cursor.style.height = `${zoomOverlay.offsetHeight / zoom}px`
     let cursorWidth = cursor.offsetWidth;
     let cursorHeight = cursor.offsetHeight;
-    let posX = globalX - zoomImg.getBoundingClientRect().left - cursorWidth / 2;
-    let posY = globalY - zoomImg.getBoundingClientRect().top - cursorHeight / 2;
+    let posX = globalX - (zoomImg.getBoundingClientRect().left + window.scrollX) - cursorWidth / 2;
+    let posY = globalY - (zoomImg.getBoundingClientRect().top + window.scrollY) - cursorHeight / 2;
     if (posX < 0) {
         posX = 0
     }
