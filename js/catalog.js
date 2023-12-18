@@ -261,17 +261,16 @@ rangeSliders.forEach(rangeSlider => {
 
 /* Анимация наведения для кнопок */
 
-// const resetBtn = document.querySelector('button.reset');
+// const resetBtn = document.querySelector('button.show');
 
 // resetBtn.addEventListener('mouseenter', (event) => {
 //     let parentOffsetY = resetBtn.offsetTop,
 //         parentOffsetX = resetBtn.offsetLeft,
 //         relX = event.pageX - parentOffsetX,
 //         relY = event.pageY - parentOffsetY;
-
-//     const resetBtnSpan = resetBtn.querySelector('span');
-//     resetBtnSpan.style.top = relY + 'px';
-//     resetBtnSpan.style.left = relX + 'px';
+//     btnSpan.style.top = relY + 'px';
+//     btnSpan.style.left = relX + 'px';
+//     addClass(btnSpan, 'animate')
 // });
 
 // resetBtn.addEventListener('mouseout', (event) => {
@@ -279,9 +278,9 @@ rangeSliders.forEach(rangeSlider => {
 //         parentOffsetX = resetBtn.offsetLeft,
 //         relX = event.pageX - parentOffsetX,
 //         relY = event.pageY - parentOffsetY;
-//     const resetBtnSpan = resetBtn.querySelector('span');
-
-//     resetBtnSpan.style.top = relY + 'px';
-//     resetBtnSpan.style.left = relX + 'px';
+//     btnSpan.style.top = relY + 'px';
+//     btnSpan.style.left = relX + 'px';
+//     btnSpan.style.top = relY + 'px';
+//     btnSpan.style.left = relX + 'px';
 // });
 

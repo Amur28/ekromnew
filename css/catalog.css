@@ -1,3 +1,7 @@
+@import url('./global.css');
+@import url('./font.css');
+@import url('./style.css');
+
 /* HEADER START */
 
 .header {
@@ -883,7 +887,7 @@ a.header__categories-link:hover span {
     max-height: 83px;
 }
 
-.filter-item.hidden .filter-item__props, 
+.filter-item.hidden .filter-item__props,
 .filter-item.hidden .filter-item__footer {
     max-height: 0;
     padding: 0;
@@ -1123,6 +1127,11 @@ a.header__categories-link:hover span {
 
 .oval-btn--filter.show {
     margin-top: 25px;
+    position: relative;
+    margin-top: 10px;
+    border: 1px solid var(--main-blue);
+    position: relative;
+    overflow: hidden;
 }
 
 .oval-btn--filter.reset {
@@ -1130,20 +1139,8 @@ a.header__categories-link:hover span {
     background-color: transparent;
     border: 1px solid var(--main-blue);
     color: var(--main-blue);
-    /* position: relative;
-    overflow: hidden; */
-}
-
-.oval-btn--filter.reset span {
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-radius: 100%;
-    background-color: var(--main-blue);
-    transition: all .7s;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+    position: relative;
+    overflow: hidden;
 }
 
 .catalog__promo {
