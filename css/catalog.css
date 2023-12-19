@@ -700,7 +700,6 @@ ul.products-pagination {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 275px;
 }
 
 .feedback-banner__text {
