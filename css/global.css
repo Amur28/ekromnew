@@ -14,6 +14,7 @@
     --red-color: #F63B00;
     --subtitle-color: #5d6c7b;
     --filter-bg-color: #f4f7fb;
+    --hover-blue: #486BC5;
 }
 
 html {
@@ -26,7 +27,7 @@ html {
     box-sizing: border-box;
     font-family: var(--main-font);
     font-size: 14px;
-    line-height: 21px;
+    line-height: 1.5;
 }
 
 body {
@@ -144,6 +145,11 @@ input[type="search"]::-webkit-search-results-decoration {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--default-transition);
+}
+
+.round-btn:hover {
+    background-color: var(--hover-blue);
 }
 
 .round-btn img {

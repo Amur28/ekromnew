@@ -99,7 +99,7 @@ const brandsMarquee = new Splide('.brands__marquee', {
     pagination: false,
     gap: 20,
     autoScroll: {
-        speed: 2,
+        speed: 1,
         pauseOnHover: false,
     },
 });

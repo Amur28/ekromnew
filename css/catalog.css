@@ -421,7 +421,7 @@
 }
 
 .oval-btn--all-categories:hover {
-    background-color: #486BC5;
+    background-color: var(--hover-blue);
 }
 
 .oval-btn--all-categories::after {
@@ -835,7 +835,7 @@ a.header__categories-link:hover span {
 }
 
 .tags__item:hover {
-    background-color: #486BC5;
+    background-color: var(--hover-blue);
 }
 
 .tags__item a {
@@ -1105,6 +1105,7 @@ a.header__categories-link:hover span {
     padding-bottom: 20px;
     position: relative;
     transition: var(--alt-transition);
+    margin-top: 10px;
 }
 
 .filter-item__btn::after {

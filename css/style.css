@@ -433,7 +433,7 @@
 }
 
 .oval-btn--all-categories:hover {
-    background-color: #486BC5;
+    background-color: var(--hover-blue);
 }
 
 .oval-btn--all-categories::after {
@@ -1324,6 +1324,11 @@ a.header__categories-link:hover span {
     top: 225px;
 }
 
+.bestseller__inner .bestseller-button-next:hover,
+.bestseller__inner .bestseller-button-prev:hover {
+    background-color: var(--hover-blue);
+}
+
 /* BESTSELLER END */
 
 /* SHOWROOM START */
@@ -1378,10 +1383,11 @@ section.showroom {
 }
 
 .rect-btn--showroom {
-    font-size: 32px;
-    line-height: 40px;
-    padding: 16px 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 17px 30px;
     margin-top: 50px;
+    font-weight: 400;
 }
 
 .rect-btn--showroom.skeleton {
@@ -1813,10 +1819,28 @@ a.footer__nav-link--show {
     opacity: 1;
 }
 
+#fastView.active .fast-view__container,
+#questionForm.active .question-form,
+#authRegister.active .auth__inner,
+#authLogin.active .auth__inner,
+#citySelect.active .city-select {
+    animation: zoomIn .3s;
+}
+
 .fast-view__container {
     min-height: 840px;
     background-color: var(--bg-white);
     border-radius: 10px;
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 .fast-view__header {
@@ -2633,7 +2657,7 @@ a.footer__nav-link--show {
 }
 
 .auth__text {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.5;
     color: var(--text-grey-color);
     margin-top: 10px;
@@ -2665,6 +2689,7 @@ form.auth__form {
 .auth__form-group--checkbox p {
     font-size: 12px;
     line-height: 1.5;
+    color: var(--text-grey-color);
 }
 
 .auth__form-group input {
@@ -2696,12 +2721,10 @@ form.auth__form {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
     cursor: pointer;
 }
 
-#registerFormEntity + label::after {
+#registerFormEntity + label::before {
     content: '';
     width: 16px;
     height: 16px;
@@ -2711,9 +2734,10 @@ form.auth__form {
     background-position: center;
     background-repeat: no-repeat;
     padding: 3px;
+    margin-right: 10px;
 }
 
-#registerFormEntity:checked + label::after {
+#registerFormEntity:checked + label::before {
     background-image: url('../img/icons/check.svg');
 }
 
@@ -2736,6 +2760,7 @@ form.auth__form {
 .auth__footer a {
     font-size: 12px;
     line-height: 1.5;
+    color: var(--text-grey-color);
 }
 
 .auth__footer a {
@@ -2770,7 +2795,7 @@ form.auth__form {
 }
 
 .auth__form-subtext span {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.5;
     color: var(--text-grey-color);
 }
