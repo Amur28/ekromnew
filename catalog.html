@@ -645,7 +645,7 @@
                                 <p class="catalog-popup__categories-text">
                                     Мы вам поможем!
                                 </p>
-                                <button class="rect-btn rect-btn--catalog-popup">
+                                <button class="rect-btn rect-btn--catalog-popup feedback">
                                     Связаться с нами
                                 </button>
                             </div>
@@ -887,7 +887,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <a class="promo-feedback" href="#">
+                            <a class="promo-feedback feedback" href="#">
                                 <img src="./img/woman.png" alt="">
                                 <p>Задать вопрос менеджеру</p>
                             </a>
@@ -1890,7 +1890,7 @@
                                 <p class="catalog-popup__categories-text">
                                     Мы вам поможем!
                                 </p>
-                                <button class="rect-btn rect-btn--catalog-popup">
+                                <button class="rect-btn rect-btn--catalog-popup feedback">
                                     Связаться с нами
                                 </button>
                             </div>
@@ -3607,7 +3607,7 @@
                     </p>
                     <form class="feedback-banner__form">
                         <input type="email" placeholder="Введите ваш email">
-                        <button class="rect-btn rect-btn--feedback-baner" type="submit">
+                        <button class="rect-btn rect-btn--feedback-banner" type="submit">
                             Подписаться
                         </button>
                     </form>
@@ -4605,6 +4605,45 @@
             </div>
         </div>
 
+    </div>
+    <div id="questionForm" class="modal">
+        <div class="container">
+            <form class="question-form" action="#">
+                <button class="close-btn close-btn--question" type="button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <div class="question-form__inner">
+                    <div class="question-form__text">
+                        <h2 class="question-form__title">
+                            Задайте свой вопрос и мы с вами свяжемся!
+                        </h2>
+                        <textarea name="question-textarea" id="questionTextArea" cols="30" rows="10"
+                            placeholder="Напишите ваш вопрос здесь" required></textarea>
+                    </div>
+                    <div class="question-form__user-fields">
+                        <input id="questionPhoneInput" type="tel" placeholder="+7 (9xx) xxx-xx-xx" required>
+                        <input id="questionMailInput" type="email" placeholder="xxxxxx@xx.xx" required>
+                        <div class="question-form__checkbox">
+                            <input id="questionCheckbox" type="checkbox" required name="question-checkbox">
+                            <label for="questionCheckbox"></label>
+                            <p>
+                                Отправляя форму Вы соглашаетесь с
+                                <a href="#">обработкой персональных данных и политикой конфеденциальности</a>
+                            </p>
+                        </div>
+
+                        <button id="questionSubmit" class="rect-btn rect-btn--question" type="submit">
+                            Отправить
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
     </div>
     <script>
         const allSkeletons = document.querySelectorAll('.skeleton');

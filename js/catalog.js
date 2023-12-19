@@ -140,6 +140,13 @@ fastViewPopup.addEventListener('click', (event) => {
     const fastViewContainer = fastViewPopup.querySelector('.fast-view__container');
     const fastViewCloseBtn = fastViewPopup.querySelector('.close-btn--fastview');
     checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup)
+
+    const currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
+    const currentSlideImg = currentSlide.firstElementChild;
+    const isSlide = target == zoomImg || zoomImg.contains(target);
+    if (isSlide) {
+        currentSlideImg.click()
+    }
 });
 
 /* Попап сравнения/избранного */
@@ -363,4 +370,23 @@ zoomImg.addEventListener('mouseleave', (event) => {
     const zoomOverlay = zoomImg.nextElementSibling;
     cursor.style.display = 'none';
     zoomOverlay.style.display = 'none';
+});
+
+const faqBtn = document.querySelectorAll('.feedback');
+const questionForm = document.getElementById('questionForm');
+
+faqBtn.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        event.stopPropagation()
+        addClass(questionForm, 'active');
+    });
+})
+
+
+questionForm.addEventListener('click', (event) => {
+    const target = event.target;
+    const questionFormContainer = questionForm.querySelector('form.question-form');
+    const closeQuestionFormBtn = questionForm.querySelector('.close-btn--question');
+
+    checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, questionForm);
 });
