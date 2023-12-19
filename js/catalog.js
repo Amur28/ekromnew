@@ -1,5 +1,5 @@
 'use strict';
-
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 /* Функции для работы с классами */
 
 const containClass = (el, className) => el.classList.contains(`${className}`);
@@ -284,3 +284,83 @@ rangeSliders.forEach(rangeSlider => {
 //     btnSpan.style.left = relX + 'px';
 // });
 
+const fastViewSliderThumbs = new Swiper('.slider-fastview-thumbs', {
+    slidesPerView: 6,
+    spaceBetween: 5,
+});
+
+const fastViewSlider = new Swiper('.slider-fastview', {
+    slidesPerView: 1,
+    loop: true,
+    thumbs: {
+        swiper: fastViewSliderThumbs,
+    }
+});
+
+const fastViewColorSlider = new Swiper('.slider-fastview-color', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: '.slider-fastview-color-button-next',
+        prevEl: '.slider-fastview-color-button-prev',
+    }
+});
+Fancybox.bind('[data-fancybox="fastview-gallery"]', {
+
+});
+
+let globalX = 0;
+let globalY = 0;
+
+document.addEventListener('mousemove', (event) => {
+    globalX = event.pageX;
+    globalY = event.pageY;
+});
+
+const zoomImg = document.querySelector('.zoom-img');
+
+zoomImg.addEventListener('mousemove', (event) => {
+    let zoom = 5;
+    let currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
+    let currentImg = currentSlide.firstElementChild;
+    let currentImgSrc = currentImg.getAttribute('data-src');
+    let imgWidth = currentImg.offsetWidth;
+    let imgHeight = currentImg.offsetHeight;
+    const zoomOverlay = zoomImg.nextElementSibling;
+    const cursor = zoomImg.firstElementChild;
+    cursor.style.width = `${zoomOverlay.offsetWidth / zoom}px`
+    cursor.style.height = `${zoomOverlay.offsetHeight / zoom}px`
+    let cursorWidth = cursor.offsetWidth;
+    let cursorHeight = cursor.offsetHeight;
+    let posX = globalX - (zoomImg.getBoundingClientRect().left + window.scrollX) - cursorWidth / 2;
+    let posY = globalY - (zoomImg.getBoundingClientRect().top + window.scrollY) - cursorHeight / 2;
+    if (posX < 0) {
+        posX = 0
+    }
+    if (posY < 0) {
+        posY = 0
+    }
+    if (posX > (imgWidth - cursorWidth)) {
+        posX = imgWidth - cursorWidth
+    }
+    if (posY > (imgHeight - cursorHeight)) {
+        posY = imgHeight - cursorHeight
+    }
+    cursor.style.display = 'block';
+    cursor.style.left = posX + 'px';
+    cursor.style.top = posY + 'px';
+
+    posX *= zoom
+    posY *= zoom
+    zoomOverlay.style.display = 'block';
+    zoomOverlay.style.backgroundImage = `url(${currentImgSrc})`;
+    zoomOverlay.style.backgroundSize = `${imgWidth * zoom}px`;
+    zoomOverlay.style.backgroundPosition = `-${posX}px -${posY}px`;
+});
+
+zoomImg.addEventListener('mouseleave', (event) => {
+    const cursor = zoomImg.firstElementChild;
+    const zoomOverlay = zoomImg.nextElementSibling;
+    cursor.style.display = 'none';
+    zoomOverlay.style.display = 'none';
+});

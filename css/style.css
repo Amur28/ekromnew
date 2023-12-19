@@ -1,5 +1,6 @@
 @import url('./global.css');
 @import url('./font.css');
+@import url('./catalog.css');
 
 /* HEADER START */
 
@@ -7,7 +8,7 @@
     position: sticky;
     top: 0;
     transition: var(--default-transition);
-    z-index: 900;
+    z-index: 950;
 }
 
 .header.popup-active {
@@ -213,7 +214,7 @@
     padding: 0;
     font-size: 16px;
     width: 100%;
-    padding: 16px 0 16px 48px;
+    padding: 12px 0 12px 48px;
     border-radius: 30px;
     background-color: #343538;
     color: var(--text-grey-color);
@@ -397,7 +398,7 @@
     color: var(--text-black-color);
 }
 
-.catalog-popup__categories-banner {
+.promo-banner {
     position: relative;
     background-color: var(--bg-white);
     border-radius: 10px;
@@ -1052,7 +1053,6 @@ a.header__categories-link:hover span {
 
 .product-card {
     position: relative;
-    z-index: 900;
     min-height: 440px;
     width: 270px;
     background-color: #fff;
@@ -1802,7 +1802,6 @@ a.footer__nav-link--show {
 #citySelect,
 #authRegister,
 #authLogin {
-    display: flex;
     visibility: hidden;
     opacity: 0;
     transition: var(--alt-transition);

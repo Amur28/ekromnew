@@ -108,6 +108,17 @@ input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+  }
+
 .container {
     padding: 0 20px;
     margin: 0 auto;
@@ -146,10 +157,6 @@ input[type="search"]::-webkit-search-results-decoration {
     align-items: center;
     justify-content: center;
     transition: var(--default-transition);
-}
-
-.round-btn:hover {
-    background-color: var(--hover-blue);
 }
 
 .round-btn img {
