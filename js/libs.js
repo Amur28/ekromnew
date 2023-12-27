@@ -59,7 +59,7 @@ const showroomGallerySlider = new Swiper('.showroom-gallery-slider', {
     loop: true,
     slidesPerView: 1.5,
     autoplay: {
-        delay: 2000,
+        delay: 1500,
     },
     speed: 500,
     navigation: {

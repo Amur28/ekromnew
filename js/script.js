@@ -19,6 +19,7 @@ const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl)
 };
 
 /* Проверка и скрытие элемента при клике вне его */
+
 const checkClassAndClick = (targetEl, className, target, parentEl) => {
     const itsEl = target == targetEl || targetEl.contains(target);
     const elHasClass = containClass(parentEl, className);
