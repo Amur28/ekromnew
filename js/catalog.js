@@ -390,3 +390,35 @@ questionForm.addEventListener('click', (event) => {
 
     checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, questionForm);
 });
+
+const productsViewBtnsParent = document.querySelector('.products-view-buttons');
+const productsViewBtns = productsViewBtnsParent.querySelectorAll('.products-view-btn')
+
+productsViewBtnsParent.addEventListener('click', (event) => {
+    const currentBtn = event.target.closest('.products-view-btn');
+    const productsRows = document.querySelector('.products__main.rows')
+    const productsTiles = document.querySelector('.products__main.tiles')
+
+    if (!currentBtn) return;
+
+    if (containClass(currentBtn, 'active')) {
+        removeClass(currentBtn, 'active')
+    }
+
+    hideSecondBtn(productsViewBtns)
+
+    addClass(currentBtn, 'active');
+    if (containClass(currentBtn, 'tiles')) {
+        removeClass(productsRows, 'active');
+        addClass(productsTiles, 'active');
+    } else if (containClass(currentBtn, 'row')) {
+        removeClass(productsTiles, 'active');
+        addClass(productsRows, 'active')
+    }
+});
+
+const hideSecondBtn = (parentEl) => {
+    parentEl.forEach(btn => {
+        removeClass(btn, 'active');
+    });
+};

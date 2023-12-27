@@ -294,3 +294,17 @@ zoomImg.addEventListener('mouseleave', (event) => {
     cursor.style.display = 'none';
     zoomOverlay.style.display = 'none';
 });
+
+/* Выбор цвета */
+
+const productBoxColorsList = fastViewPopup.querySelector('.product-box__colors-list');
+
+productBoxColorsList.addEventListener('click', (event) => {
+    const colorLabel = event.target.closest('.product-box__colors-item');
+    if (!colorLabel) return;
+    const frame = productBoxColorsList.querySelector('.frame');
+    let posX = colorLabel.offsetLeft;
+    let posY = colorLabel.offsetTop;
+
+    frame.style.cssText = `transform: translate(${posX}px, ${posY}px)`;
+});

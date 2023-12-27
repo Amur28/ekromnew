@@ -6,17 +6,12 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 const bannerSlider = new Swiper('.banner-slider', {
     loop: false,
     pagination: {
-        el: '.banner__pagination',
+        el: '.banner-pagination',
         clickable: true,
     },
     navigation: {
-        nextEl: '.banner__button-next',
-        prevEl: '.banner__button-prev',
-    },
-    effect: 'cards',
-    cardsEffect: {
-        perSlideOffset: 5,
-        perSlideRotate: 2,
+        nextEl: '.banner-button-next',
+        prevEl: '.banner-button-prev',
     },
     autoplay: {
         delay: 3000,
@@ -34,7 +29,11 @@ const categoriesSlider = new Swiper('.categories-slider', {
         delay: 3000,
         disableOnInteraction: true,
     },
-    speed: 1000,
+    speed: 500,
+    navigation: {
+        nextEl: '.categories-button-next',
+        prevEl: '.categories-button-prev',
+    }
 });
 
 const bestsellerSlider = new Swiper('.bestseller-slider', {
@@ -49,22 +48,25 @@ const bestsellerSlider = new Swiper('.bestseller-slider', {
     spaceBetween: 15,
 });
 
-const showroomGallerySlider = new Swiper('.showroom-gallery-slider', {
-    slidesPerView: 2.5,
-    speed: 1000,
-    autoplay: {
-        delay: 1500,
-    },
-});
-
 const showroomSlider = new Swiper('.showroom-slider', {
-    slidesPerView: 1,
-    speed: 500,
     pagination: {
-        el: '.showroom-slider-pagination',
+        el: '.showroom-pagination',
         clickable: true,
     },
 });
+
+const showroomGallerySlider = new Swiper('.showroom-gallery-slider', {
+    loop: true,
+    slidesPerView: 1.5,
+    autoplay: {
+        delay: 2000,
+    },
+    speed: 500,
+    navigation: {
+        nextEl: '.showroom-gallery-button-next',
+        prevEl: '.showroom-gallery-button-prev',
+    },
+})
 
 const fastViewSliderThumbs = new Swiper('.slider-fastview-thumbs', {
     slidesPerView: 6,
@@ -147,5 +149,4 @@ document.addEventListener('DOMContentLoaded', () => {
         mask: '+{7} (000) 000-00-00'
     };
     IMask(questionPhoneInput, questionPhoneMaskOptions);
-    // IMask(registerPhoneInput, questionPhoneMaskOptions);
 });
