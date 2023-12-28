@@ -177,11 +177,6 @@ select::-ms-expand {
     transition: var(--default-transition);
 }
 
-.rect-btn.white {
-    background-color: #fff;
-    color: var(--main-blue);
-}
-
 .brand-banner {
     background-color: #343538;
     border-radius: 20px;

@@ -54,13 +54,15 @@ const scrollPosition = () => window.scrollY || document.documentElement.scrollTo
 
 /* Показ/скрытие попапа со всеми категориями */
 
-const allCategoriesBtn = document.getElementById('allCategoriesBtn');
+const allCategoriesBtns = document.querySelectorAll('.oval-btn--all-categories');
 const catalogPopup = document.getElementById('catalogPopup');
 
-allCategoriesBtn.addEventListener('click', (event) => {
-    event.stopPropagation()
-    toggleClass(catalogPopup, 'active')
-    toggleClass(allCategoriesBtn, 'active')
+allCategoriesBtns.forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.stopPropagation()
+        toggleClass(catalogPopup, 'active')
+        toggleClass(button, 'active')
+    });
 });
 
 document.addEventListener('click', (event) => {
@@ -151,25 +153,30 @@ fastViewPopup.addEventListener('click', (event) => {
 
 /* Попап сравнения/избранного */
 
-// const compareBtns = document.querySelectorAll('.round-btn--compare');
-// const comparePopup = document.getElementById('popupCompare');
-// const favBtns = document.querySelectorAll('.round-btn--fav');
-// const favPopup = document.getElementById('popupFav');
+const compareBtns = document.querySelectorAll('.round-btn--compare');
+const favBtns = document.querySelectorAll('.round-btn--fav');
+const statusPopup = document.getElementById('popupStatus');
+const statusPopupParagraph = statusPopup.querySelector('.popup-text');
+const statusPopupLink = statusPopup.querySelector('.popup-link');
 
-// compareBtns.forEach(btn => {
-//     btn.addEventListener('click', (event) => {
-//         addClass(comparePopup, 'active');
-//         setTimeout(() => {
-//             removeClass(comparePopup, 'active')
-//         }, 3000)
-//     })
-// });
+compareBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        statusPopupParagraph.textContent = 'Товар добавлен в список сравнения!';
+        statusPopupLink.textContent = 'Перейти в сравнение';
+
+        addClass(statusPopup, 'active')
+    });
+});
 
 // favBtns.forEach(btn => {
-//     btn.addEventListener('click', (event) => {
-//         addClass(favPopup, 'active');
+//     btn.addEventListener('click', () => {
+//         statusPopupParagraph.textContent = 'Товар добавлен в список избранного!';
+//         statusPopupLink.textContent = 'Перейти в избранное';
+//         addClass(statusPopup, 'active');
 //         setTimeout(() => {
-//             removeClass(favPopup, 'active')
+//             if (!containClass(statusPopup, 'active')) {
+//                 removeClass(statusPopup, 'active')
+//             }
 //         }, 3000)
 //     })
 // });
@@ -216,20 +223,6 @@ filterItems.addEventListener('click', (event) => {
 
 });
 
-// const filterShowFiltersBtn = document.querySelector('.filter-items-show-filters');
-// filterShowFiltersBtn.addEventListener('click', () => {
-
-//     if (containClass(filterItems, 'expand')) {
-//         filterShowFiltersBtn.textContent = 'Показать все фильтры';
-//         removeClass(filterShowFiltersBtn, 'expand');
-//         removeClass(filterItems, 'expand');
-//     } else {
-//         filterShowFiltersBtn.textContent = 'Скрыть фильтры';
-//         addClass(filterShowFiltersBtn, 'expand');
-//         addClass(filterItems, 'expand');
-//     }
-// });
-
 /* Ползунок в каталоге */
 
 const rangeSliders = document.querySelectorAll('.filter-item__slider');
@@ -266,31 +259,6 @@ rangeSliders.forEach(rangeSlider => {
     })
 });
 
-/* Анимация наведения для кнопок */
-
-// const resetBtn = document.querySelector('button.show');
-
-// resetBtn.addEventListener('mouseenter', (event) => {
-//     let parentOffsetY = resetBtn.offsetTop,
-//         parentOffsetX = resetBtn.offsetLeft,
-//         relX = event.pageX - parentOffsetX,
-//         relY = event.pageY - parentOffsetY;
-//     btnSpan.style.top = relY + 'px';
-//     btnSpan.style.left = relX + 'px';
-//     addClass(btnSpan, 'animate')
-// });
-
-// resetBtn.addEventListener('mouseout', (event) => {
-//     let parentOffsetY = resetBtn.offsetTop,
-//         parentOffsetX = resetBtn.offsetLeft,
-//         relX = event.pageX - parentOffsetX,
-//         relY = event.pageY - parentOffsetY;
-//     btnSpan.style.top = relY + 'px';
-//     btnSpan.style.left = relX + 'px';
-//     btnSpan.style.top = relY + 'px';
-//     btnSpan.style.left = relX + 'px';
-// });
-
 const fastViewSliderThumbs = new Swiper('.slider-fastview-thumbs', {
     slidesPerView: 6,
     spaceBetween: 5,
@@ -315,6 +283,8 @@ const fastViewColorSlider = new Swiper('.slider-fastview-color', {
 Fancybox.bind('[data-fancybox="fastview-gallery"]', {
 
 });
+
+/* Зум картинки в окне быстрого просмотра */
 
 let globalX = 0;
 let globalY = 0;
@@ -372,6 +342,8 @@ zoomImg.addEventListener('mouseleave', (event) => {
     zoomOverlay.style.display = 'none';
 });
 
+/* Форма "Задать свой вопрос" */
+
 const faqBtn = document.querySelectorAll('.feedback');
 const questionForm = document.getElementById('questionForm');
 
@@ -391,6 +363,8 @@ questionForm.addEventListener('click', (event) => {
     checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, questionForm);
 });
 
+/* Смена отображения карточек в каталоге */
+
 const productsViewBtnsParent = document.querySelector('.products-view-buttons');
 const productsViewBtns = productsViewBtnsParent.querySelectorAll('.products-view-btn')
 
@@ -405,7 +379,7 @@ productsViewBtnsParent.addEventListener('click', (event) => {
         removeClass(currentBtn, 'active')
     }
 
-    hideSecondBtn(productsViewBtns)
+    hideOtherItems(productsViewBtns, 'active')
 
     addClass(currentBtn, 'active');
     if (containClass(currentBtn, 'tiles')) {
@@ -417,8 +391,41 @@ productsViewBtnsParent.addEventListener('click', (event) => {
     }
 });
 
-const hideSecondBtn = (parentEl) => {
-    parentEl.forEach(btn => {
-        removeClass(btn, 'active');
+/* Выбор цвета у карточки */
+
+const hideOtherItems = (parentEl, className) => {
+    parentEl.forEach(faqItem => {
+        removeClass(faqItem, className)
     });
 };
+
+const productCards = document.querySelectorAll('.product-card');
+
+productCards.forEach(card => {
+    card.addEventListener('change', (event) => {
+        const colorLabels = card.querySelectorAll('.product-card__color-label')
+        const colorLabel = event.target.closest('.product-card__color-label');
+        
+        if (!colorLabel) return;
+
+        if (containClass(colorLabel, 'checkdd')) {
+            removeClass(colorLabel, 'checked');
+            return
+        }
+
+        hideOtherItems(colorLabels, 'checked');
+
+        addClass(colorLabel, 'checked')
+    })
+});
+
+const productCardsRow = document.querySelectorAll('.product-card.row');
+
+productCardsRow.forEach(card => {
+    card.addEventListener('click', (event) => {
+        const cartButton = event.target.closest('.product-card__buy-cart');
+        const counter = cartButton.nextElementSibling;
+        addClass(cartButton, 'hide');
+        removeClass(counter, 'hide');
+    })
+})

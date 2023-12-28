@@ -55,14 +55,16 @@ const scrollPosition = () => window.scrollY || document.documentElement.scrollTo
 
 /* Показ/скрытие попапа со всеми категориями */
 
-const allCategoriesBtn = document.getElementById('allCategoriesBtn');
+const allCategoriesBtns = document.querySelectorAll('.oval-btn--all-categories');
 const catalogPopup = document.getElementById('catalogPopup');
 
-allCategoriesBtn.addEventListener('click', (event) => {
-    event.stopPropagation()
-    toggleClass(catalogPopup, 'active')
-    toggleClass(allCategoriesBtn, 'active')
-});
+allCategoriesBtns.forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.stopPropagation()
+        toggleClass(catalogPopup, 'active')
+        toggleClass(button, 'active')
+    });
+})
 
 document.addEventListener('click', (event) => {
     const target = event.target;
@@ -76,7 +78,7 @@ document.addEventListener('click', (event) => {
     checkClassAndClick(authPopup, 'active', target, authPopup);
 
     const itsFaqInner = target == faqInner || faqInner.contains(target);
-    if (!itsFaqInner) hideOtherFaqItems(faqItems);
+    if (!itsFaqInner) hideOtherItems(faqItems, 'active');
 });
 
 /* Header dropdown */
@@ -133,9 +135,9 @@ authLogin.addEventListener('click', (event) => {
 const faqInner = document.querySelector('.faq__inner');
 const faqItems = document.querySelectorAll('.faq__item');
 
-const hideOtherFaqItems = (parentEl) => {
+const hideOtherItems = (parentEl, className) => {
     parentEl.forEach(faqItem => {
-        removeClass(faqItem, 'active')
+        removeClass(faqItem, className)
     });
 };
 
@@ -149,7 +151,7 @@ faqInner.addEventListener('click', (event) => {
         return;
     };
 
-    hideOtherFaqItems(faqItems);
+    hideOtherItems(faqItems, 'active');
 
     addClass(currentFaqItem, 'active');
 });
@@ -200,28 +202,27 @@ fastViewPopup.addEventListener('click', (event) => {
 
 /* Попап сравнения/избранного */
 
-const compareBtns = document.querySelectorAll('.round-btn--compare');
-const comparePopup = document.getElementById('popupCompare');
-const favBtns = document.querySelectorAll('.round-btn--fav');
-const favPopup = document.getElementById('popupFav');
+// const compareBtns = document.querySelectorAll('.round-btn--compare');
+// const favBtns = document.querySelectorAll('.round-btn--fav');
+// const statusPopup = document.getElementById('popupStatus');
 
-compareBtns.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        addClass(comparePopup, 'active');
-        setTimeout(() => {
-            removeClass(comparePopup, 'active')
-        }, 3000)
-    })
-});
+// compareBtns.forEach(btn => {
+//     btn.addEventListener('click', (event) => {
+//         addClass(statusPopup, 'active');
+//         setTimeout(() => {
+//             removeClass(statusPopup, 'active')
+//         }, 3000)
+//     })
+// });
 
-favBtns.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        addClass(favPopup, 'active');
-        setTimeout(() => {
-            removeClass(favPopup, 'active')
-        }, 3000)
-    })
-});
+// favBtns.forEach(btn => {
+//     btn.addEventListener('click', (event) => {
+//         addClass(statusPopup, 'active');
+//         setTimeout(() => {
+//             removeClass(statusPopup, 'active')
+//         }, 3000)
+//     })
+// });
 
 /*Выбор города*/
 
@@ -296,7 +297,7 @@ zoomImg.addEventListener('mouseleave', (event) => {
     zoomOverlay.style.display = 'none';
 });
 
-/* Выбор цвета */
+/* Выбор цвета в окне быстрого просмотра */
 
 const productBoxColorsList = fastViewPopup.querySelector('.product-box__colors-list');
 
@@ -308,4 +309,27 @@ productBoxColorsList.addEventListener('click', (event) => {
     let posY = colorLabel.offsetTop;
 
     frame.style.cssText = `transform: translate(${posX}px, ${posY}px)`;
+});
+
+
+/* Выбор цвета у карточки */
+
+const productCards = document.querySelectorAll('.product-card');
+
+productCards.forEach(card => {
+    card.addEventListener('change', (event) => {
+        const colorLabels = card.querySelectorAll('.product-card__color-label')
+        const colorLabel = event.target.closest('.product-card__color-label');
+
+        if (!colorLabel) return;
+
+        if (containClass(colorLabel, 'checkdd')) {
+            removeClass(colorLabel, 'checked');
+            return
+        }
+
+        hideOtherItems(colorLabels, 'checked');
+
+        addClass(colorLabel, 'checked')
+    })
 });

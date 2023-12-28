@@ -173,6 +173,10 @@
     gap: 12px;
 }
 
+.header.scroll .header-city {
+    display: none;
+}
+
 .header-city__icon {
     width: 48px;
     height: 48px;
@@ -213,6 +217,14 @@
     height: 48px;
 }
 
+.header.scroll .header__search {
+    margin-left: 30px;
+}
+
+.header.scroll .header__search-input:focus {
+    width: 100%;
+}
+
 .header__search-input {
     border: 0;
     padding: 0;
@@ -230,6 +242,7 @@
     width: 210%;
     position: absolute;
     outline: none;
+    background-color: #fff;
 }
 
 .header__search-input::placeholder {
@@ -326,6 +339,10 @@
     border-width: 0 8px 8px 8px;
     border-style: solid;
     border-color: #fff transparent;
+}
+
+.header.scroll .catalog-popup__wrapper::before {
+    left: 15%;
 }
 
 .catalog-popup__menu {
@@ -430,6 +447,15 @@
     width: 183px;
     padding-left: 56px;
     padding-right: 26px;
+}
+
+.header .header__middle .oval-btn--all-categories {
+    display: none;
+}
+
+.header.scroll .header__middle .oval-btn--all-categories {
+    display: block;
+    margin-left: 30px;
 }
 
 .close {
@@ -542,6 +568,19 @@ a.header__categories-link:hover span {
     gap: 8px;
 }
 
+.header .header__middle .header-panel {
+    display: none;
+}
+
+.header.scroll .header__middle .header-panel {
+    display: flex;
+    margin-left: 30px;
+}
+
+.header.scroll .working-days {
+    display: none;
+}
+
 .header-panel__item {
     position: relative;
 }
@@ -586,6 +625,7 @@ a.header__categories-link:hover span {
     border-radius: 10px;
     min-width: 305px;
     display: none;
+    right: 0;
 }
 
 .cart-popup:hover {
@@ -598,7 +638,7 @@ a.header__categories-link:hover span {
     height: 0;
     position: absolute;
     bottom: 100%;
-    left: 5%;
+    left: 90%;
     border-width: 0 8px 8px 8px;
     border-style: solid;
     border-color: #fff transparent;
@@ -1852,8 +1892,7 @@ a.footer__nav-link--show {
 
 #fastView,
 #questionForm,
-#popupCompare,
-#popupFav,
+#popupStatus,
 #citySelect,
 #authRegister,
 #authLogin {
@@ -1864,8 +1903,7 @@ a.footer__nav-link--show {
 
 #fastView.active,
 #questionForm.active,
-#popupCompare.active,
-#popupFav.active,
+/* #popupStatus.active, */
 #citySelect.active,
 #authRegister.active,
 #authLogin.active {
@@ -2510,19 +2548,22 @@ a.footer__nav-link--show {
 
 /* POPUP START*/
 
-#popupCompare,
-#popupFav {
+#popupStatus {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--default-transition);
+    z-index: 10;
+    box-shadow: 0px 4px 30px rgba(25, 33, 79, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#popupStatus.active {
+    animation: popupHide 3s;
 }
 
 .popup {
     background-color: #fff;
-    border-radius: 10px;
     padding: 25px 50px 25px 25px;
     position: relative;
 }
@@ -2556,6 +2597,17 @@ a.footer__nav-link--show {
     height: 10px;
     top: 10px;
     right: 10px;
+}
+
+@keyframes popupHide {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 /* POPUP END*/

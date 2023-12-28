@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header" id="stickyHeader">
+        <div class="header__top">
+            <div class="container">
+                <nav class="header__top-nav">
+                    <ul class="header__top-list">
+                        <li class="header__top-item">
+                            <a class="header__top-link actions" href="#">
+                                Акции
+                                <svg width="9" height="12" viewBox="0 0 9 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 0L0 7H3L2 12L9 5H6L7 0Z" fill="white" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="header__top-item">
+                            <a class="header__top-link" href="#">Оплата</a>
+                        </li>
+                        <li class="header__top-item">
+                            <a class="header__top-link" href="#">Доставка</a>
+                        </li>
+                        <li class="header__top-item">
+                            <a class="header__top-link" href="#">Каталог</a>
+                        </li>
+                        <li class="header__top-item">
+                            <a class="header__top-link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                    <div class="header__top-info">
+                        <a class="header__top-link header__top-link--info" href="#">
+                            Информация для клиентов и партнеров
+                        </a>
+                        <ul class="header__top-info-dropdown">
+                            <li>
+                                <a href="#">О компании</a>
+                            </li>
+                            <li>
+                                <a href="#">Новости</a>
+                            </li>
+                            <li>
+                                <a href="#">Бонусная программа</a>
+                            </li>
+                            <li>
+                                <a href="#">Обмен и возврат товара</a>
+                            </li>
+                            <li>
+                                <a href="#">Сервисные центры</a>
+                            </li>
+                            <li>
+                                <a href="#">Конфиденциальность</a>
+                            </li>
+                            <li>
+                                <a href="#">Обратная связь</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="header__content">
+            <div class="container">
+                <div class="header__middle">
+                    <a class="header__logo" href="index.html" aria-label="Перейти на главную страницу сайта">
+                        <img src="./img/icons/logo.svg" alt="">
+                    </a>
+                    <button class="oval-btn oval-btn--all-categories blue" id="allCategoriesBtn">
+                        Все категории
+                        <div class="close">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                    <div class="header-city">
+                        <div class="header-city__icon">
+                            <img src="./img/icons/city-icon.svg" alt="City icon">
+                        </div>
+                        <div class="header-city__text">
+                            <p class="header-city__descr">
+                                Город
+                            </p>
+                            <div class="header-city__select">
+                                <button class="header-city__button">Екатеринбург</button>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="header__search" action="#">
+                        <input class="header__search-input" type="search" name="search" placeholder="Поиск">
+                        <button class="header__search-submit" type="submit" name="searchSubmit" value=""
+                            aria-label="Кнопка поиска">
+                            <img src="./img/icons/search-icon.svg" alt="">
+                        </button>
+                    </form>
+                    
+                    <div class="working-period">
+                        <p class="working-days">
+                            пн-пт 9:00 - 18:00; сб-вс выходной
+                        </p>
+                        <a class="phone-number" href="#">
+                            +7 (343) 379-98-68
+                        </a>
+                    </div>
+                    <nav class="header-panel">
+                        <div class="header-panel__item">
+                            <button class="round-btn round-btn--header auth-btn">
+                                <img src="./img/icons/user.svg" alt="Личный кабинет">
+                            </button>
+                            <div class="auth-popup">
+                                <h5 class="auth-popup__title">
+                                    Добро пожаловать!
+                                </h5>
+                                <p>
+                                    Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                                </p>
+                                <button class="rect-btn rect-btn--login blue">
+                                    Войти
+                                </button>
+                                <button class="rect-btn rect-btn--register transparent">
+                                    Зарегистрироваться
+                                </button>
+                            </div>
+                        </div>
+                        <div class="header-panel__item">
+                            <a class="round-btn round-btn--header" href="#">
+                                <img src="./img/icons/heart.svg" alt="Избранное">
+                            </a>
+                            <span>5</span>
+                        </div>
+                        <div class="header-panel__item">
+                            <a class="round-btn round-btn--header" href="#">
+                                <img src="./img/icons/compare.svg" alt="Сравнение">
+                            </a>
+                            <span>99</span>
+                        </div>
+                        
+                        <div class="header-panel__item cart-item">
+                            <a class="round-btn round-btn--header" href="#">
+                                <img src="./img/icons/cart.svg" alt="Корзина">
+                            </a>
+                            <span>3</span>
+                            <div class="cart-popup">
+                                <div class="cart-popup__inner cart-popup__inner--has-items">
+                                    <div class="cart-popup__header">
+                                        <h5 class="cart-popup__title">
+                                            В вашей корзине
+                                        </h5>
+                                        <span>
+                                            3 <span>товара</span>
+                                        </span>
+                                    </div>
+                                    <ul class="cart-popup__list">
+                                        <li class="cart-popup__item">
+                                            <a class="cart-popup__product-link" href="#">
+                                                <img class="cart-popup__product-img" src="./img/mini-product.webp"
+                                                    alt="">
+                                            </a>
+                                            <div class="cart-popup__product">
+                                                <a class="cart-popup__product-name" href="#">
+                                                    Мойка кухонная Dr.Gans Берта-760
+                                                </a>
+                                                <span class="cart-popup__price">29 900 ₽</span>
+                                                <span>1 <span>шт.</span></span>
+                                            </div>
+                                            <button class="cart-popup__delete">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z"
+                                                        fill="#5D6C7B" />
+                                                </svg>
+                                            </button>
+                                        </li>
+                                        <li class="cart-popup__item">
+                                            <a class="cart-popup__product-link" href="#">
+                                                <img class="cart-popup__product-img" src="./img/mini-product.webp"
+                                                    alt="">
+                                            </a>
+                                            <div class="cart-popup__product">
+                                                <a class="cart-popup__product-name" href="#">
+                                                    Мойка кухонная Dr.Gans Берта-760
+                                                </a>
+                                                <span class="cart-popup__price">29 900 ₽</span>
+                                                <span>1 <span>шт.</span></span>
+                                            </div>
+                                            <button class="cart-popup__delete">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z"
+                                                        fill="#5D6C7B" />
+                                                </svg>
+                                            </button>
+                                        </li>
+                                        <li class="cart-popup__item">
+                                            <a class="cart-popup__product-link" href="#">
+                                                <img class="cart-popup__product-img" src="./img/mini-product.webp"
+                                                    alt="">
+                                            </a>
+                                            <div class="cart-popup__product">
+                                                <a class="cart-popup__product-name" href="#">
+                                                    Мойка кухонная Dr.Gans Берта-760
+                                                </a>
+                                                <span class="cart-popup__price">29 900 ₽</span>
+                                                <span>1 <span>шт.</span></span>
+                                            </div>
+                                            <button class="cart-popup__delete">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z"
+                                                        fill="#5D6C7B" />
+                                                </svg>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-popup__footer">
+                                        <div class="cart-popup__footer-left">
+                                            <p class="cart-popup__footer-suptitle">
+                                                Сумма:
+                                            </p>
+                                            <p class="cart-popup__footer-sum">
+                                                59 800 ₽
+                                            </p>
+                                        </div>
+                                        <a class="rect-btn rect-btn--cart-popup blue" href="#">
+                                            Оформить заказ
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cart-popup__inner cart-popup__inner--empty">
+                                    <div class="cart-popup__header">
+                                        <h5 class="cart-popup__title">
+                                            В вашей корзине
+                                        </h5>
+                                        <span>
+                                            0 <span>товаров</span>
+                                        </span>
+                                    </div>
+                                    <div class="cart-popup__info">
+                                        <p class="cart-popup__empty-big">
+                                            Ваша корзина пуста
+                                        </p>
+                                        <p>
+                                            Добавьте в нее товары из каталога
+                                        </p>
+                                    </div>
+                                    <div class="cart-popup__footer">
+                                        <div class="cart-popup__footer-left">
+                                            <p class="cart-popup__footer-suptitle">
+                                                Сумма:
+                                            </p>
+                                            <p class="cart-popup__footer-sum">
+                                                0 ₽
+                                            </p>
+                                        </div>
+                                        <a class="rect-btn rect-btn--cart-popup blue" href="#">
+                                            Перейти в каталог
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <button class="oval-btn oval-btn--header blue">
+                        Подбор техники
+                    </button>
+                </div>
+                <div class="header__bottom">
+                    <div class="header__bottom-nav">
+                        <button class="oval-btn oval-btn--all-categories blue" id="allCategoriesBtn">
+                            Все категории
+                            <div class="close">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
+                        <ul class="header__categories-list">
+                            <li class="header__categories-item has-submenu">
+                                <a class="header__categories-link" href="./catalog.html">
+                                    Мойки
+                                    <span></span>
+                                </a>
+                                <ul class="header__categories-submenu">
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Мойки из нержавеющей стали
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Мойки из камня
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header__categories-item">
+                                <a class="header__categories-link" href="./catalog.html">
+                                    Смесители
+                                </a>
+                            </li>
+                            <li class="header__categories-item">
+                                <a class="header__categories-link" href="./catalog.html">
+                                    Кухонные вытяжки
+                                </a>
+
+                            </li>
+                            <li class="header__categories-item has-submenu">
+                                <a class="header__categories-link" href="./catalog.html">
+                                    Комплекты техники
+                                    <span></span>
+                                </a>
+                                <ul class="header__categories-submenu">
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Комплекты кухонной техники
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Стиральная машина + сушильная машина
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header__categories-item has-submenu">
+                                <a class="header__categories-link" href="./catalog.html">
+                                    Духовые шкафы
+                                    <span></span>
+                                </a>
+                                <ul class="header__categories-submenu">
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Газовые
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./catalog.html">
+                                            С функцией СВЧ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Электрические
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header__categories-item has-submenu">
+                                <a class="header__categories-link" href="./catalog.html">
+                                    Варочные панели
+                                    <span></span>
+                                </a>
+                                <ul class="header__categories-submenu">
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Газовые
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Индукционные
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Комбинированные
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./catalog.html">
+                                            Электрические
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <nav class="header-panel">
+                        <div class="header-panel__item">
+                            <button class="round-btn round-btn--header auth-btn">
+                                <img src="./img/icons/user.svg" alt="Личный кабинет">
+                            </button>
+                            <div class="auth-popup">
+                                <h5 class="auth-popup__title">
+                                    Добро пожаловать!
+                                </h5>
+                                <p>
+                                    Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                                </p>
+                                <button class="rect-btn rect-btn--login blue">
+                                    Войти
+                                </button>
+                                <button class="rect-btn rect-btn--register transparent">
+                                    Зарегистрироваться
+                                </button>
+                            </div>
+                        </div>
+                        <div class="header-panel__item">
+                            <a class="round-btn round-btn--header" href="#">
+                                <img src="./img/icons/heart.svg" alt="Избранное">
+                            </a>
+                            <span>5</span>
+                        </div>
+                        <div class="header-panel__item">
+                            <a class="round-btn round-btn--header" href="#">
+                                <img src="./img/icons/compare.svg" alt="Сравнение">
+                            </a>
+                            <span>99</span>
+                        </div>
+                        
+                        <div class="header-panel__item cart-item">
+                            <a class="round-btn round-btn--header" href="#">
+                                <img src="./img/icons/cart.svg" alt="Корзина">
+                            </a>
+                            <span>3</span>
+                            <div class="cart-popup">
+                                <div class="cart-popup__inner cart-popup__inner--has-items">
+                                    <div class="cart-popup__header">
+                                        <h5 class="cart-popup__title">
+                                            В вашей корзине
+                                        </h5>
+                                        <span>
+                                            3 <span>товара</span>
+                                        </span>
+                                    </div>
+                                    <ul class="cart-popup__list">
+                                        <li class="cart-popup__item">
+                                            <a class="cart-popup__product-link" href="#">
+                                                <img class="cart-popup__product-img" src="./img/mini-product.webp"
+                                                    alt="">
+                                            </a>
+                                            <div class="cart-popup__product">
+                                                <a class="cart-popup__product-name" href="#">
+                                                    Мойка кухонная Dr.Gans Берта-760
+                                                </a>
+                                                <span class="cart-popup__price">29 900 ₽</span>
+                                                <span>1 <span>шт.</span></span>
+                                            </div>
+                                            <button class="cart-popup__delete">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z"
+                                                        fill="#5D6C7B" />
+                                                </svg>
+                                            </button>
+                                        </li>
+                                        <li class="cart-popup__item">
+                                            <a class="cart-popup__product-link" href="#">
+                                                <img class="cart-popup__product-img" src="./img/mini-product.webp"
+                                                    alt="">
+                                            </a>
+                                            <div class="cart-popup__product">
+                                                <a class="cart-popup__product-name" href="#">
+                                                    Мойка кухонная Dr.Gans Берта-760
+                                                </a>
+                                                <span class="cart-popup__price">29 900 ₽</span>
+                                                <span>1 <span>шт.</span></span>
+                                            </div>
+                                            <button class="cart-popup__delete">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z"
+                                                        fill="#5D6C7B" />
+                                                </svg>
+                                            </button>
+                                        </li>
+                                        <li class="cart-popup__item">
+                                            <a class="cart-popup__product-link" href="#">
+                                                <img class="cart-popup__product-img" src="./img/mini-product.webp"
+                                                    alt="">
+                                            </a>
+                                            <div class="cart-popup__product">
+                                                <a class="cart-popup__product-name" href="#">
+                                                    Мойка кухонная Dr.Gans Берта-760
+                                                </a>
+                                                <span class="cart-popup__price">29 900 ₽</span>
+                                                <span>1 <span>шт.</span></span>
+                                            </div>
+                                            <button class="cart-popup__delete">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z"
+                                                        fill="#5D6C7B" />
+                                                </svg>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-popup__footer">
+                                        <div class="cart-popup__footer-left">
+                                            <p class="cart-popup__footer-suptitle">
+                                                Сумма:
+                                            </p>
+                                            <p class="cart-popup__footer-sum">
+                                                59 800 ₽
+                                            </p>
+                                        </div>
+                                        <a class="rect-btn rect-btn--cart-popup blue" href="#">
+                                            Оформить заказ
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cart-popup__inner cart-popup__inner--empty">
+                                    <div class="cart-popup__header">
+                                        <h5 class="cart-popup__title">
+                                            В вашей корзине
+                                        </h5>
+                                        <span>
+                                            0 <span>товаров</span>
+                                        </span>
+                                    </div>
+                                    <div class="cart-popup__info">
+                                        <p class="cart-popup__empty-big">
+                                            Ваша корзина пуста
+                                        </p>
+                                        <p>
+                                            Добавьте в нее товары из каталога
+                                        </p>
+                                    </div>
+                                    <div class="cart-popup__footer">
+                                        <div class="cart-popup__footer-left">
+                                            <p class="cart-popup__footer-suptitle">
+                                                Сумма:
+                                            </p>
+                                            <p class="cart-popup__footer-sum">
+                                                0 ₽
+                                            </p>
+                                        </div>
+                                        <a class="rect-btn rect-btn--cart-popup blue" href="#">
+                                            Перейти в каталог
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+            <div class="catalog-popup" id="catalogPopup">
+                <div class="container">
+                    <div class="catalog-popup__wrapper">
+                        <nav class="catalog-popup__menu">
+                            <ul class="catalog-popup__menu-list">
+                                <li class="catalog-popup__menu-item">
+                                    <a class="catalog-popup__menu-link" href="./catalog.html">Встраиваемая техника</a>
+                                    <div class="catalog-popup__meni-icon">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.5 3.13397C7.16667 3.51887 7.16667 4.48113 6.5 4.86603L2 7.4641C1.33333 7.849 0.5 7.36788 0.5 6.59808L0.5 1.40192C0.5 0.632124 1.33333 0.150998 2 0.535898L6.5 3.13397Z"
+                                                fill="#19214F" />
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="catalog-popup__menu-item">
+                                    <a class="catalog-popup__menu-link" href="./catalog.html">Отдельностоящая бытовая
+                                        техника</a>
+                                    <div class="catalog-popup__meni-icon">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.5 3.13397C7.16667 3.51887 7.16667 4.48113 6.5 4.86603L2 7.4641C1.33333 7.849 0.5 7.36788 0.5 6.59808L0.5 1.40192C0.5 0.632124 1.33333 0.150998 2 0.535898L6.5 3.13397Z"
+                                                fill="#19214F" />
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="catalog-popup__menu-item">
+                                    <a class="catalog-popup__menu-link" href="./catalog.html">Стиральные и сушильные
+                                        машины</a>
+                                    <div class="catalog-popup__meni-icon">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.5 3.13397C7.16667 3.51887 7.16667 4.48113 6.5 4.86603L2 7.4641C1.33333 7.849 0.5 7.36788 0.5 6.59808L0.5 1.40192C0.5 0.632124 1.33333 0.150998 2 0.535898L6.5 3.13397Z"
+                                                fill="#19214F" />
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="catalog-popup__menu-item">
+                                    <a class="catalog-popup__menu-link" href="./catalog.html">Мелкая техника для
+                                        кухни</a>
+                                    <div class="catalog-popup__meni-icon">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.5 3.13397C7.16667 3.51887 7.16667 4.48113 6.5 4.86603L2 7.4641C1.33333 7.849 0.5 7.36788 0.5 6.59808L0.5 1.40192C0.5 0.632124 1.33333 0.150998 2 0.535898L6.5 3.13397Z"
+                                                fill="#19214F" />
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="catalog-popup__menu-item">
+                                    <a class="catalog-popup__menu-link" href="./catalog.html">Кухонные мойки и
+                                        аксессуары для кухни</a>
+                                    <div class="catalog-popup__meni-icon">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.5 3.13397C7.16667 3.51887 7.16667 4.48113 6.5 4.86603L2 7.4641C1.33333 7.849 0.5 7.36788 0.5 6.59808L0.5 1.40192C0.5 0.632124 1.33333 0.150998 2 0.535898L6.5 3.13397Z"
+                                                fill="#19214F" />
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="catalog-popup__menu-item">
+                                    <a class="catalog-popup__menu-link" href="./catalog.html">Прочая бытовая техника</a>
+                                    <div class="catalog-popup__meni-icon">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.5 3.13397C7.16667 3.51887 7.16667 4.48113 6.5 4.86603L2 7.4641C1.33333 7.849 0.5 7.36788 0.5 6.59808L0.5 1.40192C0.5 0.632124 1.33333 0.150998 2 0.535898L6.5 3.13397Z"
+                                                fill="#19214F" />
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="catalog-popup__menu-item">
+                                    <a class="catalog-popup__menu-link" href="./catalog.html">Кофеварки и кофемашины</a>
+                                    <div class="catalog-popup__meni-icon">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.5 3.13397C7.16667 3.51887 7.16667 4.48113 6.5 4.86603L2 7.4641C1.33333 7.849 0.5 7.36788 0.5 6.59808L0.5 1.40192C0.5 0.632124 1.33333 0.150998 2 0.535898L6.5 3.13397Z"
+                                                fill="#19214F" />
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="catalog-popup__menu-item">
+                                    <a class="catalog-popup__menu-link" href="./catalog.html">Техника для уборки</a>
+                                    <div class="catalog-popup__meni-icon">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.5 3.13397C7.16667 3.51887 7.16667 4.48113 6.5 4.86603L2 7.4641C1.33333 7.849 0.5 7.36788 0.5 6.59808L0.5 1.40192C0.5 0.632124 1.33333 0.150998 2 0.535898L6.5 3.13397Z"
+                                                fill="#19214F" />
+                                        </svg>
+                                    </div>
+                                </li>
+                                <li class="catalog-popup__menu-item">
+                                    <a class="catalog-popup__menu-link" href="./catalog.html">Сантехника для ванны</a>
+                                    <div class="catalog-popup__meni-icon">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.5 3.13397C7.16667 3.51887 7.16667 4.48113 6.5 4.86603L2 7.4641C1.33333 7.849 0.5 7.36788 0.5 6.59808L0.5 1.40192C0.5 0.632124 1.33333 0.150998 2 0.535898L6.5 3.13397Z"
+                                                fill="#19214F" />
+                                        </svg>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <nav class="catalog-popup__categories">
+                            <div class="catalog-popup__categories-menu">
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Варочные панели
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Газовые
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Индукционные
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Комбинированные
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Электрические
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для варочных панелей
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Духовые шкафы
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Газовые
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            С СВЧ
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Электрические
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для духовых шкафов
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Кухонные вытяжки
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Полновстраиваемые
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Фильтры для вытяжек
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для вытяжек
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Посудомоечные машины
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для посудомоечных машин
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Сресдтва для посудомоечных машин
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Микроволновые печи
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            В верхний модуль
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для микроволновых печей
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Холодильники
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для холодильников
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Морозильные шкафы
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для морозильных шкафов
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Винные шкафы
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для ценителей вина
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Стиральные машины
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            С сушкой
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для стиральных машин
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Средства для стирки
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="catalog-popup__categories-list">
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link catalog-popup__categories-link--title"
+                                            href="./catalog.html">
+                                            Кофемашины
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Кофеварки
+                                        </a>
+                                    </li>
+                                    <li class="catalog-popup__categories-item">
+                                        <a class="catalog-popup__categories-link" href="./catalog.html">
+                                            Аксессуары для кофемашин
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="promo-banner" style="background-image: url('./img/catalog-banner.png');">
+                                <p class="catalog-popup__categories-text">
+                                    Не можете выбрать?
+                                </p>
+                                <p class="catalog-popup__categories-text">
+                                    Мы вам поможем!
+                                </p>
+                                <button class="rect-btn rect-btn--catalog-popup glass">
+                                    Связаться с нами
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="info">
+            <div class="container">
+                <ul class="breadcrumbs">
+                    <li class="breadcrumbs__item breadcrumbs__item--home">
+                        <a href="#">
+                            <svg width="15" height="15" viewBox="0 0 15 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.8651 7.89824L8.20489 2.24102L7.8255 1.86162C7.73906 1.77575 7.62215 1.72755 7.5003 1.72755C7.37846 1.72755 7.26155 1.77575 7.17511 1.86162L1.13556 7.89824C1.04698 7.98648 0.976977 8.09156 0.929678 8.20729C0.882379 8.32302 0.858744 8.44706 0.860168 8.57207C0.866028 9.0877 1.29523 9.49932 1.81085 9.49932H2.43341V14.2703H12.5672V9.49932H13.2029C13.4534 9.49932 13.6893 9.40117 13.8665 9.22393C13.9538 9.13693 14.0229 9.03349 14.07 8.91959C14.117 8.80568 14.1409 8.68358 14.1404 8.56035C14.1404 8.31133 14.0423 8.07549 13.8651 7.89824ZM8.32062 13.2156H6.67999V10.2273H8.32062V13.2156ZM11.5125 8.44463V13.2156H9.25812V9.87578C9.25812 9.55205 8.99591 9.28985 8.67218 9.28985H6.32843C6.0047 9.28985 5.74249 9.55205 5.74249 9.87578V13.2156H3.4881V8.44463H2.08185L7.50177 3.0291L7.84015 3.36748L12.9202 8.44463H11.5125Z"
+                                    fill="#5D6C7B" />
+                            </svg>
+                            Главная
+                        </a>
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="#">Каталог</a>
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumbs__item current">
+                        <span>Мойки</span>
+                    </li>
+                </ul>
+                <div class="page-banner skeleton">
+                    <div class="title title--banner">
+                        <h2>
+                            Моя корзина
+                        </h2>
+                        <div class="counter">
+                            1390
+                        </div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <div class="tags__item skeleton blue">
+                        <a href="#">Нержавеющая сталь</a>
+                    </div>
+                    <div class="tags__item skeleton blue">
+                        <a href="">Каменные</a>
+                    </div>
+                    <div class="tags__item skeleton blue">
+                        <a href="">Комбинированные</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__info">
+                    <div class="footer__info-top">
+                        <a class="footer__logo" href="#" aria-label="Перейти на главную страницу сайта">
+                            <img src="./img/icons/footer/footer-logo.svg" alt="">
+                        </a>
+                        <p class="footer__descr">
+                            «Екром» – оптовая компания по продаже кухонных моек, смесителей и встраиваемой бытовой
+                            техники.
+                            Все для обустройства вашей новой кухни!
+                        </p>
+                    </div>
+
+                    <div class="footer__contacts">
+                        <div class="footer__contacts-item">
+                            <a class="round-btn round-btn--footer" href="tel:+73433799868" aria-label="Позвонить">
+                                <img src="./img/icons/footer/footer-tel.svg" alt="">
+                            </a>
+                            <div class="footer__contacts-box">
+                                <p>
+                                    Телефон
+                                </p>
+                                <a class="footer__contacts-link" href="tel:+73433799868">
+                                    8(343)379-98-68
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer__contacts-item">
+                            <a class="round-btn round-btn--footer" href="mailto:sale@ekrom.ru"
+                                aria-label="Написать письмо на почту">
+                                <img src="./img/icons/footer/footer-mail.svg" alt="">
+                            </a>
+                            <div class="footer__contacts-box">
+                                <p>
+                                    Почта
+                                </p>
+                                <a class="footer__contacts-link" href="mailto:sale@ekrom.ru">
+                                    sale@ekrom.ru
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="footer__contacts-item">
+                            <a class="round-btn round-btn--footer" href="#"
+                                aria-label="Перейти на страницу с адресом компании">
+                                <img src="./img/icons/footer/footer-geo.svg" alt="">
+                            </a>
+                            <div class="footer__contacts-box">
+                                <p>
+                                    Адрес офиса
+                                </p>
+                                <a class="footer__contacts-link" href="#">
+                                    г. Екатеринбург, Карла Либкнехта, 22, 419 офис, 4 этаж
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="footer__nav">
+                    <div class="footer__nav-box">
+                        <h4 class="footer__nav-title">
+                            <a href="#">
+                                Каталог
+                            </a>
+                        </h4>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="./catalog.html">
+                                    Мойки
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="./catalog.html">
+                                    Смесители
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="./catalog.html">
+                                    Кухонные вытяжки
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="./catalog.html">
+                                    Варочные панели
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="./catalog.html">
+                                    Духовые шкафы
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link footer__nav-link--show" href="#">
+                                    Показать все
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-box">
+                        <h4 class="footer__nav-title">
+                            <a href="#">
+                                Информация
+                            </a>
+                        </h4>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    Доставка
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    Гарантия
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    Сервисные центры
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    Конфеденциальности
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    Обмен и возврат товара
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-box">
+                        <h4 class="footer__nav-title">
+                            <a href="#">
+                                О Нас
+                            </a>
+                        </h4>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    О компании
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    Контакты
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    Новости
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    Реферальная программа
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a class="footer__nav-link" href="#">
+                                    Обратная связь
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="footer__bottom">
+                    <div class="footer__socials">
+                        <a class="footer__socials-link round-btn round-btn--footer" href="#"
+                            aria-label="Перейти в ВК сообщество компании">
+                            <img src="./img/icons/footer/vk.svg" alt="">
+                        </a>
+                        <a class="footer__socials-link round-btn round-btn--footer" href="#"
+                            aria-label="Перейти на YouTube-канал компании">
+                            <img src="./img/icons/footer/youtube.svg" alt="">
+                        </a>
+                        <a class="footer__socials-link round-btn round-btn--footer" href="#"
+                            aria-label="Перейти в телеграм-канал компании">
+                            <img src="./img/icons/footer/telegram.svg" alt="">
+                        </a>
+                        <a class="footer__socials-link round-btn round-btn--footer" href="#"
+                            aria-label="Написать в whatsapp">
+                            <img src="./img/icons/footer/whatsapp.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="footer__confidence">
+                        <a class="footer__confidence-link" href="#">
+                            Политика обработки персональных данных
+                        </a>
+                        <p>
+                            2024 © Eкром — Продажа моек и встроенной бытовой техники
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <div id="citySelect" class="modal">
+        <div class="city-select">
+            <h4 class="city-select__title">
+                Выберите город доставки
+            </h4>
+            <form class="city-select__form" action="#">
+                <input type="search" name="citySelectSearch" placeholder="Поиск">
+                <button>
+                    <img src="./img/icons/search-icon.svg" alt="">
+                </button>
+            </form>
+            <p class="city-select__popular">
+                Популярные города
+            </p>
+            <ul class="city-select__cities">
+                <li class="city-select__city">
+                    <span>Екатеринбург</span>
+                </li>
+                <li class="city-select__city">
+                    <span>Москва</span>
+                </li>
+                <li class="city-select__city">
+                    <span>Санкт-Петербург</span>
+                </li>
+                <li class="city-select__city">
+                    <span>Тюмень</span>
+                </li>
+                <li class="city-select__city">
+                    <span>Новосибирск</span>
+                </li>
+                <li class="city-select__city">
+                    <span>Казань</span>
+                </li>
+                <li class="city-select__city">
+                    <span>Нижний Новгород</span>
+                </li>
+                <li class="city-select__city">
+                    <span>Красноярск</span>
+                </li>
+                <li class="city-select__city">
+                    <span>Челябинск</span>
+                </li>
+            </ul>
+            <button class="close-btn close-btn--city-select">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z"
+                        fill="#282739" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="authRegister" class="modal">
+        <div class="auth__inner">
+            <div class="auth__box auth__box--register">
+                <h4 class="auth__title">
+                    Регистрация
+                </h4>
+                <p class="auth__text">
+                    Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
+                </p>
+                <form class="auth__form auth__form--register" action="#">
+                    <div class="auth__form-group">
+                        <label for="registerFormEmail">
+                            Email
+                        </label>
+                        <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru"
+                            style="background-image: url('./img/icons/auth-form/email.svg');">
+                    </div>
+                    <div class="auth__form-group">
+                        <label for="registerFormPhone">
+                            Телефон
+                        </label>
+                        <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx"
+                            style="background-image: url('./img/icons/auth-form/phone.svg');">
+                    </div>
+                    <div class="auth__form-group">
+                        <label for="registerFormName">
+                            Ваше имя
+                        </label>
+                        <input id="registerFormName" type="text" required placeholder="Иван Иванов"
+                            style="background-image: url('./img/icons/auth-form/user.svg');">
+                    </div>
+                    <div class="auth__form-group">
+                        <label for="registerFormPassword">
+                            Пароль
+                        </label>
+                        <input id="registerFormPassword" type="password" required placeholder="••••••"
+                            style="background-image: url('./img/icons/auth-form/lock.svg');">
+                    </div>
+                    <div class="auth__form-group">
+                        <label for="registerFormConfirmPassword">
+                            Подтвердите пароль
+                        </label>
+                        <input id="registerFormConfirmPassword" type="password" required placeholder="••••••"
+                            style="background-image: url('./img/icons/auth-form/lock.svg');">
+                    </div>
+                    <div class="auth__form-group auth__form-group--checkbox">
+                        <input id="registerFormEntity" type="checkbox">
+                        <label for="registerFormEntity">
+                            Хочу зарегистрироваться как юридическое лицо
+                        </label>
+                    </div>
+                    <button class="rect-btn rect-btn--auth-register" type="submit">
+                        Зарегистрироваться
+                    </button>
+                </form>
+                <div class="auth__footer">
+                    <span>Уже есть аккаунт?</span>
+                    <a href="#">Войти</a>
+                </div>
+            </div>
+            <div class="auth__box auth__box--verify">
+                <div class="auth__header">
+                    <button class="round-btn round-btn--auth">
+                        <img src="./img/icons/arrow-back.svg" alt="">
+                    </button>
+                </div>
+                <h4 class="auth__title auth__title--verify">
+                    Регистрация
+                </h4>
+                <p class="auth__text">
+                    Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
+                </p>
+                <form class="auth__form auth__form--verify" action="#">
+                    <div class="auth__form-group">
+                        <label for="verifyFormInput">
+                            Верификационный код
+                        </label>
+                        <input id="verifyFormInput" type="text" required placeholder="______">
+                        <div class="auth__form-subtext">
+                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+                        </div>
+                    </div>
+                    <button class="rect-btn rect-btn--auth-register" type="submit">
+                        Зарегистрироваться
+                    </button>
+                </form>
+                <div class="auth__footer">
+                    <span>Уже есть аккаунт?</span>
+                    <a href="#">Войти</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="authLogin" class="modal">
+        <div class="auth__inner">
+            <div class="auth__box auth__box--login">
+                <h4 class="auth__title auth__title--login">
+                    Вход
+                </h4>
+                <p class="auth__text">
+                    Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                </p>
+                <form class="auth__form auth__form--login" action="#">
+                    <div class="auth__form-group">
+                        <label for="loginFormEmail">
+                            Email
+                        </label>
+                        <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru"
+                            style="background-image: url('./img/icons/auth-form/email.svg');">
+                    </div>
+                    <div class="auth__form-group">
+                        <label for="loginFormPassword">
+                            Пароль
+                        </label>
+                        <input id="loginFormPassword" type="password" required placeholder="••••••"
+                            style="background-image: url('./img/icons/auth-form/lock.svg');">
+                    </div>
+                    <a class="auth__form-forgot" href="#">
+                        Забыли пароль?
+                    </a>
+                    <button class="rect-btn rect-btn--auth-register" type="submit">
+                        Войти
+                    </button>
+                </form>
+                <div class="auth__footer">
+                    <span>Еще нет аккаунта?</span>
+                    <a href="#">Зарегистрироваться</a>
+                </div>
+            </div>
+            <div class="auth__box auth__box--recover">
+                <div class="auth__header">
+                    <button class="round-btn round-btn--auth">
+                        <img src="./img/icons/arrow-back.svg" alt="">
+                    </button>
+                </div>
+                <h4 class="auth__title auth__title--recover">
+                    Восстановление пароля
+                </h4>
+                <p class="auth__text">
+                    Восстановите пароль, чтобы воспользоваться личным кабинетом
+                </p>
+                <form class="auth__form auth__form--recover" action="#">
+                    <div class="auth__form-group">
+                        <label for="recoverFormInput">
+                            Верификационный код
+                        </label>
+                        <input id="recoverFormInput" type="text" required placeholder="______">
+                        <div class="auth__form-subtext">
+                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+                        </div>
+                    </div>
+                    <button class="rect-btn rect-btn--auth-register" type="submit">
+                        Сбросить пароль
+                    </button>
+                </form>
+                <div class="auth__footer">
+                    <span>Уже есть аккаунт?</span>
+                    <a href="#">Войти</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const allSkeletons = document.querySelectorAll('.skeleton');
+        window.addEventListener('load', function () {
+            allSkeletons.forEach(item => {
+                item.classList.remove('skeleton')
+            });
+        });
+    </script>
+    <script src="./js/cart.js"></script>
+</body>
+</html>

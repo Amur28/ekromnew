@@ -4,7 +4,7 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 /* Инициализация слайдеров */
 
 const bannerSlider = new Swiper('.banner-slider', {
-    loop: false,
+    loop: true,
     pagination: {
         el: '.banner-pagination',
         clickable: true,
