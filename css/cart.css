@@ -1,0 +1,32 @@
+/* CART-EMPTY START */
+
+.cart-empty__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0 143px 0;
+}
+
+.cart-empty img {
+    width: 134px;
+    height: 85px;
+}
+
+.cart-empty__title {
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+.cart-empty__text {
+    margin-top: 10px;
+}
+
+.rect-btn--cart-empty {
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+/* CART-EMPTY END */

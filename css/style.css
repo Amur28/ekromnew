@@ -1,8 +1,13 @@
 @import url('./font.css');
 @import url('./global.css');
 @import url('./catalog.css');
+@import url('./cart.css');
 
 /* HEADER START */
+
+body.active {
+    overflow: hidden;
+}
 
 .header {
     position: sticky;

@@ -1,15 +1,14 @@
 'use strict';
-
 /* Функции для работы с классами */
 
-const containClass = (el, className) => el.classList.contains(`${className}`);
-const addClass = (el, className) => el.classList.add(`${className}`);
-const removeClass = (el, className) => el.classList.remove(`${className}`);
-const toggleClass = (el, className) => el.classList.toggle(`${className}`);
+export const containClass = (el, className) => el.classList.contains(`${className}`);
+export const addClass = (el, className) => el.classList.add(`${className}`);
+export const removeClass = (el, className) => el.classList.remove(`${className}`);
+export const toggleClass = (el, className) => el.classList.toggle(`${className}`);
 
 /* Проверка и скрытие элемента при клике вне его или по кнопке "Закрыть" */
 
-const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl) => {
+export const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl) => {
     const itsEl = target == targetEl || targetEl.contains(target);
     const itsCloseBtn = target == closeBtn || closeBtn.contains(target);
 
@@ -20,7 +19,7 @@ const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl)
 
 /* Проверка и скрытие элемента при клике вне его */
 
-const checkClassAndClick = (targetEl, className, target, parentEl) => {
+export const checkClassAndClick = (targetEl, className, target, parentEl) => {
     const itsEl = target == targetEl || targetEl.contains(target);
     const elHasClass = containClass(parentEl, className);
 
@@ -29,12 +28,20 @@ const checkClassAndClick = (targetEl, className, target, parentEl) => {
     }
 };
 
+/* Функция скрытия остальных элементов */
+
+export const hideOtherItems = (parentEl, className) => {
+    parentEl.forEach(faqItem => {
+        removeClass(faqItem, className)
+    });
+};
+
 /* Липкий HEADER */
 
 let lastScrollPos = 0;
 const stickyHeader = document.getElementById('stickyHeader');
 
-window.addEventListener('scroll', () => {
+export const hideShowHeaderOnScroll = () => {
     const defaultOffset = 200;
 
     if (scrollPosition() > lastScrollPos && !containClass(stickyHeader, 'scroll') && scrollPosition() > defaultOffset) {
@@ -49,9 +56,11 @@ window.addEventListener('scroll', () => {
     }
 
     lastScrollPos = scrollPosition();
-});
+};
 
 const scrollPosition = () => window.scrollY || document.documentElement.scrollTop;
+
+window.addEventListener('scroll', hideShowHeaderOnScroll);
 
 /* Показ/скрытие попапа со всеми категориями */
 
@@ -71,13 +80,15 @@ document.addEventListener('click', (event) => {
     const allCategoriesWrapper = catalogPopup.querySelector('.catalog-popup__wrapper');
 
     checkClassAndClick(allCategoriesWrapper, 'active', target, catalogPopup);
-    checkClassAndClick(allCategoriesWrapper, 'active', target, allCategoriesBtn);
-
+    allCategoriesBtns.forEach(button => {
+        checkClassAndClick(allCategoriesWrapper, 'active', target, button)
+    })
     checkClassAndClick(headerTopInfoDropdown, 'active', target, headerTopInfoDropdown);
 
     checkClassAndClick(authPopup, 'active', target, authPopup);
 
     const itsFaqInner = target == faqInner || faqInner.contains(target);
+
     if (!itsFaqInner) hideOtherItems(faqItems, 'active');
 });
 
@@ -93,41 +104,55 @@ headerTopInfoLink.addEventListener('click', (event) => {
 
 /* Auth popup */
 
-const authBtn = document.querySelector('.auth-btn');
+const authBtns = document.querySelectorAll('.auth-btn');
 const authPopup = document.querySelector('.auth-popup')
 
-authBtn.addEventListener('click', (event) => {
-    event.stopPropagation();
-    toggleClass(authPopup, 'active');
-});
+authBtns.forEach(authBtn => {
+    authBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const authPopupClosest = authBtn.nextElementSibling;
+
+        toggleClass(authPopupClosest, 'active');
+    });
+})
 
 /* Форма авторизации */
 
+const authRegisterBtns = document.querySelectorAll('.rect-btn--register');
+const authLoginBtns = document.querySelectorAll('.rect-btn--login');
 const authRegister = document.getElementById('authRegister');
-const authRegisterBtn = document.querySelector('.rect-btn--register');
 const authLogin = document.getElementById('authLogin');
-const authLoginBtn = document.querySelector('.rect-btn--login');
 
-authRegisterBtn.addEventListener('click', () => {
-    addClass(authRegister, 'active');
-    removeClass(authPopup, 'active');
+authRegisterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const parentPopup = btn.parentNode;
+        removeClass(parentPopup, 'active');
+        addClass(authRegister, 'active');
+        addClass(body, 'active')
+    });
 });
 
-authLoginBtn.addEventListener('click', () => {
-    addClass(authLogin, 'active');
-    removeClass(authPopup, 'active');
+authLoginBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const parentPopup = btn.parentNode;
+        removeClass(parentPopup, 'active');
+        addClass(authLogin, 'active');
+        addClass(body, 'active')
+    });
 });
 
 authRegister.addEventListener('click', (event) => {
     const authInner = authRegister.querySelector('.auth__inner');
     let target = event.target;
     checkClassAndClick(authInner, 'active', target, authRegister);
+    checkClassAndClick(authInner, 'active', target, body);
 });
 
 authLogin.addEventListener('click', (event) => {
     const authInner = authLogin.querySelector('.auth__inner');
     let target = event.target;
     checkClassAndClick(authInner, 'active', target, authLogin);
+    checkClassAndClick(authInner, 'active', target, body);
 });
 
 /* FAQ section */
@@ -135,13 +160,7 @@ authLogin.addEventListener('click', (event) => {
 const faqInner = document.querySelector('.faq__inner');
 const faqItems = document.querySelectorAll('.faq__item');
 
-const hideOtherItems = (parentEl, className) => {
-    parentEl.forEach(faqItem => {
-        removeClass(faqItem, className)
-    });
-};
-
-faqInner.addEventListener('click', (event) => {
+const showFaqPopup = () => {
     const currentFaqItem = event.target.closest('.faq__item');
 
     if (!currentFaqItem) return;
@@ -154,7 +173,9 @@ faqInner.addEventListener('click', (event) => {
     hideOtherItems(faqItems, 'active');
 
     addClass(currentFaqItem, 'active');
-});
+}
+
+faqInner.addEventListener('click', showFaqPopup);
 
 /* Форма "Задать свой вопрос" */
 
@@ -165,6 +186,7 @@ const questionForm = document.getElementById('questionForm');
 faqBtn.addEventListener('click', (event) => {
     event.stopPropagation()
     addClass(questionForm, 'active');
+    addClass(body, 'active')
 });
 
 questionForm.addEventListener('click', (event) => {
@@ -173,16 +195,19 @@ questionForm.addEventListener('click', (event) => {
     const closeQuestionFormBtn = questionForm.querySelector('.close-btn--question');
 
     checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, questionForm);
+    checkClassAndClick(questionFormContainer, 'active', target, body);
 });
 
 /* Окно быстрого просмотра */
 
 const fastViewPopup = document.getElementById('fastView');
 const fastViewBtnList = document.querySelectorAll('.fast-view-btn');
+const body = document.querySelector('body')
 
 fastViewBtnList.forEach(btn => {
     btn.addEventListener('click', () => {
         addClass(fastViewPopup, 'active')
+        addClass(body, 'active')
     });
 });
 
@@ -191,6 +216,7 @@ fastViewPopup.addEventListener('click', (event) => {
     const fastViewContainer = fastViewPopup.querySelector('.fast-view__container');
     const fastViewCloseBtn = fastViewPopup.querySelector('.close-btn--fastview');
     checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup);
+    checkClassAndClick(fastViewContainer, 'active', target, body);
 
     const currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
     const currentSlideImg = currentSlide.firstElementChild;
@@ -232,12 +258,14 @@ const headerCityButton = document.querySelector('.header-city__button');
 
 headerCityButton.addEventListener('click', () => {
     addClass(citySelect, 'active');
+    addClass(body, 'active')
 });
 
 citySelect.addEventListener('click', (event) => {
     let target = event.target;
     const citySelectInner = citySelect.querySelector('.city-select');
     checkClickWithCloseBtn(citySelectInner, 'active', target, citySelectCloseBtn, citySelect);
+    checkClassAndClick(citySelectInner, 'active', target, body);
 });
 
 /* ZOOM */

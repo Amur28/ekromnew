@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Корзина</title>
 </head>
 <body>
     <header class="header" id="stickyHeader">
@@ -898,34 +898,33 @@
                         </a>
                         <span>/</span>
                     </li>
-                    <li class="breadcrumbs__item">
-                        <a href="#">Каталог</a>
-                        <span>/</span>
-                    </li>
                     <li class="breadcrumbs__item current">
-                        <span>Мойки</span>
+                        <span>Корзина</span>
                     </li>
                 </ul>
                 <div class="page-banner skeleton">
                     <div class="title title--banner">
                         <h2>
-                            Моя корзина
+                            Корзина
                         </h2>
-                        <div class="counter">
-                            1390
-                        </div>
                     </div>
                 </div>
-                <div class="tags">
-                    <div class="tags__item skeleton blue">
-                        <a href="#">Нержавеющая сталь</a>
-                    </div>
-                    <div class="tags__item skeleton blue">
-                        <a href="">Каменные</a>
-                    </div>
-                    <div class="tags__item skeleton blue">
-                        <a href="">Комбинированные</a>
-                    </div>
+            </div>
+        </div>
+
+        <div class="cart-empty" style="display: none;">
+            <div class="container">
+                <div class="cart-empty__inner">
+                    <img src="./img/icons/cart-empty.svg" alt="">
+                    <h2 class="cart-empty__title">
+                        Ваша корзина пуста
+                    </h2>
+                    <p class="cart-empty__text">
+                        Добавьте в нее товары из каталога
+                    </p>
+                    <a class="rect-btn rect-btn--cart-empty blue" href="./catalog.html">
+                        Перейти в каталог
+                    </a>
                 </div>
             </div>
         </div>

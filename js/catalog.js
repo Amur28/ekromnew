@@ -1,56 +1,10 @@
 'use strict';
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
-/* Функции для работы с классами */
-
-const containClass = (el, className) => el.classList.contains(`${className}`);
-const addClass = (el, className) => el.classList.add(`${className}`);
-const removeClass = (el, className) => el.classList.remove(`${className}`);
-const toggleClass = (el, className) => el.classList.toggle(`${className}`);
-
-/* Проверка и скрытие элемента при клике вне его или по кнопке "Закрыть" */
-
-const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl) => {
-    const itsEl = target == targetEl || targetEl.contains(target);
-    const itsCloseBtn = target == closeBtn || closeBtn.contains(target);
-
-    if (!itsEl || itsCloseBtn) {
-        removeClass(parentEl, className);
-    }
-};
-
-/* Проверка и скрытие элемента при клике вне его */
-const checkClassAndClick = (targetEl, className, target, parentEl) => {
-    const itsEl = target == targetEl || targetEl.contains(target);
-    const elHasClass = containClass(parentEl, className);
-
-    if (!itsEl && elHasClass) {
-        removeClass(parentEl, className);
-    }
-};
+import { addClass, removeClass, containClass, toggleClass, checkClassAndClick, checkClickWithCloseBtn } from './script.js';
 
 /* Липкий HEADER */
 
-let lastScrollPos = 0;
-const stickyHeader = document.getElementById('stickyHeader');
-
-window.addEventListener('scroll', () => {
-    const defaultOffset = 200;
-
-    if (scrollPosition() > lastScrollPos && !containClass(stickyHeader, 'scroll') && scrollPosition() > defaultOffset) {
-        addClass(stickyHeader, 'scroll');
-    } else if (scrollPosition() < lastScrollPos && containClass(stickyHeader, 'scroll')) {
-        removeClass(stickyHeader, 'scroll')
-    }
-    if (containClass(catalogPopup, 'active')) {
-        addClass(stickyHeader, 'popup-active')
-    } else {
-        removeClass(stickyHeader, 'popup-active')
-    }
-
-    lastScrollPos = scrollPosition();
-});
-
-const scrollPosition = () => window.scrollY || document.documentElement.scrollTop;
+window.addEventListener('scroll', hideShowHeaderOnScroll);
 
 /* Показ/скрытие попапа со всеми категориями */
 
@@ -63,15 +17,16 @@ allCategoriesBtns.forEach(button => {
         toggleClass(catalogPopup, 'active')
         toggleClass(button, 'active')
     });
-});
+})
 
 document.addEventListener('click', (event) => {
     const target = event.target;
     const allCategoriesWrapper = catalogPopup.querySelector('.catalog-popup__wrapper');
 
     checkClassAndClick(allCategoriesWrapper, 'active', target, catalogPopup);
-    checkClassAndClick(allCategoriesWrapper, 'active', target, allCategoriesBtn);
-
+    allCategoriesBtns.forEach(button => {
+        checkClassAndClick(allCategoriesWrapper, 'active', target, button)
+    });
     checkClassAndClick(headerTopInfoDropdown, 'active', target, headerTopInfoDropdown);
 
     checkClassAndClick(authPopup, 'active', target, authPopup);
@@ -168,20 +123,7 @@ compareBtns.forEach(btn => {
     });
 });
 
-// favBtns.forEach(btn => {
-//     btn.addEventListener('click', () => {
-//         statusPopupParagraph.textContent = 'Товар добавлен в список избранного!';
-//         statusPopupLink.textContent = 'Перейти в избранное';
-//         addClass(statusPopup, 'active');
-//         setTimeout(() => {
-//             if (!containClass(statusPopup, 'active')) {
-//                 removeClass(statusPopup, 'active')
-//             }
-//         }, 3000)
-//     })
-// });
-
-/*Выбор города*/
+/* Выбор города */
 
 const citySelect = document.getElementById('citySelect');
 const citySelectCloseBtn = citySelect.querySelector('.close-btn--city-select');
@@ -242,7 +184,7 @@ rangeSliders.forEach(rangeSlider => {
     const inputMax = inputs.lastElementChild;
     const inputsRange = [inputMin, inputMax];
 
-    rangeSlider.noUiSlider.on('update', function (values, handle) {
+    rangeSlider.noUiSlider.on('update', function(values, handle) {
         inputsRange[handle].value = Math.round(values[handle]);
     });
 
@@ -354,7 +296,6 @@ faqBtn.forEach(btn => {
     });
 })
 
-
 questionForm.addEventListener('click', (event) => {
     const target = event.target;
     const questionFormContainer = questionForm.querySelector('form.question-form');
@@ -389,6 +330,20 @@ productsViewBtnsParent.addEventListener('click', (event) => {
         removeClass(productsTiles, 'active');
         addClass(productsRows, 'active')
     }
+});
+
+/* Выбор цвета в окне быстрого просмотра */
+
+const productBoxColorsList = fastViewPopup.querySelector('.product-box__colors-list');
+
+productBoxColorsList.addEventListener('click', (event) => {
+    const colorLabel = event.target.closest('.product-box__colors-item');
+    if (!colorLabel) return;
+    const frame = productBoxColorsList.querySelector('.frame');
+    let posX = colorLabel.offsetLeft;
+    let posY = colorLabel.offsetTop;
+
+    frame.style.cssText = `transform: translate(${posX}px, ${posY}px)`;
 });
 
 /* Выбор цвета у карточки */
