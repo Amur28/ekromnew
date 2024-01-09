@@ -1087,7 +1087,6 @@ a.header__categories-link:hover span {
     justify-content: center;
     border-bottom: 1px solid var(--bg-white);
     position: relative;
-    padding: 10px;
 }
 
 .product-card__img-box:hover .fast-view-btn {

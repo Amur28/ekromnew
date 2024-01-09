@@ -47,6 +47,14 @@ const checkClassAndClick = (targetEl, className, target, parentEl) => {
     }
 };
 
+/* Функция скрытия остальных элементов */
+
+const hideOtherItems = (parentEl, className) => {
+    parentEl.forEach(faqItem => {
+        removeClass(faqItem, className)
+    });
+};
+
 /* Липкий HEADER */
 
 let lastScrollPos = 0;
@@ -272,3 +280,43 @@ zoomImg.addEventListener('mouseleave', (event) => {
     zoomOverlay.style.display = 'none';
 });
 
+/* Выбор цвета у карточки */
+
+const productCards = document.querySelectorAll('.product-card');
+
+productCards.forEach(card => {
+    card.addEventListener('change', (event) => {
+        const colorLabels = card.querySelectorAll('.product-card__color-label')
+        const colorLabel = event.target.closest('.product-card__color-label');
+
+        if (!colorLabel) return;
+
+        if (containClass(colorLabel, 'checkdd')) {
+            removeClass(colorLabel, 'checked');
+            return
+        }
+
+        hideOtherItems(colorLabels, 'checked');
+
+        addClass(colorLabel, 'checked')
+    });
+
+    const thumbs = card.querySelectorAll('.thumb');
+    const productImg = card.querySelector('.product-card__img');
+    const progressBarItems = card.querySelectorAll('.progressbar-item');
+
+    thumbs.forEach((thumb, index) => {
+        thumb.addEventListener('mouseover', (event) => {
+            const thumbImg = thumb.querySelector('img');
+            const thumbImgSrc = thumbImg.getAttribute('src');
+            const currentProgressbarItem = progressBarItems[index];
+            
+            hideOtherItems(progressBarItems, 'current');
+            addClass(currentProgressbarItem, 'current');
+            productImg.setAttribute('src', thumbImgSrc );
+        })
+    })
+
+});
+
+/* Смена картинки при наведении */

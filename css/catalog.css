@@ -605,6 +605,7 @@
 
 .products__main .product-card:hover .product-card__footer {
     display: block;
+    border-radius: 0 0 5px 5px;
 }
 
 .promo-banner.promo-banner--catalog {
