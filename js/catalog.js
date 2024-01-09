@@ -279,14 +279,6 @@ const fastViewSlider = new Swiper('.slider-fastview', {
     }
 });
 
-const fastViewColorSlider = new Swiper('.slider-fastview-color', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    navigation: {
-        nextEl: '.slider-fastview-color-button-next',
-        prevEl: '.slider-fastview-color-button-prev',
-    }
-});
 Fancybox.bind('[data-fancybox="fastview-gallery"]', {
 
 });

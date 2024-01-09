@@ -231,6 +231,20 @@ fastViewPopup.addEventListener('click', (event) => {
     }
 });
 
+/* Выбор цвета в окне быстрого просмотра */
+
+const productBoxColorsList = fastViewPopup.querySelector('.product-box__colors-list');
+
+productBoxColorsList.addEventListener('click', (event) => {
+    const colorLabel = event.target.closest('.product-box__colors-item');
+    if (!colorLabel) return;
+    const frame = productBoxColorsList.querySelector('.frame');
+    let posX = colorLabel.offsetLeft;
+    let posY = colorLabel.offsetTop;
+
+    frame.style.cssText = `transform: translate(${posX}px, ${posY}px)`;
+});
+
 /*Выбор города*/
 
 const citySelect = document.getElementById('citySelect');
@@ -306,21 +320,6 @@ zoomImg.addEventListener('mouseleave', (event) => {
     cursor.style.display = 'none';
     zoomOverlay.style.display = 'none';
 });
-
-/* Выбор цвета в окне быстрого просмотра */
-
-const productBoxColorsList = fastViewPopup.querySelector('.product-box__colors-list');
-
-productBoxColorsList.addEventListener('click', (event) => {
-    const colorLabel = event.target.closest('.product-box__colors-item');
-    if (!colorLabel) return;
-    const frame = productBoxColorsList.querySelector('.frame');
-    let posX = colorLabel.offsetLeft;
-    let posY = colorLabel.offsetTop;
-
-    frame.style.cssText = `transform: translate(${posX}px, ${posY}px)`;
-});
-
 
 /* Выбор цвета у карточки */
 

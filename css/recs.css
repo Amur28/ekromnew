@@ -1,0 +1,29 @@
+/* RECS START */
+
+.recs .title h2 {
+    font-size: 25px;
+}
+
+.recs-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.recs-list .product-card {
+    overflow: visible;
+}
+
+.recs-list .product-card__footer {
+    position: absolute;
+    max-height: 0;
+    background-color: #fff;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.recs-list .product-card:hover .product-card__footer {
+   display: block;
+}
+
+/* RECS END */
