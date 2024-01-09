@@ -1,8 +1,68 @@
 'use strict';
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
-import { addClass, removeClass, containClass, toggleClass, checkClassAndClick, checkClickWithCloseBtn } from './script.js';
+
+const body = document.querySelector('body')
+
+/* Функции для работы с классами */
+
+const containClass = (el, className) => el.classList.contains(`${className}`);
+const addClass = (el, className) => el.classList.add(`${className}`);
+const removeClass = (el, className) => el.classList.remove(`${className}`);
+const toggleClass = (el, className) => el.classList.toggle(`${className}`);
+
+/* Проверка и скрытие элемента при клике вне его или по кнопке "Закрыть" */
+
+const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl) => {
+    const itsEl = target == targetEl || targetEl.contains(target);
+    const itsCloseBtn = target == closeBtn || closeBtn.contains(target);
+
+    if (!itsEl || itsCloseBtn) {
+        removeClass(parentEl, className);
+    }
+};
+
+/* Проверка и скрытие элемента при клике вне его */
+
+const checkClassAndClick = (targetEl, className, target, parentEl) => {
+    const itsEl = target == targetEl || targetEl.contains(target);
+    const elHasClass = containClass(parentEl, className);
+
+    if (!itsEl && elHasClass) {
+        removeClass(parentEl, className);
+    }
+};
+
+/* Функция скрытия остальных элементов */
+
+const hideOtherItems = (parentEl, className) => {
+    parentEl.forEach(faqItem => {
+        removeClass(faqItem, className)
+    });
+};
 
 /* Липкий HEADER */
+
+let lastScrollPos = 0;
+const stickyHeader = document.getElementById('stickyHeader');
+
+const hideShowHeaderOnScroll = () => {
+    const defaultOffset = 200;
+
+    if (scrollPosition() > lastScrollPos && !containClass(stickyHeader, 'scroll') && scrollPosition() > defaultOffset) {
+        addClass(stickyHeader, 'scroll');
+    } else if (scrollPosition() < lastScrollPos && containClass(stickyHeader, 'scroll')) {
+        removeClass(stickyHeader, 'scroll')
+    }
+    if (containClass(catalogPopup, 'active')) {
+        addClass(stickyHeader, 'popup-active')
+    } else {
+        removeClass(stickyHeader, 'popup-active')
+    }
+
+    lastScrollPos = scrollPosition();
+};
+
+const scrollPosition = () => window.scrollY || document.documentElement.scrollTop;
 
 window.addEventListener('scroll', hideShowHeaderOnScroll);
 
@@ -29,7 +89,9 @@ document.addEventListener('click', (event) => {
     });
     checkClassAndClick(headerTopInfoDropdown, 'active', target, headerTopInfoDropdown);
 
-    checkClassAndClick(authPopup, 'active', target, authPopup);
+    authPopup.forEach(popup => {
+        checkClassAndClick(popup, 'active', target, popup)
+    });
 });
 
 /* Header dropdown */
@@ -44,41 +106,55 @@ headerTopInfoLink.addEventListener('click', (event) => {
 
 /* Auth popup */
 
-const authBtn = document.querySelector('.auth-btn');
-const authPopup = document.querySelector('.auth-popup')
+const authBtns = document.querySelectorAll('.auth-btn');
+const authPopup = document.querySelectorAll('.auth-popup');
 
-authBtn.addEventListener('click', (event) => {
-    event.stopPropagation();
-    toggleClass(authPopup, 'active');
-});
+authBtns.forEach(authBtn => {
+    authBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const authPopupClosest = authBtn.nextElementSibling;
+
+        toggleClass(authPopupClosest, 'active');
+    });
+})
 
 /* Форма авторизации */
 
+const authRegisterBtns = document.querySelectorAll('.rect-btn--register');
+const authLoginBtns = document.querySelectorAll('.rect-btn--login');
 const authRegister = document.getElementById('authRegister');
-const authRegisterBtn = document.querySelector('.rect-btn--register');
 const authLogin = document.getElementById('authLogin');
-const authLoginBtn = document.querySelector('.rect-btn--login');
 
-authRegisterBtn.addEventListener('click', () => {
-    addClass(authRegister, 'active');
-    removeClass(authPopup, 'active');
+authRegisterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const parentPopup = btn.parentNode;
+        removeClass(parentPopup, 'active');
+        addClass(authRegister, 'active');
+        addClass(body, 'active')
+    });
 });
 
-authLoginBtn.addEventListener('click', () => {
-    addClass(authLogin, 'active');
-    removeClass(authPopup, 'active');
+authLoginBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const parentPopup = btn.parentNode;
+        removeClass(parentPopup, 'active');
+        addClass(authLogin, 'active');
+        addClass(body, 'active')
+    });
 });
 
 authRegister.addEventListener('click', (event) => {
     const authInner = authRegister.querySelector('.auth__inner');
     let target = event.target;
     checkClassAndClick(authInner, 'active', target, authRegister);
+    checkClassAndClick(authInner, 'active', target, body);
 });
 
 authLogin.addEventListener('click', (event) => {
     const authInner = authLogin.querySelector('.auth__inner');
     let target = event.target;
     checkClassAndClick(authInner, 'active', target, authLogin);
+    checkClassAndClick(authInner, 'active', target, body);
 });
 
 /* Окно быстрого просмотра */
@@ -89,6 +165,7 @@ const fastViewBtnList = document.querySelectorAll('.fast-view-btn');
 fastViewBtnList.forEach(btn => {
     btn.addEventListener('click', () => {
         addClass(fastViewPopup, 'active')
+        addClass(body, 'active')
     });
 });
 
@@ -96,7 +173,9 @@ fastViewPopup.addEventListener('click', (event) => {
     const target = event.target;
     const fastViewContainer = fastViewPopup.querySelector('.fast-view__container');
     const fastViewCloseBtn = fastViewPopup.querySelector('.close-btn--fastview');
-    checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup)
+    checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup);
+    checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, body);
+    checkClassAndClick(fastViewContainer, 'active', target, body);
 
     const currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
     const currentSlideImg = currentSlide.firstElementChild;
@@ -104,23 +183,6 @@ fastViewPopup.addEventListener('click', (event) => {
     if (isSlide) {
         currentSlideImg.click()
     }
-});
-
-/* Попап сравнения/избранного */
-
-const compareBtns = document.querySelectorAll('.round-btn--compare');
-const favBtns = document.querySelectorAll('.round-btn--fav');
-const statusPopup = document.getElementById('popupStatus');
-const statusPopupParagraph = statusPopup.querySelector('.popup-text');
-const statusPopupLink = statusPopup.querySelector('.popup-link');
-
-compareBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        statusPopupParagraph.textContent = 'Товар добавлен в список сравнения!';
-        statusPopupLink.textContent = 'Перейти в сравнение';
-
-        addClass(statusPopup, 'active')
-    });
 });
 
 /* Выбор города */
@@ -131,12 +193,15 @@ const headerCityButton = document.querySelector('.header-city__button');
 
 headerCityButton.addEventListener('click', () => {
     addClass(citySelect, 'active');
+    addClass(body, 'active');
 });
 
 citySelect.addEventListener('click', (event) => {
     let target = event.target;
     const citySelectInner = citySelect.querySelector('.city-select');
     checkClickWithCloseBtn(citySelectInner, 'active', target, citySelectCloseBtn, citySelect);
+    checkClickWithCloseBtn(citySelectInner, 'active', target, citySelectCloseBtn, body);
+    checkClassAndClick(citySelectInner, 'active', target, body);
 });
 
 /* Скрытие/показ фильтров */
@@ -184,7 +249,7 @@ rangeSliders.forEach(rangeSlider => {
     const inputMax = inputs.lastElementChild;
     const inputsRange = [inputMin, inputMax];
 
-    rangeSlider.noUiSlider.on('update', function(values, handle) {
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
         inputsRange[handle].value = Math.round(values[handle]);
     });
 
@@ -293,6 +358,7 @@ faqBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
         event.stopPropagation()
         addClass(questionForm, 'active');
+        addClass(body, 'active')
     });
 })
 
@@ -302,6 +368,8 @@ questionForm.addEventListener('click', (event) => {
     const closeQuestionFormBtn = questionForm.querySelector('.close-btn--question');
 
     checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, questionForm);
+    checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, body);
+    checkClassAndClick(questionFormContainer, 'active', target, body);
 });
 
 /* Смена отображения карточек в каталоге */
@@ -347,20 +415,13 @@ productBoxColorsList.addEventListener('click', (event) => {
 });
 
 /* Выбор цвета у карточки */
-
-const hideOtherItems = (parentEl, className) => {
-    parentEl.forEach(faqItem => {
-        removeClass(faqItem, className)
-    });
-};
-
 const productCards = document.querySelectorAll('.product-card');
 
 productCards.forEach(card => {
     card.addEventListener('change', (event) => {
         const colorLabels = card.querySelectorAll('.product-card__color-label')
         const colorLabel = event.target.closest('.product-card__color-label');
-        
+
         if (!colorLabel) return;
 
         if (containClass(colorLabel, 'checkdd')) {

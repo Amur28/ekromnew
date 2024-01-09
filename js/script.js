@@ -1,14 +1,14 @@
 'use strict';
 /* Функции для работы с классами */
 
-export const containClass = (el, className) => el.classList.contains(`${className}`);
-export const addClass = (el, className) => el.classList.add(`${className}`);
-export const removeClass = (el, className) => el.classList.remove(`${className}`);
-export const toggleClass = (el, className) => el.classList.toggle(`${className}`);
+const containClass = (el, className) => el.classList.contains(`${className}`);
+const addClass = (el, className) => el.classList.add(`${className}`);
+const removeClass = (el, className) => el.classList.remove(`${className}`);
+const toggleClass = (el, className) => el.classList.toggle(`${className}`);
 
 /* Проверка и скрытие элемента при клике вне его или по кнопке "Закрыть" */
 
-export const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl) => {
+const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, parentEl) => {
     const itsEl = target == targetEl || targetEl.contains(target);
     const itsCloseBtn = target == closeBtn || closeBtn.contains(target);
 
@@ -19,7 +19,7 @@ export const checkClickWithCloseBtn = (targetEl, className, target, closeBtn, pa
 
 /* Проверка и скрытие элемента при клике вне его */
 
-export const checkClassAndClick = (targetEl, className, target, parentEl) => {
+const checkClassAndClick = (targetEl, className, target, parentEl) => {
     const itsEl = target == targetEl || targetEl.contains(target);
     const elHasClass = containClass(parentEl, className);
 
@@ -30,7 +30,7 @@ export const checkClassAndClick = (targetEl, className, target, parentEl) => {
 
 /* Функция скрытия остальных элементов */
 
-export const hideOtherItems = (parentEl, className) => {
+const hideOtherItems = (parentEl, className) => {
     parentEl.forEach(faqItem => {
         removeClass(faqItem, className)
     });
@@ -41,7 +41,7 @@ export const hideOtherItems = (parentEl, className) => {
 let lastScrollPos = 0;
 const stickyHeader = document.getElementById('stickyHeader');
 
-export const hideShowHeaderOnScroll = () => {
+const hideShowHeaderOnScroll = () => {
     const defaultOffset = 200;
 
     if (scrollPosition() > lastScrollPos && !containClass(stickyHeader, 'scroll') && scrollPosition() > defaultOffset) {
@@ -85,7 +85,9 @@ document.addEventListener('click', (event) => {
     })
     checkClassAndClick(headerTopInfoDropdown, 'active', target, headerTopInfoDropdown);
 
-    checkClassAndClick(authPopup, 'active', target, authPopup);
+    authPopup.forEach(popup => {
+        checkClassAndClick(popup, 'active', target, popup)
+    });
 
     const itsFaqInner = target == faqInner || faqInner.contains(target);
 
@@ -105,7 +107,7 @@ headerTopInfoLink.addEventListener('click', (event) => {
 /* Auth popup */
 
 const authBtns = document.querySelectorAll('.auth-btn');
-const authPopup = document.querySelector('.auth-popup')
+const authPopup = document.querySelectorAll('.auth-popup')
 
 authBtns.forEach(authBtn => {
     authBtn.addEventListener('click', (event) => {
@@ -179,15 +181,16 @@ faqInner.addEventListener('click', showFaqPopup);
 
 /* Форма "Задать свой вопрос" */
 
-const faqBtn = document.getElementById('rectBtnFaq');
+const faqBtn = document.querySelectorAll('.feedback');
 const questionForm = document.getElementById('questionForm');
 
-
-faqBtn.addEventListener('click', (event) => {
-    event.stopPropagation()
-    addClass(questionForm, 'active');
-    addClass(body, 'active')
-});
+faqBtn.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        event.stopPropagation()
+        addClass(questionForm, 'active');
+        addClass(body, 'active')
+    });
+})
 
 questionForm.addEventListener('click', (event) => {
     const target = event.target;
@@ -195,6 +198,7 @@ questionForm.addEventListener('click', (event) => {
     const closeQuestionFormBtn = questionForm.querySelector('.close-btn--question');
 
     checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, questionForm);
+    checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, body);
     checkClassAndClick(questionFormContainer, 'active', target, body);
 });
 
@@ -216,6 +220,7 @@ fastViewPopup.addEventListener('click', (event) => {
     const fastViewContainer = fastViewPopup.querySelector('.fast-view__container');
     const fastViewCloseBtn = fastViewPopup.querySelector('.close-btn--fastview');
     checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, fastViewPopup);
+    checkClickWithCloseBtn(fastViewContainer, 'active', target, fastViewCloseBtn, body);
     checkClassAndClick(fastViewContainer, 'active', target, body);
 
     const currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
@@ -225,30 +230,6 @@ fastViewPopup.addEventListener('click', (event) => {
         currentSlideImg.click()
     }
 });
-
-/* Попап сравнения/избранного */
-
-// const compareBtns = document.querySelectorAll('.round-btn--compare');
-// const favBtns = document.querySelectorAll('.round-btn--fav');
-// const statusPopup = document.getElementById('popupStatus');
-
-// compareBtns.forEach(btn => {
-//     btn.addEventListener('click', (event) => {
-//         addClass(statusPopup, 'active');
-//         setTimeout(() => {
-//             removeClass(statusPopup, 'active')
-//         }, 3000)
-//     })
-// });
-
-// favBtns.forEach(btn => {
-//     btn.addEventListener('click', (event) => {
-//         addClass(statusPopup, 'active');
-//         setTimeout(() => {
-//             removeClass(statusPopup, 'active')
-//         }, 3000)
-//     })
-// });
 
 /*Выбор города*/
 
@@ -265,6 +246,7 @@ citySelect.addEventListener('click', (event) => {
     let target = event.target;
     const citySelectInner = citySelect.querySelector('.city-select');
     checkClickWithCloseBtn(citySelectInner, 'active', target, citySelectCloseBtn, citySelect);
+    checkClickWithCloseBtn(citySelectInner, 'active', target, citySelectCloseBtn, body);
     checkClassAndClick(citySelectInner, 'active', target, body);
 });
 

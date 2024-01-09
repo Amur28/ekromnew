@@ -1877,8 +1877,17 @@ a.footer__nav-link--show {
     background-color: #343538;
 }
 
-.round-btn--footer:hover {
-    background-color: var(--main-blue);
+.round-btn--footer.vk:hover {
+    background-color: #0077FF;
+}
+.round-btn--footer.whatsapp:hover {
+    background-color: #25D366;
+}
+.round-btn--footer.youtube:hover {
+    background-color: #c4302b;
+}
+.round-btn--footer.telegram:hover {
+    background-color: #0088cc;
 }
 
 .footer__confidence,
