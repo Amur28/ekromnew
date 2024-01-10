@@ -288,6 +288,11 @@
     width: 100%;
     max-width: 285px;
     position: sticky;
+    top: 211px;
+}
+
+.cart-aside.scroll {
+    top: 88px;
 }
 
 .cart-total {
