@@ -140,3 +140,21 @@ productCards.forEach(card => {
         });
     });
 });
+
+/* Форма "Задать свой вопрос" */
+
+import { hideQuestionForm, questionForm } from './popups.js';
+
+const faqBtn = document.querySelectorAll('.feedback');
+
+faqBtn.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        event.stopPropagation()
+        addClass(questionForm, 'active');
+        addClass(body, 'active')
+    });
+});
+
+questionForm.addEventListener('click', (event) => {
+    hideQuestionForm(event);
+});
