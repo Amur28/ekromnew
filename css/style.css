@@ -242,13 +242,14 @@ body.active {
     background-color: #343538;
     color: var(--text-grey-color);
     transition: all .3s;
+    position: relative;
+    z-index: 2;
 }
 
 .header__search-input:focus {
     width: 210%;
     position: absolute;
     outline: none;
-    background-color: #fff;
 }
 
 .header__search-input::placeholder {
@@ -266,10 +267,119 @@ body.active {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .header__search-submit img {
     width: 100%;
+}
+
+.header__search-input:focus ~ .search-result {
+    width: 210%;
+    display: block;
+}
+
+.header__search-input:focus ~ .search-result .search-result__row {
+    padding: 10px 25px;
+}
+
+.search-result {
+    position: absolute;
+    display: none;
+    overflow: hidden;
+    background-color: #343538;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-radius: 30px 30px 10px 10px;
+    transition: all .3s;
+    z-index: 1;
+}
+
+.empty-row {
+    height: 48px;
+    z-index: 0;
+}
+
+.search-result__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--subtitle-color);
+    padding: 10px 15px;
+    transition: all .3s;
+}
+
+.search-result__product {
+    display: flex;
+    gap: 5px;
+    
+    align-items: center;
+}
+
+.search-result__img {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+}
+
+.search-result__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-info__name {
+    color: #fff;
+    display: block;
+    font-size: 12px;
+}
+
+.product-info__price {
+    color: #fff;
+    font-size: 12px;
+}
+
+.search-counter {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    background-color: rgba(244, 247, 251, .06);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-counter .minus {
+    padding: 15px 22px 15px 13px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.search-counter.collapse .minus,
+.search-counter.collapse span {
+    display: none;
+}
+
+.search-counter.collapse .plus {
+    padding: 15px;
+}
+
+.search-counter span {
+    color: #fff;
+}
+
+.search-counter .plus {
+    padding: 15px 13px 15px 22px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.rect-btn--search-result {
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
 }
 
 .working-period {
