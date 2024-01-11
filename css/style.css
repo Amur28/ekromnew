@@ -2569,7 +2569,7 @@ a.footer__nav-link--show {
 
 .zoom-overlay {
     position: absolute;
-    width: 540px;
+    width: 560px;
     height: 610px;
     left: calc(100%);
     background-repeat: no-repeat;

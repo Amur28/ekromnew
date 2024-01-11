@@ -21,6 +21,21 @@ html {
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
 *,
 *::after,
 *::before {
@@ -122,7 +137,7 @@ select {
 
 select::-ms-expand {
     display: none;
-  }
+}
 
 .container {
     padding: 0 20px;

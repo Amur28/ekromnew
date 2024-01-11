@@ -20,10 +20,15 @@ const showOrHideContentOnScroll = () => {
     const defaultOffset = 200;
     if (checkScrollDown(lastScrollPos, stickyHeader, 'scroll', defaultOffset)) {
         addClass(stickyHeader, 'scroll');
-        addClass(cartAside, 'scroll');
+        if (cartAside) {
+            addClass(cartAside, 'scroll');
+        }
+        
     } else if (checkScrollUp(lastScrollPos, stickyHeader, 'scroll')) {
         removeClass(stickyHeader, 'scroll');
-        removeClass(cartAside, 'scroll');
+        if (cartAside) {
+            removeClass(cartAside, 'scroll');
+        }
     }
     if (containClass(catalogPopup, 'active')) {
         addClass(stickyHeader, 'popup-active')

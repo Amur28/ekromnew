@@ -18,7 +18,7 @@ import { stickyHeader, checkScrollDown, checkScrollUp, scrollPosition } from './
 let lastScrollPos = 0;
 
 const showOrHideContentOnScroll = () => {
-    const defaultOffset = 200;
+    const defaultOffset = 200; 
     if (checkScrollDown(lastScrollPos, stickyHeader, 'scroll', defaultOffset)) {
         addClass(stickyHeader, 'scroll');
     } else if (checkScrollUp(lastScrollPos, stickyHeader, 'scroll')) {
