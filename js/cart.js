@@ -80,9 +80,11 @@ hideCitySelect();
 
 /* Окно быстрого просмотра */
 
-import { showFastView, fastViewBtnList, fastViewPopup, zoomImg, hideFastView, fakeClickOnImg, moveColorFrame } from './fastView.js';
+import { showFastView, fastViewBtnList, zoomImg, hideFastView, fakeClickOnImg, moveColorFrame } from './fastView.js';
 
-showFastView(fastViewBtnList, body)
+showFastView(fastViewBtnList, body);
+
+const fastViewPopup = document.getElementById('fastView');
 
 fastViewPopup.addEventListener('click', (event) => {
     hideFastView(body, event);
@@ -104,13 +106,14 @@ import { initZoom, removeZoom } from './fastView.js';
 let globalX = 0;
 let globalY = 0;
 
+
 document.addEventListener('mousemove', (event) => {
     globalX = event.pageX;
     globalY = event.pageY;
 });
 
 zoomImg.addEventListener('mousemove', () => {
-    initZoom(globalX, globalY);
+    initZoom(globalX, globalY, fastViewPopup);
 });
 
 zoomImg.addEventListener('mouseleave', removeZoom);

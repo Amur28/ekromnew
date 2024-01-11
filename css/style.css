@@ -4,6 +4,7 @@
 @import url('./cart.css');
 @import url('./recs.css');
 @import url('./order.css');
+@import url('./product.css');
 
 /* HEADER START */
 
@@ -277,6 +278,11 @@ body.active {
 
 .header__search-input:focus ~ .search-result {
     width: 210%;
+    display: block;
+}
+
+.header.scroll .header__search-input:focus ~ .search-result {
+    width: 100%;
     display: block;
 }
 

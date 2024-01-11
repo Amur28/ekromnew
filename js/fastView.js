@@ -1,9 +1,8 @@
 'use strict';
 import { addClass, checkClassAndClick, checkClickWithCloseBtn, hideOtherItems } from "./functions.js";
 
-export const fastViewPopup = document.getElementById('fastView');
+const fastViewPopup = document.getElementById('fastView');
 export const fastViewBtnList = document.querySelectorAll('.fast-view-btn');
-
 
 /* Открыть окно быстрого просмотра */
 
@@ -58,9 +57,9 @@ export const moveColorFrame = (event, el) => {
 
 /* Zoom картинки в окне быстрого просмотра */
 
-export const initZoom = (globalX, globalY) => {
+export const initZoom = (globalX, globalY, parentEl) => {
     let zoom = 5;
-    let currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
+    let currentSlide = parentEl.querySelector('.swiper-slide-active');
     let currentImg = currentSlide.firstElementChild;
     let currentImgSrc = currentImg.getAttribute('data-src');
     let imgWidth = currentImg.offsetWidth;

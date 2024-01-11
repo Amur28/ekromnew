@@ -63,9 +63,11 @@ hideAuthForm(authLogin);
 
 /* Окно быстрого просмотра */
 
-import { showFastView, fastViewBtnList, fastViewPopup, zoomImg, hideFastView, fakeClickOnImg, moveColorFrame } from './fastView.js';
+import { showFastView, fastViewBtnList, zoomImg, hideFastView, fakeClickOnImg, moveColorFrame } from './fastView.js';
 
-showFastView(fastViewBtnList, body)
+showFastView(fastViewBtnList, body);
+
+const fastViewPopup = document.getElementById('fastView');
 
 fastViewPopup.addEventListener('click', (event) => {
     hideFastView(body, event);

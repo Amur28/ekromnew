@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Оформление заказа</title>
+    <title>Страница товара</title>
 </head>
 <body>
     <div class="wrapper">
@@ -928,13 +930,13 @@
             </div>
     
         </header>
-    
+
         <main>
             <div class="info">
                 <div class="container">
                     <ul class="breadcrumbs">
                         <li class="breadcrumbs__item breadcrumbs__item--home">
-                            <a href="#">
+                            <a href="./index.html">
                                 <svg width="15" height="15" viewBox="0 0 15 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -946,628 +948,563 @@
                             <span class="slash">/</span>
                         </li>
                         <li class="breadcrumbs__item">
-                            <a href="#">Корзина</a>
+                            <a href="./catalog.html">Варочные панели</a>
                             <span class="slash">/</span>
                         </li>
                         <li class="breadcrumbs__item current">
-                            <span>Оформление заказа</span>
+                            <span>Варочная панель Lex EVH 320 BL</span>
                         </li>
                     </ul>
-                    <div class="page-banner skeleton">
-                        <div class="title title--banner">
-                            <h2>
-                                Оформление заказа
-                            </h2>
-                        </div>
-                    </div>
                 </div>
+            
             </div>
-    
-            <div class="order">
+
+            <div class="product">
                 <div class="container">
-                    <div class="order__inner">
-                        <div class="order-make">
-                            <div class="order-tabs">
-                                <label class="rect-btn rect-btn--order-make individual active">
-                                    Физическое лицо
-                                    <input type="radio" name="order-tab" checked>
-                                </label>
-                                <label class="rect-btn rect-btn--order-make entity">
-                                    Юридическое лицо
-                                    <input type="radio" name="order-tab">
-                                </label>
-                            </div>
-    
-                            <div class="order-make__inner individual active">
-                                <div class="order-make__item">
-                                    <h4 class="order-make__item-title">
-                                        <span class="number">Шаг 1.</span>
-                                        &nbsp;
-                                        <span class="name">Укажите данные получателя</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>ФИО <span>*</span></p>
-                                                    <input type="text" placeholder="Введите Ваше ФИО" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>Ваш телефон <span>*</span></p>
-                                                    <input type="tel" placeholder="+7 (___) __ - __ - __" required>
-                                                </label>
-                                                <label>
-                                                    <p>Ваше e-mail <span>*</span></p>
-                                                    <input type="email" placeholder="Введите email" required>
-                                                    <p class="hint"><span>*&nbsp;</span>-&nbsp;обязательные поля</p>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Комментарий</p>
-                                                    <textarea type="text" placeholder="Оставьте пожелание или комментарий к заказу"></textarea>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
+                    <div class="product-box">
+                        <div class="product-box__name-box">
+                            <a class="product-box__name" href="#">
+                                Варочная панель lex evh 320 bl
+                            </a>
+                            <div class="product-box__additional">
+                                <div class="views">
+                                    Просмотров <span>350</span>
                                 </div>
-                                <div class="order-make__item">
-                                    <h4 class="order-make__item-title">
-                                        <span class="number">Шаг 2.</span>
-                                        &nbsp;
-                                        <span class="name">Выберите способ доставки</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex cards">
-                                                <label class="order-make__card">
-                                                    <input class="order-pickup" type="radio" name="order-delivery-individual">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Самовывоз со склада
-                                                        </h5>
-                                                        <div class="order-make__pickup">
-                                                            <div class="order-make__select">
-                                                                <select class="order-make__select-input">
-                                                                    <option value="ekb">в Екатеринбурге</option>
-                                                                    <option value="tmn">в Тюмени</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="order-make__pickup-address">
-                                                                <img class="order-make__pickup-address-icon" src="./img/icons/order-icon.svg" alt="">
-                                                                <div class="order-make__pickup-text">
-                                                                    <p>
-                                                                        ул. Промышленный проезд, ст.4
-                                                                    </p>
-                                                                    <p>
-                                                                        Пн - Вс 10:00 - 20:00
-                                                                    </p>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div> 
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-courier" type="radio" name="order-delivery-individual" >
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Доставка курьером
-                                                        </h5>
-                                                        
-                                                        <ul class="order-make__card-list">
-                                                            <li>Екатеринбург</li>
-                                                            <li>Тюмень</li>
-                                                        </ul>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-quick" type="radio" name="order-delivery-individual">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Срочная доставка курьером
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                            Только по Екатеринбургу
-                                                        </p>
-        
-                                                        <p class="order-make__card-cost">
-                                                            Стоимость уточняйте у менеджера&nbsp;
-                                                            <a href="#">
-                                                                +7 (343) 379-98-68
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-service" type="radio" name="order-delivery-individual">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Службой доставки
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           Регионы России
-                                                        </p>
-        
-                                                        <p class="order-make__card-cost">
-                                                            Стоимость уточняйте у менеджера&nbsp;
-                                                            <a href="#">
-                                                                +7 (343) 379-98-68
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
+                                <div class="purchase">
+                                    Купили <span>196</span> раз
                                 </div>
-                                <div class="order-make__item delivery-inputs">
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Адрес доставки <span>*</span></p>
-                                                    <input type="text" placeholder="Например: город Екатеринбург, ул. Карла Либкнехта, 22, офис 419" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label class="index">
-                                                    <p>Индекс <span>*</span></p>
-                                                    <input type="text" placeholder="______" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Комментарий</p>
-                                                    <textarea type="text" placeholder="Оставьте пожелание или комментарий к заказу"></textarea>
-                                                </label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="order-make__item">
-                                    <h4 class="order-make__item-title">
-                                        <span class="number">Шаг 3.</span>
-                                        &nbsp;
-                                        <span class="name">Выберите способ оплаты</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex cards">
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Картой
-                                                        </h5>
-                                                        <ul class="order-make__card-pays">
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/google-pay.svg" alt="">
-                                                            </li>
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/apple-pay.svg" alt="">
-                                                            </li>
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/visa.svg" alt="">
-                                                            </li>
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/mastercard.svg" alt="">
-                                                            </li>
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/mir-pay.svg" alt="">
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Наличными
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                            Курьеру, в магазине или при доставке CDEK
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Через интернет-банкинг по счету
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                            Менеджер свяжется с вами, чтобы выставить счет
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Онлайн на сайте
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           После оформления заказ вы будете перенаправлены на страницу оплаты
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            В рассрочку
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           После оформления заказа с вами свяжется менеджер
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            В кредит от "Тинькофф"
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           С условиями можно ознакомиться
-                                                           <a class="tinkoff" href="#">на сайте банка</a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
+                                <div class="article">
+                                    Артикул: <span>CHYO000174</span>
                                 </div>
                             </div>
-                            <div class="order-make__inner entity">
-                                <div class="order-make__item">
-                                    <h4 class="order-make__item-title">
-                                        <span class="number">Шаг 1.</span>
-                                        &nbsp;
-                                        <span class="name">Укажите данные получателя</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>Название компании <span>*</span></p>
-                                                    <input type="text" placeholder="Введите название компании или ИП" required>
-                                                </label>
-                                                <label>
-                                                    <p>Юридический адрес</p>
-                                                    <input type="text" placeholder="Введите адрес" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>ИНН</p>
-                                                    <input type="number" placeholder="Введите 10 цифр" required>
-                                                </label>
-                                                <label>
-                                                    <p>КПП</p>
-                                                    <input type="number" placeholder="Введите 9 цифр" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>Контактное лицо<span>*</span></p>
-                                                    <input type="text" placeholder="Введите ФИО" required>
-                                                </label>
-                                                <label>
-                                                    <p>E-mail <span>*</span></p>
-                                                    <input type="email" placeholder="Введите email" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>Ваш телефон<span>*</span></p>
-                                                    <input type="text" placeholder="+7 (___) __ - __ - __" required>
-                                                </label>
-                                                <label>
-                                                    <p>Факс</p>
-                                                    <input type="number" placeholder="Введите номер факса" required>
-                                                    <p class="hint"><span>*&nbsp;</span>-&nbsp;обязательные поля</p>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                                <div class="order-make__item">
-                                    <h4 class="order-make__item-title">
-                                        <span class="number">Шаг 2.</span>
-                                        &nbsp;
-                                        <span class="name">Выберите способ доставки</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex cards">
-                                                <label class="order-make__card">
-                                                    <input class="order-pickup" type="radio" name="order-delivery-entity">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Самовывоз со склада
-                                                        </h5>
-                                                        <div class="order-make__pickup">
-                                                            <div class="order-make__select">
-                                                                <select class="order-make__select-input">
-                                                                    <option value="ekb">в Екатеринбурге</option>
-                                                                    <option value="tmn">в Тюмени</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="order-make__pickup-address">
-                                                                <img class="order-make__pickup-address-icon" src="./img/icons/order-icon.svg" alt="">
-                                                                <div class="order-make__pickup-text">
-                                                                    <p>
-                                                                        ул. Промышленный проезд, ст.4
-                                                                    </p>
-                                                                    <p>
-                                                                        Пн - Вс 10:00 - 20:00
-                                                                    </p>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div> 
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-courier" type="radio" name="order-delivery-entity" >
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Доставка курьером
-                                                        </h5>
-                                                        
-                                                        <ul class="order-make__card-list">
-                                                            <li>Екатеринбург</li>
-                                                            <li>Тюмень</li>
-                                                        </ul>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-quick" type="radio" name="order-delivery-entity">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Срочная доставка курьером
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                            Только по Екатеринбургу
-                                                        </p>
-        
-                                                        <p class="order-make__card-cost">
-                                                            Стоимость уточняйте у менеджера&nbsp;
-                                                            <a href="#">
-                                                                +7 (343) 379-98-68
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-service" type="radio" name="order-delivery-entity">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Службой доставки
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           Регионы России
-                                                        </p>
-        
-                                                        <p class="order-make__card-cost">
-                                                            Стоимость уточняйте у менеджера&nbsp;
-                                                            <a href="#">
-                                                                +7 (343) 379-98-68
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                                <div class="order-make__item delivery-inputs">
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Адрес доставки <span>*</span></p>
-                                                    <input type="text" placeholder="Например: город Екатеринбург, ул. Карла Либкнехта, 22, офис 419" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label class="index">
-                                                    <p>Индекс <span>*</span></p>
-                                                    <input type="text" placeholder="______" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Комментарий</p>
-                                                    <textarea type="text" placeholder="Оставьте пожелание или комментарий к заказу"></textarea>
-                                                </label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="order-make__item">
-                                    <h4 class="order-make__item-title">
-                                        <span class="number">Шаг 3.</span>
-                                        &nbsp;
-                                        <span class="name">Выберите способ оплаты</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex cards">
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Рассчетный счет
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           После оформления заказа вы будете перенаправлены на страницу оплаты
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            По реквизитам
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           Перевод банком "Сбербанк"
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
                         </div>
-                        <aside class="cart-aside">
-                            <div class="cart-total">
-                                <div class="cart-total__header">
-                                    <p>Итого</p>
-                                    <p class="cart-total__sum">
-                                        50 800 ₽
-                                    </p>
-                                </div>
-                                <ul class="cart-calc">
-                                    <li class="cart-calc__price">
-                                        <p>Стоимость товаров</p>
-                                        <p class="price">58 800 ₽</p>
-                                    </li>
-                                    <li class="cart-calc__price">
-                                        <p>Ваша скидка</p>
-                                        <p class="price">8 000 ₽</p>
-                                    </li>
-                                    <li class="cart-calc__price">
-                                        <p>Итого <span>(без учета доставки)</span></p>
-                                        <p class="price">50 800 ₽</p>
-                                    </li>
-                                </ul>
-                                <form class="cart-promocode">
-                                    <input class="promocode-input" type="text" placeholder="Введите промокод">
-                                    <button class="promocode-button" type="submit">
-                                        <img src="./img/icons/cart-arrow.svg" alt="">
-                                    </button>
-                                </form>
-                                <div class="promocode-error">
-                                    <div class="promocode-message">
-                                        <img src="./img/icons/promocode-icon.svg" alt="">
-                                        <span class="promocode">SALE</span> &nbsp;
-                                        <span class="text">не найден</span>
+                        <div class="product-box__inner">
+                            <div class="product-box__gallery">
+                                <div class="zoom-box">
+                                    <div class="zoom-img">
+                                        <div class="zoom-cursor"></div>
                                     </div>
-                                    <div class="cart-item__delete">
-                                        <button class="cart-item__delete-btn">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    <div class="zoom-overlay"></div>
+                                </div>
+        
+                                <div class="swiper slider-fastview">
+                                    <img class="country lazyload" data-src="./img/icons/countries/italy.svg" alt="">
+                                    <div class="swiper-wrapper slider-fastview-wrapper">
+                                        <div class="swiper-slide slider-fastview-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/1.webp" alt=""
+                                                data-fancybox="fastview-gallery">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/2.webp" alt=""
+                                                data-fancybox="fastview-gallery">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/3.webp" alt=""
+                                                data-fancybox="fastview-gallery">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/4.webp" alt=""
+                                                data-fancybox="fastview-gallery">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/5.webp" alt=""
+                                                data-fancybox="fastview-gallery">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/1.webp" alt=""
+                                                data-fancybox="fastview-gallery">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper slider-fastview-thumbs">
+                                    <div class="swiper-wrapper slider-fastview-thumbs-wrapper">
+                                        <div class="swiper-slide slider-fastview-thumbs-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/1.webp" alt="">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-thumbs-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/2.webp" alt="">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-thumbs-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/3.webp" alt="">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-thumbs-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/4.webp" alt="">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-thumbs-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/5.webp" alt="">
+                                        </div>
+                                        <div class="swiper-slide slider-fastview-thumbs-slide">
+                                            <img class="lazyload" data-src="./img/card-gallery/1.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-box__info">
+                                <div class="product-box__header">
+                                    <div class="product-box__tools">
+                                        <div class="product-box__available">
+                                            <div class="product-box__color" style="background-color: #75D14A;"></div>
+                                            <div class="product-box__status">
+                                                В наличии
+                                            </div>
+                                        </div>
+                                        <div class="product-box__tool product-box__tool--compare">
+                                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
-                                                    d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z"
-                                                    fill="#5D6C7B"></path>
+                                                    d="M0.653809 3.30005H12.1707C13.5521 3.30005 14.6671 4.41672 14.6671 5.80005V8.56672"
+                                                    stroke="#282739" stroke-width="1.2" stroke-miterlimit="10"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M3.28339 0.666748L0.653809 3.30006L3.28339 5.93342" stroke="#282739"
+                                                    stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.6671 14.7H3.15024C1.76888 14.7 0.653809 13.5834 0.653809 12.2V9.43335"
+                                                    stroke="#282739" stroke-width="1.2" stroke-miterlimit="10"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12.0376 17.3333L14.6671 14.7L12.0376 12.0667" stroke="#282739"
+                                                    stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
                                             </svg>
-                                        </button>
+                                            <button>Сравнить</button>
+                                        </div>
+                                        <div class="product-box__tool product-box__tool--share">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_168_1460)">
+                                                    <path
+                                                        d="M15.4233 13.4529C14.465 13.4529 13.6017 13.8667 13.0025 14.525L7.61293 11.187C7.75682 10.8186 7.83663 10.4185 7.83663 9.99998C7.83663 9.58128 7.75682 9.1812 7.61293 8.813L13.0025 5.47484C13.6017 6.13311 14.465 6.54708 15.4233 6.54708C17.2284 6.54708 18.6969 5.07857 18.6969 3.27346C18.6969 1.46835 17.2284 0 15.4233 0C13.6182 0 12.1497 1.4685 12.1497 3.27361C12.1497 3.69216 12.2296 4.09225 12.3734 4.46059L6.98397 7.7986C6.38476 7.14034 5.52141 6.72637 4.56316 6.72637C2.75805 6.72637 1.28955 8.19502 1.28955 9.99998C1.28955 11.8051 2.75805 13.2736 4.56316 13.2736C5.52141 13.2736 6.38476 12.8598 6.98397 12.2014L12.3734 15.5394C12.2296 15.9077 12.1497 16.3078 12.1497 16.7265C12.1497 18.5315 13.6182 20 15.4233 20C17.2284 20 18.6969 18.5315 18.6969 16.7265C18.6969 14.9214 17.2284 13.4529 15.4233 13.4529ZM13.3434 3.27361C13.3434 2.12677 14.2764 1.19369 15.4233 1.19369C16.5701 1.19369 17.5032 2.12677 17.5032 3.27361C17.5032 4.42046 16.5701 5.35354 15.4233 5.35354C14.2764 5.35354 13.3434 4.42046 13.3434 3.27361ZM4.56316 12.0799C3.41616 12.0799 2.48309 11.1468 2.48309 9.99998C2.48309 8.85313 3.41616 7.92006 4.56316 7.92006C5.71001 7.92006 6.64293 8.85313 6.64293 9.99998C6.64293 11.1468 5.71001 12.0799 4.56316 12.0799ZM13.3434 16.7263C13.3434 15.5795 14.2764 14.6464 15.4233 14.6464C16.5701 14.6464 17.5032 15.5795 17.5032 16.7263C17.5032 17.8732 16.5701 18.8063 15.4233 18.8063C14.2764 18.8063 13.3434 17.8732 13.3434 16.7263Z"
+                                                        fill="#282739" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_168_1460">
+                                                        <rect width="20" height="20" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <button>
+                                                Поделиться
+                                            </button>
+                                        </div>
+                                        <div class="product-box__tool product-box__tool--pdf">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_224_2550)">
+                                                    <path
+                                                        d="M19.3156 5.41238L14.2203 0.117891C14.1478 0.0425781 14.0477 0 13.9432 0H6.34901C5.49913 0 4.80769 0.691172 4.80769 1.5407V6.92309H1.73007C1.09421 6.92309 0.576904 7.44023 0.576904 8.07594V13.8472C0.576904 14.4829 1.09421 15 1.73007 15H4.80769V18.462C4.80769 19.31 5.49913 20 6.34901 20H17.8817C18.7316 20 19.4231 19.3104 19.4231 18.4629V5.6791C19.4231 5.57965 19.3845 5.48406 19.3156 5.41238ZM14.0385 1.03832L18.2212 5.38461H14.0385V1.03832ZM1.73007 14.2308C1.51835 14.2308 1.34616 14.0587 1.34616 13.8472V8.07594C1.34616 7.86441 1.51839 7.6923 1.73007 7.6923H12.1161C12.3278 7.6923 12.5 7.86441 12.5 8.07594V13.8472C12.5 14.0587 12.3278 14.2308 12.1161 14.2308H1.73007ZM18.6538 18.4629C18.6538 18.8863 18.3075 19.2308 17.8817 19.2308H6.34901C5.92327 19.2308 5.5769 18.8859 5.5769 18.462V15H12.1161C12.7519 15 13.2692 14.4829 13.2692 13.8472V8.07594C13.2692 7.44023 12.7519 6.92309 12.1161 6.92309H5.5769V1.5407C5.5769 1.11527 5.92327 0.769219 6.34901 0.769219H13.2692V5.76922C13.2692 5.98164 13.4414 6.15383 13.6538 6.15383H18.6538V18.4629Z"
+                                                        fill="#282739" />
+                                                    <path
+                                                        d="M5.17507 9.7614C5.04738 9.59538 4.88886 9.48757 4.69957 9.438C4.57636 9.40495 4.31195 9.38843 3.90628 9.38843H2.83582V12.6922H3.50289V11.446H3.93785C4.23984 11.446 4.47046 11.4302 4.62972 11.3986C4.74691 11.3731 4.86222 11.3209 4.97566 11.242C5.0891 11.1631 5.18261 11.0546 5.25625 10.9164C5.32988 10.7782 5.36667 10.6076 5.36667 10.4048C5.36664 10.1419 5.30277 9.92741 5.17507 9.7614ZM4.60378 10.6707C4.55347 10.7444 4.48398 10.7984 4.39531 10.833C4.30664 10.8676 4.13089 10.8848 3.86796 10.8848H3.50289V9.94733H3.82515C4.06554 9.94733 4.22554 9.95483 4.30515 9.96987C4.41332 9.9894 4.50273 10.0382 4.57332 10.1164C4.64394 10.1945 4.67925 10.2937 4.67925 10.4138C4.67929 10.5115 4.6541 10.5971 4.60378 10.6707Z"
+                                                        fill="#282739" />
+                                                    <path
+                                                        d="M8.57351 10.291C8.5014 10.0799 8.39621 9.90151 8.258 9.75577C8.1198 9.61003 7.95375 9.50862 7.75996 9.45151C7.61574 9.40944 7.40613 9.38843 7.13121 9.38843H5.91199V12.6922H7.16726C7.41367 12.6922 7.61046 12.6689 7.75769 12.6223C7.95453 12.5592 8.11078 12.4714 8.22644 12.3587C8.37968 12.2099 8.49761 12.0154 8.58027 11.775C8.64789 11.5782 8.68167 11.3438 8.68167 11.0719C8.68167 10.7624 8.64562 10.5021 8.57351 10.291ZM7.92445 11.6477C7.87937 11.7957 7.82117 11.902 7.7498 11.9666C7.67843 12.0312 7.58867 12.077 7.4805 12.104C7.39789 12.1251 7.26339 12.1356 7.0771 12.1356H6.57906V9.94733H6.87878C7.1507 9.94733 7.33328 9.95784 7.4264 9.9789C7.55109 10.0059 7.65402 10.0578 7.73515 10.1344C7.81628 10.211 7.87937 10.3177 7.92445 10.4544C7.96953 10.5911 7.99207 10.7872 7.99207 11.0426C7.99207 11.298 7.96953 11.4997 7.92445 11.6477Z"
+                                                        fill="#282739" />
+                                                    <path
+                                                        d="M11.5167 9.94733V9.38843H9.25183V12.6922H9.9189V11.2882H11.2981V10.7293H9.9189V9.94733H11.5167Z"
+                                                        fill="#282739" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_224_2550">
+                                                        <rect width="20" height="20" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <button>
+                                                PDF
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-box__brand">
+                                        <a class="product-box__brand-link" href="">
+                                            <img class="lazyload" data-src="./img/brands/lex.webp" alt="">
+                                        </a>
                                     </div>
                                 </div>
-                                <button class="rect-btn rect-btn--order blue">
-                                    Оформить заказ
-                                </button>
-                            </div>
-                            <div class="product-box__delivery-options">
-                                <h5 class="product-box__delivery-title">
-                                    Способы получения заказа
-                                </h5>
-                                <div class="option pickup">
-                                    <a href="#">Самовывоз за 15 минут</a>
-                                    <p>с нашего склада - бесплатно</p>
+                                <div class="product-box__items">
+                                    <div class="product-box__item product-box__item--price">
+                                        <div class="product-box__price-header">
+                                            <div class="product-box__cost">
+                                                <p class="price">9 900 ₽</p>
+                                                <p class="price-type">Розничная цена</p>
+                                            </div>
+                                            <button class="round-btn round-btn--fav">
+                                                <img src="./img/icons/heart-card.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="product-box__delivery">
+                                            <img src="./img/icons/delivery.svg" alt="">
+                                            <div class="product-box__delivery-text">
+                                                <p class="delivery-title">Доставка по РФ</p>
+                                                <p class="delivery-term">
+                                                    от <span>1</span>&nbsp;<span>дня</span>&nbsp;при заказе
+                                                    до&nbsp;<span>01.09</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="product-box__price-buttons">
+                                            <button class="rect-btn rect-btn--add-to-cart blue">Добавить в корзину</button>
+                                            <button class="rect-btn rect-btn--click-buy transparent">Купить в 1 клик</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-box__item product-box__item--terms">
+                                        <ul class="product-box__guarantee">
+                                            <li class="product-box__guarantee-item">
+                                                <img src="./img/icons/guarantee.svg" alt="">
+                                                <dl class="product-box__guarantee-text">
+                                                    <dt>Гарантия</dt>
+                                                    <dd>3 года</dd>
+                                                </dl>
+                                            </li>
+                                            <li class="product-box__guarantee-item">
+                                                <img src="./img/icons/return.svg" alt="">
+                                                <dl class="product-box__guarantee-text">
+                                                    <dt>Возврат</dt>
+                                                    <dd>14 дней с момента покупки</dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+                                        <div class="product-box__colors">
+                                            <div class="product-box__colors-title">
+                                                <span class="property">Цвет</span>&nbsp;&mdash;&nbsp;<span
+                                                    class="value">Белый</span>
+                                            </div>
+                                            <ul class="product-box__colors-list">
+                                                <div class="frame"></div>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-1" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-1">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-2" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-2">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-3" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-3">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-4" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-4">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-5" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-5">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-6" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-6">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-7" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-7">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-8" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-8">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-9" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-9">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-10" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-10">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-11" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-11">
+                                                    </label>
+                                                </li>
+                                                <li class="product-box__colors-item">
+                                                    <input id="color-12" type="radio" name="color">
+                                                    <label class="product-box__colors-color" for="color-12">
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-box__item product-box__item--properties">
+        
+                                        <div class="product-box__properties-box">
+                                            <h5 class="product-box__properties-title">
+                                                Основные характеристики
+                                            </h5>
+                                            <ul class="product-box__properties-list">
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Модель</span>
+                                                    </p>
+                                                    <p class="property-value">EVH 320 BL</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Вид варочной поверхности</span>
+                                                    </p>
+                                                    <p class="property-value">Индукционная</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Цвет</span>
+                                                    </p>
+                                                    <p class="property-value">Черный</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Материал поверхности</span>
+                                                    </p>
+                                                    <p class="property-value">Стеклокерамика</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Кол-во конфорок</span>
+                                                    </p>
+                                                    <p class="property-value">2</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Тип управления</span>
+                                                    </p>
+                                                    <p class="property-value">сенсорное</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Страна сборки</span>
+                                                    </p>
+                                                    <p class="property-value">Китай</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-box__properties-box">
+                                            <h5 class="product-box__properties-title">
+                                                Общая информация
+                                            </h5>
+                                            <ul class="product-box__properties-list">
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Производитель</span>
+                                                    </p>
+                                                    <p class="property-value">Lex</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Цвет варочной поверхности</span>
+                                                    </p>
+                                                    <p class="property-value">черный</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-box__properties-box">
+                                            <h5 class="product-box__properties-title">
+                                                Габариты
+                                            </h5>
+                                            <ul class="product-box__properties-list">
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Габариты без упаковки (В*Ш*Г)</span>
+                                                    </p>
+                                                    <p class="property-value">49x29x51</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Размеры ниши для встраивания (В*Ш*Г)</span>
+                                                    </p>
+                                                    <p class="property-value">44x27.5x49</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-box__properties-box">
+                                            <h5 class="product-box__properties-title">
+                                                Конфорки
+                                            </h5>
+                                            <ul class="product-box__properties-list">
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Мощность конфорки 1, кВт</span>
+                                                    </p>
+                                                    <p class="property-value">1.8</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Мощность конфорки 2, кВт</span>
+                                                    </p>
+                                                    <p class="property-value">1.2</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-box__properties-box">
+                                            <h5 class="product-box__properties-title">
+                                                Панель управления
+                                            </h5>
+                                            <ul class="product-box__properties-list">
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Края панели</span>
+                                                    </p>
+                                                    <p class="property-value">без рамки</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Тип сенсорного управления</span>
+                                                    </p>
+                                                    <p class="property-value">сенсоры +/-</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-box__properties-box">
+                                            <h5 class="product-box__properties-title">
+                                                Функции
+                                            </h5>
+                                            <ul class="product-box__properties-list">
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Кол-во уровней мощности</span>
+                                                    </p>
+                                                    <p class="property-value">9</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Автоматическое выключение</span>
+                                                    </p>
+                                                    <p class="property-value">да</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Звуковой сигнал</span>
+                                                    </p>
+                                                    <p class="property-value">да</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Таймер</span>
+                                                    </p>
+                                                    <p class="property-value">да</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-box__properties-box">
+                                            <h5 class="product-box__properties-title">
+                                                Индикация
+                                            </h5>
+                                            <ul class="product-box__properties-list">
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Тип дисплея</span>
+                                                    </p>
+                                                    <p class="property-value">LED</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Индикатор остаточного тепла</span>
+                                                    </p>
+                                                    <p class="property-value">да</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Индикатор выбранной мощности</span>
+                                                    </p>
+                                                    <p class="property-value">нет</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-box__properties-box">
+                                            <h5 class="product-box__properties-title">
+                                                Безопасность
+                                            </h5>
+                                            <ul class="product-box__properties-list">
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Блокировка от детей</span>
+                                                    </p>
+                                                    <p class="property-value">да</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Индикация ошибок</span>
+                                                    </p>
+                                                    <p class="property-value">да</p>
+                                                </li>
+                                                <li class="product-box__properties-item">
+                                                    <p class="property-name">
+                                                        <span>Защитное отключение</span>
+                                                    </p>
+                                                    <p class="property-value">нет</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-box__item product-box__item--delivery">
+                                        <div class="product-box__delivery-options">
+                                            <h5 class="product-box__delivery-title">
+                                                Способы получения заказа
+                                            </h5>
+                                            <div class="option pickup">
+                                                <a href="#">Самовывоз за 15 минут</a>
+                                                <p>с нашего склада - бесплатно</p>
+                                            </div>
+                                            <div class="option delivery">
+                                                <a href="#">Доставка до дома</a>
+                                                <p>
+                                                    При заказе от 20 000 ₽ доставка по Екатеринбургу - бесплатно
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <a class="rect-btn rect-btn--brand blue" href="#">
+                                            Все товары бренда&nbsp;<span>LEX</span>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="option delivery">
-                                    <a href="#">Доставка до дома</a>
-                                    <p>
-                                        При заказе от 20 000 ₽ доставка по Екатеринбургу - бесплатно
-                                    </p>
-                                </div>
                             </div>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="order-apply">
-                <div class="container">
-                    <a class="order-apply__return-to-catalog" href="#">
-                        Вернуться в каталог
-                    </a>
-                    <div class="order-apply__box">
-                        <div class="order-apply__text-box">
-                            <p class="order-apply__message">
-                            Спасибо, ваш заказ принят
-                        </p>
-                        <p class="order-apply__text">
-                            Менеджер свяжется с Вами в течение 5 минут в рабочее время. Если Вы оставили заявку в нерабочее время — начнем следующий день со звонка Вам.
-                        </p>
-                        <p class="order-apply__text">
-                            А пока ожидаете — ознакомьтесь с товарами, которые могут дополнить ваш заказ.
-                        </p>
-                        <a class="rect-btn rect-btn--return-to-catalog white" href="#">
-                            Перейти в каталог
-                        </a>
                         </div>
-                        
+        
                     </div>
                 </div>
+                
             </div>
-    
-            <div class="feedback-banner">
+            
+            <div class="product-tabs">
                 <div class="container">
-                    <div class="feedback-banner__inner">
-                        <p class="feedback-banner__text">
-                            Оставьте свою почту и мы с вами свяжемся
-                        </p>
-                        <form class="feedback-banner__form">
-                            <input type="email" placeholder="Введите ваш email">
-                            <button class="rect-btn rect-btn--feedback-banner white" type="submit">
-                                Подписаться
-                            </button>
-                        </form>
+                    <div class="product-tabs__inner">
+                        <div class="product-tabs__item">
+                            <label class="product-tabs__label">
+                                О товаре
+                                <input type="radio" name="product-tab" checked>
+                            </label>
+                        </div>
+                        <div class="product-tabs__item">
+                            <label class="product-tabs__label">
+                                Характеристики
+                                <input type="radio" name="product-tab">
+                            </label>
+                        </div>
+                        <div class="product-tabs__item">
+                            <label class="product-tabs__label">
+                                Доставка и оплата
+                                <input type="radio" name="product-tab">
+                            </label>
+                        </div>
+                        <div class="product-tabs__item">
+                            <label class="product-tabs__label">
+                                Гарантии
+                                <input type="radio" name="product-tab">
+                            </label>
+                        </div>
+                        <div class="product-tabs__slider"></div>
                     </div>
-    
                 </div>
             </div>
+
         </main>
-    
+
         <footer class="footer">
             <div class="container">
                 <div class="footer__inner">
@@ -1769,268 +1706,266 @@
             </div>
     
         </footer>
-    </div>
-    
 
-    <div id="questionForm" class="modal">
-        <div class="container">
-            <form class="question-form" action="#">
-                <button class="close-btn close-btn--question" type="button">
+        <div id="questionForm" class="modal">
+            <div class="container">
+                <form class="question-form" action="#">
+                    <button class="close-btn close-btn--question" type="button">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                    <div class="question-form__inner">
+                        <div class="question-form__text">
+                            <h2 class="question-form__title">
+                                Задайте свой вопрос и мы с вами свяжемся!
+                            </h2>
+                            <textarea name="question-textarea" id="questionTextArea" cols="30" rows="10"
+                                placeholder="Напишите ваш вопрос здесь" required></textarea>
+                        </div>
+                        <div class="question-form__user-fields">
+                            <input id="questionPhoneInput" type="tel" placeholder="+7 (9xx) xxx-xx-xx" required>
+                            <input id="questionMailInput" type="email" placeholder="xxxxxx@xx.xx" required>
+                            <div class="question-form__checkbox">
+                                <input id="questionCheckbox" type="checkbox" required name="question-checkbox">
+                                <label for="questionCheckbox"></label>
+                                <p>
+                                    Отправляя форму Вы соглашаетесь с
+                                    <a href="#">обработкой персональных данных и политикой конфеденциальности</a>
+                                </p>
+                            </div>
+    
+                            <button id="questionSubmit" class="rect-btn rect-btn--question" type="submit">
+                                Отправить
+                            </button>
+                        </div>
+    
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="citySelect" class="modal">
+            <div class="city-select">
+                <h4 class="city-select__title">
+                    Выберите город доставки
+                </h4>
+                <form class="city-select__form" action="#">
+                    <input type="search" name="citySelectSearch" placeholder="Поиск">
+                    <button>
+                        <img src="./img/icons/search-icon.svg" alt="">
+                    </button>
+                </form>
+                <p class="city-select__popular">
+                    Популярные города
+                </p>
+                <ul class="city-select__cities">
+                    <li class="city-select__city">
+                        <span>Екатеринбург</span>
+                    </li>
+                    <li class="city-select__city">
+                        <span>Москва</span>
+                    </li>
+                    <li class="city-select__city">
+                        <span>Санкт-Петербург</span>
+                    </li>
+                    <li class="city-select__city">
+                        <span>Тюмень</span>
+                    </li>
+                    <li class="city-select__city">
+                        <span>Новосибирск</span>
+                    </li>
+                    <li class="city-select__city">
+                        <span>Казань</span>
+                    </li>
+                    <li class="city-select__city">
+                        <span>Нижний Новгород</span>
+                    </li>
+                    <li class="city-select__city">
+                        <span>Красноярск</span>
+                    </li>
+                    <li class="city-select__city">
+                        <span>Челябинск</span>
+                    </li>
+                </ul>
+                <button class="close-btn close-btn--city-select">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z"
-                            fill="white" />
+                            fill="#282739" />
                     </svg>
                 </button>
-                <div class="question-form__inner">
-                    <div class="question-form__text">
-                        <h2 class="question-form__title">
-                            Задайте свой вопрос и мы с вами свяжемся!
-                        </h2>
-                        <textarea name="question-textarea" id="questionTextArea" cols="30" rows="10"
-                            placeholder="Напишите ваш вопрос здесь" required></textarea>
-                    </div>
-                    <div class="question-form__user-fields">
-                        <input id="questionPhoneInput" type="tel" placeholder="+7 (9xx) xxx-xx-xx" required>
-                        <input id="questionMailInput" type="email" placeholder="xxxxxx@xx.xx" required>
-                        <div class="question-form__checkbox">
-                            <input id="questionCheckbox" type="checkbox" required name="question-checkbox">
-                            <label for="questionCheckbox"></label>
-                            <p>
-                                Отправляя форму Вы соглашаетесь с
-                                <a href="#">обработкой персональных данных и политикой конфеденциальности</a>
-                            </p>
+            </div>
+        </div>
+    
+        <div id="authRegister" class="modal">
+            <div class="auth__inner">
+                <div class="auth__box auth__box--register">
+                    <h4 class="auth__title">
+                        Регистрация
+                    </h4>
+                    <p class="auth__text">
+                        Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
+                    </p>
+                    <form class="auth__form auth__form--register" action="#">
+                        <div class="auth__form-group">
+                            <label for="registerFormEmail">
+                                Email
+                            </label>
+                            <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru"
+                                style="background-image: url('./img/icons/auth-form/email.svg');">
                         </div>
-
-                        <button id="questionSubmit" class="rect-btn rect-btn--question" type="submit">
-                            Отправить
+                        <div class="auth__form-group">
+                            <label for="registerFormPhone">
+                                Телефон
+                            </label>
+                            <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx"
+                                style="background-image: url('./img/icons/auth-form/phone.svg');">
+                        </div>
+                        <div class="auth__form-group">
+                            <label for="registerFormName">
+                                Ваше имя
+                            </label>
+                            <input id="registerFormName" type="text" required placeholder="Иван Иванов"
+                                style="background-image: url('./img/icons/auth-form/user.svg');">
+                        </div>
+                        <div class="auth__form-group">
+                            <label for="registerFormPassword">
+                                Пароль
+                            </label>
+                            <input id="registerFormPassword" type="password" required placeholder="••••••"
+                                style="background-image: url('./img/icons/auth-form/lock.svg');">
+                        </div>
+                        <div class="auth__form-group">
+                            <label for="registerFormConfirmPassword">
+                                Подтвердите пароль
+                            </label>
+                            <input id="registerFormConfirmPassword" type="password" required placeholder="••••••"
+                                style="background-image: url('./img/icons/auth-form/lock.svg');">
+                        </div>
+                        <div class="auth__form-group auth__form-group--checkbox">
+                            <input id="registerFormEntity" type="checkbox">
+                            <label for="registerFormEntity">
+                                Хочу зарегистрироваться как юридическое лицо
+                            </label>
+                        </div>
+                        <button class="rect-btn rect-btn--auth-register" type="submit">
+                            Зарегистрироваться
+                        </button>
+                    </form>
+                    <div class="auth__footer">
+                        <span>Уже есть аккаунт?</span>
+                        <a href="#">Войти</a>
+                    </div>
+                </div>
+                <div class="auth__box auth__box--verify">
+                    <div class="auth__header">
+                        <button class="round-btn round-btn--auth">
+                            <img src="./img/icons/arrow-back.svg" alt="">
                         </button>
                     </div>
-
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="citySelect" class="modal">
-        <div class="city-select">
-            <h4 class="city-select__title">
-                Выберите город доставки
-            </h4>
-            <form class="city-select__form" action="#">
-                <input type="search" name="citySelectSearch" placeholder="Поиск">
-                <button>
-                    <img src="./img/icons/search-icon.svg" alt="">
-                </button>
-            </form>
-            <p class="city-select__popular">
-                Популярные города
-            </p>
-            <ul class="city-select__cities">
-                <li class="city-select__city">
-                    <span>Екатеринбург</span>
-                </li>
-                <li class="city-select__city">
-                    <span>Москва</span>
-                </li>
-                <li class="city-select__city">
-                    <span>Санкт-Петербург</span>
-                </li>
-                <li class="city-select__city">
-                    <span>Тюмень</span>
-                </li>
-                <li class="city-select__city">
-                    <span>Новосибирск</span>
-                </li>
-                <li class="city-select__city">
-                    <span>Казань</span>
-                </li>
-                <li class="city-select__city">
-                    <span>Нижний Новгород</span>
-                </li>
-                <li class="city-select__city">
-                    <span>Красноярск</span>
-                </li>
-                <li class="city-select__city">
-                    <span>Челябинск</span>
-                </li>
-            </ul>
-            <button class="close-btn close-btn--city-select">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z"
-                        fill="#282739" />
-                </svg>
-            </button>
-        </div>
-    </div>
-
-    <div id="authRegister" class="modal">
-        <div class="auth__inner">
-            <div class="auth__box auth__box--register">
-                <h4 class="auth__title">
-                    Регистрация
-                </h4>
-                <p class="auth__text">
-                    Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
-                </p>
-                <form class="auth__form auth__form--register" action="#">
-                    <div class="auth__form-group">
-                        <label for="registerFormEmail">
-                            Email
-                        </label>
-                        <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru"
-                            style="background-image: url('./img/icons/auth-form/email.svg');">
-                    </div>
-                    <div class="auth__form-group">
-                        <label for="registerFormPhone">
-                            Телефон
-                        </label>
-                        <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx"
-                            style="background-image: url('./img/icons/auth-form/phone.svg');">
-                    </div>
-                    <div class="auth__form-group">
-                        <label for="registerFormName">
-                            Ваше имя
-                        </label>
-                        <input id="registerFormName" type="text" required placeholder="Иван Иванов"
-                            style="background-image: url('./img/icons/auth-form/user.svg');">
-                    </div>
-                    <div class="auth__form-group">
-                        <label for="registerFormPassword">
-                            Пароль
-                        </label>
-                        <input id="registerFormPassword" type="password" required placeholder="••••••"
-                            style="background-image: url('./img/icons/auth-form/lock.svg');">
-                    </div>
-                    <div class="auth__form-group">
-                        <label for="registerFormConfirmPassword">
-                            Подтвердите пароль
-                        </label>
-                        <input id="registerFormConfirmPassword" type="password" required placeholder="••••••"
-                            style="background-image: url('./img/icons/auth-form/lock.svg');">
-                    </div>
-                    <div class="auth__form-group auth__form-group--checkbox">
-                        <input id="registerFormEntity" type="checkbox">
-                        <label for="registerFormEntity">
-                            Хочу зарегистрироваться как юридическое лицо
-                        </label>
-                    </div>
-                    <button class="rect-btn rect-btn--auth-register" type="submit">
-                        Зарегистрироваться
-                    </button>
-                </form>
-                <div class="auth__footer">
-                    <span>Уже есть аккаунт?</span>
-                    <a href="#">Войти</a>
-                </div>
-            </div>
-            <div class="auth__box auth__box--verify">
-                <div class="auth__header">
-                    <button class="round-btn round-btn--auth">
-                        <img src="./img/icons/arrow-back.svg" alt="">
-                    </button>
-                </div>
-                <h4 class="auth__title auth__title--verify">
-                    Регистрация
-                </h4>
-                <p class="auth__text">
-                    Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
-                </p>
-                <form class="auth__form auth__form--verify" action="#">
-                    <div class="auth__form-group">
-                        <label for="verifyFormInput">
-                            Верификационный код
-                        </label>
-                        <input id="verifyFormInput" type="text" required placeholder="______">
-                        <div class="auth__form-subtext">
-                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+                    <h4 class="auth__title auth__title--verify">
+                        Регистрация
+                    </h4>
+                    <p class="auth__text">
+                        Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
+                    </p>
+                    <form class="auth__form auth__form--verify" action="#">
+                        <div class="auth__form-group">
+                            <label for="verifyFormInput">
+                                Верификационный код
+                            </label>
+                            <input id="verifyFormInput" type="text" required placeholder="______">
+                            <div class="auth__form-subtext">
+                                <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+                            </div>
                         </div>
+                        <button class="rect-btn rect-btn--auth-register" type="submit">
+                            Зарегистрироваться
+                        </button>
+                    </form>
+                    <div class="auth__footer">
+                        <span>Уже есть аккаунт?</span>
+                        <a href="#">Войти</a>
                     </div>
-                    <button class="rect-btn rect-btn--auth-register" type="submit">
-                        Зарегистрироваться
-                    </button>
-                </form>
-                <div class="auth__footer">
-                    <span>Уже есть аккаунт?</span>
-                    <a href="#">Войти</a>
                 </div>
             </div>
+    
         </div>
-
-    </div>
-
-    <div id="authLogin" class="modal">
-        <div class="auth__inner">
-            <div class="auth__box auth__box--login">
-                <h4 class="auth__title auth__title--login">
-                    Вход
-                </h4>
-                <p class="auth__text">
-                    Войдите в аккаунт, чтобы воспользоваться личным кабинетом
-                </p>
-                <form class="auth__form auth__form--login" action="#">
-                    <div class="auth__form-group">
-                        <label for="loginFormEmail">
-                            Email
-                        </label>
-                        <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru"
-                            style="background-image: url('./img/icons/auth-form/email.svg');">
-                    </div>
-                    <div class="auth__form-group">
-                        <label for="loginFormPassword">
-                            Пароль
-                        </label>
-                        <input id="loginFormPassword" type="password" required placeholder="••••••"
-                            style="background-image: url('./img/icons/auth-form/lock.svg');">
-                    </div>
-                    <a class="auth__form-forgot" href="#">
-                        Забыли пароль?
-                    </a>
-                    <button class="rect-btn rect-btn--auth-register" type="submit">
-                        Войти
-                    </button>
-                </form>
-                <div class="auth__footer">
-                    <span>Еще нет аккаунта?</span>
-                    <a href="#">Зарегистрироваться</a>
-                </div>
-            </div>
-            <div class="auth__box auth__box--recover">
-                <div class="auth__header">
-                    <button class="round-btn round-btn--auth">
-                        <img src="./img/icons/arrow-back.svg" alt="">
-                    </button>
-                </div>
-                <h4 class="auth__title auth__title--recover">
-                    Восстановление пароля
-                </h4>
-                <p class="auth__text">
-                    Восстановите пароль, чтобы воспользоваться личным кабинетом
-                </p>
-                <form class="auth__form auth__form--recover" action="#">
-                    <div class="auth__form-group">
-                        <label for="recoverFormInput">
-                            Верификационный код
-                        </label>
-                        <input id="recoverFormInput" type="text" required placeholder="______">
-                        <div class="auth__form-subtext">
-                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+    
+        <div id="authLogin" class="modal">
+            <div class="auth__inner">
+                <div class="auth__box auth__box--login">
+                    <h4 class="auth__title auth__title--login">
+                        Вход
+                    </h4>
+                    <p class="auth__text">
+                        Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                    </p>
+                    <form class="auth__form auth__form--login" action="#">
+                        <div class="auth__form-group">
+                            <label for="loginFormEmail">
+                                Email
+                            </label>
+                            <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru"
+                                style="background-image: url('./img/icons/auth-form/email.svg');">
                         </div>
+                        <div class="auth__form-group">
+                            <label for="loginFormPassword">
+                                Пароль
+                            </label>
+                            <input id="loginFormPassword" type="password" required placeholder="••••••"
+                                style="background-image: url('./img/icons/auth-form/lock.svg');">
+                        </div>
+                        <a class="auth__form-forgot" href="#">
+                            Забыли пароль?
+                        </a>
+                        <button class="rect-btn rect-btn--auth-register" type="submit">
+                            Войти
+                        </button>
+                    </form>
+                    <div class="auth__footer">
+                        <span>Еще нет аккаунта?</span>
+                        <a href="#">Зарегистрироваться</a>
                     </div>
-                    <button class="rect-btn rect-btn--auth-register" type="submit">
-                        Сбросить пароль
-                    </button>
-                </form>
-                <div class="auth__footer">
-                    <span>Уже есть аккаунт?</span>
-                    <a href="#">Войти</a>
+                </div>
+                <div class="auth__box auth__box--recover">
+                    <div class="auth__header">
+                        <button class="round-btn round-btn--auth">
+                            <img src="./img/icons/arrow-back.svg" alt="">
+                        </button>
+                    </div>
+                    <h4 class="auth__title auth__title--recover">
+                        Восстановление пароля
+                    </h4>
+                    <p class="auth__text">
+                        Восстановите пароль, чтобы воспользоваться личным кабинетом
+                    </p>
+                    <form class="auth__form auth__form--recover" action="#">
+                        <div class="auth__form-group">
+                            <label for="recoverFormInput">
+                                Верификационный код
+                            </label>
+                            <input id="recoverFormInput" type="text" required placeholder="______">
+                            <div class="auth__form-subtext">
+                                <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
+                            </div>
+                        </div>
+                        <button class="rect-btn rect-btn--auth-register" type="submit">
+                            Сбросить пароль
+                        </button>
+                    </form>
+                    <div class="auth__footer">
+                        <span>Уже есть аккаунт?</span>
+                        <a href="#">Войти</a>
+                    </div>
                 </div>
             </div>
+    
         </div>
-
     </div>
-
     <script>
         const allSkeletons = document.querySelectorAll('.skeleton');
         window.addEventListener('load', function () {
@@ -2039,7 +1974,8 @@
             });
         });
     </script>
-    
-    <script src="./js/order.js" type="module"></script>
+    <script src="./js/lazysizes.min.js"></script>
+    <script src="./js/fancybox.umd.js"></script>
+    <script src="./js/product.js" type="module"></script>
 </body>
 </html>
