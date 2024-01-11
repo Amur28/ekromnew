@@ -33,3 +33,15 @@ export const changeImgOnHover = (thumb, progressBar, progressBarItems, productIm
 
     productImg.setAttribute('src', thumbImgSrc);
 }
+
+/* Смена кнопки "Добавить в корзину" на счётчик */
+
+export const changeCartButtonOnCounter = (event) => {
+    const cartButton = event.target.closest('.product-card__buy-cart');
+
+    if (!cartButton) return;
+
+    const counter = cartButton.nextElementSibling;
+    addClass(cartButton, 'hide');
+    removeClass(counter, 'hide');
+}

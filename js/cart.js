@@ -135,7 +135,7 @@ productCards.forEach(card => {
     thumbs.forEach((thumb, index) => {
         const length = thumbs.length;
         thumb.style.width = 100 / length + '%';
-        thumb.addEventListener('mouseover', (event) => {
+        thumb.addEventListener('mouseover', () => {
             changeImgOnHover(thumb, progressBar, progressBarItems, productImg, index)
         });
     });
@@ -157,4 +157,14 @@ faqBtn.forEach(btn => {
 
 questionForm.addEventListener('click', (event) => {
     hideQuestionForm(event);
+});
+
+/* Смена кнопки "Добавить в корзину" на счётчик */
+
+import { changeCartButtonOnCounter } from './productCards.js';
+
+productCards.forEach(card => {
+    card.addEventListener('click', (event) => {
+        changeCartButtonOnCounter(event);
+    })
 });

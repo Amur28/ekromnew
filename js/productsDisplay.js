@@ -28,3 +28,4 @@ export const swapProductsDisplay = (event) => {
         addClass(productsRows, 'active')
     }
 }
+

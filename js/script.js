@@ -2,7 +2,7 @@
 import './sliders.js';
 import { brandsMarquee } from './marquee.js';
 import './libs.js';
-import { addClass, removeClass, containClass, toggleClass, checkClickWithCloseBtn, checkClassAndClick, hideOtherItems } from './functions.js';
+import { addClass, removeClass, containClass, hideOtherItems } from './functions.js';
 import { body } from './popups.js';
 
 /* Инициализация бегущей строки брендов */
@@ -197,4 +197,14 @@ videosList.addEventListener('click', (event) => {
         if (event.target == button)
             button.previousElementSibling.click()
     });
+});
+
+/* Смена кнопки "Добавить в корзину" на счётчик */
+
+import { changeCartButtonOnCounter } from './productCards.js';
+
+productCards.forEach(card => {
+    card.addEventListener('click', (event) => {
+        changeCartButtonOnCounter(event);
+    })
 });

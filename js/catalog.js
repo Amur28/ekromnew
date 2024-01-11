@@ -181,16 +181,12 @@ productCards.forEach(card => {
     });
 });
 
-const productCardsRow = document.querySelectorAll('.product-card.row');
+/* Смена кнопки "Добавить в корзину" на счётчик */
 
-productCardsRow.forEach(card => {
+import { changeCartButtonOnCounter } from './productCards.js';
+
+productCards.forEach(card => {
     card.addEventListener('click', (event) => {
-        const cartButton = event.target.closest('.product-card__buy-cart');
-
-        if (!cartButton) return;
-
-        const counter = cartButton.nextElementSibling;
-        addClass(cartButton, 'hide');
-        removeClass(counter, 'hide');
+        changeCartButtonOnCounter(event);
     })
-})
+});
