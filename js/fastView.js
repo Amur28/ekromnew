@@ -31,9 +31,9 @@ export const hideFastView = (body, event) => {
 
 export const zoomImg = document.querySelector('.zoom-img');
 
-export const fakeClickOnImg = (event) => {
+export const fakeClickOnImg = (event, parentEl) => {
     const target = event.target;
-    const currentSlide = fastViewPopup.querySelector('.swiper-slide-active');
+    const currentSlide = parentEl.querySelector('.swiper-slide-active');
     const currentSlideImg = currentSlide.firstElementChild;
     const isSlide = target == zoomImg || zoomImg.contains(target);
     if (isSlide) {

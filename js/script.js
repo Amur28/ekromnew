@@ -119,7 +119,7 @@ const fastViewPopup = document.getElementById('fastView');
 
 fastViewPopup.addEventListener('click', (event) => {
     hideFastView(body, event);
-    fakeClickOnImg(event)
+    fakeClickOnImg(event, fastViewPopup)
 });
 
 /* Выбор цвета в окне быстрого просмотра */

@@ -1,6 +1,7 @@
 'use strict';
 import './libs.js';
 import { fastViewSlider, fastViewSliderThumbs } from './sliders.js';
+import './libs.js';
 import { addClass, removeClass, containClass, hideOtherItems } from './functions.js';
 import { body } from './popups.js';
 
@@ -92,11 +93,16 @@ hideCitySelect();
 
 /* ZOOM */
 
-import { initZoom, removeZoom, zoomImg } from './fastView.js';
+import { initZoom, removeZoom, zoomImg, fakeClickOnImg } from './fastView.js';
 
 let globalX = 0;
 let globalY = 0;
+
 const productBox = document.querySelector('.product-box');
+
+productBox.addEventListener('click', (event) => {
+    fakeClickOnImg(event, productBox);
+})
 
 document.addEventListener('mousemove', (event) => {
     globalX = event.pageX;
@@ -118,3 +124,16 @@ const productBoxColorsList = productBox.querySelector('.product-box__colors-list
 productBoxColorsList.addEventListener('click', (event) => {
     moveColorFrame(event, productBoxColorsList);
 });
+
+/* Смена контента по табам товара */
+
+import { swapContentOnTabs } from './tabs.js';
+
+const productTabs = document.querySelectorAll('.product-tabs__item');
+const productContentArray = document.querySelectorAll('.product-info__inner');
+
+productTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+        swapContentOnTabs(productTabs, tab, productContentArray, index);
+    })
+})
