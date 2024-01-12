@@ -3,6 +3,7 @@
 /* Галереи FANCYBOX */
 
 export const fastviewFancy = Fancybox.bind('[data-fancybox="fastview-gallery"]', {});
+export const productFancy = Fancybox.bind('[data-fancybox="product-gallery"]')
 export const videosFancy = Fancybox.bind('[data-fancybox="video"]', {
     Carousel: {
         infinite: false,

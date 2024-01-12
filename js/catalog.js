@@ -63,7 +63,7 @@ hideAuthForm(authLogin);
 
 /* Окно быстрого просмотра */
 
-import { showFastView, fastViewBtnList, zoomImg, hideFastView, fakeClickOnImg, moveColorFrame } from './fastView.js';
+import { showFastView, fastViewBtnList, hideFastView, fakeClickOnImg, moveColorFrame } from './fastView.js';
 
 showFastView(fastViewBtnList, body);
 
@@ -71,7 +71,7 @@ const fastViewPopup = document.getElementById('fastView');
 
 fastViewPopup.addEventListener('click', (event) => {
     hideFastView(body, event);
-    fakeClickOnImg(event)
+    fakeClickOnImg(event, fastViewPopup, zoomImg)
 });
 
 /* Выбор города */
@@ -107,6 +107,7 @@ import { initZoom, removeZoom } from './fastView.js';
 
 let globalX = 0;
 let globalY = 0;
+const zoomImg = fastViewPopup.querySelector('.zoom-img')
 
 document.addEventListener('mousemove', (event) => {
     globalX = event.pageX;
@@ -114,10 +115,12 @@ document.addEventListener('mousemove', (event) => {
 });
 
 zoomImg.addEventListener('mousemove', () => {
-    initZoom(globalX, globalY);
+    initZoom(globalX, globalY, fastViewPopup, zoomImg);
 });
 
-zoomImg.addEventListener('mouseleave', removeZoom);
+zoomImg.addEventListener('mouseleave', () => {
+    removeZoom(zoomImg);
+});
 
 /* Форма "Задать свой вопрос" */
 
@@ -164,7 +167,6 @@ productCards.forEach(card => {
 
     const thumbs = card.querySelectorAll('.thumb');
     const productImg = card.querySelector('.product-card__img');
-    const progressBar = card.querySelector('.thumbs-progressbar');
     const progressBarItems = card.querySelectorAll('.progressbar-item');
 
     progressBarItems.forEach(item => {
@@ -178,7 +180,7 @@ productCards.forEach(card => {
         const length = thumbs.length;
         thumb.style.width = 100 / length + '%';
         thumb.addEventListener('mouseover', () => {
-            changeImgOnHover(thumb, progressBar, progressBarItems, productImg, index)
+            changeImgOnHover(thumb, progressBarItems, productImg, index)
         });
     });
 });

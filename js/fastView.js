@@ -29,9 +29,9 @@ export const hideFastView = (body, event) => {
 
 /* Имитация клика по картинке (для правильной работы галереи Fancybox) */
 
-export const zoomImg = document.querySelector('.zoom-img');
+// export const zoomImg = document.querySelector('.zoom-img');
 
-export const fakeClickOnImg = (event, parentEl) => {
+export const fakeClickOnImg = (event, parentEl, zoomImg) => {
     const target = event.target;
     const currentSlide = parentEl.querySelector('.swiper-slide-active');
     const currentSlideImg = currentSlide.firstElementChild;
@@ -57,7 +57,7 @@ export const moveColorFrame = (event, el) => {
 
 /* Zoom картинки в окне быстрого просмотра */
 
-export const initZoom = (globalX, globalY, parentEl) => {
+export const initZoom = (globalX, globalY, parentEl, zoomImg) => {
     let zoom = 5;
     let currentSlide = parentEl.querySelector('.swiper-slide-active');
     let currentImg = currentSlide.firstElementChild;
@@ -96,7 +96,7 @@ export const initZoom = (globalX, globalY, parentEl) => {
     zoomOverlay.style.backgroundPosition = `-${posX}px -${posY}px`;
 }
 
-export const removeZoom = () => {
+export const removeZoom = (zoomImg) => {
     const cursor = zoomImg.firstElementChild;
     const zoomOverlay = zoomImg.nextElementSibling;
     cursor.style.display = 'none';

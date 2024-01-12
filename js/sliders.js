@@ -79,11 +79,15 @@ export const fastViewSlider = new Swiper('.slider-fastview', {
     }
 });
 
-export const fastViewColorSlider = new Swiper('.slider-fastview-color', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    navigation: {
-        nextEl: '.slider-fastview-color-button-next',
-        prevEl: '.slider-fastview-color-button-prev',
+export const productSliderThumbs = new Swiper('.slider-product-thumbs', {
+    slidesPerView: 6,
+    spaceBetween: 5,
+});
+
+export const productSlider = new Swiper('.slider-product', {
+    slidesPerView: 1,
+    loop: true,
+    thumbs: {
+        swiper: productSliderThumbs,
     }
 });

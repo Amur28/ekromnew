@@ -23,7 +23,7 @@ export const changeColorOnCard = (event, card) => {
 
 /* Смена картинки при наведении */
 
-export const changeImgOnHover = (thumb, progressBar, progressBarItems, productImg, index) => {
+export const changeImgOnHover = (thumb, progressBarItems, productImg, index) => {
     const thumbImg = thumb.querySelector('img');
     const thumbImgSrc = thumbImg.getAttribute('src');
     const currentProgressbarItem = progressBarItems[index];
