@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
     <title>Главная</title>
 </head>
 
@@ -112,7 +113,7 @@
                                             <img src="./img/product/product.webp" alt="">
                                         </div>
                                         <div class="product-info">
-                                            <a class="product-info__name"href="./product.html">
+                                            <a class="product-info__name" href="./product.html">
                                                 Мойка кухонная Dr.Gans Берта-760
                                             </a>
                                             <p class="product-info__price">
@@ -936,9 +937,65 @@
 
                 </div>
             </div>
+            <div class="header__mobile">
+                <div class="container">
+                    <div class="header__mobile-inner">
+                        <button class="header__mobile-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <a class="header__logo" href="index.html" aria-label="Перейти на главную страницу сайта">
+                            <img src="./img/icons/logo.svg" alt="">
+                        </a>
+                        <ul class="header__mobile-links">
+                            <li class="header__mobile-link">
+                                <a href="tel:+73433799868">
+                                    <img src="./img/icons/header-mobile/phone.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="header__mobile-link">
+                                <a href="#">
+                                    <img src="./img/icons/header-mobile/search.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="header__mobile-link">
+                                <a href="./personal.html">
+                                    <img src="./img/icons/header-mobile/user.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="header__mobile-link">
+                                <a href="./cart.html">
+                                    <img src="./img/icons/header-mobile/cart.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header__side">
+                <div class="header__side-inner">
+                    <button class="header__close-btn">
+                        <img src="./img/icons/close-icon.svg" alt="">
+                    </button>
+                    <div class="header-city">
+                        <div class="header-city__icon">
+                            <img src="./img/icons/city-icon.svg" alt="City icon">
+                        </div>
+                        <div class="header-city__text">
+                            <p class="header-city__descr">
+                                Город
+                            </p>
+                            <div class="header-city__select">
+                                <button class="header-city__button">Екатеринбург</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
         </header>
-    
+
         <main>
             <div class="banner">
                 <div class="container">
@@ -1003,7 +1060,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <section class="popular">
                 <div class="container">
                     <div class="title title--center skeleton">
@@ -1014,7 +1071,7 @@
                             Кто ищет, тот всегда найдёт
                         </p>
                     </div>
-    
+
                     <div class="popular-grid">
                         <div class="popular-card popular-card--big">
                             <a class="popular__link" href="./catalog.html">
@@ -1079,7 +1136,7 @@
                     </div>
                 </div>
             </section>
-    
+
             <section class="categories">
                 <div class="container">
                     <div class="title skeleton">
@@ -1158,10 +1215,10 @@
                         <div class="swiper-button-next categories-button-next"></div>
                         <div class="swiper-button-prev categories-button-prev"></div>
                     </div>
-    
+
                 </div>
             </section>
-    
+
             <section class="bestseller">
                 <div class="container">
                     <div class="title title--center skeleton">
@@ -1172,16 +1229,17 @@
                             То, что пользуется спросом прямо сейчас
                         </p>
                     </div>
-    
+
                     <div class="bestseller__inner">
                         <div class="swiper bestseller-slider">
                             <div class="swiper-wrapper bestseller-slider-wrapper">
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -1207,16 +1265,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -1227,18 +1285,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -1247,69 +1305,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -1332,10 +1403,11 @@
                                 </div>
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -1361,16 +1433,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -1381,18 +1453,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -1401,69 +1473,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -1486,10 +1571,11 @@
                                 </div>
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -1515,16 +1601,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -1535,18 +1621,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -1555,69 +1641,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -1640,10 +1739,11 @@
                                 </div>
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -1669,16 +1769,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -1689,18 +1789,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -1709,69 +1809,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -1794,10 +1907,11 @@
                                 </div>
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -1823,16 +1937,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -1843,18 +1957,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -1863,69 +1977,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -1948,10 +2075,11 @@
                                 </div>
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -1977,16 +2105,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -1997,18 +2125,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -2017,69 +2145,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -2102,10 +2243,11 @@
                                 </div>
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -2131,16 +2273,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -2151,18 +2293,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -2171,69 +2313,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -2256,10 +2411,11 @@
                                 </div>
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -2285,16 +2441,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -2305,18 +2461,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -2325,69 +2481,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -2410,10 +2579,11 @@
                                 </div>
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -2439,16 +2609,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -2459,18 +2629,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -2479,69 +2649,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -2564,10 +2747,11 @@
                                 </div>
                                 <div class="swiper-slide bestseller-slider-slide">
                                     <div class="product-card">
-    
+
                                         <div class="product-card__img-box skeleton">
                                             <a class="product-card__img-box-link" href="./product.html">
-                                                <img class="lazyload product-card__img" data-src="./img/card-gallery/1.webp" alt="">
+                                                <img class="lazyload product-card__img"
+                                                    data-src="./img/card-gallery/1.webp" alt="">
                                                 <div class="label-container" style="display: none;">
                                                     <div class="label" style="background-color: #FF8023;">
                                                         Новинка
@@ -2593,16 +2777,16 @@
                                                     <div class="progressbar-item"></div>
                                                 </div>
                                             </a>
-                
+
                                             <div class="fast-view-btn">
                                                 <p>
                                                     Быстрый просмотр
                                                 </p>
                                             </div>
                                         </div>
-                
+
                                         <div class="product-card__info-box">
-                
+
                                             <div class="product-info">
                                                 <div class="product-info__available skeleton">
                                                     <div class="product-info__color" style="background-color: #6C7683;">
@@ -2613,18 +2797,18 @@
                                                     <p class="product-info__delivery">
                                                     </p>
                                                 </div>
-                
+
                                                 <div class="product-card__name skeleton">
                                                     <a class="product-card__name" href="#">
                                                         Мойка кухонная Dr.Gans Берта-760
                                                     </a>
                                                 </div>
-                
-                
+
+
                                                 <div class="product-card__article skeleton">
                                                     Артикул: 25.040.B0580.401
                                                 </div>
-                
+
                                                 <div class="product-card__prices skeleton">
                                                     <span class="product-card__price">
                                                         6 781 ₽
@@ -2633,69 +2817,82 @@
                                                     </span>
                                                 </div>
                                             </div>
-                
+
                                             <div class="product-card__tools">
-                                                <button class="round-btn round-btn--fav skeleton" aria-label="Добавить в избранное">
+                                                <button class="round-btn round-btn--fav skeleton"
+                                                    aria-label="Добавить в избранное">
                                                     <img src="./img/icons/heart-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--compare skeleton" aria-label="Добавить в сравнение">
+                                                <button class="round-btn round-btn--compare skeleton"
+                                                    aria-label="Добавить в сравнение">
                                                     <img src="./img/icons/compare-card.svg" alt="">
                                                 </button>
-                                                <button class="round-btn round-btn--cart skeleton" aria-label="Добавить в корзину">
+                                                <button class="round-btn round-btn--cart skeleton"
+                                                    aria-label="Добавить в корзину">
                                                     <img src="./img/icons/cart-card.svg" alt="">
                                                 </button>
                                             </div>
-                
+
                                         </div>
                                         <div class="product-card__footer">
                                             <div class="product-card__color">
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label checked" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label checked"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FFDA44;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FFDA44;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #6DA544;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #6DA544;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #0052B4;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #0052B4;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D80027;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D80027;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #19214F;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #19214F;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #537CE5;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #537CE5;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #D44F68;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #D44F68;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #A2001D;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #A2001D;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
                                                 <div class="product-card__color-item">
-                                                    <label class="product-card__color-label" style="background-color: #FF8023;">
+                                                    <label class="product-card__color-label"
+                                                        style="background-color: #FF8023;">
                                                         <input type="radio" name="color">
                                                     </label>
                                                 </div>
@@ -2716,16 +2913,16 @@
                                         </div>
                                     </div>
                                 </div>
-    
+
                             </div>
                         </div>
                         <div class="swiper-button-next bestseller-button-next"></div>
                         <div class="swiper-button-prev bestseller-button-prev"></div>
                     </div>
-    
+
                 </div>
             </section>
-    
+
             <section class="showroom">
                 <div class="container">
                     <div class="swiper showroom-slider skeleton">
@@ -2891,7 +3088,7 @@
                     </div>
                 </div>
             </section>
-    
+
             <section class="brands">
                 <div class="container">
                     <div class="title title--center skeleton">
@@ -2904,19 +3101,22 @@
                     </div>
                     <div class="brands__items">
                         <a class="brands__item skeleton" href="#">
-                            <span class="brands__item-preview" style="background-image: url('./img/brands/1.jpg');"></span>
+                            <span class="brands__item-preview"
+                                style="background-image: url('./img/brands/1.jpg');"></span>
                             <span class="brands__item-name">
                                 <img src="./img/brands/maunfeld.png" alt="">
                             </span>
                         </a>
                         <a class="brands__item skeleton" href="#">
-                            <span class="brands__item-preview" style="background-image: url('./img/brands/2.jpg');"></span>
+                            <span class="brands__item-preview"
+                                style="background-image: url('./img/brands/2.jpg');"></span>
                             <span class="brands__item-name">
                                 <img src="./img/brands/kuppersberg.png" alt="">
                             </span>
                         </a>
                         <a class="brands__item skeleton" href="#">
-                            <span class="brands__item-preview" style="background-image: url('./img/brands/3.jpg');"></span>
+                            <span class="brands__item-preview"
+                                style="background-image: url('./img/brands/3.jpg');"></span>
                             <span class="brands__item-name">
                                 <img src="./img/brands/korting.png" alt="">
                             </span>
@@ -3094,13 +3294,13 @@
                                     </a>
                                 </div>
                             </div>
-    
+
                         </div>
-    
+
                     </div>
                 </div>
             </section>
-    
+
             <div class="container">
                 <div class="brand-banner skeleton">
                     <img class="brand-banner__logo" src="./img/brands/gerda.png" alt="">
@@ -3113,7 +3313,7 @@
                     <img class="brand-banner__img" src="./img/brands/gerda-banner.png" alt="">
                 </div>
             </div>
-    
+
             <section class="videos">
                 <div class="container">
                     <div class="title title--videos skeleton">
@@ -3124,7 +3324,7 @@
                             Узнайте больше о товарах Екром и посмотрите сравнительные обзоры техники в наших соц-сетях.
                         </p>
                     </div>
-    
+
                     <div class="videos__inner">
                         <div class="videos__banner">
                             <a class="videos__banner-cover skeleton" href="#">
@@ -3138,7 +3338,7 @@
                                         d="M11.4596 5.45962C11.7135 5.20578 11.7135 4.79422 11.4596 4.54038L7.32304 0.403806C7.0692 0.149965 6.65765 0.149965 6.40381 0.403806C6.14997 0.657647 6.14997 1.0692 6.40381 1.32304L10.0808 5L6.40381 8.67696C6.14997 8.9308 6.14997 9.34235 6.40381 9.59619C6.65765 9.85003 7.0692 9.85003 7.32304 9.59619L11.4596 5.45962ZM0 5.65H11V4.35H0V5.65Z"
                                         fill="#282739" />
                                 </svg>
-    
+
                             </a>
                         </div>
                         <ul class="videos__list">
@@ -3183,7 +3383,7 @@
                     </div>
                 </div>
             </section>
-    
+
             <section class="faq">
                 <div class="container">
                     <div class="title title--center skeleton">
@@ -3198,7 +3398,8 @@
                             </h5>
                             <p class="faq__item-answer">
                                 После ремонта устройства проходят контроль качества выполненной работы по
-                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью в
+                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью
+                                в
                                 100%.
                             </p>
                         </div>
@@ -3208,7 +3409,8 @@
                             </h5>
                             <p class="faq__item-answer">
                                 После ремонта устройства проходят контроль качества выполненной работы по
-                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью в
+                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью
+                                в
                                 100%.
                             </p>
                         </div>
@@ -3218,7 +3420,8 @@
                             </h5>
                             <p class="faq__item-answer">
                                 После ремонта устройства проходят контроль качества выполненной работы по
-                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью в
+                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью
+                                в
                                 100%.
                             </p>
                         </div>
@@ -3228,7 +3431,8 @@
                             </h5>
                             <p class="faq__item-answer">
                                 После ремонта устройства проходят контроль качества выполненной работы по
-                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью в
+                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью
+                                в
                                 100%.
                             </p>
                         </div>
@@ -3238,7 +3442,8 @@
                             </h5>
                             <p class="faq__item-answer">
                                 После ремонта устройства проходят контроль качества выполненной работы по
-                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью в
+                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью
+                                в
                                 100%.
                             </p>
                         </div>
@@ -3248,7 +3453,8 @@
                             </h5>
                             <p class="faq__item-answer">
                                 После ремонта устройства проходят контроль качества выполненной работы по
-                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью в
+                                47 пунктам. Это означает, что после ремонта вы получите устройство с работоспособностью
+                                в
                                 100%.
                             </p>
                         </div>
@@ -3258,9 +3464,9 @@
                     </button>
                 </div>
             </section>
-    
+
         </main>
-    
+
         <footer class="footer">
             <div class="container">
                 <div class="footer__inner">
@@ -3432,7 +3638,8 @@
                     </nav>
                     <div class="footer__bottom">
                         <div class="footer__socials">
-                            <a class="footer__socials-link round-btn round-btn--footer vk" href="https://vk.com/ekromshop" target="_blank"
+                            <a class="footer__socials-link round-btn round-btn--footer vk"
+                                href="https://vk.com/ekromshop" target="_blank"
                                 aria-label="Перейти в ВК сообщество компании">
                                 <img src="./img/icons/footer/vk.svg" alt="">
                             </a>
@@ -3440,7 +3647,8 @@
                                 aria-label="Перейти на YouTube-канал компании">
                                 <img src="./img/icons/footer/youtube.svg" alt="">
                             </a>
-                            <a class="footer__socials-link round-btn round-btn--footer telegram" href="https://t.me/ekromshop" target="_blank"
+                            <a class="footer__socials-link round-btn round-btn--footer telegram"
+                                href="https://t.me/ekromshop" target="_blank"
                                 aria-label="Перейти в телеграм-канал компании">
                                 <img src="./img/icons/footer/telegram.svg" alt="">
                             </a>
@@ -3463,7 +3671,7 @@
 
         </footer>
     </div>
-    
+
 
     <div id="fastView" class="modal">
         <div class="fast-view__container">

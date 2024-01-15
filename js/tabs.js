@@ -11,4 +11,6 @@ export const swapContentOnTabs = (tabsArr, tab, contentArr, index) => {
         addClass(tab, 'active')
         addClass(contentArr[index], 'active')
     }
+
+    addClass(tab, 'active')
 }

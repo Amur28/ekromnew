@@ -5,6 +5,7 @@
 @import url('./recs.css');
 @import url('./order.css');
 @import url('./product.css');
+@import url('./personal.css');
 
 /* HEADER START */
 
@@ -60,10 +61,12 @@ body.active {
 .header__top-list {
     display: flex;
     gap: 20px;
+    padding-left: 14px;
 }
 
 .header__top-info {
     position: relative;
+    padding-right: 15px;
 }
 
 .header__top-link {
@@ -181,7 +184,7 @@ body.active {
     gap: 12px;
 }
 
-.header.scroll .header-city {
+.header.scroll .header__middle .header-city {
     display: none;
 }
 
@@ -210,7 +213,7 @@ body.active {
     color: #fff;
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
 }
 
 .header-city__button:hover {
@@ -402,9 +405,12 @@ body.active {
 }
 
 .oval-btn--header {
-    min-width: 210px;
+    max-width: 210px;
+    width: 100%;
     height: 48px;
-    padding: 15px 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 22px;
 }
 
@@ -569,7 +575,11 @@ body.active {
     height: 48px;
     width: 183px;
     padding-left: 56px;
-    padding-right: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    padding-left: 20px;
 }
 
 .header .header__middle .oval-btn--all-categories {
@@ -928,6 +938,64 @@ a.header__categories-link:hover span {
     border-style: solid;
     border-color: #fff transparent;
 }
+
+.header__mobile {
+    background-color: var(--main-black);
+    display: none;
+    padding: 20px 0;
+}
+
+.header__mobile-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__mobile-menu {
+    width: 20px;
+    height: 20px;
+}
+
+.header__mobile-menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.header__mobile-menu span + span {
+    margin-top: 3px;
+}
+
+.header__mobile .header__mobile-links {
+    display: flex;
+    gap: 20px;
+}
+
+.header__mobile .header__mobile-links .header__mobile-link a {
+    display: block;
+}
+
+.header__side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .62);
+    backdrop-filter: blur(5px);
+}
+
+.header__side-inner {
+    background-color: #343538;
+    width: calc(100% - 55px);
+    padding: 10px 0;
+    height: 100vh;
+}
+
+
+
 
 /* HEADER END */
 
@@ -2051,6 +2119,10 @@ a.footer__nav-link--show {
     width: 48px;
     height: 48px;
     background-color: #343538;
+}
+
+.footer__contacts .round-btn--footer:hover {
+    background-color: var(--main-blue);
 }
 
 .round-btn--footer.vk:hover {
