@@ -31,8 +31,8 @@ export const checkClassAndClick = (targetEl, className, target, parentEl) => {
 
 /* Функция скрытия остальных элементов */
 
-export const hideOtherItems = (parentEl, className) => {
-    parentEl.forEach(faqItem => {
+export const hideOtherItems = (elArr, className) => {
+    elArr.forEach(faqItem => {
         removeClass(faqItem, className)
     });
 };

@@ -12,8 +12,8 @@ brandsMarquee.mount(window.splide.Extensions);
 /* Скрытие общих элементов */
 
 document.addEventListener('click', (event) => {
-    const target = event.target;
     hideGeneralElements(event);
+    const target = event.target;
     const itsFaqInner = target == faqInner || faqInner.contains(target);
 
     if (!itsFaqInner) hideOtherItems(faqItems, 'active');
@@ -164,14 +164,13 @@ zoomImg.addEventListener('mouseleave', () => {
 
 /* Выбор цвета у карточки */
 
-import { productCards, changeColorOnCard, changeImgOnHover } from './productCards.js';
+import { productCards, changeColorOnCard, changeImgOnHover, returnFirstImg } from './productCards.js';
 
 productCards.forEach(card => {
     card.addEventListener('change', (event) => {
         changeColorOnCard(event, card);
     });
 
-    const thumbs = card.querySelectorAll('.thumb');
     const productImg = card.querySelector('.product-card__img');
     const progressBarItems = card.querySelectorAll('.progressbar-item');
 
@@ -181,23 +180,30 @@ productCards.forEach(card => {
     });
 
     /* Смена картинки при наведении */
+    const thumbsList = card.querySelector('.thumbs');
+    const thumbs = thumbsList.querySelectorAll('.thumb');
 
-    thumbs.forEach((thumb, index) => {
-        const length = thumbs.length;
-        thumb.style.width = 100 / length + '%';
-        thumb.addEventListener('mouseover', (event) => {
-            changeImgOnHover(thumb, progressBarItems, productImg, index)
-        });
+    thumbsList.addEventListener('mouseover', () => {
+        thumbs.forEach((thumb, index) => {
+            const length = thumbs.length;
+            thumb.style.width = 100 / length + '%';
+            thumb.addEventListener('mouseover', (event) => {
+                changeImgOnHover(thumb, progressBarItems, productImg, index)
+            });
+        })
+    });
+
+    thumbsList.addEventListener('mouseleave', () => {
+        returnFirstImg(thumbs, progressBarItems, productImg);
     });
 });
 
 /* Видео */
 
-const videosList = document.querySelector('.videos__list');
+const videosButtons = document.querySelectorAll('.videos__item-button');
 
-videosList.addEventListener('click', (event) => {
-    const playButtons = videosList.querySelectorAll('.videos__item-button');
-    playButtons.forEach(button => {
+videosButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
         if (event.target == button)
             button.previousElementSibling.click()
     });

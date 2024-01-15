@@ -164,14 +164,13 @@ productTabs.forEach((tab, index) => {
 
 /* Выбор цвета у карточки */
 
-import { productCards, changeColorOnCard, changeImgOnHover } from './productCards.js';
+import { productCards, changeColorOnCard, changeImgOnHover, returnFirstImg } from './productCards.js';
 
 productCards.forEach(card => {
     card.addEventListener('change', (event) => {
         changeColorOnCard(event, card);
     });
 
-    const thumbs = card.querySelectorAll('.thumb');
     const productImg = card.querySelector('.product-card__img');
     const progressBarItems = card.querySelectorAll('.progressbar-item');
 
@@ -181,13 +180,21 @@ productCards.forEach(card => {
     });
 
     /* Смена картинки при наведении */
+    const thumbsList = card.querySelector('.thumbs');
+    const thumbs = thumbsList.querySelectorAll('.thumb');
 
-    thumbs.forEach((thumb, index) => {
-        const length = thumbs.length;
-        thumb.style.width = 100 / length + '%';
-        thumb.addEventListener('mouseover', () => {
-            changeImgOnHover(thumb, progressBarItems, productImg, index)
-        });
+    thumbsList.addEventListener('mouseover', () => {
+        thumbs.forEach((thumb, index) => {
+            const length = thumbs.length;
+            thumb.style.width = 100 / length + '%';
+            thumb.addEventListener('mouseover', (event) => {
+                changeImgOnHover(thumb, progressBarItems, productImg, index)
+            });
+        })
+    });
+
+    thumbsList.addEventListener('mouseleave', () => {
+        returnFirstImg(thumbs, progressBarItems, productImg);
     });
 });
 

@@ -34,6 +34,17 @@ export const changeImgOnHover = (thumb, progressBarItems, productImg, index) => 
     productImg.setAttribute('src', thumbImgSrc);
 }
 
+export const returnFirstImg = (thumbs, progressBarItems, productImg) => {
+    const thumbImg = thumbs[0].querySelector('img');
+    const thumbImgSrc = thumbImg.getAttribute('src');
+    const firstProgressbarItem = progressBarItems[0];
+    
+    hideOtherItems(progressBarItems, 'current');
+    addClass(firstProgressbarItem, 'current');
+
+    productImg.setAttribute('src', thumbImgSrc)
+}
+
 /* Смена кнопки "Добавить в корзину" на счётчик */
 
 export const changeCartButtonOnCounter = (event) => {
