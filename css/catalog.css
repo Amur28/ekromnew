@@ -504,6 +504,10 @@
     border-radius: 10px 10px 0 0;
 }
 
+.products__main .product-card:has(.skeleton):hover .product-card__footer {
+    display: none;
+}
+
 .products__main .product-card:hover .product-card__footer {
     display: block;
     border-radius: 0 0 5px 5px;

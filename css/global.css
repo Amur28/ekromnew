@@ -345,7 +345,9 @@ select::-ms-expand {
 
 .skeleton {
     position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
+    background: linear-gradient(90deg, #eee, #d3d3d3, #eee) !important;
+    border: none !important;
 }
 
 .skeleton::before {
@@ -359,7 +361,6 @@ select::-ms-expand {
     background: linear-gradient(90deg, #eee, #d3d3d3, #eee);
     background-size: 200%;
     animation: skeleton 2s infinite linear reverse;
-    border-radius: 10px;
 }
 
 

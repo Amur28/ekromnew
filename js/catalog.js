@@ -177,14 +177,14 @@ productCards.forEach(card => {
     const thumbsList = card.querySelector('.thumbs');
     const thumbs = thumbsList.querySelectorAll('.thumb');
 
-    thumbsList.addEventListener('mouseover', () => {
-        thumbs.forEach((thumb, index) => {
+    thumbs.forEach((thumb, index) => {
+        thumb.addEventListener('mouseover', () => {
             const length = thumbs.length;
             thumb.style.width = 100 / length + '%';
-            thumb.addEventListener('mouseover', (event) => {
-                changeImgOnHover(thumb, progressBarItems, productImg, index)
+            thumb.addEventListener('mouseover', () => {
+                changeImgOnHover(thumb, progressBarItems, productImg, index);
             });
-        })
+        });
     });
 
     thumbsList.addEventListener('mouseleave', () => {

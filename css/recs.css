@@ -27,6 +27,10 @@
     border-radius: 0 0 5px 5px;
 }
 
+.recs-list .product-card:has(.skeleton):hover .product-card__footer {
+    display: none;
+}
+
 .recs-list .product-card:hover .product-card__footer {
    display: block;
 }

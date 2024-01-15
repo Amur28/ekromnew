@@ -1,5 +1,10 @@
 /* CART-EMPTY START */
 
+.cart-empty,
+.cart {
+    margin-bottom: 100px;
+}
+
 .cart-empty__inner {
     display: flex;
     flex-direction: column;
