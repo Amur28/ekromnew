@@ -57,8 +57,25 @@ export const categoriesSlider = new Swiper('.categories-slider', {
     }
 });
 
+export const complectsSlide = new Swiper('.complects-swiper', {
+    spaceBetween: 15,
+    breakpoints: {
+        1400: {
+            enabled: false,
+            slidesPerView: 3,
+        },
+        992: {
+            enabled: true,
+            slidesPerView: 2,
+            navigation: {
+                nextEl: '.complects-swiper-button-next',
+                prevEl: '.complects-swiper-button-prev',
+            }
+        }
+    }
+})
+
 export const bestsellerSlider = new Swiper('.bestseller-slider', {
-    slidesPerView: 5,
     loop: true,
     speed: 300,
     simulateTouch: false,
@@ -67,6 +84,30 @@ export const bestsellerSlider = new Swiper('.bestseller-slider', {
         prevEl: '.bestseller-button-prev',
     },
     spaceBetween: 15,
+    breakpoints: {
+        1400: {
+            slidesPerView: 5,
+        },
+        1200: {
+            slidesPerView: 4,
+        },
+        992: {
+            slidesPerView: 3.5,
+        },
+        880: {
+            slidesPerView: 3,
+        },
+        760: {
+            slidesPerView: 2.5,
+        },
+        320: {
+            slidesPerView: 2,
+            grid: {
+                fill: 'row',
+                rows: 2,
+            },
+        },
+    }
 });
 
 export const showroomSlider = new Swiper('.showroom-slider', {

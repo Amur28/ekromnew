@@ -20,11 +20,11 @@
     }
 
     .swiper-button-next {
-        right: -14px;
+        right: -14px !important;
     }
 
     .swiper-button-prev {
-        left: -14px;
+        left: -14px !important;
     }
 
     .popular-grid {
@@ -296,6 +296,31 @@
     .title h2 {
         font-size: 36px;
     }
+    .bestseller .product-card {
+        width: auto;
+    }
+    .bestseller .product-card__img-box {
+        height: auto;
+    }
+    .bestseller .round-btn--cart {
+        display: none;
+    }
+    .product-card__info-box .product-card__color {
+        display: flex;
+    }
+    .bestseller .product-card__footer {
+        display: none;
+    }
+    .bestseller .product-card:hover .product-card__footer {
+        display: none;
+    }
+    .product-card__info-box {
+        padding-bottom: 5px;
+    }
+    .product-card__info-box ~ .product-card__footer-buttons {
+        margin-top: 0;
+        display: flex;
+    }
 }
 @media (max-width: 576px) {
     .title h2 {
@@ -309,6 +334,39 @@
     }
     .rect-btn--popular {
         font-size: 16px;
+    }
+    .complects__item-name {
+        font-size: 14px;
+    }
+    .complects__item-price {
+        font-size: 18px;
+    }
+    .complects__item-cost,
+    .complects__item-descr {
+        gap: 5px;
+    }
+    .complects__item-old-price {
+        font-size: 12px;
+    }
+    .complects__item-info {
+        padding: 15px 10px;
+    }
+    .complects__link {
+        margin-top: 10px;
+    }
+    .product-card__info-box .product-card__color-label {
+        width: 18px;
+        height: 18px;
+    }
+    .product-card__info-box .product-card__color {
+        gap: 10px;
+    }
+    .bestseller .product-card__buy-click {
+        font-size: 10px;
+        padding: 0;
+    }
+    .bestseller .product-card__buy-cart {
+        font-size: 10px;
     }
 }
 @media (max-width: 400px) {
@@ -329,5 +387,21 @@
     }
     .rect-btn--popular {
         font-size: 14px;
+    }
+    .complects__item-name,
+    .complects__item-price {
+        font-size: 15px;
+    }
+    .complects__item-descr {
+        gap: 10px;
+    }
+    .complects__item-cost {
+        gap: 5px;
+    }
+    .complects__item-old-price {
+        font-size: 10px;
+    }
+    .complects__item-quantity {
+        font-size: 10px;
     }
 }

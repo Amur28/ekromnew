@@ -1259,10 +1259,12 @@ a.header__categories-link:hover span {
 
 /* COMPLECTS START */
 
-.complects__inner {
+.complects-swiper {
     margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
+}
+
+.complects__wrapper {
+    position: relative;
 }
 
 .complects__item {
@@ -1274,7 +1276,7 @@ a.header__categories-link:hover span {
     justify-content: space-between;
     border-radius: 20px;
     transition: var(--default-transition);
-    box-shadow: 0px 4px 30px 0px rgba(25, 33, 79, 0.25);
+    /* box-shadow: 0px 4px 30px 0px rgba(25, 33, 79, 0.25); */
 }
 
 .complects__item:hover {
@@ -1301,6 +1303,10 @@ a.header__categories-link:hover span {
     padding: 5px;
 }
 
+.complects__item-img img {
+    max-height: 340px;
+}
+
 .complects__item-info {
     background-color: #343538;
     display: flex;
@@ -1325,6 +1331,9 @@ a.header__categories-link:hover span {
     border-radius: 10px;
     border: 1px solid #fff;
     padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .complects__item-cost {
@@ -1518,6 +1527,11 @@ a.header__categories-link:hover span {
     gap: 10px;
 }
 
+.product-card__info-box > .product-card__footer-buttons {
+    margin-top: 0;
+    display: none;
+}
+
 .product-info__available {
     display: flex;
     gap: 10px;
@@ -1592,6 +1606,17 @@ a.header__categories-link:hover span {
     background-color: var(--red-color);
 }
 
+.product-card__info-box .product-card__color {
+    display: none;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.product-card__info-box .product-card__color-label {
+    width: 20px;
+    height: 20px;
+}
+
 .product-card__tools {
     display: flex;
     flex-direction: column;
@@ -1637,7 +1662,6 @@ a.header__categories-link:hover span {
 .product-card__color {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 15px;
     padding: 0 40px;
 }
@@ -1675,6 +1699,7 @@ a.header__categories-link:hover span {
     border-radius: 5px 5px 0 0;
     font-size: 12px;
     line-height: 1.5;
+    padding: 0 5px;
 }
 
 .product-card__counter {
