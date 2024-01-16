@@ -6,6 +6,7 @@ export const bannerSlider = new Swiper('.banner-slider', {
     pagination: {
         el: '.banner-pagination',
         clickable: true,
+        enabled: true,
     },
     navigation: {
         nextEl: '.banner-button-next',
@@ -21,16 +22,38 @@ export const bannerSlider = new Swiper('.banner-slider', {
 
 export const categoriesSlider = new Swiper('.categories-slider', {
     loop: true,
-    slidesPerView: 8.5,
     spaceBetween: 20,
     autoplay: {
-        delay: 3000,
+        delay: 1500,
         disableOnInteraction: true,
     },
-    speed: 500,
+    speed: 200,
     navigation: {
         nextEl: '.categories-button-next',
         prevEl: '.categories-button-prev',
+    },
+    breakpoints: {
+        1400: {
+            slidesPerView: 8.5,
+        },
+        1200: {
+            slidesPerView: 7.5,
+        },
+        992: {
+            slidesPerView: 6.5,
+        },
+        650: {
+            slidesPerView: 4.5,
+        },
+        576: {
+            slidesPerView: 3.5,
+        },
+        400: {
+            slidesPerView: 2.5,
+        },
+        320: {
+            slidesPerView: 1.5,
+        },
     }
 });
 

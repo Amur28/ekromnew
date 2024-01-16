@@ -579,7 +579,7 @@ body.active {
     align-items: center;
     justify-content: center;
     padding: 0;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 .header .header__middle .oval-btn--all-categories {
@@ -1038,19 +1038,24 @@ a.header__categories-link:hover span {
 .banner__inner .banner-pagination {
     top: calc(100% + 20px);
     height: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .banner__inner .banner-pagination .swiper-pagination-bullet {
     width: 15px;
     height: 15px;
-    margin: 0 10px;
+}
+
+.banner__inner .banner-pagination .swiper-pagination-bullet {
+    margin: 0;
 }
 
 .banner__inner .banner-pagination .swiper-pagination-bullet-active {
     background-color: var(--main-blue);
 }
-
-
 
 /* BANNER END */
 
@@ -1058,8 +1063,8 @@ a.header__categories-link:hover span {
 
 .popular-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 132px);
     margin-top: 50px;
 }
 
@@ -1069,11 +1074,12 @@ a.header__categories-link:hover span {
     position: relative;
     overflow: hidden;
     box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, .25);
+    padding: 10px;
 }
 
-.popular-card:hover img,
+.popular-card:hover .popular__img img,
 .popular-card:hover .popular__text {
-    transform: scale(1.08);
+    transform: translateX(0) scale(1.08);
     color: var(--main-blue)
 }
 
@@ -1091,13 +1097,25 @@ a.header__categories-link:hover span {
 .popular__img {
     width: 60%;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .popular-card img {
     position: absolute;
-    right: 0;
     transition: var(--default-transition);
     max-width: 100%;
+    max-height: 100%;
+}
+
+.popular-card--big .popular__img img {
+    left: -10px;
+}
+.popular-card--bottom .popular__img img {
+    top: -10px;
+}
+.popular-card--center .popular__img img {
+    right: -10px;
 }
 
 .popular__text {
@@ -1109,7 +1127,7 @@ a.header__categories-link:hover span {
 
 .popular-card__title {
     font-size: 32px;
-    line-height: 40px;
+    line-height: 1.5;
     text-align: right;
 }
 
@@ -1120,10 +1138,7 @@ a.header__categories-link:hover span {
 }
 
 .popular-card--big {
-    width: 691px;
-    height: 472px;
-    grid-area: 1 / 1 / 3 / 3;
-
+    grid-area: 1 / 1 / 5 / 4;
 }
 
 .popular-card--big .popular__text {
@@ -1135,9 +1150,8 @@ a.header__categories-link:hover span {
 }
 
 .popular-card--bottom {
-    grid-area: 3 / 1 / 4 / 3;
-    width: 691px;
-    height: 264px;
+    grid-area: 5 / 1 / 7 / 4;
+    margin-top: 30px;
 }
 
 .popular-card--bottom .popular__text {
@@ -1151,10 +1165,8 @@ a.header__categories-link:hover span {
 }
 
 .popular-card--center {
-    grid-area: 1 / 3 / 4 / 4;
-    width: 338px;
-    height: 792px;
-    margin-left: 17px;
+    grid-area: 1 / 4 / 7 / 6;
+    margin-left: 15px;
 }
 
 .popular-card--center .popular__link,
@@ -1185,18 +1197,26 @@ a.header__categories-link:hover span {
 }
 
 .popular-card--right {
-    grid-area: 1 / 4 / 4 / 5;
-    width: 338px;
-    height: 792px;
-    margin-left: 17px;
+    grid-area: 1 / 6 / 7 / 8;
+    margin-left: 15px;
 }
 
 .popular-card--right .popular__link img {
     bottom: 0;
+    right: auto;
 }
 
 .popular-card--right .popular__text {
     margin: 72px auto 35px;
+}
+
+.rect-btn--popular {
+    display: none;
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
 }
 
 /* POPULAR END */
@@ -1237,10 +1257,114 @@ a.header__categories-link:hover span {
 
 /* CATEGORIES END */
 
+/* COMPLECTS START */
+
+.complects__inner {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.complects__item {
+    position: relative;
+    background-color: #fff;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    transition: var(--default-transition);
+    box-shadow: 0px 4px 30px 0px rgba(25, 33, 79, 0.25);
+}
+
+.complects__item:hover {
+    transform: scale(1.03);
+    z-index: 5;
+}
+
+.complects__item-label {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background-color: #f63b00;
+    padding: 15px 35px 15px 20px;
+    border-radius: 0 10px 10px 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.complects__item-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.complects__item-info {
+    background-color: #343538;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 0 0 20px 20px;
+}
+
+.complects__item-descr {
+    display: flex;
+    gap: 20px;
+}
+
+.complects__item-name {
+    color: #fff;
+    font-size: 16px;
+}
+
+.complects__item-quantity {
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 0 10px;
+}
+
+.complects__item-cost {
+    display: flex;
+    gap: 10px;
+}
+
+.complects__item-old-price {
+    color: #8c8c8c;
+    font-weight: 600;
+}
+
+.complects__item-price {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.complects__link {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+.complects__link svg path {
+    transition: var(--default-transition);
+}
+
+.complects__link:hover svg path {
+    fill: var(--main-blue);
+}
+
+/* COMPLECTS END */
+
 /* BESTSELLER START */
 
 .bestseller__inner {
     position: relative;
+    z-index: 2;
 }
 
 .bestseller__title {
@@ -1253,7 +1377,8 @@ a.header__categories-link:hover span {
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
-    height: 580px;
+    padding-bottom: 220px;
+    margin-bottom: -220px;
 }
 
 .product-card {
@@ -1262,7 +1387,10 @@ a.header__categories-link:hover span {
     width: 270px;
     background-color: #fff;
     border-radius: 10px;
-    overflow: hidden;
+}
+
+.product-card:hover {
+    border-radius: 10px 10px 0 0;
 }
 
 .product-card__img-box {
@@ -1494,10 +1622,16 @@ a.header__categories-link:hover span {
 .product-card__footer {
     max-height: 0;
     transition: var(--alt-transition);
+    position: absolute;
+    background-color: #fff;
+    z-index: 10;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
 }
 
 .product-card:hover .product-card__footer {
     max-height: 127px;
+    display: block;
 }
 
 .product-card__color {
