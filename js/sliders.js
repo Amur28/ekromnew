@@ -51,13 +51,14 @@ export const categoriesSlider = new Swiper('.categories-slider', {
         400: {
             slidesPerView: 2.5,
         },
-        320: {
+        300: {
             slidesPerView: 1.5,
         },
     },
 });
 
 export const complectsSlide = new Swiper('.complects-swiper', {
+    enabled: true,
     spaceBetween: 15,
     breakpoints: {
         1400: {
@@ -75,12 +76,24 @@ export const complectsSlide = new Swiper('.complects-swiper', {
                 delay: 1500,
                 disableOnInteraction: true,
             },
+        },
+        300: {
+            enabled: true,
+            slidesPerView: 1,
+            navigation: {
+                nextEl: '.complects-swiper-button-next',
+                prevEl: '.complects-swiper-button-prev',
+            },
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: true,
+            },
         }
     }
 })
 
 export const bestsellerSlider = new Swiper('.bestseller-slider', {
-    
+
     speed: 300,
     simulateTouch: false,
     navigation: {
@@ -103,14 +116,15 @@ export const bestsellerSlider = new Swiper('.bestseller-slider', {
         },
         760: {
             slidesPerView: 2.5,
+            loop: true,
         },
-        320: {
+        300: {
             slidesPerView: 2,
             grid: {
                 fill: 'row',
                 rows: 2,
             },
-            loop: true,
+            loop: false,
         },
     }
 });
@@ -124,16 +138,88 @@ export const showroomSlider = new Swiper('.showroom-slider', {
 
 export const showroomGallerySlider = new Swiper('.showroom-gallery-slider', {
     loop: true,
-    slidesPerView: 1.5,
+    slidesPerView: 1,
     autoplay: {
         delay: 1500,
     },
     speed: 500,
-    navigation: {
-        nextEl: '.showroom-gallery-button-next',
-        prevEl: '.showroom-gallery-button-prev',
-    },
-})
+    breakpoints: {
+        992: {
+            slidesPerView: 1.5,
+        },
+
+    }
+});
+
+export const brandsSlider = new Swiper('.swiper-brands', {
+    spaceBetween: 10,
+    slidesPerView: 1.05,
+    breakpoints: {
+        992: {
+            enabled: false,
+            slidesPerView: 3,
+            spaceBetween: 40,
+        },
+        576: {
+            slidesPerView: 2.1,
+            spaceBetween: 20,
+        },
+        300: {
+            slidesPerView: 1.05,
+            centeredSlides: true,
+            initialSlide: 1,
+        }
+    }
+});
+
+export const videosSlider = new Swiper('.swiper-videos', {
+    enable: true,
+    breakpoints: {
+        1440: {
+            spaceBetween: 40,
+            slidesPerView: 3,
+        },
+        1320: {
+            slidesPerView: 2.75,
+        },
+        1250: {
+            slidesPerView: 2.5,
+        },
+        1170: {
+            slidesPerView: 2.25,
+        },
+        1130: {
+            slidesPerView: 2,
+        },
+        992: {
+            enable: false,
+            spaceBetween: 20,
+            slidesPerView: 1.5,
+        },
+        880: {
+            slidesPerView: 3,
+        },
+        815: {
+            slidesPerView: 2.75,
+        },
+        740: {
+            slidesPerView: 2.5,
+        },
+        670: {
+            slidesPerView: 2.25,
+        },
+        590: {
+            slidesPerView: 2,
+        },
+        420: {
+            slidesPerView: 1.75,
+        },
+        300: {
+            slidesPerView: 1.5,
+            enable: true,
+        }
+    }
+});
 
 export const fastViewSliderThumbs = new Swiper('.slider-fastview-thumbs', {
     slidesPerView: 6,

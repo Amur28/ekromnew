@@ -200,7 +200,7 @@ select::-ms-expand {
     border-radius: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 227px;
 }
 
@@ -217,8 +217,17 @@ select::-ms-expand {
     max-width: 400px;
 }
 
+.brand-banner__img {
+    width: 100%;
+    max-width: 280px;
+}
+
 .oval-btn--brand-banner {
-    padding: 15px 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 5px;
+    width: 210px;
 }
 
 .oval-btn--brand-banner:hover {

@@ -2,8 +2,10 @@
 import './sliders.js';
 import { brandsMarquee } from './marquee.js';
 import './libs.js';
-import { addClass, removeClass, containClass, hideOtherItems } from './functions.js';
+import { addClass, removeClass, containClass, hideOtherItems, toggleClass } from './functions.js';
 import { body } from './popups.js';
+
+const clientWidth = window.innerWidth;
 
 /* Инициализация бегущей строки брендов */
 
@@ -185,6 +187,8 @@ productCards.forEach(card => {
 
     thumbs.forEach((thumb, index) => {
         thumb.addEventListener('mouseover', () => {
+            if (clientWidth <= 992) return;
+
             const length = thumbs.length;
             thumb.style.width = 100 / length + '%';
             thumb.addEventListener('mouseover', () => {
@@ -194,8 +198,11 @@ productCards.forEach(card => {
     });
 
     thumbsList.addEventListener('mouseleave', () => {
+        if (clientWidth <= 992) return;
+
         returnFirstImg(thumbs, progressBarItems, productImg);
     });
+
 });
 
 /* Видео */
@@ -218,3 +225,49 @@ productCards.forEach(card => {
         changeCartButtonOnCounter(event);
     })
 });
+
+/* Кнопки добавления в корзину на мобильной версии */
+const mobileCartButtons = document.querySelectorAll('.product-card__mobile-cart');
+
+mobileCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const mobileFoterButtons = button.nextElementSibling;
+
+        addClass(button, 'hide');
+        addClass(mobileFoterButtons, 'active');
+    })
+})
+
+/* Раскрывающиеся списки в футере */
+const footerTitles = document.querySelectorAll('.footer__nav-title');
+const footerNav = document.querySelector('.footer__nav');
+
+const showFooterItem = () => {
+    const currentNavItem = event.target.closest('.footer__nav-title');
+
+    if (!currentNavItem) return;
+
+    toggleClass(currentNavItem, 'active');
+}
+
+footerNav.addEventListener('click', showFooterItem);
+
+// const faqInner = document.querySelector('.faq__inner');
+// const faqItems = document.querySelectorAll('.faq__item');
+
+// const showFaqItem = () => {
+//     const currentFaqItem = event.target.closest('.faq__item');
+
+//     if (!currentFaqItem) return;
+
+//     if (containClass(currentFaqItem, 'active')) {
+//         removeClass(currentFaqItem, 'active');
+//         return;
+//     };
+
+//     hideOtherItems(faqItems, 'active');
+
+//     addClass(currentFaqItem, 'active');
+// }
+
+// faqInner.addEventListener('click', showFaqItem);
