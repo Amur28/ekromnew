@@ -3461,8 +3461,8 @@ form.auth__form {
     height: 70px;
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
-    border: 6px solid var(--main-black);
-    background: var(--main-black);
+    border: 6px solid #fff;
+    background: #fff;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -3479,6 +3479,7 @@ form.auth__form {
     transform-origin: bottom;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     transform: scale(0.85);
+    overflow: hidden;
 }
 
 .mobile-menu__slider::before {
@@ -3489,7 +3490,7 @@ form.auth__form {
     width: 20px;
     height: 20px;
     border-top-right-radius: 20px;
-    box-shadow: 4px -6px 0 2px var(--main-black);
+    box-shadow: 4px -6px 0 2px #fff;
 }
 
 .mobile-menu__slider::after {
@@ -3500,8 +3501,18 @@ form.auth__form {
     width: 20px;
     height: 20px;
     border-top-left-radius: 20px;
-    box-shadow: -4px -6px 0 2px var(--main-black);
+    box-shadow: -4px -6px 0 2px #fff;
     z-index: -1;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    height: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 /* MOBILE MENU END */
