@@ -252,22 +252,11 @@ const showFooterItem = () => {
 
 footerNav.addEventListener('click', showFooterItem);
 
-// const faqInner = document.querySelector('.faq__inner');
-// const faqItems = document.querySelectorAll('.faq__item');
 
-// const showFaqItem = () => {
-//     const currentFaqItem = event.target.closest('.faq__item');
 
-//     if (!currentFaqItem) return;
-
-//     if (containClass(currentFaqItem, 'active')) {
-//         removeClass(currentFaqItem, 'active');
-//         return;
-//     };
-
-//     hideOtherItems(faqItems, 'active');
-
-//     addClass(currentFaqItem, 'active');
-// }
-
-// faqInner.addEventListener('click', showFaqItem);
+const list = document.querySelectorAll(".mobile-menu__item");
+function activelink() {
+  list.forEach((item) => item.classList.remove("active"));
+  this.classList.add("active");
+}
+list.forEach((item) => item.addEventListener("click", activelink));
