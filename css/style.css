@@ -1367,6 +1367,11 @@ a.header__categories-link:hover span {
     fill: var(--main-blue);
 }
 
+.complects-swiper-button-next,
+.complects-swiper-button-prev {
+    display: none;
+}
+
 /* COMPLECTS END */
 
 /* BESTSELLER START */

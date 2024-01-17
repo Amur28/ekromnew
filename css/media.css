@@ -75,9 +75,14 @@
         transform: translateX(-50%) scale(1.08);
         color: var(--main-blue)
     }
+
     .popular-card__sections {
         margin-top: 5px;
         font-size: 14px;
+    }
+    .complects-swiper-button-next,
+    .complects-swiper-button-prev {
+        display: flex;
     }
 }
 
@@ -152,18 +157,21 @@
     .header__bottom-nav {
         gap: 10px;
     }
+
     .popular-card--big .popular__text {
         align-self: center;
     }
+
     .popular-card--bottom .popular__text,
     .popular-card--big .popular__text {
         text-align: left;
     }
+
     .popular-card__title {
         font-size: 24px;
         text-align: left;
     }
-    
+
 }
 
 @media (max-width: 992px) {
@@ -191,8 +199,8 @@
         border-radius: 0;
     }
 
-    .swiper-button-prev,
-    .swiper-button-next {
+    .swiper-button-prev:not(.complects-swiper-button-prev),
+    .swiper-button-next:not(.complects-swiper-button-next) {
         display: none;
     }
 
@@ -205,11 +213,13 @@
         grid-template-rows: repeat(2, 1fr);
         gap: 13px;
     }
+
     .popular-card {
         width: 100%;
         height: auto;
         margin: 0;
     }
+
     .popular-card.popular-card--big {
         grid-area: 1 / 1 / 2 / 2;
     }
@@ -283,207 +293,272 @@
     .rect-btn--popular {
         display: block;
     }
+
     .popular-card .popular__img img {
         transform: translateX(0);
     }
+
     .popular-card:hover .popular__img img {
         transform: translateX(0) scale(1.08);
         color: var(--main-blue);
     }
+
     .product-card__info-box {
         padding-bottom: 5px;
     }
-    .product-card__info-box ~ .product-card__footer-buttons {
+
+    .product-card__info-box~.product-card__footer-buttons {
         display: flex;
         min-height: 40px;
     }
+
     .product-card__info-box .product-card__color-label {
         width: 18px;
         height: 18px;
     }
+
     .product-card__info-box .product-card__color {
         gap: 10px;
     }
+
     .product-card__info-box .product-card__color {
         display: flex;
     }
+
     .bestseller .product-card {
         width: auto;
     }
+
     .bestseller .round-btn--cart {
         display: none;
     }
-    
+
     .bestseller .product-card__footer {
         display: none;
     }
+
     .bestseller .product-card:hover .product-card__footer {
         display: none;
     }
+
     .bestseller .product-card__article,
     .bestseller .product-card__name {
         margin-top: 5px;
     }
+
+    
 }
 
 @media (max-width: 768px) {
     .title h2 {
         font-size: 36px;
     }
-    
+
 }
+
 @media (max-width: 576px) {
     .title h2 {
         font-size: 26px;
     }
+
     .banner__inner .banner-pagination {
         gap: 15px;
     }
+
     .popular-card__title {
         font-size: 16px;
     }
+
     .rect-btn--popular {
         font-size: 16px;
     }
+
     .complects__item-name {
         font-size: 14px;
     }
+
     .complects__item-price {
         font-size: 18px;
     }
+
     .complects__item-cost,
     .complects__item-descr {
         gap: 5px;
     }
+
     .complects__item-old-price {
         font-size: 12px;
     }
+
     .complects__item-info {
         padding: 15px 10px;
     }
+
     .complects__link {
         margin-top: 10px;
     }
+
     .complects__item-label {
         padding: 10px 25px 10px 15px;
         font-size: 20px;
     }
+
     .bestseller .product-card__img-box {
         height: 220px;
     }
+
     .product-card__name a {
         font-size: 16px;
     }
+
     .product-card__price {
         font-size: 16px;
     }
-    .round-btn--fav, .round-btn--compare, .round-btn--cart {
+
+    .round-btn--fav,
+    .round-btn--compare,
+    .round-btn--cart {
         width: 30px;
         height: 30px;
         padding: 3px;
     }
+
     .product-card__info-box .product-card__color-label {
         width: 14px;
         height: 14px;
     }
-    .product-card__info-box ~ .product-card__footer-buttons .product-card__buy-click, 
-    .product-card__info-box ~ .product-card__footer-buttons .product-card__buy-cart {
+
+    .product-card__info-box~.product-card__footer-buttons .product-card__buy-click,
+    .product-card__info-box~.product-card__footer-buttons .product-card__buy-cart {
         padding: 5px;
         font-size: 10px;
     }
+
     .product-card__info-box .product-card__color {
         gap: 5px;
     }
+
     .product-card__info-box .product-card__color-label.checked {
-        border-width: 3px;
+        border-width: 2px;
     }
+
     .product-card {
         min-height: auto;
     }
+
     .product-card__counter button.minus {
         padding: 0 10px 0 20px;
     }
+
     .product-card__counter button.plus {
         padding: 0 20px 0 10px;
     }
+
     .product-info__available {
         gap: 3px;
     }
+
     .product-info__color {
         width: 5px;
         height: 5px;
     }
 }
+
 @media (max-width: 500px) {
     .product-card__name a {
         font-size: 12px;
     }
-    .round-btn--fav, .round-btn--compare, .round-btn--cart {
+
+    .round-btn--fav,
+    .round-btn--compare,
+    .round-btn--cart {
         width: 25px;
         height: 25px;
     }
+
     .product-card__article {
         font-size: 9px;
     }
+
     .product-card__prices {
         margin-top: 5px;
     }
 }
+
 @media (max-width: 400px) {
     .banner {
         padding: 0 0 50px;
     }
+
     section {
         padding: 15px 0;
     }
+
     .title h2 {
         font-size: 20px;
     }
+
     .title p {
         font-size: 14px;
     }
+
     .popular-card__title {
         font-size: 14px;
     }
+
     .rect-btn--popular {
         font-size: 14px;
     }
+
     .complects__item-name,
     .complects__item-price {
         font-size: 15px;
     }
+
     .complects__item-descr {
         gap: 10px;
     }
+
     .complects__item-cost {
         gap: 5px;
     }
+
     .complects__item-old-price {
         font-size: 10px;
     }
+
     .complects__item-quantity {
         font-size: 10px;
     }
+
     .product-card__info-box .product-card__color-label {
         width: 10px;
         height: 10px;
     }
+
     .product-info__status {
         font-size: 8px;
     }
+
     .product-card__name a {
         font-size: 10px;
     }
+
     .product-card__price {
         font-size: 12px;
     }
-    .round-btn--fav, .round-btn--compare, .round-btn--cart {
+
+    .round-btn--fav,
+    .round-btn--compare,
+    .round-btn--cart {
         width: 23px;
         height: 23px;
     }
+
     .product-card__counter button.minus {
         padding: 0 5px 0 15px;
     }
+
     .product-card__counter button.plus {
         padding: 0 15px 0 5px;
     }

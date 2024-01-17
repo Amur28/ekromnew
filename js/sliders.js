@@ -54,7 +54,7 @@ export const categoriesSlider = new Swiper('.categories-slider', {
         320: {
             slidesPerView: 1.5,
         },
-    }
+    },
 });
 
 export const complectsSlide = new Swiper('.complects-swiper', {
@@ -70,13 +70,17 @@ export const complectsSlide = new Swiper('.complects-swiper', {
             navigation: {
                 nextEl: '.complects-swiper-button-next',
                 prevEl: '.complects-swiper-button-prev',
-            }
+            },
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: true,
+            },
         }
     }
 })
 
 export const bestsellerSlider = new Swiper('.bestseller-slider', {
-    loop: true,
+    
     speed: 300,
     simulateTouch: false,
     navigation: {
@@ -106,6 +110,7 @@ export const bestsellerSlider = new Swiper('.bestseller-slider', {
                 fill: 'row',
                 rows: 2,
             },
+            loop: true,
         },
     }
 });
