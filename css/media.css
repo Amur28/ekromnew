@@ -423,6 +423,9 @@
     .product-card__img-box-link ~ .fast-view-btn {
         display: none;
     }
+    #mobile-bottom-menu {
+        display: flex;
+    }
 }
 
 @media (max-width: 820px) {

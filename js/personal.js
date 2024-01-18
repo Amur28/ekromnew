@@ -81,9 +81,11 @@ questionForm.addEventListener('click', (event) => {
 
 import { headerCityButton, hideCitySelect } from './popups.js';
 
-headerCityButton.addEventListener('click', () => {
-    addClass(citySelect, 'active');
-    addClass(body, 'active');
+headerCityButton.forEach(button => {
+    button.addEventListener('click', () => {
+        addClass(citySelect, 'active');
+        addClass(body, 'active');
+    })
 });
 
 hideCitySelect();
