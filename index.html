@@ -100,7 +100,7 @@
                             </div>
                         </div>
                         <form class="header__search" action="#">
-                            <input class="header__search-input" type="search" name="search" placeholder="Поиск">
+                            <input class="header__search-input" type="search" name="header-search" placeholder="Поиск">
                             <button class="header__search-submit" type="submit" name="searchSubmit" value=""
                                 aria-label="Кнопка поиска">
                                 <img src="./img/icons/search-icon.svg" alt="">
@@ -955,9 +955,9 @@
                                 </a>
                             </li>
                             <li class="header__mobile-link">
-                                <a href="#">
+                                <button class="header__mobile-button">
                                     <img src="./img/icons/header-mobile/search.svg" alt="">
-                                </a>
+                                </button>
                             </li>
                             <li class="header__mobile-link">
                                 <a href="./personal.html">
@@ -972,7 +972,74 @@
                         </ul>
                     </div>
                 </div>
+                <div class="header__mobile-search">
+                    <div class="container">
+                        <form class="header__mobile-search-form">
+                            
+                            <div class="header__mobile-search-input-box">
+                                <button type="submit">
+                                    <img src="./img/icons/search-icon.svg" alt="">
+                                </button>
+                                <input type="text" name="header-mobile-search">
+                                <button class="header__mobile-search-reset" type="reset">
+                                    <img src="./img/icons/close-icon.svg" alt="">
+                                </button>
+                            </div>
+                            <button class="header__mobile-search-hide" type="button">
+                                Отменить
+                            </button>
+                            
+                            <div class="search-result">
+                                <div class="search-result__row">
+                                    <div class="search-result__product">
+                                        <div class="search-result__img">
+                                            <img src="./img/product/product.webp" alt="">
+                                        </div>
+                                        <div class="product-info">
+                                            <a class="product-info__name" href="./product.html">
+                                                Мойка кухонная Dr.Gans Берта-760
+                                            </a>
+                                            <p class="product-info__price">
+                                                6 781 ₽
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="search-counter collapse">
+                                        <button class="minus" type="button">-</button>
+                                        <span>1</span>
+                                        <button class="plus" type="button">+</button>
+                                    </div>
+            
+                                </div>
+                                <div class="search-result__row">
+                                    <div class="search-result__product">
+                                        <div class="search-result__img">
+                                            <img src="./img/product/product.webp" alt="">
+                                        </div>
+                                        <div class="product-info">
+                                            <a class="product-info__name" href="./product.html">
+                                                Мойка кухонная Dr.Gans Берта-760
+                                            </a>
+                                            <p class="product-info__price">
+                                                6 781 ₽
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="search-counter">
+                                        <button class="minus" type="button">-</button>
+                                        <span>1</span>
+                                        <button class="plus" type="button">+</button>
+                                    </div>
+            
+                                </div>
+                                <a class="rect-btn rect-btn--search-result blue" href="#">Все результаты</a>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
             </div>
+            
             <div class="header-menu">
                 <div class="header-menu__inner">
                     <button class="header-menu__close close-btn close-btn--header-menu">

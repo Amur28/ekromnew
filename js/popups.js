@@ -86,7 +86,6 @@ export const hideGeneralElements = (event) => {
     authPopup.forEach(popup => {
         checkClassAndClick(popup, 'active', target, popup)
     });
-    
 
 }
 

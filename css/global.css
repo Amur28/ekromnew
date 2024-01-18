@@ -728,11 +728,6 @@ select::-ms-expand {
     display: block;
 }
 
-.header-menu .header-menu__nav-title a:hover,
-.header-menu .header-menu__nav-item a:hover {
-    color: var(--main-blue);
-}
-
 .header-menu .header-menu__nav-list {
     margin-top: 10px;
     display: none;

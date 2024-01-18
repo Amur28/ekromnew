@@ -1,5 +1,5 @@
 'use strict';
-import { addClass, removeClass, containClass } from "./functions.js";
+import { addClass, removeClass, containClass, toggleClass } from "./functions.js";
 import { headerMenu } from "./script.js";
 let xDown = null;
 let yDown = null;
@@ -37,10 +37,37 @@ document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
 const list = document.querySelectorAll(".mobile-bottom-menu__item");
-console.log(list)
+
 function activelink() {
     list.forEach((item) => item.classList.remove("active"));
     console.log('bnjhhbkl')
     this.classList.add("active");
 }
 list.forEach((item) => item.addEventListener("click", activelink));
+
+const headerMobileButton = document.querySelector('.header__mobile-button');
+const headerMobileSearch = document.querySelector('.header__mobile-search');
+const headerMobileForm = headerMobileSearch.querySelector('form')
+const headerSearchHide = headerMobileSearch.querySelector('.header__mobile-search-hide');
+const headerSearchReset = headerMobileSearch.querySelector('.header__mobile-search-reset');
+const headerMobileInput = headerMobileSearch.querySelector('input');
+
+headerMobileForm.addEventListener('reset', () => {
+    removeClass(headerSearchReset, 'active')
+})
+
+headerMobileInput.addEventListener('input', () => {
+    addClass(headerSearchReset, 'active');
+    if (!headerMobileInput.value.length) {
+        removeClass(headerSearchReset, 'active')
+    }
+    console.log(headerMobileInput.value)
+})
+
+headerMobileButton.addEventListener('click', () => {
+    addClass(headerMobileSearch, 'active');
+});
+
+headerSearchHide.addEventListener('click', () => {
+    removeClass(headerMobileSearch, 'active')
+});
