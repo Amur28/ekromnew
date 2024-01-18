@@ -639,12 +639,12 @@ select::-ms-expand {
     background-color: rgba(0, 0, 0, .62);
     z-index: 500;
     backdrop-filter: blur(10px);
-    transform: translateX(-200%);
+    left: -100%;
     transition: var(--alt-transition);
 }
 
 .header-menu.active {
-    transform: translateX(0);
+    left: 0;
 }
 
 .header-menu__inner {
@@ -656,6 +656,7 @@ select::-ms-expand {
     flex-direction: column;
     overflow: hidden;
     overflow-y: auto;
+    position: relative;
 }
 
 .header-menu__inner::-webkit-scrollbar {

@@ -271,7 +271,7 @@ function activelink() {
 }
 list.forEach((item) => item.addEventListener("click", activelink));
 
-const headerMenu = document.querySelector('.header-menu')
+export const headerMenu = document.querySelector('.header-menu')
 const headerMenuInner = document.querySelector('.header-menu__inner');
 const headerMenuCloseBtn = headerMenuInner.querySelector('.close-btn--header-menu');
 
