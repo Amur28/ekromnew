@@ -264,13 +264,6 @@ const showHeaderItem = () => {
 
 headerNav.addEventListener('click', showHeaderItem);
 
-const list = document.querySelectorAll(".mobile-menu__item");
-function activelink() {
-    list.forEach((item) => item.classList.remove("active"));
-    this.classList.add("active");
-}
-list.forEach((item) => item.addEventListener("click", activelink));
-
 export const headerMenu = document.querySelector('.header-menu')
 const headerMenuInner = document.querySelector('.header-menu__inner');
 const headerMenuCloseBtn = headerMenuInner.querySelector('.close-btn--header-menu');

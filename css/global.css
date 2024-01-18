@@ -552,17 +552,16 @@ select::-ms-expand {
     stroke: var(--main-blue);
 }
 
-
-.mobile-bottom-menu__item.active:nth-child(2).active ~ .mobile-menu__slider {
+.mobile-bottom-menu__item.active:nth-child(2).active ~ .mobile-bottom-menu__slider {
     transform: translate(calc(70px * 1));
 }
-.mobile-bottom-menu__item.active:nth-child(3).active ~ .mobile-menu__slider {
+.mobile-bottom-menu__item.active:nth-child(3).active ~ .mobile-bottom-menu__slider {
     transform: translate(calc(70px * 2));
 }
-.mobile-bottom-menu__item.active:nth-child(4).active ~ .mobile-menu__slider {
+.mobile-bottom-menu__item.active:nth-child(4).active ~ .mobile-bottom-menu__slider {
     transform: translate(calc(70px * 3));
 }
-.mobile-bottom-menu__item.active:nth-child(5).active ~ .mobile-menu__slider {
+.mobile-bottom-menu__item.active:nth-child(5).active ~ .mobile-bottom-menu__slider {
     transform: translate(calc(70px * 4));
 }
 

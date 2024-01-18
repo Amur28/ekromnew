@@ -35,3 +35,12 @@ const handleTouchMove = (evt) => {
 
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
+
+const list = document.querySelectorAll(".mobile-bottom-menu__item");
+console.log(list)
+function activelink() {
+    list.forEach((item) => item.classList.remove("active"));
+    console.log('bnjhhbkl')
+    this.classList.add("active");
+}
+list.forEach((item) => item.addEventListener("click", activelink));
