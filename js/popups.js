@@ -86,11 +86,13 @@ export const hideGeneralElements = (event) => {
     authPopup.forEach(popup => {
         checkClassAndClick(popup, 'active', target, popup)
     });
+    
+
 }
 
 /* Выбор города */
 
-export const headerCityButton = document.querySelector('.header-city__button');
+export const headerCityButton = document.querySelectorAll('.header-city__button');
 
 export const hideCitySelect = () => {
     citySelect.addEventListener('click', (event) => {

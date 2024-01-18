@@ -2,7 +2,7 @@
 import './sliders.js';
 import { brandsMarquee } from './marquee.js';
 import './libs.js';
-import { addClass, removeClass, containClass, hideOtherItems, toggleClass } from './functions.js';
+import { addClass, removeClass, containClass, hideOtherItems, toggleClass, checkClickWithCloseBtn } from './functions.js';
 import { body } from './popups.js';
 
 const clientWidth = window.innerWidth;
@@ -136,9 +136,11 @@ productBoxColorsList.addEventListener('click', (event) => {
 
 import { headerCityButton, hideCitySelect } from './popups.js';
 
-headerCityButton.addEventListener('click', () => {
-    addClass(citySelect, 'active');
-    addClass(body, 'active');
+headerCityButton.forEach(button => {
+    button.addEventListener('click', () => {
+        addClass(citySelect, 'active');
+        addClass(body, 'active');
+    })
 });
 
 hideCitySelect();
@@ -239,8 +241,8 @@ mobileCartButtons.forEach(button => {
 })
 
 /* Раскрывающиеся списки в футере */
-const footerTitles = document.querySelectorAll('.footer__nav-title');
 const footerNav = document.querySelector('.footer__nav');
+const headerNav = document.querySelector('.header-menu__nav');
 
 const showFooterItem = () => {
     const currentNavItem = event.target.closest('.footer__nav-title');
@@ -252,11 +254,36 @@ const showFooterItem = () => {
 
 footerNav.addEventListener('click', showFooterItem);
 
+const showHeaderItem = () => {
+    const currentNavItem = event.target.closest('.header-menu__nav-title');
 
+    if (!currentNavItem) return;
+
+    toggleClass(currentNavItem, 'active');
+}
+
+headerNav.addEventListener('click', showHeaderItem);
 
 const list = document.querySelectorAll(".mobile-menu__item");
 function activelink() {
-  list.forEach((item) => item.classList.remove("active"));
-  this.classList.add("active");
+    list.forEach((item) => item.classList.remove("active"));
+    this.classList.add("active");
 }
 list.forEach((item) => item.addEventListener("click", activelink));
+
+const headerMenu = document.querySelector('.header-menu')
+const headerMenuInner = document.querySelector('.header-menu__inner');
+const headerMenuCloseBtn = headerMenuInner.querySelector('.close-btn--header-menu');
+
+const headerMobileButton = document.querySelector('.header__mobile-menu');
+
+headerMobileButton.addEventListener('click', () => {
+    addClass(headerMenu, 'active');
+});
+
+const hideHeaderMenu = () => {
+    const target = event.target;
+    checkClickWithCloseBtn(headerMenuInner, 'active', target, headerMenuCloseBtn, headerMenu);
+};
+
+headerMenu.addEventListener('click', hideHeaderMenu);

@@ -794,6 +794,13 @@
         font-size: 12px;
         padding: 5px 10px;
     }
+    .header-menu .header-menu__nav-title a {
+        font-size: 16px;
+    }
+    .header-menu__close.close-btn--header-menu svg {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 @media (max-width: 400px) {
