@@ -418,10 +418,13 @@
     .faq__item {
         padding: 10px;
     }
-    .product-card__img-box-link .thumbs,
+    /* .product-card__img-box-link .thumbs,
     .product-card__img-box-link .thumbs-progressbar,
     .product-card__img-box-link ~ .fast-view-btn {
         display: none;
+    } */
+    .thumbs-progressbar {
+        opacity: 1;
     }
     #mobile-bottom-menu {
         display: flex;

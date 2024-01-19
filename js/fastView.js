@@ -29,8 +29,6 @@ export const hideFastView = (body, event) => {
 
 /* Имитация клика по картинке (для правильной работы галереи Fancybox) */
 
-// export const zoomImg = document.querySelector('.zoom-img');
-
 export const fakeClickOnImg = (event, parentEl, zoomImg) => {
     const target = event.target;
     const currentSlide = parentEl.querySelector('.swiper-slide-active');

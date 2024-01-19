@@ -3,7 +3,7 @@ import { addClass, containClass, removeClass, hideOtherItems } from "./functions
 
 /* Выбор цвета у карточки */
 
-export const productCards = document.querySelectorAll('.product-card');
+export const productCards = document.querySelectorAll('.product-card'); 
 
 export const changeColorOnCard = (event, card) => {
     const colorLabels = card.querySelectorAll('.product-card__color-label')

@@ -174,10 +174,8 @@ productCards.forEach(card => {
     card.addEventListener('change', (event) => {
         changeColorOnCard(event, card);
     });
-
     const productImg = card.querySelector('.product-card__img');
     const progressBarItems = card.querySelectorAll('.progressbar-item');
-
     progressBarItems.forEach(item => {
         const length = progressBarItems.length;
         item.style.width = 100 / length + '%';
