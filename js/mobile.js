@@ -47,21 +47,24 @@ list.forEach((item) => item.addEventListener("click", activelink));
 
 const headerMobileButton = document.querySelector('.header__mobile-button');
 const headerMobileSearch = document.querySelector('.header__mobile-search');
-const headerMobileForm = headerMobileSearch.querySelector('form')
+const headerMobileForm = headerMobileSearch.querySelector('form');
+const headerMobileSearchResult = headerMobileSearch.querySelector('.search-result');
 const headerSearchHide = headerMobileSearch.querySelector('.header__mobile-search-hide');
 const headerSearchReset = headerMobileSearch.querySelector('.header__mobile-search-reset');
 const headerMobileInput = headerMobileSearch.querySelector('input');
 
 headerMobileForm.addEventListener('reset', () => {
-    removeClass(headerSearchReset, 'active')
+    removeClass(headerSearchReset, 'active');
+    removeClass(headerMobileSearchResult, 'active');
 })
 
 headerMobileInput.addEventListener('input', () => {
     addClass(headerSearchReset, 'active');
+    addClass(headerMobileSearchResult, 'active');
     if (!headerMobileInput.value.length) {
-        removeClass(headerSearchReset, 'active')
+        removeClass(headerSearchReset, 'active');
+        removeClass(headerMobileSearchResult, 'active');
     }
-    console.log(headerMobileInput.value)
 })
 
 headerMobileButton.addEventListener('click', () => {
@@ -71,3 +74,13 @@ headerMobileButton.addEventListener('click', () => {
 headerSearchHide.addEventListener('click', () => {
     removeClass(headerMobileSearch, 'active')
 });
+
+const headerSearchForm = document.querySelector('.header__search');
+const headerSearchInput = headerSearchForm.querySelector('.header__search-input');
+const headerSearchResult = headerSearchForm.querySelector('.search-result');
+headerSearchInput.addEventListener('input', () => {
+    addClass(headerSearchResult, 'active');
+    if (!headerSearchInput.value.length) {
+        removeClass(headerSearchResult, 'active');
+    }
+})

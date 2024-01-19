@@ -260,10 +260,6 @@
     transition: var(--default-transition);
 }
 
-.product-info__guarantee-item:hover {
-    transform: scale(1.03);
-}
-
 .product-info__guarantee-item::after {
     content: '';
     position: absolute;

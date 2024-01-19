@@ -93,7 +93,6 @@ export const complectsSlide = new Swiper('.complects-swiper', {
 })
 
 export const bestsellerSlider = new Swiper('.bestseller-slider', {
-
     speed: 300,
     simulateTouch: false,
     navigation: {
@@ -124,7 +123,6 @@ export const bestsellerSlider = new Swiper('.bestseller-slider', {
                 fill: 'row',
                 rows: 2,
             },
-            loop: false,
         },
     }
 });

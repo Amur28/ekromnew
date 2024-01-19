@@ -35,10 +35,6 @@
     transition: color .5s;
 }
 
-.personal__aside-item:hover {
-    color: var(--main-blue);
-}
-
 .personal__aside-item.active {
     border: 2px solid var(--main-blue);
     color: var(--main-blue);
@@ -101,24 +97,8 @@
     transition: var(--default-transition);
 }
 
-.personal__tile:hover,
-.personal__tile-link:hover  {
-    background-color: var(--main-blue);
-}
-
 .personal__tile svg path,
 .personal__tile-link svg path {
     transition: var(--default-transition);
 }
-
-.personal__tile:hover svg path,
-.personal__tile-link:hover svg path {
-    fill: #fff;
-}
-
-.personal__tile:hover p,
-.personal__tile-link:hover p {
-    color: #fff;
-}
-
 /* PERSONAL END */

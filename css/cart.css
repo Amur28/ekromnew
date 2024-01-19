@@ -268,10 +268,6 @@
     transition: var(--default-transition);
 }
 
-.cart-item__delete-btn:hover svg path {
-    fill: var(--main-blue);
-}
-
 .cart-item__tags {
     display: flex;
     flex-wrap: wrap;

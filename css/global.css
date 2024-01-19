@@ -86,10 +86,6 @@ a {
     transition: var(--default-transition);
 }
 
-a:hover {
-    color: var(--main-blue);
-}
-
 button {
     background: transparent;
     border: none;
@@ -231,20 +227,10 @@ select::-ms-expand {
     width: 210px;
 }
 
-.oval-btn--brand-banner:hover {
-    color: #fff;
-    background-color: var(--hover-blue);
-}
-
 .white {
     background-color: #fff;
     color: var(--main-blue);
     transition: var(--default-transition);
-}
-
-.white:hover {
-    background-color: var(--hover-blue);
-    color: #fff;
 }
 
 .blue {
@@ -253,20 +239,10 @@ select::-ms-expand {
     transition: var(--default-transition);
 }
 
-.blue:hover {
-    background-color: var(--hover-blue);
-    color: #fff;
-}
-
 .transparent {
     background-color: transparent;
     color: var(--main-blue);
     border: 1px solid var(--main-blue);
-}
-
-.transparent:hover {
-    background-color: var(--main-blue);
-    color: #fff;
 }
 
 .glass {
@@ -285,10 +261,6 @@ select::-ms-expand {
     transform: rotate(35deg);
     transition: var(--default-transition);
     width: 50px;
-}
-
-.glass:hover::after {
-    left: 120%;
 }
 
 .close-btn {
@@ -331,11 +303,6 @@ select::-ms-expand {
 
 .swiper-button-next {
     right: -21px;
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    background-color: var(--hover-blue);
 }
 
 .swiper-button-prev::after,
@@ -427,10 +394,6 @@ select::-ms-expand {
 
 .breadcrumbs__item--home a svg path {
     transition: var(--default-transition);
-}
-
-.breadcrumbs__item--home a:hover svg path {
-    fill: var(--main-blue);
 }
 
 .page-banner {
@@ -536,94 +499,12 @@ select::-ms-expand {
     transition: var(--alt-transition);
 }
 
-.mobile-bottom-menu__item.active a svg {
-    transform: translateY(-2px);
-    opacity: 1;
-}
-
-.mobile-bottom-menu__item.active:first-child a svg path {
+.mobile-bottom-menu__item.active a svg path {
     fill: var(--main-blue);
 }
 
-.mobile-bottom-menu__item.active:nth-child(2) a svg path,
-.mobile-bottom-menu__item.active:nth-child(3) a svg path,
-.mobile-bottom-menu__item.active:nth-child(4) a svg path, 
-.mobile-bottom-menu__item.active:nth-child(5) a svg path {
+.mobile-bottom-menu__item.active:not(:first-child) a svg path {
     stroke: var(--main-blue);
-}
-
-.mobile-bottom-menu__item.active:nth-child(2).active ~ .mobile-bottom-menu__slider {
-    transform: translate(calc(70px * 1));
-}
-.mobile-bottom-menu__item.active:nth-child(3).active ~ .mobile-bottom-menu__slider {
-    transform: translate(calc(70px * 2));
-}
-.mobile-bottom-menu__item.active:nth-child(4).active ~ .mobile-bottom-menu__slider {
-    transform: translate(calc(70px * 3));
-}
-.mobile-bottom-menu__item.active:nth-child(5).active ~ .mobile-bottom-menu__slider {
-    transform: translate(calc(70px * 4));
-}
-
-.mobile-bottom-menu__slider {
-    position: absolute;
-    top: 0px;
-    width: 70px;
-    height: 70px;
-    border-bottom-left-radius: 35px;
-    border-bottom-right-radius: 35px;
-    border: 6px solid #fff;
-    background: #fff;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.mobile-bottom-menu__slider span {
-    position: absolute;
-    bottom: 3px;
-    left: -1px;
-    width: 60px;
-    height: 60px;
-    border: 4px solid var(--main-blue);
-    background: #fff;
-    border-radius: 50%;
-    transform-origin: bottom;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    transform: scale(0.85);
-    overflow: hidden;
-}
-
-.mobile-bottom-menu__slider::before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: -25.75px;
-    width: 20px;
-    height: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 4px -6px 0 2px #fff;
-}
-
-.mobile-bottom-menu__slider::after {
-    content: "";
-    position: absolute;
-    top: 4px;
-    right: -25.75px;
-    width: 20px;
-    height: 20px;
-    border-top-left-radius: 20px;
-    box-shadow: -4px -6px 0 2px #fff;
-    z-index: -1;
-}
-
-.mobile-bottom-line {
-    position: absolute;
-    width: 100%;
-    background-color: #fff;
-    height: 10px;
-    top: 0;
-    left: 0;
-    right: 0;
 }
 
 /* MOBILE-BOTTOM MENU END */
@@ -638,12 +519,15 @@ select::-ms-expand {
     background-color: rgba(0, 0, 0, .62);
     z-index: 500;
     backdrop-filter: blur(10px);
-    left: -100%;
+    left: 0;
     transition: var(--alt-transition);
+    visibility: hidden;
+    opacity: 0;
 }
 
 .header-menu.active {
-    left: 0;
+    visibility: visible;
+    opacity: 1;
 }
 
 .header-menu__inner {
@@ -656,6 +540,13 @@ select::-ms-expand {
     overflow: hidden;
     overflow-y: auto;
     position: relative;
+    left: -100%;
+    transition: .5s;
+}
+
+.header-menu.active .header-menu__inner {
+    left: 0;
+    transition: .5s;
 }
 
 .header-menu__inner::-webkit-scrollbar {
@@ -672,10 +563,6 @@ select::-ms-expand {
 .header-menu__close.close-btn--header-menu {
     align-self: flex-end;
     position: static;
-}
-
-.header-menu__close.close-btn--header-menu:hover svg path {
-    fill: var(--main-blue);
 }
 
 .header-menu .header-city {
@@ -704,7 +591,7 @@ select::-ms-expand {
     display: block;
 }
 
-.header-menu .header-menu__nav-title a {
+.header-menu .header-menu__nav-title {
     font-size: 18px;
     font-weight: 500;
     color: #fff;
@@ -766,13 +653,7 @@ select::-ms-expand {
     transition: var(--default-transition);
 }
 
-.header-menu .header-menu__panel-item:hover .header-menu__panel-img {
-    background-color: var(--main-blue);
-}
 
-.header-menu .header-menu__panel-item:hover .header-menu__panel-text span {
-    color: var(--main-blue);
-}
 
 .header-menu .header-menu__panel-text span.suptitle {
     font-size: 12px;
@@ -798,19 +679,6 @@ select::-ms-expand {
     width: 48px;
     height: 48px;
     background-color: var(--main-black);
-}
-
-.header-menu .round-btn--header-menu.vk:hover {
-    background-color: #0077FF;
-}
-.header-menu .round-btn--header-menu.youtube:hover {
-    background-color: #c4302b;
-}
-.header-menu .round-btn--header-menu.telegram:hover {
-    background-color: #0088cc;
-}
-.header-menu .round-btn--header-menu.whatsapp:hover {
-    background-color: #25D366;
 }
 
 /* HEADER-MENU END */

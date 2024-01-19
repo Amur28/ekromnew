@@ -263,10 +263,6 @@
     z-index: 920;
 }
 
-.filter-items__show-results:hover::before {
-    background-color: var(--hover-blue);
-}
-
 .filter-items__show-results::before {
     content: '';
     position: absolute;
@@ -314,10 +310,6 @@
     border: 1px solid var(--main-blue);
     position: relative;
     overflow: hidden;
-}
-
-.oval-btn--filter.show:hover {
-    background-color: var(--hover-blue);
 }
 
 .oval-btn--filter.reset {
@@ -500,19 +492,6 @@
     overflow: visible;
 }
 
-.products__main .product-card:hover {
-    border-radius: 10px 10px 0 0;
-}
-
-.products__main .product-card:has(.skeleton):hover .product-card__footer {
-    display: none;
-}
-
-.products__main .product-card:hover .product-card__footer {
-    display: block;
-    border-radius: 0 0 5px 5px;
-}
-
 .promo-banner.promo-banner--catalog {
     background-color: #fff;
     max-height: none;
@@ -558,8 +537,7 @@ ul.products-pagination {
     background: #fff;
 }
 
-.products-pagination-btn.current a,
-.products-pagination-btn a:hover {
+.products-pagination-btn.current a {
     border-color: var(--main-blue);
     color: var(--main-blue);
 }
@@ -574,17 +552,9 @@ ul.products-pagination {
     cursor: default;
 }
 
-.products-pagination-btn-arrow.disabled a:hover {
-    border-color: #eaebed;
-}
-
 .products-pagination-btn-arrow path {
     transition: var(--default-transition);
 }
-
-.products-pagination-btn-arrow:not(.disabled) a:hover path {
-    fill: var(--main-blue);
-} 
 
 .product-card.row {
     width: 100%;
@@ -650,7 +620,7 @@ ul.products-pagination {
     display: flex;
 }
 
-.product-card.row .product-card__property + .product-card__property {
+.product-card.row .product-card__property+.product-card__property {
     margin-top: 5px;
 }
 
@@ -725,7 +695,7 @@ ul.products-pagination {
     gap: 15px;
 }
 
-.product-card__footer-button-row + .product-card__footer-button-row {
+.product-card__footer-button-row+.product-card__footer-button-row {
     margin-top: 8px;
 }
 
@@ -749,11 +719,6 @@ ul.products-pagination {
 .product-card.row .product-card__buy-click.skeleton::before,
 .product-card.row .product-card__buy-cart.skeleton::before {
     border-radius: 5px;
-}
-
-.product-card.row .round-btn--fav:hover,
-.product-card.row .round-btn--compare:hover {
-    border-color: var(--main-blue);
 }
 
 .product-card.row .product-card__counter {
