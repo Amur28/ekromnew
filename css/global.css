@@ -610,7 +610,7 @@ select::-ms-expand {
     padding: 3px;
     transform: rotate(45deg);
     position: absolute;
-    top: 8px;
+    top: 5px;
     right: 20px;
     transition: var(--alt-transition);
     display: block;
