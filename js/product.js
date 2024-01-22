@@ -12,25 +12,7 @@ document.addEventListener('click', (event) => {
 
 /* Липкий HEADER */
 
-import { stickyHeader, checkScrollDown, checkScrollUp, scrollPosition } from './stickyHeader.js';
-
-let lastScrollPos = 0;
-
-const showOrHideContentOnScroll = () => {
-    const defaultOffset = 0;
-    if (checkScrollDown(lastScrollPos, stickyHeader, 'scroll', defaultOffset)) {
-        addClass(stickyHeader, 'scroll');
-    } else if (checkScrollUp(lastScrollPos, stickyHeader, 'scroll')) {
-        removeClass(stickyHeader, 'scroll');
-    }
-    if (containClass(catalogPopup, 'active')) {
-        addClass(stickyHeader, 'popup-active')
-    } else {
-        removeClass(stickyHeader, 'popup-active')
-    }
-
-    lastScrollPos = scrollPosition();
-};
+import { showOrHideContentOnScroll } from './stickyHeader.js';
 
 window.addEventListener('scroll', showOrHideContentOnScroll);
 

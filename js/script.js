@@ -20,32 +20,11 @@ document.addEventListener('click', (event) => {
 
     if (!itsFaqInner) hideOtherItems(faqItems, 'active');
     const headerSearch = document.querySelector('.header__mobile-search');
-    if (containClass(headerSearch, 'active')) {
-        console.log('hi')
-    }
 });
 
 /* Липкий HEADER */
 
-import { stickyHeader, checkScrollDown, checkScrollUp, scrollPosition } from './stickyHeader.js';
-
-let lastScrollPos = 0;
-
-const showOrHideContentOnScroll = () => {
-    const defaultOffset = 0;
-    if (checkScrollDown(lastScrollPos, stickyHeader, 'scroll', defaultOffset)) {
-        addClass(stickyHeader, 'scroll');
-    } else if (checkScrollUp(lastScrollPos, stickyHeader, 'scroll')) {
-        removeClass(stickyHeader, 'scroll');
-    }
-    if (containClass(catalogPopup, 'active')) {
-        addClass(stickyHeader, 'popup-active')
-    } else {
-        removeClass(stickyHeader, 'popup-active')
-    }
-
-    lastScrollPos = scrollPosition();
-};
+import { showOrHideContentOnScroll } from './stickyHeader.js';
 
 window.addEventListener('scroll', showOrHideContentOnScroll);
 
@@ -230,55 +209,17 @@ productCards.forEach(card => {
     })
 });
 
-/* Кнопки добавления в корзину на мобильной версии */
-const mobileCartButtons = document.querySelectorAll('.product-card__mobile-cart');
 
-mobileCartButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const mobileFoterButtons = button.nextElementSibling;
 
-        addClass(button, 'hide');
-        addClass(mobileFoterButtons, 'active');
-    })
-})
+/* Форма поиска в шапке */
 
-/* Раскрывающиеся списки в футере */
-const footerNav = document.querySelector('.footer__nav');
-const headerNav = document.querySelector('.header-menu__nav');
+const headerSearchForm = document.querySelector('.header__search');
+const headerSearchInput = headerSearchForm.querySelector('.header__search-input');
+const headerSearchResult = headerSearchForm.querySelector('.search-result');
 
-const showFooterItem = () => {
-    const currentNavItem = event.target.closest('.footer__nav-title');
-
-    if (!currentNavItem) return;
-
-    toggleClass(currentNavItem, 'active');
-}
-
-footerNav.addEventListener('click', showFooterItem);
-
-const showHeaderItem = () => {
-    const currentNavItem = event.target.closest('.header-menu__nav-title');
-
-    if (!currentNavItem) return;
-
-    toggleClass(currentNavItem, 'active');
-}
-
-headerNav.addEventListener('click', showHeaderItem);
-
-export const headerMenu = document.querySelector('.header-menu')
-const headerMenuInner = document.querySelector('.header-menu__inner');
-const headerMenuCloseBtn = headerMenuInner.querySelector('.close-btn--header-menu');
-
-const headerMobileButton = document.querySelector('.header__mobile-menu');
-
-headerMobileButton.addEventListener('click', () => {
-    addClass(headerMenu, 'active');
+headerSearchInput.addEventListener('input', () => {
+    addClass(headerSearchResult, 'active');
+    if (!headerSearchInput.value.length) {
+        removeClass(headerSearchResult, 'active');
+    }
 });
-
-const hideHeaderMenu = () => {
-    const target = event.target;
-    checkClickWithCloseBtn(headerMenuInner, 'active', target, headerMenuCloseBtn, headerMenu);
-};
-
-headerMenu.addEventListener('click', hideHeaderMenu);

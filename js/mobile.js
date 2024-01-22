@@ -1,8 +1,11 @@
 'use strict';
-import { addClass, removeClass, containClass, toggleClass } from "./functions.js";
-import { headerMenu } from "./script.js";
+import { addClass, removeClass, containClass, toggleClass, checkClickWithCloseBtn } from "./functions.js";
+const mobileOverlay = document.querySelector('.mobile-overlay');
+
 let xDown = null;
 let yDown = null;
+
+/* Touch функции */
 
 const handleTouchStart = (evt) => {                                         
     xDown = evt.touches[0].clientX;                                      
@@ -22,10 +25,12 @@ const handleTouchMove = (evt) => {
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
             if (containClass(headerMenu, 'active')){
-                removeClass(headerMenu, 'active')
+                removeClass(headerMenu, 'active');
+                removeClass(mobileOverlay, 'active');
             }
         } else if (xDiff < 0 && xDown <= 15) {
             addClass(headerMenu, 'active');
+            addClass(mobileOverlay, 'active');
         }                       
     }
     /* reset values */
@@ -33,25 +38,78 @@ const handleTouchMove = (evt) => {
     yDown = null;                                             
 };
 
+/* Открытие/скрытие бокового меню по свайпу */
+
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
-const list = document.querySelectorAll(".mobile-bottom-menu__item");
+/* Раскрывающиеся списки в футере/хэдере */
 
-function activelink() {
-    list.forEach((item) => item.classList.remove("active"));
-    console.log('bnjhhbkl')
-    this.classList.add("active");
+const headerMobileMenu = document.querySelector('.header__mobile')
+const headerMenu = document.querySelector('.header-menu');
+const footerNav = document.querySelector('.footer__nav');
+const headerNav = headerMenu.querySelector('.header-menu__nav');
+
+const showFooterItem = () => {
+    const currentNavItem = event.target.closest('.footer__nav-title');
+
+    if (!currentNavItem) return;
+
+    toggleClass(currentNavItem, 'active');
 }
-list.forEach((item) => item.addEventListener("click", activelink));
 
-const headerMobileButton = document.querySelector('.header__mobile-button');
+const showHeaderItem = () => {
+    const currentNavItem = event.target.closest('.header-menu__nav-title');
+
+    if (!currentNavItem) return;
+
+    toggleClass(currentNavItem, 'active');
+}
+
+footerNav.addEventListener('click', showFooterItem);
+headerNav.addEventListener('click', showHeaderItem);
+
+/* Раскрытие/скрытие бокового меню */
+
+const headerMenuInner = headerMenu.querySelector('.header-menu__inner');
+const headerMenuCloseBtn = headerMenuInner.querySelector('.close-btn--header-menu');
+const headerMobileMenuButton = document.querySelector('.header__mobile-menu');
+
+headerMobileMenuButton.addEventListener('click', () => {
+    addClass(headerMenu, 'active');
+    addClass(mobileOverlay, 'active');
+});
+
+const hideHeaderMenu = () => {
+    const target = event.target;
+    checkClickWithCloseBtn(headerMenuInner, 'active', target, headerMenuCloseBtn, headerMenu);
+    checkClickWithCloseBtn(headerMenuInner, 'active', target, headerMenuCloseBtn, mobileOverlay);
+};
+
+headerMenu.addEventListener('click', hideHeaderMenu);
+
+/* Форма поиска */
+
 const headerMobileSearch = document.querySelector('.header__mobile-search');
 const headerMobileForm = headerMobileSearch.querySelector('form');
+const headerMobileSearchButton = document.querySelector('.header__mobile-button');
 const headerMobileSearchResult = headerMobileSearch.querySelector('.search-result');
 const headerSearchHide = headerMobileSearch.querySelector('.header__mobile-search-hide');
 const headerSearchReset = headerMobileSearch.querySelector('.header__mobile-search-reset');
 const headerMobileInput = headerMobileSearch.querySelector('input');
+
+headerMobileMenu.addEventListener('click', () => {
+    const target = event.target;
+    if (target === headerMobileSearchButton || headerMobileSearchButton.contains(target)) {
+        addClass(headerMobileSearch, 'active');
+    }
+    if (target === headerSearchHide || headerSearchHide.contains(target)) {
+        removeClass(headerMobileSearch, 'active');
+        removeClass(headerMobileSearchResult, 'active');
+        removeClass(headerSearchReset, 'active');
+        headerMobileInput.value = '';
+    }
+});
 
 headerMobileForm.addEventListener('reset', () => {
     removeClass(headerSearchReset, 'active');
@@ -61,26 +119,40 @@ headerMobileForm.addEventListener('reset', () => {
 headerMobileInput.addEventListener('input', () => {
     addClass(headerSearchReset, 'active');
     addClass(headerMobileSearchResult, 'active');
+
     if (!headerMobileInput.value.length) {
         removeClass(headerSearchReset, 'active');
         removeClass(headerMobileSearchResult, 'active');
     }
-})
-
-headerMobileButton.addEventListener('click', () => {
-    addClass(headerMobileSearch, 'active');
 });
 
-headerSearchHide.addEventListener('click', () => {
-    removeClass(headerMobileSearch, 'active')
+/* Кнопки добавления в корзину на мобильной версии */
+
+const mobileCartButtons = document.querySelectorAll('.product-card__mobile-cart');
+
+mobileCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const mobileFoterButtons = button.nextElementSibling;
+
+        addClass(button, 'hide');
+        addClass(mobileFoterButtons, 'active');
+    })
 });
 
-const headerSearchForm = document.querySelector('.header__search');
-const headerSearchInput = headerSearchForm.querySelector('.header__search-input');
-const headerSearchResult = headerSearchForm.querySelector('.search-result');
-headerSearchInput.addEventListener('input', () => {
-    addClass(headerSearchResult, 'active');
-    if (!headerSearchInput.value.length) {
-        removeClass(headerSearchResult, 'active');
+/* Открытие скрытие меню фильтров в каталоге */
+const filterBtn = document.querySelector('.rect-btn--product-header-mobile');
+const aside = document.querySelector('.aside');
+const asideInner = aside.querySelector('.aside__inner');
+
+filterBtn.addEventListener('click', () => {
+    addClass(aside, 'active');
+    addClass(mobileOverlay, 'active');
+});
+
+aside.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!asideInner.contains(target)) {
+        removeClass(aside, 'active')
+        removeClass(mobileOverlay, 'active')
     }
-})
+});
