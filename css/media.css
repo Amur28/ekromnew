@@ -71,8 +71,6 @@
         transform: translateX(-50%) scale(1);
     }
 
-
-
     .popular-card__sections {
         margin-top: 5px;
         font-size: 14px;
@@ -88,6 +86,15 @@
     }
     .products__main.tiles {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .product-box__inner {
+        gap: 15px;
+    }
+    .product-box__items {
+        gap: 10px;
+    }
+    .info {
+        padding: 25px 0;
     }
 }
 
@@ -445,8 +452,6 @@
         top: 0;
         bottom: 0;
         left: -100%;
-        overflow: hidden;
-        overflow-y: auto;
     }
     .aside.active {
         left: 0;
@@ -465,8 +470,6 @@
     }
     .filter-items {
         margin-top: 25px;
-        overflow: hidden;
-        overflow-y: auto;
     }
     .catalog__inner {
         display: block;
@@ -515,6 +518,12 @@
     }
     .filter-item__header::after {
         background-image: url('../img/icons/arrow-fliter-white.svg');
+    }
+    .promo-feedback {
+        width: 100%;
+    }
+    .filter-items__show-results {
+        display: none;
     }
 }
 
@@ -694,6 +703,9 @@
 
     .product-card__name {
         margin-top: 5px;
+    }
+    .filter-item__header {
+        font-size: 16px;
     }
 }
 

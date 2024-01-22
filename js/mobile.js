@@ -28,6 +28,10 @@ const handleTouchMove = (evt) => {
                 removeClass(headerMenu, 'active');
                 removeClass(mobileOverlay, 'active');
             }
+            if (containClass(aside, 'active')) {
+                removeClass(aside, 'active');
+                removeClass(mobileOverlay, 'active');
+            }
         } else if (xDiff < 0 && xDown <= 15) {
             addClass(headerMenu, 'active');
             addClass(mobileOverlay, 'active');
@@ -140,19 +144,19 @@ mobileCartButtons.forEach(button => {
 });
 
 /* Открытие скрытие меню фильтров в каталоге */
-const filterBtn = document.querySelector('.rect-btn--product-header-mobile');
-const aside = document.querySelector('.aside');
-const asideInner = aside.querySelector('.aside__inner');
+// const filterBtn = document.querySelector('.rect-btn--product-header-mobile');
+// const aside = document.querySelector('.aside');
+// const asideInner = aside.querySelector('.aside__inner');
 
-filterBtn.addEventListener('click', () => {
-    addClass(aside, 'active');
-    addClass(mobileOverlay, 'active');
-});
+// filterBtn.addEventListener('click', () => {
+//     addClass(aside, 'active');
+//     addClass(mobileOverlay, 'active');
+// });
 
-aside.addEventListener('click', (event) => {
-    const target = event.target;
-    if (!asideInner.contains(target)) {
-        removeClass(aside, 'active')
-        removeClass(mobileOverlay, 'active')
-    }
-});
+// aside.addEventListener('click', (event) => {
+//     const target = event.target;
+//     if (!asideInner.contains(target)) {
+//         removeClass(aside, 'active')
+//         removeClass(mobileOverlay, 'active')
+//     }
+// });
