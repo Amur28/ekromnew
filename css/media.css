@@ -1479,6 +1479,12 @@
     .mobile-product-info .product-box__item--properties .product-box__properties-title {
         font-size: 14px;
     }
+    .recs .title h2 {
+        font-size: 20px;
+    }
+    .feedback-banner__form input::placeholder {
+        font-size: 12px;
+    }
 }
 
 @media (min-width: 992px) {
