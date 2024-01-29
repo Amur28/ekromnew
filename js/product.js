@@ -20,7 +20,7 @@ window.addEventListener('scroll', showOrHideContentOnScroll);
 
 /* Показ/скрытие попапа со всеми категориями */
 
-import { showHideAllCategories, catalogPopup, hideGeneralElements } from './popups.js';
+import { showHideAllCategories, hideGeneralElements } from './popups.js';
 showHideAllCategories();
 
 /* Header dropdown */

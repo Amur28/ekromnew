@@ -28,6 +28,7 @@ const handleTouchMove = (evt) => {
                 removeClass(headerMenu, 'active');
                 removeClass(mobileOverlay, 'active');
             }
+            if (!aside) return;
             if (containClass(aside, 'active')) {
                 removeClass(aside, 'active');
                 removeClass(mobileOverlay, 'active');
