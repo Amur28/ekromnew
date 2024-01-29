@@ -222,6 +222,7 @@ export const videosSlider = new Swiper('.swiper-videos', {
 export const fastViewSliderThumbs = new Swiper('.slider-fastview-thumbs', {
     slidesPerView: 6,
     spaceBetween: 5,
+    centeredSlides: true,
 });
 
 export const fastViewSlider = new Swiper('.slider-fastview', {
@@ -244,3 +245,24 @@ export const productSlider = new Swiper('.slider-product', {
         swiper: productSliderThumbs,
     }
 });
+
+export const productTabsSlider = new Swiper('.product-tabs__inner', {
+    spaceBetween: 8,
+    slidesPerView: 'auto',
+    enabled: true,
+    breakpoints: {
+        800: {
+            enabled: false,
+            slidesPerView: 'auto',
+        },
+        600: {
+            slidesPerView: 2.5,
+        },
+        400: {
+            slidesPerView: 2.2,  
+        },
+        300: {
+            slidesPerView: 1.9,
+        },
+    },
+})

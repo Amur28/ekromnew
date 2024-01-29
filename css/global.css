@@ -54,7 +54,7 @@ body {
     background-color: var(--bg-white);
     color: var(--text-black-color);
     font-size: 14px;
-    line-height: 1.5em;
+    line-height: 1.5;
 }
 
 input {
@@ -358,12 +358,13 @@ select::-ms-expand {
 /* INFO START */
 
 .info {
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .breadcrumbs {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding-left: 20px;
 }
 

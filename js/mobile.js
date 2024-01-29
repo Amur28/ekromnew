@@ -42,6 +42,9 @@ const handleTouchMove = (evt) => {
     yDown = null;                                             
 };
 
+/* Смена картинок в bestseller */
+
+
 /* Открытие/скрытие бокового меню по свайпу */
 
 document.addEventListener('touchstart', handleTouchStart, false);
@@ -144,19 +147,22 @@ mobileCartButtons.forEach(button => {
 });
 
 /* Открытие скрытие меню фильтров в каталоге */
-// const filterBtn = document.querySelector('.rect-btn--product-header-mobile');
-// const aside = document.querySelector('.aside');
-// const asideInner = aside.querySelector('.aside__inner');
+const filterBtn = document.querySelector('.rect-btn--product-header-mobile');
+const aside = document.querySelector('.aside');
 
-// filterBtn.addEventListener('click', () => {
-//     addClass(aside, 'active');
-//     addClass(mobileOverlay, 'active');
-// });
 
-// aside.addEventListener('click', (event) => {
-//     const target = event.target;
-//     if (!asideInner.contains(target)) {
-//         removeClass(aside, 'active')
-//         removeClass(mobileOverlay, 'active')
-//     }
-// });
+if (filterBtn && aside) {
+    const asideInner = aside.querySelector('.aside__inner');
+    filterBtn.addEventListener('click', () => {
+        addClass(aside, 'active');
+        addClass(mobileOverlay, 'active');
+    });
+    
+    aside.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!asideInner.contains(target)) {
+            removeClass(aside, 'active')
+            removeClass(mobileOverlay, 'active')
+        }
+    });
+}

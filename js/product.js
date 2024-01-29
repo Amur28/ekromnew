@@ -4,6 +4,8 @@ import './libs.js';
 import { addClass, removeClass, containClass, hideOtherItems } from './functions.js';
 import { body } from './popups.js';
 
+const clientWidth = window.innerWidth;
+
 /* Скрытие общих элементов */
 
 document.addEventListener('click', (event) => {
@@ -110,10 +112,12 @@ document.addEventListener('mousemove', (event) => {
 
 zoomImages.forEach(zoomImg => {
     zoomImg.addEventListener('mousemove', () => {
+        if (clientWidth <= 992) return;
         initZoom(globalX, globalY, productBox, zoomImg);
     });
 
     zoomImg.addEventListener('mouseleave', () => {
+        if (clientWidth <= 992) return;
         removeZoom(zoomImg);
     });
 });
@@ -122,7 +126,9 @@ zoomImages.forEach(zoomImg => {
 
 import { moveColorFrame } from './fastView.js';
 
+const mobileProductBox = document.querySelector('.mobile-product-info')
 const productColorsList = productBox.querySelector('.product-box__colors-list');
+const mobileProductColorsList = mobileProductBox.querySelector('.product-box__colors-list');
 const fastViewColorsList = fastViewPopup.querySelector('.product-box__colors-list');
 
 productColorsList.addEventListener('click', (event) => {
@@ -131,6 +137,10 @@ productColorsList.addEventListener('click', (event) => {
 
 fastViewColorsList.addEventListener('click', (event) => {
     moveColorFrame(event, fastViewColorsList);
+});
+
+mobileProductColorsList.addEventListener('click', (event) => {
+    moveColorFrame(event, mobileProductColorsList);
 });
 
 /* Смена контента по табам товара */
