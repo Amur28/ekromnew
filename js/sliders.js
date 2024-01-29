@@ -250,6 +250,10 @@ export const productTabsSlider = new Swiper('.product-tabs__inner', {
     spaceBetween: 8,
     slidesPerView: 'auto',
     enabled: true,
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    centerInsufficientSlides: true,
+    slideToClickedSlide: true,
     breakpoints: {
         800: {
             enabled: false,
@@ -262,7 +266,7 @@ export const productTabsSlider = new Swiper('.product-tabs__inner', {
             slidesPerView: 2.2,  
         },
         300: {
-            slidesPerView: 1.9,
+            slidesPerView: 1.5,
         },
     },
 })
