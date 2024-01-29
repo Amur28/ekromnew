@@ -9,8 +9,9 @@
 }
 
 .recs-list {
-    display: flex;
+    display: grid;
     justify-content: space-between;
+    grid-template-columns: repeat(5, 1fr);
     margin-top: 50px;
     gap: 15px;
 }
