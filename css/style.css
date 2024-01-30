@@ -455,6 +455,7 @@ body.active {
 .catalog-popup__menu {
     padding: 35px 20px 0 20px;
     overflow-y: auto;
+    min-width: 230px;
 }
 
 .catalog-popup__menu-item {
@@ -483,6 +484,7 @@ body.active {
     padding: 35px;
     gap: 0 10px;
     overflow-y: auto;
+    width: 100%;
 }
 
 .catalog-popup__categories::-webkit-scrollbar,
@@ -499,9 +501,13 @@ body.active {
 }
 
 .catalog-popup__categories-menu {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.catalog-popup__categories-menu.active {
+    display: grid;
 }
 
 .catalog-popup__categories-list:last-child {
@@ -532,6 +538,7 @@ body.active {
     background-size: contain;
     background-position: bottom center;
     padding: 35px;
+    min-width: 250px;
 }
 
 .catalog-popup__categories-text {

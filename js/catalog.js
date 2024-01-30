@@ -86,3 +86,8 @@ headerSearchInput.addEventListener('input', () => {
         removeClass(headerSearchResult, 'active');
     }
 });
+
+/* Смена контента в попапе каталога */
+import { catalogPopupMenuItems, changeContentInCatalogPopup } from './popups.js';
+
+catalogPopupMenuItems.forEach(changeContentInCatalogPopup);

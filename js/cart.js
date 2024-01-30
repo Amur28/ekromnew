@@ -160,3 +160,8 @@ productCards.forEach(card => {
         changeCartButtonOnCounter(event);
     })
 });
+
+/* Смена контента в попапе каталога */
+import { catalogPopupMenuItems, changeContentInCatalogPopup } from './popups.js';
+
+catalogPopupMenuItems.forEach(changeContentInCatalogPopup);

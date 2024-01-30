@@ -30,7 +30,7 @@ window.addEventListener('scroll', showOrHideContentOnScroll);
 
 /* Показ/скрытие попапа со всеми категориями */
 
-import { showHideAllCategories, catalogPopup, hideGeneralElements } from './popups.js';
+import { showHideAllCategories, hideGeneralElements } from './popups.js';
 showHideAllCategories();
 
 /* Header dropdown */
@@ -209,8 +209,6 @@ productCards.forEach(card => {
     })
 });
 
-
-
 /* Форма поиска в шапке */
 
 const headerSearchForm = document.querySelector('.header__search');
@@ -223,3 +221,8 @@ headerSearchInput.addEventListener('input', () => {
         removeClass(headerSearchResult, 'active');
     }
 });
+
+/* Смена контента в попапе каталога */
+import { catalogPopupMenuItems, changeContentInCatalogPopup } from './popups.js';
+
+catalogPopupMenuItems.forEach(changeContentInCatalogPopup);

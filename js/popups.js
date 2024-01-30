@@ -119,3 +119,17 @@ export const hideQuestionForm = (event) => {
     checkClickWithCloseBtn(questionFormContainer, 'active', target, closeQuestionFormBtn, body);
     checkClassAndClick(questionFormContainer, 'active', target, body);
 };
+
+/* Смена контента в попапе каталога */
+
+const catalogPopupMenu = catalogPopup.querySelector('.catalog-popup__menu-list');
+export const catalogPopupMenuItems = catalogPopupMenu.querySelectorAll('.catalog-popup__menu-item');
+const catalogPopupContent = catalogPopup.querySelectorAll('.catalog-popup__categories-menu')
+
+export const changeContentInCatalogPopup = (item, index) => {
+    item.addEventListener('mouseover', () => {
+        let currentContent = catalogPopupContent[index];
+        hideOtherItems(catalogPopupContent, 'active');
+        addClass(currentContent, 'active');
+    });
+}

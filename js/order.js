@@ -83,4 +83,9 @@ orderTabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
         swapContentOnTabs(orderTabs, tab, contentArr, index)
     })
-})
+});
+
+/* Смена контента в попапе каталога */
+import { catalogPopupMenuItems, changeContentInCatalogPopup } from './popups.js';
+
+catalogPopupMenuItems.forEach(changeContentInCatalogPopup);

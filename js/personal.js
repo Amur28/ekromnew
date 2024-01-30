@@ -113,3 +113,8 @@ personalTiles.forEach((tile, index) => {
         swapContentOnTabs(personalTabsTile, personalTabsTile[index], personalContentTile, index + 1)
     });
 });
+
+/* Смена контента в попапе каталога */
+import { catalogPopupMenuItems, changeContentInCatalogPopup } from './popups.js';
+
+catalogPopupMenuItems.forEach(changeContentInCatalogPopup);
