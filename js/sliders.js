@@ -93,6 +93,7 @@ export const complectsSlide = new Swiper('.complects-swiper', {
 })
 
 export const bestsellerSlider = new Swiper('.bestseller-slider', {
+    loop: true,
     speed: 300,
     simulateTouch: false,
     navigation: {

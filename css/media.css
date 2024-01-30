@@ -301,7 +301,8 @@
     .product-info__doc-name {
         font-size: 12px;
     }
-    .recs-list {
+    .recs-list,
+    .catalog__categories {
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -898,6 +899,9 @@
     .product-info__inner.delivery-payment.active .product-info__item + .product-info__item {
         margin-top: 20px;
     }
+    .catalog__categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 620px) {
@@ -1322,6 +1326,9 @@
     .product-info__inner.delivery-payment .product-info__title,
     .product-info__guarantee-text h4 {
         font-size: 14px;
+    }
+    .catalog__categories {
+        grid-template-columns: 1fr;
     }
 }
 
