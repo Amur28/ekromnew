@@ -93,7 +93,6 @@ export const complectsSlide = new Swiper('.complects-swiper', {
 })
 
 export const bestsellerSlider = new Swiper('.bestseller-slider', {
-    loop: true,
     speed: 300,
     simulateTouch: false,
     navigation: {
@@ -117,9 +116,13 @@ export const bestsellerSlider = new Swiper('.bestseller-slider', {
         760: {
             slidesPerView: 2.5,
             loop: true,
+            grid: {
+                fill: 'column',
+            }
         },
         300: {
             slidesPerView: 2,
+            loop: false,
             grid: {
                 fill: 'row',
                 rows: 2,
@@ -221,9 +224,8 @@ export const videosSlider = new Swiper('.swiper-videos', {
 });
 
 export const fastViewSliderThumbs = new Swiper('.slider-fastview-thumbs', {
-    slidesPerView: 6,
+    slidesPerView: 'auto',
     spaceBetween: 5,
-    centeredSlides: true,
 });
 
 export const fastViewSlider = new Swiper('.slider-fastview', {

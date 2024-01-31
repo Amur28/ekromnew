@@ -736,7 +736,7 @@
     .recs-list {
         grid-template-columns: repeat(2, 1fr);
     }
-    .product-card:last-child {
+    .recs .product-card:last-child {
         display: none;
     }
     .not-found__content {
@@ -1866,6 +1866,10 @@
 
     .product-info__guarantee-item:hover {
         transform: scale(1.03);
+    }
+
+    .product-card__tools .round-btn:hover {
+        border-color: var(--main-blue);
     }
 
     /* HOVER END */

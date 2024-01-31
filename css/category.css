@@ -758,15 +758,7 @@ ul.products-pagination {
 }
 
 .product-card.row .product-card__counter button {
-    padding: 15px 0;
-}
-
-.product-card.row .product-card__counter .minus {
-    padding-left: 20px;
-}
-
-.product-card.row .product-card__counter .plus {
-    padding-right: 20px;
+    padding: 15px 50px;
 }
 
 /* PRODUCTS END */

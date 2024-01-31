@@ -156,12 +156,22 @@ questionForm.addEventListener('click', (event) => {
 import { changeCartButtonOnCounter } from './productCards.js';
 
 productCards.forEach(card => {
-    card.addEventListener('click', (event) => {
-        changeCartButtonOnCounter(event);
-    })
+    card.addEventListener('click', changeCartButtonOnCounter);
 });
 
 /* Смена контента в попапе каталога */
 import { catalogPopupMenuItems, changeContentInCatalogPopup } from './popups.js';
 
 catalogPopupMenuItems.forEach(changeContentInCatalogPopup);
+
+/* Кнопки избранного/сравнения/корзины и смена количества товаров */
+
+import { addProductsToCart } from './productCards.js';
+
+productCards.forEach(addProductsToCart)
+
+productCards.forEach(item => {
+    item.addEventListener('change', () => {
+        console.log('hi')
+    })
+});
