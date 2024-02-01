@@ -1,5 +1,6 @@
 @import url('./font.css');
 @import url('./global.css');
+@import url('./itc-custom-select.css');
 @import url('./category.css');
 @import url('./catalog.css');
 @import url('./cart.css');
@@ -7,6 +8,8 @@
 @import url('./order.css');
 @import url('./product.css');
 @import url('./personal.css');
+@import url('./compare.css');
+
 
 /* HEADER START */
 

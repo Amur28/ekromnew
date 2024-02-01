@@ -19,7 +19,7 @@ window.addEventListener('scroll', showOrHideContentOnScroll);
 
 /* Показ/скрытие попапа со всеми категориями */
 
-import { showHideAllCategories, catalogPopup, hideGeneralElements } from './popups.js';
+import { showHideAllCategories, hideGeneralElements } from './popups.js';
 showHideAllCategories();
 
 /* Header dropdown */
@@ -69,22 +69,6 @@ headerCityButton.forEach(button => {
 
 hideCitySelect();
 
-/* Скрытие/показ фильтров */
-
-import { initRangeSliders, showHideFilters } from './filter.js';
-
-const filterItems = document.querySelector('.filter-items');
-
-filterItems.addEventListener('click', (event) => {
-    showHideFilters(event);
-});
-
-/* Ползунок в каталоге */
-
-const rangeSliders = document.querySelectorAll('.filter-item__slider');
-
-initRangeSliders(rangeSliders);
-
 /* ZOOM */
 
 import { initZoom, removeZoom } from './fastView.js';
@@ -122,14 +106,6 @@ faqBtn.forEach(btn => {
 
 questionForm.addEventListener('click', (event) => {
     hideQuestionForm(event);
-});
-
-/* Смена отображения карточек в каталоге */
-
-import { swapProductsDisplay, productsViewBtnsParent } from './productsDisplay.js';
-
-productsViewBtnsParent.addEventListener('click', (event) => {
-    swapProductsDisplay(event);
 });
 
 /* Выбор цвета в окне быстрого просмотра */
@@ -252,7 +228,13 @@ import { addProductsToCart } from './productCards.js';
 
 productCards.forEach(addProductsToCart);
 
-/* Кастомный select */
-import { ItcCustomSelect } from './itc-custom-select.js';
+import { swapContentOnTabs } from './tabs.js';
 
-const categorySelect = new ItcCustomSelect('#category-sort')
+const compareTabs = document.querySelectorAll('.rect-btn--compare-category');
+const compareProductArr = document.querySelectorAll('.swiper-compare');
+
+compareTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+        swapContentOnTabs(compareTabs, tab, compareProductArr, index)
+    })
+})

@@ -381,6 +381,13 @@
         display: none;
     }
 
+    .swiper-button-prev.swiper-compare-prev-button,
+    .swiper-button-next.swiper-compare-next-button {
+        display: flex;
+        width: 35px;
+        height: 35px;
+    }
+
     .banner__slide {
         height: auto;
     }
@@ -1037,6 +1044,25 @@
     .not-found__code p {
         font-size: 150px;
     }
+    .compare-feedback__inner {
+        padding: 40px;
+    }
+    .compare-feedback__column {
+        max-width: none;
+    }
+    .compare-feedback__text {
+        margin-top: 25px;
+    }
+    .compare__header {
+        flex-direction: column;
+    }
+    .compare__categories {
+        flex-wrap: wrap;
+    }
+    .compare__buttons {
+        margin-top: 15px;
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 620px) {
@@ -1091,6 +1117,18 @@
 
     .promo-banner.promo-banner--category {
         min-width: auto;
+    }
+    .compare-feedback__form-row input,
+    .rect-btn--compare-feedback {
+        font-size: 12px;
+        width: 100%;
+    }
+    .compare-feedback__form-row input::placeholder {
+        font-size: 12px;
+    }
+    .compare-feedback__form-row {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -1356,6 +1394,18 @@
     .rect-btn--not-found {
         margin-top: 15px;
     }
+    .rect-btn--compare-feedback {
+        padding: 10px;
+    }
+    .compare-feedback__form-row input::placeholder {
+        font-size: 10px;
+    }
+    .compare-feedback__form-confidence label {
+        font-size: 10px;
+    }
+    .compare__header {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -1546,6 +1596,10 @@
 
     .promo-banner.promo-banner--category {
         padding: 20px;
+    }
+
+    .compare-feedback__inner {
+        padding: 25px;
     }
 }
 
@@ -2059,6 +2113,18 @@
 
     .product-card__tools .round-btn:hover {
         border-color: var(--main-blue);
+    }
+
+    .compare-feedback__form-confidence label a:hover {
+        color: var(--hover-blue);
+    }
+
+    .rect-btn--compare-category.active:hover {
+        background-color: var(--hover-blue);
+    }
+
+    .close-btn--compare:hover svg path {
+        fill: var(--main-black);
     }
 
     /* HOVER END */
