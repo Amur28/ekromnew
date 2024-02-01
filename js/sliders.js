@@ -100,28 +100,37 @@ export const bestsellerSlider = new Swiper('.bestseller-slider', {
         prevEl: '.bestseller-button-prev',
     },
     spaceBetween: 15,
+    autoplay: false,
     breakpoints: {
         1400: {
             slidesPerView: 5,
+            loop: true,
         },
         1200: {
             slidesPerView: 4,
+            loop: true,
         },
         992: {
             slidesPerView: 3.5,
+            loop: true,
         },
         880: {
             slidesPerView: 3,
+            loop: true,
         },
         760: {
             slidesPerView: 2.5,
             loop: true,
             grid: {
                 fill: 'column',
-            }
+            },
+            autoplay: true,
         },
         300: {
             slidesPerView: 2,
+            autoplay: {
+                delay: 1500,
+            },
             loop: false,
             grid: {
                 fill: 'row',
@@ -233,11 +242,12 @@ export const fastViewSlider = new Swiper('.slider-fastview', {
     loop: true,
     thumbs: {
         swiper: fastViewSliderThumbs,
+        autoScrollOffset: 2,
     }
 });
 
 export const productSliderThumbs = new Swiper('.slider-product-thumbs', {
-    slidesPerView: 6,
+    slidesPerView: 'auto',
     spaceBetween: 5,
 });
 
@@ -246,6 +256,7 @@ export const productSlider = new Swiper('.slider-product', {
     loop: true,
     thumbs: {
         swiper: productSliderThumbs,
+        autoScrollOffset: 2,
     }
 });
 
