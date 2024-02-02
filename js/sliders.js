@@ -100,7 +100,6 @@ export const bestsellerSlider = new Swiper('.bestseller-slider', {
         prevEl: '.bestseller-button-prev',
     },
     spaceBetween: 15,
-    autoplay: false,
     breakpoints: {
         1400: {
             slidesPerView: 5,
@@ -124,13 +123,9 @@ export const bestsellerSlider = new Swiper('.bestseller-slider', {
             grid: {
                 fill: 'column',
             },
-            autoplay: true,
         },
         300: {
             slidesPerView: 2,
-            autoplay: {
-                delay: 1500,
-            },
             loop: false,
             grid: {
                 fill: 'row',
@@ -159,7 +154,7 @@ export const showroomGallerySlider = new Swiper('.showroom-gallery-slider', {
             slidesPerView: 1.5,
         },
 
-    }
+    },
 });
 
 export const brandsSlider = new Swiper('.swiper-brands', {
@@ -277,7 +272,7 @@ export const productTabsSlider = new Swiper('.product-tabs__inner', {
             spaceBetween: 8,
         },
         400: {
-            slidesPerView: 2.2,  
+            slidesPerView: 2.2,
             spaceBetween: 8,
         },
         300: {
@@ -314,5 +309,5 @@ export const compareSwiper = new Swiper('.swiper-compare', {
             slidesPerView: 2,
         },
     },
-    
+
 })

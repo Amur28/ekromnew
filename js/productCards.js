@@ -84,8 +84,6 @@ function toggleActiveOnRoundBtn(event) {
     const counterBtn = productFooter.querySelector('.product-card__counter');
     const productFooterButtons = productFooter.querySelector('.product-card__footer-buttons');
 
-
-
     if (containClass(productCardRoundBtn, 'round-btn--cart')) {
         addClass(productFooterButtons, 'active')
         addClass(buyCartBtn, 'hide')
@@ -101,51 +99,103 @@ function toggleActiveOnRoundBtn(event) {
 function changeProductQuantity(event) {
     const minus = event.target.closest('.minus');
     const plus = event.target.closest('.plus');
-    
+
     if (containClass(this, 'row')) {
-        const counter = this.querySelector('.product-card__counter');
-        const cartBtn = this.querySelector('.product-card__buy-cart');
-        const counterSpan = counter.querySelector('span');
-        let counterQuantity = Number(counterSpan.textContent);
-        
-        if (minus) {
-            if (counterSpan.textContent === '1') {
-                addClass(counter, 'hide');
-                removeClass(cartBtn, 'hide');
-                return;
-            }
-            counterSpan.textContent = counterQuantity - 1;
-        }
-        if (plus) {
-            counterQuantity += 1;
-            counterSpan.textContent = counterQuantity;
-        }
-        return
+        changeOnProductRow(this, minus, plus);
+        return;
     }
 
-    const footer = this.querySelector('.product-card__footer');
-    const counter = footer.querySelector('.product-card__counter');
-    const productFooterButtons = footer.querySelector('.product-card__footer-buttons');
+    if (window.innerWidth <= 992) {
+        changeOnMobileCard(this, minus, plus);
+        return;
+    }
+
+    changeOnProductCard(this, minus, plus);
+
+}
+
+function changeOnProductRow(el, minus, plus) {
+    const counter = el.querySelector('.product-card__counter');
+    const cartBtn = el.querySelector('.product-card__buy-cart');
     const counterSpan = counter.querySelector('span');
     let counterQuantity = Number(counterSpan.textContent);
-    const roundCartBtn = this.querySelector('.round-btn--cart');
-    const cartBtn = this.querySelector('.product-card__buy-cart');
-    const roundSpan = roundCartBtn.querySelector('span');
-
     if (minus) {
         if (counterSpan.textContent === '1') {
             addClass(counter, 'hide');
             removeClass(cartBtn, 'hide');
-            removeClass(roundCartBtn, 'active');
-            removeClass(productFooterButtons, 'active')
             return;
         }
         counterSpan.textContent = counterQuantity - 1;
-        roundSpan.textContent = counterSpan.textContent
     }
     if (plus) {
         counterQuantity += 1;
         counterSpan.textContent = counterQuantity;
-        roundSpan.textContent = counterSpan.textContent
     }
 }
+
+function changeOnProductCard(el, minus, plus) {
+    const footer = el.querySelector('.product-card__footer');
+    const roundCartBtn = el.querySelector('.round-btn--cart');
+    const roundSpan = roundCartBtn.querySelector('span');
+
+    if (minus) {
+        changeOnMinusBtn(footer, el);
+    }
+
+    if (plus) {
+        changeOnPlusBtn(footer, el)
+    }
+}
+
+function changeOnMobileCard(el, minus, plus) {
+    const footer = el.querySelector('.product-card__mobile-footer');
+
+    if (minus) {
+        changeOnMinusBtn(footer, el);
+    }
+
+    if (plus) {
+        changeOnPlusBtn(footer, el)
+    }
+}
+
+function changeOnMinusBtn(footer, el) {
+    const footerButtons = footer.querySelector('.product-card__footer-buttons');
+    const counter = footer.querySelector('.product-card__counter');
+    const counterSpan = counter.querySelector('span')
+    const cartBtn = footer.querySelector('.product-card__buy-cart');
+    const mobileCartBtn = footer.querySelector('.product-card__mobile-cart')
+    let counterQuantity = Number(counterSpan.textContent);
+    const roundCartBtn = el.querySelector('.round-btn--cart')
+    const activeArr = [roundCartBtn, footerButtons];
+    const roundSpan = roundCartBtn.querySelector('span');
+
+    if (counterSpan.textContent === '1') {
+        if (window.innerWidth <= 992) {
+            removeClass(mobileCartBtn, 'hide');
+            removeClass(footerButtons, 'active');
+            return
+        }
+        addClass(counter, 'hide');
+        removeClass(cartBtn, 'hide');
+        removeClass(roundCartBtn, 'active')
+        
+        return;
+    }
+
+    counterSpan.textContent = counterQuantity - 1;
+    roundSpan.textContent = counterSpan.textContent;
+}
+
+function changeOnPlusBtn(footer, el) {
+    const counter = footer.querySelector('.product-card__counter');
+    const counterSpan = counter.querySelector('span');
+    let counterQuantity = Number(counterSpan.textContent);
+    const roundCartBtn = el.querySelector('.round-btn--cart')
+    const roundSpan = roundCartBtn.querySelector('span')
+
+    counterQuantity += 1;
+    counterSpan.textContent = counterQuantity;
+    roundSpan.textContent = counterSpan.textContent
+}
+

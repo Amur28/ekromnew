@@ -210,9 +210,3 @@ catalogPopupMenuItems.forEach(changeContentInCatalogPopup);
 import { addProductsToCart } from './productCards.js';
 
 productCards.forEach(addProductsToCart)
-
-productCards.forEach(item => {
-    item.addEventListener('change', () => {
-        console.log('hi')
-    })
-});
