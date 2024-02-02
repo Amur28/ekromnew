@@ -228,6 +228,8 @@ import { addProductsToCart } from './productCards.js';
 
 productCards.forEach(addProductsToCart);
 
+/* Табы в сравнении */
+
 import { swapContentOnTabs } from './tabs.js';
 
 const compareTabs = document.querySelectorAll('.rect-btn--compare-category');
@@ -238,3 +240,4 @@ compareTabs.forEach((tab, index) => {
         swapContentOnTabs(compareTabs, tab, compareProductArr, index)
     })
 })
+

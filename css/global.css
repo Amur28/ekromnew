@@ -717,7 +717,7 @@ select::-ms-expand {
     margin-left: 20px;
 }
 
-.not-found__return::before {
+.not-found__return::after {
     content: '';
     position: absolute;
     background-image: url(../img/icons/return-catalog-white.svg);
@@ -727,6 +727,10 @@ select::-ms-expand {
     top: 50%;
     right: calc(100% + 7px);
     transform: translateY(-50%);
+}
+
+.not-found__return.skeleton::after {
+    display: none;
 }
 
 .not-found__content {

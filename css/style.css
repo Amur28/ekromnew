@@ -1576,6 +1576,7 @@ body.active {
     left: 10px;
     flex-direction: column;
     align-items: flex-start;
+    z-index: 5;
 }
 
 .label {
@@ -1587,6 +1588,8 @@ body.active {
     border-radius: 5px;
     text-align: center;
     font-weight: 500;
+    cursor: pointer;
+    position: relative;
 }
 
 .label+.label {
@@ -1664,8 +1667,10 @@ body.active {
     line-height: 16.5px;
 }
 
-.product-card__name {
+.product-card__name:not(a) {
     margin-top: 10px;
+    overflow: hidden;
+    height: 55px;
 }
 
 .product-card__name a {

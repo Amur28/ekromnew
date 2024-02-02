@@ -309,5 +309,4 @@ export const compareSwiper = new Swiper('.swiper-compare', {
             slidesPerView: 2,
         },
     },
-
 })

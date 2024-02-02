@@ -276,7 +276,7 @@ a.tinkoff {
     margin-left: 20px;
 }
 
-.order-apply__return-to-catalog::before {
+.order-apply__return-to-catalog::after {
     content: '';
     position: absolute;
     background-image: url('../img/icons/return-catalog.svg');
