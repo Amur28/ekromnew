@@ -436,7 +436,7 @@
 }
 
 #category-sort button {
-    border: 2px solid var(--main-blue);
+    border: 1px solid var(--main-blue);
     background-color: transparent;
     border-radius: 5px;
     padding: 10px;
@@ -445,6 +445,10 @@
     color: var(--main-blue);
     font-size: 14px;
     max-height: 35px;
+}
+
+.itc-select__dropdown {
+    z-index: 15;
 }
 
 #category-sort button::after {

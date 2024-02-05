@@ -182,6 +182,11 @@
     background-size: 15px;
     background-position: center;
     background-repeat: no-repeat;
+    transition: background-img 0s;
+}
+
+.auth-form__label .auth-form__show-password.active {
+    background-image: url('../img/icons/auth-form/open-eye.svg');
 }
 
 .auth-form__label input:not([type=checkbox]) {
@@ -207,14 +212,16 @@
     background-image: url('../img/icons/auth-form/email.svg');
 }
 
-.auth-form__label input[type=password] {
+.auth-form__label input[type=password],
+.auth-form__label input.password-input {
     background-image: url('../img/icons/auth-form/lock.svg');
 }
 
-.auth-form__label input[type=text] {
+.auth-form__label input[type=text]:not(.password-input) {
     background-image: url('../img/icons/auth-form/user.svg');
 }
-.auth-form__label input[type=number] {
+
+.auth-form__label input[type=number]:not(.auth-verify-input) {
     background-image: url('../img/icons/auth-form/phone.svg');
 }
 
@@ -228,4 +235,15 @@ p.check-acc {
 
 p.check-acc button {
     color: var(--main-blue);
+}
+
+p.auth-form__label-subtext {
+    color: var(--text-grey-color);
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.auth-form__label input[type=number].auth-verify-input {
+    text-align: center;
+    padding: 10px 15px;
 }

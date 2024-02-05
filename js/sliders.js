@@ -32,6 +32,7 @@ export const categoriesSlider = new Swiper('.categories-slider', {
         nextEl: '.categories-button-next',
         prevEl: '.categories-button-prev',
     },
+    grabCursor: true,
     breakpoints: {
         1400: {
             slidesPerView: 8.5,
@@ -313,4 +314,7 @@ export const compareSwiper = new Swiper('.swiper-compare', {
 
 export const authSwiper = new Swiper('.swiper-auth', {
     slidesPerView: 1,
+    autoHeight: true,
+    effect: 'fade',
+    allowTouchMove: false,
 })

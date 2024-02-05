@@ -1362,6 +1362,7 @@ body.active {
 
 .complects__wrapper {
     position: relative;
+    margin-top: 20px;
 }
 
 .complects__item {

@@ -18,7 +18,7 @@
             <div class="header__mobile">
                 <div class="container">
                     <div class="header__mobile-inner header__mobile-inner--auth">
-                        <a class="header__mobile-auth-return" href="./index.html">
+                        <a class="header__mobile-auth-return" href="#">
                             <img src="./img/icons/return-catalog-white.svg" alt="">
                         </a>
                         <h2 class="header__mobile-auth-title">
@@ -41,10 +41,10 @@
                                 <p class="auth-text">
                                     Войдите в аккаунт, чтобы воспользоваться личным кабинетом
                                 </p>
-                                <button class="rect-btn rect-btn--auth blue">
+                                <button class="rect-btn rect-btn--auth rect-btn--auth-start-login auth-check-btn--login blue">
                                     Войти
                                 </button>
-                                <button class="rect-btn rect-btn--auth transparent">
+                                <button class="rect-btn rect-btn--auth rect-btn--auth-start-register auth-check-btn--register transparent">
                                     Зарегистрироваться
                                 </button>
                                 <div class="auth-tools">
@@ -59,7 +59,7 @@
                                         </label>
                                         
                                     </div>
-                                    <button>Забыли пароль?</button>
+                                    <button class="go-to-password-recovery" type="button">Забыли пароль?</button>
                                 </div>
                             </div>
                             <div class="swiper-slide swiper-auth-slide auth-login">
@@ -70,11 +70,11 @@
                                     <div class="auth-form__group">
                                         <label class="auth-form__label">
                                             <p>Email</p>
-                                            <input type="email" placeholder="email@ekrom.ru">
+                                            <input type="email" placeholder="email@ekrom.ru" required>
                                         </label>
                                         <label class="auth-form__label">
                                             <p>Пароль</p>
-                                            <input type="password" placeholder="••••••">
+                                            <input class="password-input" type="password" placeholder="••••••" required>
                                             <button class="auth-form__show-password" type="button"></button>
                                         </label>
                                     </div>
@@ -89,13 +89,13 @@
                                             </label>
                                             
                                         </div>
-                                        <button>Забыли пароль?</button>
+                                        <button class="go-to-password-recovery" type="button">Забыли пароль?</button>
                                     </div>
-                                    <button class="rect-btn rect-btn--auth blue" type="submit">
+                                    <button class="rect-btn rect-btn--auth rect-btn--auth-login-page blue" type="submit">
                                         Войти
                                     </button>
                                     <p class="check-acc">
-                                        Еще нет аккаунта? <button>Зарегистрироваться</button>
+                                        Еще нет аккаунта? <button class="auth-check-btn auth-check-btn--register" type="button">Зарегистрироваться</button>
                                     </p>
                                 </form>
                                 
@@ -109,24 +109,24 @@
                                     <div class="auth-form__group">
                                         <label class="auth-form__label">
                                             <p>Email</p>
-                                            <input type="email" placeholder="email@ekrom.ru">
+                                            <input type="email" placeholder="email@ekrom.ru" required>
                                         </label>
                                         <label class="auth-form__label">
                                             <p>Телефон</p>
-                                            <input type="number" placeholder="+7 9xx xxx xx xx">
+                                            <input class="tel" type="number" placeholder="+7 9xx xxx xx xx" required>
                                         </label>
                                         <label class="auth-form__label">
                                             <p>Ваше имя</p>
-                                            <input type="text" placeholder="Иван Иванов">
+                                            <input type="text" placeholder="Иван Иванов" required>
                                         </label>
                                         <label class="auth-form__label">
                                             <p>Пароль</p>
-                                            <input type="password" placeholder="••••••">
+                                            <input class="password-input" type="password" placeholder="••••••" required>
                                             <button class="auth-form__show-password" type="button"></button>
                                         </label>
                                         <label class="auth-form__label">
                                             <p>Подтвердите пароль</p>
-                                            <input type="password" placeholder="••••••">
+                                            <input class="password-input" type="password" placeholder="••••••" required>
                                             <button class="auth-form__show-password" type="button"></button>
                                         </label>
                                         <label class="auth-form__label auth-form__label--checkbox">
@@ -134,7 +134,7 @@
                                             <p>Хочу зарегистрироваться как юридическое лицо</p>
                                         </label>
                                         <label class="auth-form__label auth-form__label--checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" required>
                                             <p>Я согласен на обработку персональных данных</p>
                                         </label>
                                     </div>
@@ -149,15 +149,87 @@
                                             </label>
 
                                         </div>
-                                        <button>Забыли пароль?</button>
+                                        <button class="go-to-password-recovery" type="button">Забыли пароль?</button>
                                     </div>
-                                    <button class="rect-btn rect-btn--auth blue" type="submit">
-                                        Войти
+                                    <button class="rect-btn rect-btn--auth rect-btn--auth-register-page blue" type="submit">
+                                        Зарегистрироваться
                                     </button>
                                     <p class="check-acc">
-                                        Уже есть аккаунт? <button>Войти</button>
+                                        Уже есть аккаунт? <button class="auth-check-btn auth-check-btn--login" type="button">Войти</button>
                                     </p>
                                 </form>
+                            </div>
+                            <div class="swiper-slide swiper-auth-slide auth-verify">
+                                <p class="auth-text">
+                                    Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                                </p>
+                                <form class="auth-form auth-form--login" name="auth-verify-form">
+                                    <div class="auth-form__group">
+                                        <label class="auth-form__label">
+                                            <p>Верификационный код</p>
+                                            <input class="auth-verify-input" type="number" placeholder="123456" required>
+                                            <p class="auth-form__label-subtext">
+                                                Код отправлен на номер <span>+79825568864</span>
+                                            </p>
+                                        </label>
+                                    </div>
+                                    <button class="rect-btn rect-btn--auth blue" type="submit">
+                                        Зарегистрироваться
+                                    </button>
+                                    <p class="check-acc">
+                                        Уже есть аккаунт? <button class="auth-check-btn auth-check-btn--login" type="button">Войти</button>
+                                    </p>
+                                </form>
+                                
+                            </div>
+                            <div class="swiper-slide swiper-auth-slide auth-password-recovery-verify">
+                                <p class="auth-text">
+                                    Восстановите пароль, чтобы воспользоваться личным кабинетом
+                                </p>
+                                <form class="auth-form auth-form--login" name="auth-verify-form">
+                                    <div class="auth-form__group">
+                                        <label class="auth-form__label">
+                                            <p>Верификационный код</p>
+                                            <input class="auth-verify-input" type="number" placeholder="123456" required>
+                                            <p class="auth-form__label-subtext">
+                                                Код отправлен на номер <span>+79825568864</span>
+                                            </p>
+                                        </label>
+                                    </div>
+                                    <button class="rect-btn rect-btn--auth rect-btn--recovery-password blue" type="submit">
+                                        Сбросить пароль
+                                    </button>
+                                    <p class="check-acc">
+                                        Уже есть аккаунт? <button class="auth-check-btn auth-check-btn--login" type="button">Войти</button>
+                                    </p>
+                                </form>
+                                
+                            </div>
+                            <div class="swiper-slide swiper-auth-slide auth-password-recovery">
+                                <p class="auth-text">
+                                    Восстановите пароль, чтобы воспользоваться личным кабинетом
+                                </p>
+                                <form class="auth-form auth-form--login" name="auth-verify-form">
+                                    <div class="auth-form__group">
+                                        <label class="auth-form__label">
+                                            <p>Новый пароль</p>
+                                            <input class="password-input" type="password" placeholder="••••••" required>
+                                            <button class="auth-form__show-password" type="button"></button>
+                                        </label>
+                                        <label class="auth-form__label">
+                                            <p>Повторите новый пароль</p>
+                                            <input class="password-input" type="password" placeholder="••••••" required>
+                                            <button class="auth-form__show-password" type="button"></button>
+                                        </label>
+                                    </div>
+                                    <button class="rect-btn rect-btn--auth blue" type="submit">
+                                        Сбросить пароль
+                                    </button>
+                                    <p class="check-acc">
+                                        Уже есть аккаунт? <button class="auth-check-btn auth-check-btn--login" type="button">Войти</button>
+                                    </p>
+                                </form>
+                                
                             </div>
                         </div>
                     </div>
@@ -420,7 +492,7 @@
                 </a>
             </li>
             <li class="mobile-bottom-menu__item">
-                <a href="./personal.html">
+                <a href="./auth.html">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M9 9C11.0711 9 12.75 7.32107 12.75 5.25C12.75 3.17893 11.0711 1.5 9 1.5C6.92893 1.5 5.25 3.17893 5.25 5.25C5.25 7.32107 6.92893 9 9 9Z"
@@ -486,7 +558,6 @@
             });
         });
     </script>
-    <script src="./js/mobile.js" type="module"></script>
     <script src="./js/auth.js" type="module"></script>
 </body>
 

@@ -178,7 +178,8 @@ function changeOnMinusBtn(footer, el) {
         }
         addClass(counter, 'hide');
         removeClass(cartBtn, 'hide');
-        removeClass(roundCartBtn, 'active')
+        removeClass(roundCartBtn, 'active');
+        removeClass(footerButtons, 'active');
         
         return;
     }
