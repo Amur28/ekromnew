@@ -2521,7 +2521,6 @@ a.footer__nav-link--show {
     gap: 85px;
     margin-top: 25px;
     display: flex;
-    max-height: 606px;
 }
 
 .product-box__gallery {
@@ -2831,6 +2830,7 @@ a.footer__nav-link--show {
     border-radius: 10px;
     max-height: 100%;
     overflow: auto;
+    max-height: 255px;
 }
 
 .product-box__item--properties::-webkit-scrollbar {

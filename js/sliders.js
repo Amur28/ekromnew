@@ -286,6 +286,7 @@ export const productTabsSlider = new Swiper('.product-tabs__inner', {
 export const compareSwiper = new Swiper('.swiper-compare', {
     slidesPerView: 5,
     spaceBetween: 12,
+    simulateTouch: false,
     navigation: {
         nextEl: '.swiper-compare-next-button',
         prevEl: '.swiper-compare-prev-button',

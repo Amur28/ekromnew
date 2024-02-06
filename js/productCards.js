@@ -166,8 +166,7 @@ function changeOnMinusBtn(footer, el) {
     const cartBtn = footer.querySelector('.product-card__buy-cart');
     const mobileCartBtn = footer.querySelector('.product-card__mobile-cart')
     let counterQuantity = Number(counterSpan.textContent);
-    const roundCartBtn = el.querySelector('.round-btn--cart')
-    const activeArr = [roundCartBtn, footerButtons];
+    const roundCartBtn = el.querySelector('.round-btn--cart');
     const roundSpan = roundCartBtn.querySelector('span');
 
     if (counterSpan.textContent === '1') {

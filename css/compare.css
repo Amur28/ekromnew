@@ -35,6 +35,8 @@
 .swiper-compare {
     padding-top: 35px;
     margin-top: -35px;
+    padding: 35px 21px 0 21px;
+    margin: -35px -21px 0 -21px;
 }
 
 .swiper-compare:not(.active) {
@@ -49,6 +51,14 @@
 .swiper-compare-next-button,
 .swiper-compare-prev-button {
     top: 22%;
+}
+
+.swiper-compare-next-button {
+    right: 0;
+}
+
+.swiper-compare-prev-button {
+    left: 0;
 }
 
 .close-btn--compare {
