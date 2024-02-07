@@ -9,7 +9,7 @@ import { body } from './popups.js';
 document.addEventListener('click', (event) => {
     hideGeneralElements(event);
     const headerDropdown = document.querySelector('.header__mobile-more-dropdown')
-    if (event.target === headerMobileMore || headerMobileMore.contains(event.target)) return;
+    if (event.target === headerMobileMore || headerMobileMore.contains(event.target) || event.target === headerDropdown || headerDropdown.contains(event.target)) return;
     if (event.target !== headerDropdown && containClass(headerDropdown, 'active')) {
         removeClass(headerDropdown, 'active')
     }

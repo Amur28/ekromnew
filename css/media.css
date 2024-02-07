@@ -1886,6 +1886,14 @@
     .cart {
         margin-bottom: 50px;
     }
+    .cart-item__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 60px;
+        min-height: 40px;
+        padding: 5px;
+    }
 }
 
 @media (max-width: 400px) {
