@@ -1,7 +1,7 @@
 'use strict';
 import './sliders.js';
 import './libs.js';
-import { addClass, removeClass, containClass, toggleClass, checkClickWithCloseBtn, checkClassAndClick, hideOtherItems } from './functions.js';
+import { addClass, hideOtherItems } from './functions.js';
 import { body } from './popups.js';
 
 /* Скрытие общих элементов */
@@ -19,7 +19,7 @@ window.addEventListener('scroll', showOrHideContentOnScroll);
 
 /* Показ/скрытие попапа со всеми категориями */
 
-import { showHideAllCategories, catalogPopup, hideGeneralElements } from './popups.js';
+import { showHideAllCategories, hideGeneralElements } from './popups.js';
 showHideAllCategories();
 
 /* Header dropdown */
@@ -255,4 +255,4 @@ productCards.forEach(addProductsToCart);
 /* Кастомный select */
 import { ItcCustomSelect } from './itc-custom-select.js';
 
-const categorySelect = new ItcCustomSelect('#category-sort')
+const categorySelect = new ItcCustomSelect('#category-sort');

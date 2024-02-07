@@ -1,13 +1,18 @@
 'use strict';
 import './sliders.js';
 import './libs.js';
-import { addClass, removeClass, containClass } from './functions.js';
+import { addClass, containClass, hideOtherItems, removeClass } from './functions.js';
 import { body } from './popups.js';
 
 /* Скрытие общих элементов */
 
 document.addEventListener('click', (event) => {
     hideGeneralElements(event);
+    const headerDropdown = document.querySelector('.header__mobile-more-dropdown')
+    if (event.target === headerMobileMore || headerMobileMore.contains(event.target)) return;
+    if (event.target !== headerDropdown && containClass(headerDropdown, 'active')) {
+        removeClass(headerDropdown, 'active')
+    }
 });
 
 /* Липкий HEADER */
@@ -18,7 +23,7 @@ window.addEventListener('scroll', showOrHideContentOnScroll);
 
 /* Показ/скрытие попапа со всеми категориями */
 
-import { showHideAllCategories, catalogPopup, hideGeneralElements } from './popups.js';
+import { showHideAllCategories, hideGeneralElements } from './popups.js';
 showHideAllCategories();
 
 /* Header dropdown */
@@ -101,6 +106,9 @@ zoomImg.addEventListener('mouseleave', () => {
 
 import { productCards, changeColorOnCard, changeImgOnHover, returnFirstImg } from './productCards.js';
 
+let xDown = null;
+let yDown = null;
+
 productCards.forEach(card => {
     card.addEventListener('change', (event) => {
         changeColorOnCard(event, card);
@@ -112,6 +120,60 @@ productCards.forEach(card => {
     progressBarItems.forEach(item => {
         const length = progressBarItems.length;
         item.style.width = 100 / length + '%';
+    });
+
+    const productImgBox = card.querySelector('.product-card__img-box');
+
+    productImgBox.addEventListener('touchstart', (evt) => {
+        xDown = evt.touches[0].clientX;
+        yDown = evt.touches[0].clientY;
+    });
+
+    productImgBox.addEventListener('touchmove', (evt) => {
+        if (!xDown || !yDown) {
+            return;
+        }
+        let xUp = evt.touches[0].clientX;
+        let yUp = evt.touches[0].clientY;
+
+        let xDiff = xDown - xUp;
+        let yDiff = yDown - yUp;
+
+        const progressBarContainer = productImgBox.querySelector('.thumbs-progressbar');
+        const currentItem = progressBarContainer.querySelector('.current');
+        const nextItem = currentItem.nextElementSibling;
+        const prevItem = currentItem.previousElementSibling;
+        const progressBarArr = Array.from(progressBarItems);
+        let currentIndex = progressBarArr.indexOf(currentItem);
+
+
+        // немного поясню здесь. Тут берутся модули движения по оси абсцисс и ординат (почему модули? потому что если движение сделано влево или вниз, то его показатель будет отрицательным) и сравнивается, чего было больше: движения по абсциссам или ординатам. Нужно это для того, чтобы, если пользователь провел вправо, но немного наискосок вниз, сработал именно коллбэк для движения вправо, а ни как-то иначе.
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+            if (xDiff > 0) {
+                if (nextItem) {
+                    hideOtherItems(progressBarItems, 'current');
+                    addClass(nextItem, 'current');
+                    currentIndex += 1;
+                    const thumb = thumbs[currentIndex];
+                    const thumbImg = thumb.querySelector('img');
+                    const thumbImgSrc = thumbImg.getAttribute('src');
+                    productImg.setAttribute('src', thumbImgSrc)
+                }
+            } else if (xDiff < 0) {
+                if (prevItem) {
+                    hideOtherItems(progressBarItems, 'current');
+                    addClass(prevItem, 'current')
+                    currentIndex -= 1;
+                    const thumb = thumbs[currentIndex];
+                    const thumbImg = thumb.querySelector('img');
+                    const thumbImgSrc = thumbImg.getAttribute('src');
+                    productImg.setAttribute('src', thumbImgSrc)
+                }
+            }
+        }
+        /* reset values */
+        xDown = null;
+        yDown = null;
     });
 
     /* Смена картинки при наведении */
@@ -168,10 +230,38 @@ catalogPopupMenuItems.forEach(changeContentInCatalogPopup);
 
 import { addProductsToCart } from './productCards.js';
 
-productCards.forEach(addProductsToCart)
+productCards.forEach(addProductsToCart);
 
-productCards.forEach(item => {
-    item.addEventListener('change', () => {
-        console.log('hi')
-    })
-});
+/* Header More */
+
+const headerMobileMore = document.querySelector('.header__mobile-more-btn');
+
+headerMobileMore.addEventListener('click', openCloseDropDown);
+
+function openCloseDropDown() {
+    const headerDropdown = this.nextElementSibling;
+    if (event.target !== headerDropdown && containClass(headerDropdown, 'active')) {
+        removeClass(headerDropdown, 'active')
+    }
+    addClass(headerDropdown, 'active');
+}
+
+/* Кнопка "Выбрать все" */
+
+const headerMobileCheckbox = document.querySelector('.cart-mobile__choice-label input');
+
+headerMobileCheckbox.addEventListener('input', checkAllProducts);
+
+function checkAllProducts() {
+    const productCheckboxes = document.querySelectorAll('.cart-item__checkbox input');
+
+    productCheckboxes.forEach(toggleCheckboxes)
+}
+
+function toggleCheckboxes(item) {
+    if (headerMobileCheckbox.checked === true) {
+        item.checked = true
+    } else {
+        item.checked = false
+    }
+}

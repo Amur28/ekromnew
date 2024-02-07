@@ -239,5 +239,4 @@ compareTabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
         swapContentOnTabs(compareTabs, tab, compareProductArr, index)
     })
-})
-
+});
