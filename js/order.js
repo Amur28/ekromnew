@@ -1,5 +1,5 @@
 'use strict';
-import { addClass, removeClass, containClass, hideOtherItems } from './functions.js';
+import { addClass, removeClass, containClass, hideOtherItems, toggleClass } from './functions.js';
 import { body } from './popups.js';
 
 /* Скрытие общих элементов */
@@ -89,3 +89,20 @@ orderTabs.forEach((tab, index) => {
 import { catalogPopupMenuItems, changeContentInCatalogPopup } from './popups.js';
 
 catalogPopupMenuItems.forEach(changeContentInCatalogPopup);
+
+function toggleOrderMakeItem() {
+    toggleClass(this, 'active')
+}
+
+if (window.innerWidth <= 992) {
+    const orderMakeItemTitle = document.querySelectorAll('.order-make__item-title');
+    orderMakeItemTitle.forEach(item => {
+        item.addEventListener('click', toggleOrderMakeItem)
+    })
+}
+
+/* Кастомный select */
+import { ItcCustomSelect } from './itc-custom-select.js';
+
+const orderSelect = new ItcCustomSelect('#order-select');
+const orderSelectEntity = new ItcCustomSelect('#order-select-entity');

@@ -30,6 +30,7 @@
     .swiper-button-prev.swiper-compare-prev-button {
         left: 0;
     }
+
     .swiper-button-next.swiper-compare-next-button {
         right: 0;
     }
@@ -116,6 +117,7 @@
     .popular-card:hover .popular__img img {
         transform: translateX(-50%) scale(1.08);
     }
+
     .popular-card:hover .popular__text {
         color: var(--main-blue);
         transform: scale(1.08);
@@ -361,7 +363,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .product-card.row .product-info__delivery, 
+    .product-card.row .product-info__delivery,
     .product-card.row .product-card__article {
         margin-left: 10px;
     }
@@ -410,9 +412,7 @@
     }
 }
 
-@media (max-width: 1024px) {
-
-}
+@media (max-width: 1024px) {}
 
 @media (max-width: 992px) {
 
@@ -858,6 +858,7 @@
     .not-found__content {
         gap: 50px;
     }
+
     .popular-card:hover .popular__img img {
         transform: none;
     }
@@ -876,12 +877,31 @@
     .cart-aside .product-box__delivery-options,
     .cart-total__sum,
     .promocode-error,
-    .cart-item__tags {
+    .cart-item__tags,
+    .order-page .info {
         display: none;
     }
 
-    .cart__inner {
+    .cart__inner,
+    .order__inner {
         flex-direction: column;
+    }
+
+    .order-make {
+        max-width: none;
+        padding-top: 10px;
+    }
+
+    .order-make__item {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    .order-make__form-row label input:not([type=radio]),
+    .order-make__form-row label textarea {
+        background-color: var(--filter-bg-color);
+        border: none;
     }
 
     .cart-aside {
@@ -889,6 +909,10 @@
         top: auto;
         max-width: none;
         background-color: var(--bg-white);
+    }
+
+    .order-page .cart-aside {
+        position: static;
     }
 
     .cart-total {
@@ -901,7 +925,7 @@
         background-color: #fff;
         padding: 10px;
         border-radius: 10px;
-    } 
+    }
 
     .cart-total__header-text p:first-child {
         font-weight: 600;
@@ -954,7 +978,7 @@
         border-radius: 10px;
     }
 
-    .cart .cart-item + .cart-item {
+    .cart .cart-item+.cart-item {
         border: none;
         padding-top: 10px;
         margin-top: 10px;
@@ -970,20 +994,85 @@
         padding: 0;
         gap: 10px;
     }
+
     .question-form {
         padding: 45px;
     }
+
     .question-form__inner {
         gap: 45px;
         flex-direction: column;
     }
+
     .question-form__user-fields {
         width: auto;
     }
+
     .question-form__title {
         font-size: 36px;
         text-align: center;
         max-width: none;
+    }
+
+    .order-tabs {
+        justify-content: space-between;
+    }
+
+    .rect-btn--order-make {
+        width: 50%;
+        text-align: center;
+    }
+
+    .order-make__form-row label p.hint {
+        display: none;
+    }
+    .order-make__item-title {
+        cursor: pointer;
+    }
+
+    .order-make__item-title::after {
+        content: '';
+        border: solid var(--text-black-color);
+        border-width: 0 1px 1px 0;
+        display: block;
+        padding: 4px;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        transition: var(--alt-transition);
+        transform-origin: 50%;
+    }
+
+    .order-make__item-title.active::after {
+        transform: rotate(45deg);
+    }
+
+    .order-make__item-title ~ .order-make__item-content {
+        max-height: 0;
+        overflow: hidden;
+        margin-top: 0;
+        transition: height .5s;
+    }
+    .order-make__item-title.active ~ .order-make__item-content {
+        max-height: none;
+        margin-top: 30px;
+    }
+    .order-make__item + .order-make__item {
+        margin-top: 20px;
+    }
+
+    .order-make__form-row.flex.cards {
+        justify-content: space-between;
+    }
+    .order-make__item-title.active::after {
+        top: 5px;
+    }
+    .order-make__form-row label.index input {
+        max-width: none;
+    }
+    .order-make__item-content {
+        margin-top: 0;
     }
 }
 
@@ -1050,6 +1139,10 @@
 
     .not-found__code p {
         font-size: 200px;
+    }
+
+    label.order-make__card {
+        width: calc(50% - 20px);
     }
 }
 
@@ -1236,21 +1329,27 @@
     .not-found__code p {
         font-size: 150px;
     }
+
     .compare-feedback__inner {
         padding: 40px;
     }
+
     .compare-feedback__column {
         max-width: none;
     }
+
     .compare-feedback__text {
         margin-top: 25px;
     }
+
     .compare__header {
         flex-direction: column;
     }
+
     .compare__categories {
         flex-wrap: wrap;
     }
+
     .compare__buttons {
         margin-top: 15px;
         justify-content: space-between;
@@ -1268,7 +1367,8 @@
     .cart-item__article {
         display: block;
     }
-    .cart-item__left ~ div:not(.cart-item__right) {
+
+    .cart-item__left~div:not(.cart-item__right) {
         display: none;
     }
 
@@ -1298,6 +1398,7 @@
     .cart-item__name {
         max-width: none;
     }
+
     .cart-item__right .cart-item__sum {
         display: flex;
         flex-direction: column-reverse;
@@ -1311,6 +1412,7 @@
     .cart-item__right .cart-item__quantity {
         margin-top: 5px;
     }
+
     .question-form__inner {
         gap: 20px;
     }
@@ -1369,20 +1471,34 @@
     .promo-banner.promo-banner--category {
         min-width: auto;
     }
+
     .compare-feedback__form-row input,
     .rect-btn--compare-feedback {
         font-size: 12px;
         width: 100%;
     }
+
     .compare-feedback__form-row input::placeholder {
         font-size: 12px;
     }
+
     .compare-feedback__form-row {
         flex-direction: column;
         gap: 10px;
     }
+
     .cart-item__right .cart-item__sum .current-price {
         font-size: 14px;
+    }
+    .order-apply__box {
+        padding: 50px;
+    }
+    .order-apply__text-box {
+        max-width: none;
+        text-align: center;
+    }
+    .order-apply__text {
+        margin-top: 15px;
     }
 }
 
@@ -1648,26 +1764,72 @@
     .rect-btn--not-found {
         margin-top: 15px;
     }
+
     .rect-btn--compare-feedback {
         padding: 10px;
     }
+
     .compare-feedback__form-row input::placeholder {
         font-size: 10px;
     }
+
     .compare-feedback__form-confidence label {
         font-size: 10px;
     }
+
     .compare__header {
         margin-top: 10px;
     }
+
     .question-form__title {
         font-size: 24px;
     }
+
     #questionTextArea {
         max-height: 120px;
     }
+
     #questionTextArea::placeholder {
         font-size: 16px;
+    }
+    .order-make__item:first-child .order-make__form-row.flex {
+        flex-direction: column;
+    }
+    .order-make__form-row.flex label:not(.order-make__card) {
+        width: 100%;
+    }
+    label.order-make__card .order-make__card-title {
+        font-size: 12px;
+    }
+    .order-make__card-list li,
+    .order-make__form-row label p {
+        font-size: 10px;
+    }
+    .order-make__item-content .itc-select__toggle {
+        padding: 5px 10px;
+        gap: 10px;
+        justify-content: flex-start;
+        font-size: 10px;
+        width: auto;
+    }
+    .order-make__item-content .itc-select__toggle::after {
+        margin-left: 0;
+    }
+    .order-make__form-row.flex.cards {
+        gap: 10px 5px;
+    }
+    label.order-make__card {
+        width: calc(50% - 5px);
+    }
+    .order-make__card .itc-select__dropdown {
+        top: 1.5rem;
+    }
+    .order-make__card .itc-select__dropdown li {
+        font-size: 10px;
+        padding: 5px;
+    }
+    .rect-btn--order-make {
+        font-size: 12px;
     }
 }
 
@@ -1868,10 +2030,12 @@
     .catalog__categories-box img {
         max-width: 15px;
     }
-    .cart-item__counter button.minus{
+
+    .cart-item__counter button.minus {
         padding: 0 10px 0 15px;
     }
-    .cart-item__counter button.plus{
+
+    .cart-item__counter button.plus {
         padding: 0 15px 0 10px;
     }
 
@@ -1889,34 +2053,43 @@
         width: 10px;
         height: 10px;
     }
+
     .cart-item__name-link,
     .cart-item__right .cart-item__sum .current-price {
         font-size: 12px;
     }
+
     .cart-item__status,
     .cart-item__article,
     .cart-item__color,
     .cart-item__sum .old-price .price {
         font-size: 8px;
     }
+
     .cart-item__left {
         gap: 5px;
     }
+
     .cart-item__row {
         gap: 2px;
     }
+
     .cart-calc__price p:not(.price) {
         font-size: 10px;
     }
+
     .cart-calc__price p.price {
         font-size: 12px;
     }
-    .cart-calc__price + .cart-calc__price {
+
+    .cart-calc__price+.cart-calc__price {
         margin-top: 5px;
     }
+
     .cart {
         margin-bottom: 50px;
     }
+
     .cart-item__img {
         display: flex;
         justify-content: center;
@@ -1925,31 +2098,112 @@
         min-height: 40px;
         padding: 5px;
     }
-    .round-btn--fav svg, 
-    .round-btn--compare svg, 
+
+    .round-btn--fav svg,
+    .round-btn--compare svg,
     .round-btn--cart svg {
         width: 10px;
         height: 10px;
     }
+
     .question-form__title {
         font-size: 20px;
     }
+
     .question-form__checkbox p {
         font-size: 12px;
     }
+
     .question-form .close-btn {
         width: 16px;
         height: 16px;
         right: 16px;
     }
+
     #questionTextArea {
         margin-top: 15px;
     }
+
     #questionPhoneInput {
         margin-top: 0;
     }
+
     #questionMailInput {
         margin-top: 10px;
+    }
+    .order-make__form-row label textarea {
+        min-height: 50px;
+    }
+    .order-make__form-row label input:not([type=radio]),
+    .order-make__form-row label textarea {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+    .order-make__form-row label input:not([type=radio])::placeholder,
+    .order-make__form-row label textarea::placeholder {
+        font-size: 10px;
+    }
+    .order-make__item-title span {
+        font-size: 16px;
+    }
+    label.order-make__card .order-make__card-title {
+        font-size: 10px;
+    }
+    label.order-make__card {
+        padding: 10px;
+    }
+    label.order-make__card .order-make__card-info {
+        padding-left: 15px;
+    }
+    label.order-make__card .order-make__card-title::before {
+        width: 12px;
+        height: 12px;
+        left: -18px;
+    }
+    label.order-make__card .order-make__card-title::after {
+        width: 6px;
+        height: 6px;
+        left: -15px;
+    }
+    .order-make__card-list li, .order-make__form-row label p,
+    .order-make__item-content .itc-select__toggle,
+    .order-make__card .itc-select__dropdown li {
+        font-size: 8px;
+    }
+    .order-make__card .itc-select__dropdown li::after {
+        width: 8px;
+        height: 8px;
+    }
+    label.order-make__card .order-make__card-title {
+        margin-bottom: 10px;
+    }
+    p.order-make__card-cost {
+        margin-top: 10px;
+    }
+    .order-make__card-pays li {
+        width: 35px;
+        height: 25px;
+    }
+    .order-make__item-title.active ~ .order-make__item-content,
+    .order-make__form-row + .order-make__form-row {
+        margin-top: 10px;
+    }
+
+    .order-make__form-row.flex {
+        gap: 10px;
+    }
+    .rect-btn--order-make {
+        font-size: 10px;
+    }
+    .order-make__item-title span {
+        font-size: 12px;
+    }
+    .order-make__item-title.active::after,
+    .order-make__item-title::after {
+        padding: 3px;
+    }
+    .order-apply__box .order-apply__message {
+        font-size: 24px;
     }
 }
 
@@ -2131,43 +2385,62 @@
     .promo-banner.promo-banner--category {
         padding: 10px;
     }
+
     .question-form {
         padding: 20px;
     }
+
     .question-form__title {
         font-size: 16px;
     }
+
     .question-form .close-btn {
         width: 10px;
         height: 10px;
         top: 10px;
         right: 10px;
     }
+
     #questionTextArea {
         max-height: 80px;
         font-size: 12px;
     }
+
     #questionTextArea::placeholder {
         font-size: 12px;
     }
+
     #questionPhoneInput,
     #questionMailInput {
         font-size: 12px;
         padding: 15px;
         min-height: auto;
     }
+
     .question-form__user-fields input::placeholder {
         font-size: 12px;
     }
+
     .question-form__checkbox {
         margin-top: 15px;
     }
+
     .question-form__checkbox p {
         font-size: 10px;
     }
+
     .rect-btn--question {
         margin-top: 15px;
         font-size: 14px;
+    }
+    .order-apply__box .order-apply__message {
+        font-size: 20px;
+    }
+    .order-apply__box {
+        padding: 20px;
+    }
+    .order-apply__text {
+        font-size: 12px;
     }
 }
 

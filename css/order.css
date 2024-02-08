@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 120px;
+    gap: 10px;
 }
 
 .order-make {
@@ -18,6 +19,10 @@
 
 .order-make__inner {
     display: none;
+}
+
+.order-make__item-title {
+    position: relative;
 }
 
 .order-make__inner .order-make__form-row.flex {
@@ -121,6 +126,7 @@
     margin-top: 5px;
     font-size: 16px;
     line-height: 1.5;
+    border-radius: 5px;
 }
 
 .order-make__form-row label.index input {
@@ -157,6 +163,31 @@ label.order-make__card {
     gap: 10px;
     cursor: pointer;
     transition: var(--alt-transition);
+    position: relative;
+}
+
+label.order-make__card .order-make__card-title::before,
+label.order-make__card .order-make__card-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+label.order-make__card .order-make__card-title::before {
+    left: -23px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--main-blue);
+}
+
+label.order-make__card .order-make__card-title::after {
+    width: 8px;
+    height: 8px;
+    left: -19px;
+    background-color: var(--main-blue);
+    opacity: 0;
 }
 
 label.order-make__card:has(input:checked) {
@@ -168,40 +199,38 @@ label.order-make__card:has(input:checked) .order-make__card-pays img {
 }
 
 label.order-make__card input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
     margin-top: 5px;
 }
 
+label.order-make__card:has(input:checked) .order-make__card-title::after {
+    opacity: 1;
+}
+
+label.order-make__card .order-make__card-info {
+    padding-left: 23px;
+}
+
 label.order-make__card .order-make__card-title {
+    position: relative;
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-.order-make__select {
-    position: relative;
-}
-
-.order-make__select-input {
-    border: none;
-    border-radius: 5px;
-    width: 100%;
+.order-make__item-content .itc-select__toggle {
     padding: 10px 15px;
-    cursor: pointer;
     font-size: 12px;
-    line-height: 1.5;
-    position: relative;
+    font-style: normal;
+    border: none;
 }
 
-.order-make__select::after {
-    content: '';
-    position: absolute;
-    top: 50%;
+.order-make__item-content .itc-select__toggle::after {
+    background-image: url('../img/icons/select-arrow-black.svg');
     width: 8px;
     height: 4px;
-    background-image: url('../img/icons/order-make-select.svg');
-    background-repeat: no-repeat;
-    transform: translateY(-50%);
-    right: 15px;
 }
 
 .order-make__pickup-address {
