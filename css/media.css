@@ -970,6 +970,21 @@
         padding: 0;
         gap: 10px;
     }
+    .question-form {
+        padding: 45px;
+    }
+    .question-form__inner {
+        gap: 45px;
+        flex-direction: column;
+    }
+    .question-form__user-fields {
+        width: auto;
+    }
+    .question-form__title {
+        font-size: 36px;
+        text-align: center;
+        max-width: none;
+    }
 }
 
 @media (max-width: 820px) {
@@ -1292,6 +1307,13 @@
     .cart-item__right .cart-item__sum .old-price .discount {
         display: none;
     }
+
+    .cart-item__right .cart-item__quantity {
+        margin-top: 5px;
+    }
+    .question-form__inner {
+        gap: 20px;
+    }
 }
 
 @media (max-width: 620px) {
@@ -1411,7 +1433,7 @@
         font-size: 20px;
     }
 
-    .product-card__name a {
+    .product-card__name {
         font-size: 16px;
     }
 
@@ -1638,10 +1660,19 @@
     .compare__header {
         margin-top: 10px;
     }
+    .question-form__title {
+        font-size: 24px;
+    }
+    #questionTextArea {
+        max-height: 120px;
+    }
+    #questionTextArea::placeholder {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 500px) {
-    .product-card__name a {
+    .product-card__name {
         font-size: 12px;
     }
 
@@ -1894,6 +1925,32 @@
         min-height: 40px;
         padding: 5px;
     }
+    .round-btn--fav svg, 
+    .round-btn--compare svg, 
+    .round-btn--cart svg {
+        width: 10px;
+        height: 10px;
+    }
+    .question-form__title {
+        font-size: 20px;
+    }
+    .question-form__checkbox p {
+        font-size: 12px;
+    }
+    .question-form .close-btn {
+        width: 16px;
+        height: 16px;
+        right: 16px;
+    }
+    #questionTextArea {
+        margin-top: 15px;
+    }
+    #questionPhoneInput {
+        margin-top: 0;
+    }
+    #questionMailInput {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -1951,7 +2008,7 @@
         font-size: 8px;
     }
 
-    .product-card__name a {
+    .product-card__name {
         font-size: 10px;
     }
 
@@ -2073,6 +2130,44 @@
 
     .promo-banner.promo-banner--category {
         padding: 10px;
+    }
+    .question-form {
+        padding: 20px;
+    }
+    .question-form__title {
+        font-size: 16px;
+    }
+    .question-form .close-btn {
+        width: 10px;
+        height: 10px;
+        top: 10px;
+        right: 10px;
+    }
+    #questionTextArea {
+        max-height: 80px;
+        font-size: 12px;
+    }
+    #questionTextArea::placeholder {
+        font-size: 12px;
+    }
+    #questionPhoneInput,
+    #questionMailInput {
+        font-size: 12px;
+        padding: 15px;
+        min-height: auto;
+    }
+    .question-form__user-fields input::placeholder {
+        font-size: 12px;
+    }
+    .question-form__checkbox {
+        margin-top: 15px;
+    }
+    .question-form__checkbox p {
+        font-size: 10px;
+    }
+    .rect-btn--question {
+        margin-top: 15px;
+        font-size: 14px;
     }
 }
 
@@ -2322,7 +2417,7 @@
     }
 
     .rect-btn--question:hover {
-        background-color: var(--main-blue);
+        background-color: var(--hover-blue);
         color: #fff;
     }
 

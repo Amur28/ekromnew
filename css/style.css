@@ -1671,14 +1671,16 @@ body.active {
 
 .product-card__name:not(a) {
     margin-top: 10px;
-    overflow: hidden;
-    height: 55px;
+    font-size: 18px;
 }
 
 .product-card__name a {
+    overflow: hidden;
+    display: block;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 1.5;
+    line-height: normal;
+    max-height: 3.5em;
+    height: 3.5em;
 }
 
 .product-card__article {
@@ -1903,13 +1905,8 @@ body.active {
     width: 50%;
 }
 
-.bestseller__inner .bestseller-button-prev {
-    left: -21px;
-    top: 225px;
-}
-
+.bestseller__inner .bestseller-button-prev,
 .bestseller__inner .bestseller-button-next {
-    right: -21px;
     top: 225px;
 }
 
@@ -2995,7 +2992,6 @@ a.footer__nav-link--show {
     font-size: 42px;
     font-weight: 500;
     color: #fff;
-    line-height: 54px;
     max-width: 500px;
 }
 
@@ -3032,35 +3028,47 @@ a.footer__nav-link--show {
     font-size: 18px;
     font-weight: 400;
 }
-
-#questionCheckbox {
+.question-form__checkbox input {
     position: absolute;
     z-index: -1;
     opacity: 0;
 }
 
-#questionCheckbox+label {
-    display: flex;
-    align-items: center;
-    user-select: none;
+.question-form__checkbox label {
+    position: relative;
+    padding-left: 25px;
     cursor: pointer;
 }
 
-#questionCheckbox+label::before {
+.question-form__checkbox label::before {
     content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
     display: inline-block;
     width: 16px;
     height: 16px;
     border: 1px solid var(--subtitle-color);
     border-radius: 2px;
     background-color: #fff;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 3px;
 }
 
-#questionCheckbox:checked+label::before {
-    background-image: url('../img/icons/check.svg');
+.question-form__checkbox label::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    content: '';
+    width: 11px;
+    height: 9px;
+    background: url(../img/icons/check.svg) center center / cover no-repeat;
+    transition: var(--alt-transition);
+    opacity: 0;
+}
+
+.question-form__checkbox label:has(input:checked)::after {
+    opacity: 1;
 }
 
 #questionMailInput {
@@ -3076,12 +3084,11 @@ a.footer__nav-link--show {
 
 .question-form__checkbox p {
     color: #fff;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 18px;
 }
 
 .question-form__checkbox a {
-    font-size: 12px;
     line-height: 18px;
     color: #fff;
 }
@@ -3091,7 +3098,6 @@ a.footer__nav-link--show {
     border-color: #fff;
     color: var(--text-black-color);
     font-size: 18px;
-    line-height: 27px;
     margin-top: 25px;
 }
 
