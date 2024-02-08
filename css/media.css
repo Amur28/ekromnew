@@ -2205,6 +2205,21 @@
     .order-apply__box .order-apply__message {
         font-size: 24px;
     }
+    form.cart-promocode {
+        padding: 10px;
+    }
+    form.cart-promocode .promocode-input {
+        padding: 10px;
+    }
+    .rect-btn--order .rect-btn--order-text {
+        font-size: 12px;
+    }
+    .promocode-button img {
+        width: 15px;
+    }
+    .rect-btn--order .rect-btn--order-sum {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 400px) {
