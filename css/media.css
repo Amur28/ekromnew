@@ -410,6 +410,12 @@
     .cart-calc__price p:not(.price) {
         max-width: 50%;
     }
+
+    .personal__tile svg,
+    .personal__tile-link svg {
+        width: 80px;
+        height: 80px;
+    }
 }
 
 @media (max-width: 1024px) {}
@@ -1074,6 +1080,38 @@
     .order-make__item-content {
         margin-top: 0;
     }
+    .personal__aside {
+        display: none;
+    }
+    .personal-main .info {
+        display: none;
+    }
+    .personal {
+        margin: 20px 0 80px 0;
+    }
+    .personal__tile,
+    .personal__tile-link {
+        border-color: #fff;
+    } 
+    .personal__tile svg,
+    .personal__tile-link svg {
+        width: 60px;
+        height: 60px;
+    }
+    .personal__tile svg path,
+    .personal__tile-link svg path {
+        fill: #fff;
+    }
+    .personal-main {
+        background-color: var(--search-color);
+    }
+    .personal__tile p, 
+    .personal__tile-link p {
+        color: #fff;
+    }
+    .personal__item.tile p {
+        color: #fff;
+    }
 }
 
 @media (max-width: 820px) {
@@ -1415,6 +1453,12 @@
 
     .question-form__inner {
         gap: 20px;
+    }
+    .personal__tile, .personal__tile-link {
+        width: calc(50% - 18px);
+    }
+    .personal__tiles {
+        justify-content: space-between;
     }
 }
 
@@ -1831,6 +1875,14 @@
     .rect-btn--order-make {
         font-size: 12px;
     }
+    .personal__tile, 
+    .personal__tile-link {
+        padding: 15px 0;
+    } 
+    .personal__tile p, 
+    .personal__tile-link p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -2220,6 +2272,16 @@
     .rect-btn--order .rect-btn--order-sum {
         font-size: 10px;
     }
+    .personal__tiles {
+        gap: 5px;
+    }
+    .personal__tile, .personal__tile-link {
+        width: calc(50% - 5px);
+    }
+    .personal__tile p, 
+    .personal__tile-link p {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -2456,6 +2518,14 @@
     }
     .order-apply__text {
         font-size: 12px;
+    }
+    .personal__tile svg, 
+    .personal__tile-link svg {
+        width: 45px;
+        height: 45px;
+    }
+    .personal {
+        margin: 20px 0;
     }
 }
 

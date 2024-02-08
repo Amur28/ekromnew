@@ -100,3 +100,18 @@ personalTiles.forEach((tile, index) => {
 import { catalogPopupMenuItems, changeContentInCatalogPopup } from './popups.js';
 
 catalogPopupMenuItems.forEach(changeContentInCatalogPopup);
+
+/* Смена контента в личном кабинете */
+if (window.innerWidth <= 992) {
+    const headerMobileAuthReturn = document.querySelector('.header__mobile-auth-return');
+
+    headerMobileAuthReturn.addEventListener('click', returnToPrevContent);
+
+    function returnToPrevContent(event) {
+        if (!containClass(personalContentArr[0], 'active')) {
+            event.preventDefault();
+            hideOtherItems(personalContentArr, 'active');
+            addClass(personalContentArr[0], 'active')
+        }
+    }
+}
