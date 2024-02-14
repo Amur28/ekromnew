@@ -18,9 +18,9 @@
             <div class="header__mobile">
                 <div class="container">
                     <div class="header__mobile-inner header__mobile-inner--auth">
-                        <a class="header__mobile-auth-return" href="#">
+                        <button class="header__mobile-auth-return" onclick="window.history.back()">
                             <img src="./img/icons/return-catalog-white.svg" alt="">
-                        </a>
+                        </button>
                         <h2 class="header__mobile-title header__mobile-title--auth">
                             Вход
                         </h2>
@@ -34,7 +34,7 @@
                 <div class="container">
                     <div class="swiper swiper-auth">
                         <div class="swiper-wrapper swiper-auth-wrapper">
-                            <div class="swiper-slide swiper-auth-slide auth-start">
+                            <div class="swiper-slide swiper-auth-slide auth-start" data-hash="auth-start">
                                 <h3 class="auth-title">
                                     Добро пожаловать!
                                 </h3>
@@ -62,7 +62,7 @@
                                     <button class="go-to-password-recovery" type="button">Забыли пароль?</button>
                                 </div>
                             </div>
-                            <div class="swiper-slide swiper-auth-slide auth-login">
+                            <div class="swiper-slide swiper-auth-slide auth-login" data-hash="auth-login">
                                 <p class="auth-text">
                                     Войдите в аккаунт, чтобы воспользоваться личным кабинетом
                                 </p>
@@ -100,7 +100,7 @@
                                 </form>
                                 
                             </div>
-                            <div class="swiper-slide swiper-auth-slide auth-register">
+                            <div class="swiper-slide swiper-auth-slide auth-register" data-hash="auth-register">
                                 <p class="auth-text">
                                     Зарегистрируйте аккаунт, чтобы
                                     воспользоваться личным кабинетом
@@ -159,7 +159,7 @@
                                     </p>
                                 </form>
                             </div>
-                            <div class="swiper-slide swiper-auth-slide auth-verify">
+                            <div class="swiper-slide swiper-auth-slide auth-verify" data-hash="auth-verify">
                                 <p class="auth-text">
                                     Войдите в аккаунт, чтобы воспользоваться личным кабинетом
                                 </p>
@@ -182,7 +182,7 @@
                                 </form>
                                 
                             </div>
-                            <div class="swiper-slide swiper-auth-slide auth-password-recovery-verify">
+                            <div class="swiper-slide swiper-auth-slide auth-password-recovery-verify" data-hash="auth-password-recovery-verify">
                                 <p class="auth-text">
                                     Восстановите пароль, чтобы воспользоваться личным кабинетом
                                 </p>
@@ -205,7 +205,7 @@
                                 </form>
                                 
                             </div>
-                            <div class="swiper-slide swiper-auth-slide auth-password-recovery">
+                            <div class="swiper-slide swiper-auth-slide auth-password-recovery" data-hash="auth-password-recovery">
                                 <p class="auth-text">
                                     Восстановите пароль, чтобы воспользоваться личным кабинетом
                                 </p>
@@ -548,8 +548,10 @@
             </li>
         </ul>
     </div>
+
     <div class="mobile-overlay">
     </div>
+
     <script>
         const allSkeletons = document.querySelectorAll('.skeleton');
         window.addEventListener('load', function () {
@@ -558,7 +560,7 @@
             });
         });
     </script>
-    <script src="./js/auth.js" type="module"></script>
+    <script src="./js/script.js" type="module"></script>
 </body>
 
 </html>

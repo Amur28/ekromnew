@@ -137,8 +137,6 @@ if (headerMenu) {
     });
 }
 
-
-
 /* Кнопки добавления в корзину на мобильной версии */
 
 const mobileCartButtons = document.querySelectorAll('.product-card__mobile-cart');
@@ -171,4 +169,52 @@ if (filterBtn && aside) {
             removeClass(mobileOverlay, 'active')
         }
     });
+}
+
+/* Header more */
+
+const headerMobileMore = document.querySelector('.header__mobile-more-btn');
+
+if (headerMobileMore) {
+    headerMobileMore.addEventListener('click', openCloseDropDown);
+    document.addEventListener('click', hideHeaderMobileMore);
+}
+
+function hideHeaderMobileMore(event) {
+    const headerMobileMoreDropdown = headerMobileMore.nextElementSibling;
+    if (event.target === headerMobileMore || headerMobileMore.contains(event.target) || event.target === headerMobileMoreDropdown || headerMobileMoreDropdown.contains(event.target)) {
+        return
+    }
+    if (event.target !== headerMobileMoreDropdown && containClass(headerMobileMoreDropdown, 'active')) {
+        removeClass(headerMobileMoreDropdown, 'active')
+    }
+}
+
+function openCloseDropDown() {
+    const headerDropdown = this.nextElementSibling;
+    if (event.target !== headerDropdown && containClass(headerDropdown, 'active')) {
+        removeClass(headerDropdown, 'active')
+    }
+    addClass(headerDropdown, 'active');
+}
+
+/* Кнопка "Выбрать все" */
+
+const headerMobileCheckbox = document.querySelector('.cart-mobile__choice-label input');
+if (headerMobileCheckbox) {
+    headerMobileCheckbox.addEventListener('input', checkAllProducts);
+}
+
+function checkAllProducts() {
+    const productCheckboxes = document.querySelectorAll('.cart-item__checkbox input');
+
+    productCheckboxes.forEach(toggleCheckboxes)
+}
+
+function toggleCheckboxes(item) {
+    if (headerMobileCheckbox.checked === true) {
+        item.checked = true
+    } else {
+        item.checked = false
+    }
 }

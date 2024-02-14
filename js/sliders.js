@@ -318,4 +318,7 @@ export const authSwiper = new Swiper('.swiper-auth', {
     autoHeight: true,
     effect: 'fade',
     allowTouchMove: false,
+    hashNavigation: {
+        watchState: true,
+    },
 })

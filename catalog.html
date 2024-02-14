@@ -599,9 +599,9 @@
 
                     </div>
                 </div>
-                <div class="catalog-popup" id="catalogPopup">
+                <div class="catalog-popup" id="catalogPopup" data-modal>
                     <div class="container">
-                        <div class="catalog-popup__wrapper">
+                        <div class="catalog-popup__wrapper" data-modal-container>
                             <nav class="catalog-popup__menu">
                                 <ul class="catalog-popup__menu-list">
                                     <li class="catalog-popup__menu-item">
@@ -630,7 +630,8 @@
                                         </div>
                                     </li>
                                     <li class="catalog-popup__menu-item">
-                                        <a class="catalog-popup__menu-link" href="./category.html">Стиральные и сушильные
+                                        <a class="catalog-popup__menu-link" href="./category.html">Стиральные и
+                                            сушильные
                                             машины</a>
                                         <div class="catalog-popup__meni-icon">
                                             <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
@@ -690,7 +691,8 @@
                                         </div>
                                     </li>
                                     <li class="catalog-popup__menu-item">
-                                        <a class="catalog-popup__menu-link" href="./category.html">Техника для уборки</a>
+                                        <a class="catalog-popup__menu-link" href="./category.html">Техника для
+                                            уборки</a>
                                         <div class="catalog-popup__meni-icon">
                                             <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1530,7 +1532,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                
+
                                 <div class="promo-banner" style="background-image: url('./img/catalog-banner.png');">
                                     <p class="catalog-popup__categories-text">
                                         Не можете выбрать?
@@ -2683,9 +2685,9 @@
         </footer>
     </div>
 
-    <div id="questionForm" class="modal">
-        <div class="container">
-            <form class="question-form" action="#">
+    <div id="questionForm" class="modal" data-modal>
+        <div class="container modal-container" >
+            <form class="question-form" action="#" data-modal-container>
                 <button class="close-btn close-btn--question" type="button">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -2705,12 +2707,14 @@
                         <input id="questionPhoneInput" type="tel" placeholder="+7 (9xx) xxx-xx-xx" required>
                         <input id="questionMailInput" type="email" placeholder="xxxxxx@xx.xx" required>
                         <div class="question-form__checkbox">
-                            <input id="questionCheckbox" type="checkbox" required name="question-checkbox">
-                            <label for="questionCheckbox"></label>
-                            <p>
-                                Отправляя форму Вы соглашаетесь с
-                                <a href="./confidence.html">обработкой персональных данных и политикой конфеденциальности</a>
-                            </p>
+                            <label>
+                                <input type="checkbox" required name="question-checkbox">
+                                <p>
+                                    Отправляя форму Вы соглашаетесь с
+                                    <a href="#">обработкой персональных данных и политикой конфеденциальности</a>
+                                </p>
+                            </label>
+
                         </div>
 
                         <button id="questionSubmit" class="rect-btn rect-btn--question" type="submit">
@@ -2746,8 +2750,8 @@
         </div>
     </div>
 
-    <div id="citySelect" class="modal">
-        <div class="city-select">
+    <div id="citySelect" class="modal" data-modal>
+        <div class="city-select modal-container" data-modal-container>
             <h4 class="city-select__title">
                 Выберите город доставки
             </h4>
@@ -2799,8 +2803,8 @@
         </div>
     </div>
 
-    <div id="authRegister" class="modal">
-        <div class="auth__inner">
+    <div id="authRegister" class="modal" data-modal>
+        <div class="auth__inner modal-container" data-modal-container>
             <div class="auth__box auth__box--register">
                 <h4 class="auth__title">
                     Регистрация
@@ -2894,8 +2898,8 @@
 
     </div>
 
-    <div id="authLogin" class="modal">
-        <div class="auth__inner">
+    <div id="authLogin" class="modal" data-modal>
+        <div class="auth__inner" data-modal-container>
             <div class="auth__box auth__box--login">
                 <h4 class="auth__title auth__title--login">
                     Вход
@@ -3044,7 +3048,7 @@
             });
         });
     </script>
-    <script src="./js/catalog.js" type="module"></script>
+    <script src="./js/script.js" type="module"></script>
     <script src="./js/mobile.js" type="module"></script>
 </body>
 

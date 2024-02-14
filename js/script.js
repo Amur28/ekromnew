@@ -1,65 +1,247 @@
 'use strict';
 import './sliders.js';
-import { brandsMarquee } from './marquee.js';
-import './libs.js';
-import { addClass, removeClass, containClass, hideOtherItems, toggleClass, checkClickWithCloseBtn } from './functions.js';
-import { body } from './popups.js';
+import { addClass, removeClass, containClass, hideOtherItems, toggleClass, checkClassAndClick } from './functions.js';
+
+const body = document.body;
 
 const clientWidth = window.innerWidth;
 
+/* Липкий HEADER */
+
+let lastScrollPos = 0;
+
+function scrollPosition() {
+    return window.scrollY || document.documentElement.scrollTop;
+};
+
+function addScroll(arr) {
+    arr.forEach(el => {
+        if (el) {
+            addClass(el, 'scroll');
+        }
+    });
+};
+
+function removeScroll(arr) {
+    arr.forEach(el => {
+        if (el) {
+            removeClass(el, 'scroll');
+        }
+    });
+};
+
+const catalogPopup = document.querySelector('.catalog-popup');
+
+function showOrHideContentOnScroll() {
+    const defaultOffset = 500;
+    const stickyHeader = document.querySelector('.header');
+    const cartAside = document.querySelector('.cart-aside');
+
+    const elementsArr = [stickyHeader, cartAside]
+
+    if (scrollPosition() > lastScrollPos && !containClass(stickyHeader, 'scroll') && scrollPosition() > defaultOffset) {
+        addScroll(elementsArr);
+        if (headerTopInfoLink) {
+            const headerDropdown = headerTopInfoLink.nextElementSibling;
+            removeClass(headerDropdown, 'active')
+        }
+    } else if (scrollPosition() < lastScrollPos && containClass(stickyHeader, 'scroll') && scrollPosition() < 200) {
+        removeScroll(elementsArr);
+    }
+    if (!catalogPopup) return;
+    if (containClass(catalogPopup, 'active')) {
+        addClass(stickyHeader, 'popup-active')
+    } else {
+        removeClass(stickyHeader, 'popup-active')
+    }
+
+    lastScrollPos = scrollPosition();
+};
+
+window.addEventListener('scroll', showOrHideContentOnScroll)
+
 /* Инициализация бегущей строки брендов */
 
-brandsMarquee.mount(window.splide.Extensions);
+function initBrandsMarquee() {
+    const brandsMarquee = document.querySelector('.brands__marquee');
+
+    if (brandsMarquee) {
+        const marquee = new Splide(brandsMarquee, {
+            type: 'loop',
+            drag: 'free',
+            focus: 'center',
+            perPage: 6,
+            arrows: false,
+            pagination: false,
+            gap: 20,
+            autoScroll: {
+                speed: 0.5,
+                pauseOnHover: false,
+            },
+            breakpoints: {
+                1400: {
+                    perPage: 5,
+                },
+                1000: {
+                    perPage: 4,
+                },
+                768: {
+                    perPage: 3,
+                },
+                560: {
+                    perPage: 2,
+                    gap: 0,
+                },
+                400: {
+                    perPage: 1.5,
+                }
+            }
+        });
+        marquee.mount(window.splide.Extensions)
+    }
+}
+
+initBrandsMarquee();
 
 /* Скрытие общих элементов */
 
-document.addEventListener('click', (event) => {
-    hideGeneralElements(event);
+function closeModalOnClick() {
+    const modalArr = document.querySelectorAll('[data-modal]');
+
+    modalArr.forEach(modal => {
+        modal.addEventListener('click', checkModalClick)
+    });
+};
+
+function checkModalClick(event) {
     const target = event.target;
-    const itsFaqInner = target == faqInner || faqInner.contains(target);
+    const modalContainer = this.querySelector('[data-modal-container]');
+    const closeBtn = this.querySelector('.close-btn');
+    const isModal = target == modalContainer || modalContainer.contains(target);
 
-    if (!itsFaqInner) hideOtherItems(faqItems, 'active');
-    const headerSearch = document.querySelector('.header__mobile-search');
-});
+    if (closeBtn) {
+        const isCloseBtn = target == closeBtn || closeBtn.contains(target);
+        if (isCloseBtn) {
+            removeClass(this, 'active')
+            removeClass(body, 'active')
+        }
+    }
+    if (!isModal) {
+        removeClass(this, 'active');
+        removeClass(body, 'active');
+    }
 
-/* Липкий HEADER */
+};
 
-import { showOrHideContentOnScroll } from './stickyHeader.js';
-
-window.addEventListener('scroll', showOrHideContentOnScroll);
+document.addEventListener('click', closeModalOnClick);
 
 /* Показ/скрытие попапа со всеми категориями */
 
-import { showHideAllCategories, hideGeneralElements } from './popups.js';
-showHideAllCategories();
+const catalogPopupBtns = document.querySelectorAll('.oval-btn--all-categories');
+
+function toggleCatalogPopup() {
+    const catalogPopup = document.querySelector('.catalog-popup');
+    toggleClass(catalogPopup, 'active');
+};
+
+catalogPopupBtns.forEach(btn => {
+    btn.addEventListener('click', toggleCatalogPopup);
+});
 
 /* Header dropdown */
 
-import { headerTopInfoLink, showHideHeaderDrodown } from './popups.js';
+const headerTopInfoLink = document.querySelector('.header__top-link--info');
 
-headerTopInfoLink.addEventListener('click', showHideHeaderDrodown)
+if (headerTopInfoLink) {
+    const headerDropdown = headerTopInfoLink.nextElementSibling;
+
+    function toggleHeaderDropdown(event) {
+        event.stopPropagation();
+        toggleClass(headerDropdown, 'active');
+    };
+
+    function closeHeaderDropdown(event) {
+        const target = event.target;
+        const itsHeaderDropdown = target == headerDropdown || headerDropdown.contains(target);
+        if (!itsHeaderDropdown && containClass(headerDropdown, 'active')) {
+            removeClass(headerDropdown, 'active')
+        }
+    };
+
+    headerTopInfoLink.addEventListener('click', toggleHeaderDropdown);
+    document.addEventListener('click', closeHeaderDropdown);
+}
 
 /* Auth popup */
 
-import { showHideAuthPopup } from './popups.js';
+const authBtns = document.querySelectorAll('.auth-btn');
 
-showHideAuthPopup();
+authBtns.forEach(btn => {
+    btn.addEventListener('click', toggleAuthPopup)
+})
+
+function toggleAuthPopup(event) {
+    event.stopPropagation()
+    const authPopup = this.nextElementSibling;
+    toggleClass(authPopup, 'active');
+}
+
+document.addEventListener('click', closeAuthPopup);
+
+function closeAuthPopup(event) {
+    const target = event.target;
+    const authPopups = document.querySelectorAll('.auth-popup');
+    authPopups.forEach(item => {
+        const isPopup = target == item || item.contains(target);
+        if (!isPopup) {
+            removeClass(item, 'active')
+        }
+    })
+};
 
 /* Форма авторизации */
 
-import { authRegister, authLogin, authRegisterBtns, authLoginBtns, showAuthForm, hideAuthForm } from './popups.js'
+const authRegisterBtns = document.querySelectorAll('.rect-btn--register');
+const authLoginBtns = document.querySelectorAll('.rect-btn--login');
+const authRegister = document.getElementById('authRegister');
+const authLogin = document.getElementById('authLogin');
 
-showAuthForm(authRegisterBtns, authRegister);
-showAuthForm(authLoginBtns, authLogin);
-hideAuthForm(authRegister);
-hideAuthForm(authLogin);
+if (authLogin) {
+    showAuthForm(authLoginBtns, authLogin);
+    hideAuthForm(authLogin);
+}
+
+if (authRegister) {
+    showAuthForm(authRegisterBtns, authRegister);
+    hideAuthForm(authRegister);
+}
+
+function showAuthForm(arr, el) {
+    arr.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const parentPopup = btn.parentNode;
+            removeClass(parentPopup, 'active');
+            addClass(el, 'active');
+            addClass(body, 'active')
+        })
+    })
+}
+
+function hideAuthForm(el) {
+    el.addEventListener('click', (event) => {
+        const authInner = el.querySelector('.auth__inner');
+        let target = event.target;
+        checkClassAndClick(authInner, 'active', target, el);
+        checkClassAndClick(authInner, 'active', target, body);
+    });
+}
 
 /* FAQ section */
 
 const faqInner = document.querySelector('.faq__inner');
 const faqItems = document.querySelectorAll('.faq__item');
 
-const showFaqItem = () => {
+function showFaqItem(event) {
     const currentFaqItem = event.target.closest('.faq__item');
 
     if (!currentFaqItem) return;
@@ -74,117 +256,438 @@ const showFaqItem = () => {
     addClass(currentFaqItem, 'active');
 }
 
-faqInner.addEventListener('click', showFaqItem);
+function checkFaqInner(event) {
+    const target = event.target;
+    const itsFaqInner = target == faqInner || faqInner.contains(target);
+    if (!itsFaqInner) hideOtherItems(faqItems, 'active');
+}
+
+if (faqInner) {
+    faqInner.addEventListener('click', showFaqItem);
+    document.addEventListener('click', checkFaqInner);
+}
 
 /* Форма "Задать свой вопрос" */
 
-import { hideQuestionForm, questionForm } from './popups.js';
-
+const questionForm = document.getElementById('questionForm');
 const faqBtn = document.querySelectorAll('.feedback');
 
 faqBtn.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        event.stopPropagation()
-        addClass(questionForm, 'active');
-        addClass(body, 'active')
-    });
+    btn.addEventListener('click', showQuestionForm)
 });
 
-questionForm.addEventListener('click', (event) => {
-    hideQuestionForm(event);
-});
+function showQuestionForm() {
+    addClass(questionForm, 'active');
+    addClass(body, 'active');
+}
 
 /* Окно быстрого просмотра */
 
-import { showFastView, fastViewBtnList, hideFastView, fakeClickOnImg, moveColorFrame } from './fastView.js';
-
-showFastView(fastViewBtnList, body);
-
 const fastViewPopup = document.getElementById('fastView');
+const fastViewBtnList = document.querySelectorAll('.fast-view-btn');
 
-fastViewPopup.addEventListener('click', (event) => {
-    hideFastView(body, event);
-    fakeClickOnImg(event, fastViewPopup, zoomImg)
+
+
+function showFastView() {
+    addClass(fastViewPopup, 'active');
+    addClass(body, 'active');
+}
+
+fastViewBtnList.forEach(btn => {
+    btn.addEventListener('click', showFastView)
 });
+
+if (fastViewPopup) {
+    fastViewPopup.addEventListener('click', fakeClickOnImg);
+
+    function fakeClickOnImg(event) {
+        const target = event.target;
+        const currentSlide = this.querySelector('.swiper-slide-active');
+        const currentSlideImg = currentSlide.firstElementChild;
+        const isSlide = target == fastviewZoomImg || fastviewZoomImg.contains(target);
+        if (isSlide) {
+            currentSlideImg.click()
+        }
+    }
+
+    const productBoxColorsList = fastViewPopup.querySelector('.product-box__colors-list');
+    productBoxColorsList.addEventListener('click', moveColorFrame);
+
+    const fastviewZoomImg = fastViewPopup.querySelector('.zoom-img');
+
+    fastviewZoomImg.addEventListener('mouseleave', removeZoom)
+    fastviewZoomImg.addEventListener('mousemove', initZoom)
+}
 
 /* Выбор цвета в окне быстрого просмотра */
 
-const productBoxColorsList = fastViewPopup.querySelector('.product-box__colors-list');
+function moveColorFrame(event) {
+    const colorLabel = event.target.closest('.product-box__colors-item');
 
-productBoxColorsList.addEventListener('click', (event) => {
-    moveColorFrame(event, productBoxColorsList);
-});
+    if (!colorLabel) return;
+
+    const frame = this.querySelector('.frame');
+    let posX = colorLabel.offsetLeft;
+    let posY = colorLabel.offsetTop;
+
+    frame.style.cssText = `transform: translate(${posX}px, ${posY}px)`
+}
 
 /*Выбор города*/
 
-import { headerCityButton, hideCitySelect } from './popups.js';
+const headerCityButton = document.querySelectorAll('.header-city__button');
+
+function showCitySelect() {
+    const citySelect = document.querySelector('#citySelect')
+    addClass(citySelect, 'active');
+    addClass(body, 'active')
+}
 
 headerCityButton.forEach(button => {
-    button.addEventListener('click', () => {
-        addClass(citySelect, 'active');
-        addClass(body, 'active');
-    })
+    button.addEventListener('click', showCitySelect)
 });
-
-hideCitySelect();
 
 /* ZOOM */
 
-import { initZoom, removeZoom } from './fastView.js';
-
 let globalX = 0;
 let globalY = 0;
-const zoomImg = fastViewPopup.querySelector('.zoom-img');
 
 document.addEventListener('mousemove', (event) => {
     globalX = event.pageX;
     globalY = event.pageY;
 });
 
-zoomImg.addEventListener('mousemove', () => {
-    initZoom(globalX, globalY, fastViewPopup, zoomImg);
-});
+function initZoom() {
+    let zoomLevel = 5;
+    const currentSlide = this.parentNode.nextElementSibling.querySelector('.swiper-slide-active');
+    const currentImg = currentSlide.firstElementChild;
+    const currentImgSrc = currentImg.getAttribute('src');
+    let imgWidth = currentImg.offsetWidth;
+    let imgHeight = currentImg.offsetHeight;
+    const zoomOverlay = this.nextElementSibling;
+    const zoomCursor = this.firstElementChild;
+    zoomCursor.style.width = `${zoomOverlay.offsetWidth / zoomLevel}px`
+    zoomCursor.style.height = `${zoomOverlay.offsetHeight / zoomLevel}px`
+    let zoomCursorWidth = zoomCursor.offsetWidth;
+    let zoomCursorHeight = zoomCursor.offsetHeight;
+    let posX = globalX - (this.getBoundingClientRect().left + window.scrollX) - zoomCursorWidth / 2;
+    let posY = globalY - (this.getBoundingClientRect().top + window.scrollY) - zoomCursorHeight / 2;
+    if (posX < 0) {
+        posX = 0
+    }
+    if (posY < 0) {
+        posY = 0
+    }
+    if (posX > (imgWidth - zoomCursorWidth)) {
+        posX = imgWidth - zoomCursorWidth
+    }
+    if (posY > (imgHeight - zoomCursorHeight)) {
+        posY = imgHeight - zoomCursorHeight
+    }
+    zoomCursor.style.display = 'block';
+    zoomCursor.style.left = posX + 'px';
+    zoomCursor.style.top = posY + 'px';
 
-zoomImg.addEventListener('mouseleave', () => {
-    removeZoom(zoomImg);
-});
+    posX *= zoomLevel
+    posY *= zoomLevel
+    zoomOverlay.style.display = 'block';
+    zoomOverlay.style.backgroundImage = `url(${currentImgSrc})`;
+    zoomOverlay.style.backgroundSize = `${imgWidth * zoomLevel}px`;
+    zoomOverlay.style.backgroundPosition = `-${posX}px -${posY}px`;
+}
 
-/* Выбор цвета у карточки */
+function removeZoom() {
+    const zoomCursor = this.firstElementChild;
+    const zoomOverlay = this.nextElementSibling;
+    zoomCursor.style.display = 'none';
+    zoomOverlay.style.display = 'none';
+}
 
-import { productCards, changeColorOnCard, changeImgOnHover, returnFirstImg } from './productCards.js';
+/* События для карточек товаров */
+
+const productCards = document.querySelectorAll('.product-card');
+let xDown = null;
+let yDown = null;
 
 productCards.forEach(card => {
-    card.addEventListener('change', (event) => {
-        changeColorOnCard(event, card);
-    });
-    const productImg = card.querySelector('.product-card__img');
+
     const progressBarItems = card.querySelectorAll('.progressbar-item');
-    progressBarItems.forEach(item => {
-        const length = progressBarItems.length;
-        item.style.width = 100 / length + '%';
-    });
+    const thumbsContainer = card.querySelector('.thumbs')
+    const thumbs = card.querySelectorAll('.thumb');
+    const productImg = card.querySelector('.product-card__img');
+
+    /* Смена кнопки "Добавить в корзину" на счётчик */
+
+    card.addEventListener('click', changeCartButtonOnCounter);
+
+    function changeCartButtonOnCounter(event) {
+        const cartButton = event.target.closest('.product-card__buy-cart');
+        const roundCartBtn = this.querySelector('.round-btn--cart')
+
+        if (!cartButton) return;
+        const counter = cartButton.nextElementSibling;
+
+        if (roundCartBtn) {
+            addClass(roundCartBtn, 'active');
+        }
+
+        addClass(cartButton, 'hide');
+        removeClass(counter, 'hide');
+    }
+
+    /* Кнопки избранного/сравнения/корзины */
+
+    card.addEventListener('click', toggleActiveOnRoundBtn);
+
+    function toggleActiveOnRoundBtn(event) {
+        const productCardRoundBtn = event.target.closest('.round-btn');
+
+        if (!productCardRoundBtn) return;
+
+        if (containClass(this, 'row')) {
+            toggleClass(productCardRoundBtn, 'active')
+            return
+        }
+        const productFooter = this.querySelector('.product-card__footer');
+        const buyCartBtn = productFooter.querySelector('.product-card__buy-cart');
+        const counterBtn = productFooter.querySelector('.product-card__counter');
+        const productFooterButtons = productFooter.querySelector('.product-card__footer-buttons');
+
+        if (containClass(productCardRoundBtn, 'round-btn--cart')) {
+            addClass(productFooterButtons, 'active')
+            addClass(buyCartBtn, 'hide')
+            removeClass(counterBtn, 'hide')
+            addClass(productCardRoundBtn, 'active')
+            return;
+        }
+        toggleClass(productCardRoundBtn, 'active')
+    }
+
+    /* Cмена количества товаров */
+
+    card.addEventListener('click', changeProductQuantity);
+
+    function changeProductQuantity(event) {
+        const minus = event.target.closest('.minus');
+        const plus = event.target.closest('.plus');
+
+        if (containClass(this, 'row')) {
+            changeOnProductRow(this, minus, plus);
+            return;
+        }
+
+        if (window.innerWidth <= 992) {
+            changeOnMobileCard(this, minus, plus);
+            return;
+        }
+
+        changeOnProductCard(this, minus, plus);
+
+    }
+
+    function changeOnProductRow(el, minus, plus) {
+        const counter = el.querySelector('.product-card__counter');
+        const cartBtn = el.querySelector('.product-card__buy-cart');
+        const counterSpan = counter.querySelector('span');
+        let counterQuantity = Number(counterSpan.textContent);
+        if (minus) {
+            if (counterSpan.textContent === '1') {
+                addClass(counter, 'hide');
+                removeClass(cartBtn, 'hide');
+                return;
+            }
+            counterSpan.textContent = counterQuantity - 1;
+        }
+        if (plus) {
+            counterQuantity += 1;
+            counterSpan.textContent = counterQuantity;
+        }
+    }
+
+    function changeOnProductCard(el, minus, plus) {
+        const footer = el.querySelector('.product-card__footer');
+
+        if (minus) {
+            changeOnMinusBtn(footer, el);
+        }
+
+        if (plus) {
+            changeOnPlusBtn(footer, el)
+        }
+    }
+
+    function changeOnMobileCard(el, minus, plus) {
+        const footer = el.querySelector('.product-card__mobile-footer');
+
+        if (minus) {
+            changeOnMinusBtn(footer, el);
+        }
+
+        if (plus) {
+            changeOnPlusBtn(footer, el)
+        }
+    }
+
+    function changeOnMinusBtn(footer, el) {
+        const footerButtons = footer.querySelector('.product-card__footer-buttons');
+        const counter = footer.querySelector('.product-card__counter');
+        const counterSpan = counter.querySelector('span')
+        const cartBtn = footer.querySelector('.product-card__buy-cart');
+        const mobileCartBtn = footer.querySelector('.product-card__mobile-cart')
+        let counterQuantity = Number(counterSpan.textContent);
+        const roundCartBtn = el.querySelector('.round-btn--cart');
+        const roundSpan = roundCartBtn.querySelector('span');
+
+        if (counterSpan.textContent === '1') {
+            if (window.innerWidth <= 992) {
+                removeClass(mobileCartBtn, 'hide');
+                removeClass(footerButtons, 'active');
+                return
+            }
+            addClass(counter, 'hide');
+            removeClass(cartBtn, 'hide');
+            removeClass(roundCartBtn, 'active');
+            removeClass(footerButtons, 'active');
+
+            return;
+        }
+
+        counterSpan.textContent = counterQuantity - 1;
+        roundSpan.textContent = counterSpan.textContent;
+    }
+
+    function changeOnPlusBtn(footer, el) {
+        const counter = footer.querySelector('.product-card__counter');
+        const counterSpan = counter.querySelector('span');
+        let counterQuantity = Number(counterSpan.textContent);
+        const roundCartBtn = el.querySelector('.round-btn--cart')
+        const roundSpan = roundCartBtn.querySelector('span')
+
+        counterQuantity += 1;
+        counterSpan.textContent = counterQuantity;
+        roundSpan.textContent = counterSpan.textContent
+    }
+
+    /* Смена цвета по клику */
+
+    card.addEventListener('change', changeColorOnCard);
+
+    function changeColorOnCard(event) {
+        const colorLabelList = this.querySelectorAll('.product-card__color-label')
+        const colorLabel = event.target.closest('.product-card__color-label');
+
+        if (containClass(colorLabel, 'checked')) {
+            removeClass(colorLabel, 'checked');
+            return;
+        }
+
+        hideOtherItems(colorLabelList, 'checked');
+        addClass(colorLabel, 'checked')
+    }
+
+    /* Рассчет ширины элементов прогрессбара и скрытых контейнеров смены картинок */
+
+    progressBarItems.forEach(setItemWidth)
+    thumbs.forEach(setItemWidth)
+
+    function setItemWidth(item, index, arr) {
+        const length = arr.length;
+        item.style.width = 100 / length + '%'
+    }
 
     /* Смена картинки при наведении */
-    const thumbsList = card.querySelector('.thumbs');
-    const thumbs = thumbsList.querySelectorAll('.thumb');
 
-    thumbs.forEach((thumb, index) => {
-        thumb.addEventListener('mouseover', () => {
-            if (clientWidth <= 992) return;
+    function initChangeImgOnHover(item, index) {
+        if (clientWidth <= 992) return;
 
-            const length = thumbs.length;
-            thumb.style.width = 100 / length + '%';
-            thumb.addEventListener('mouseover', () => {
-                changeImgOnHover(thumb, progressBarItems, productImg, index);
-            });
+        item.addEventListener('mouseover', function () {
+
+            const thumbImg = this.querySelector('img');
+            const thumbImgSrc = thumbImg.getAttribute('src');
+            const currentProgressbarItem = progressBarItems[index];
+
+            hideOtherItems(progressBarItems, 'current');
+            addClass(currentProgressbarItem, 'current');
+            productImg.setAttribute('src', thumbImgSrc)
         });
-    });
+    }
 
-    thumbsList.addEventListener('mouseleave', () => {
+    thumbs.forEach(initChangeImgOnHover);
+
+    /* Смена на первую картинку, если курсор покинул контейнер картинки */
+
+    thumbsContainer.addEventListener('mouseleave', () => {
         if (clientWidth <= 992) return;
 
         returnFirstImg(thumbs, progressBarItems, productImg);
     });
+
+    function returnFirstImg() {
+        const firstThumbImg = thumbs[0].querySelector('img');
+        const firstThumbImgSrc = firstThumbImg.getAttribute('src');
+        const firstProgressbarItem = progressBarItems[0];
+
+        hideOtherItems(progressBarItems, 'current');
+        addClass(firstProgressbarItem, 'current');
+
+        productImg.setAttribute('src', firstThumbImgSrc)
+    }
+
+    /* Смена картинки при свайпе */
+
+    const productImgBox = card.querySelector('.product-card__img-box');
+
+    productImgBox.addEventListener('touchstart', (event) => {
+        xDown = event.touches[0].clientX;
+        yDown = event.touches[0].clientY;
+    });
+
+    productImgBox.addEventListener('touchmove', function(event) {
+        if(containClass(card.parentNode, 'swiper-slide')) return;
+        
+        if (!xDown || !yDown) {
+            return;
+        }
+        let xUp = event.touches[0].clientX;
+        let yUp = event.touches[0].clientY;
+
+        let xDiff = xDown - xUp;
+        let yDiff = yDown - yUp;
+
+        const progressBarContainer = productImgBox.querySelector('.thumbs-progressbar');
+        const currentItem = progressBarContainer.querySelector('.current');
+        const nextItem = currentItem.nextElementSibling;
+        const prevItem = currentItem.previousElementSibling;
+        const progressBarArr = Array.from(progressBarItems);
+        let currentIndex = progressBarArr.indexOf(currentItem);
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            if (xDiff > 0) {
+                if (nextItem) {
+                    hideOtherItems(progressBarItems, 'current');
+                    addClass(nextItem, 'current');
+                    currentIndex += 1;
+                    const thumb = thumbs[currentIndex];
+                    const thumbImg = thumb.querySelector('img');
+                    const thumbImgSrc = thumbImg.getAttribute('src');
+                    productImg.setAttribute('src', thumbImgSrc)
+                }
+            } else if (xDiff < 0) {
+                if (prevItem) {
+                    hideOtherItems(progressBarItems, 'current');
+                    addClass(prevItem, 'current')
+                    currentIndex -= 1;
+                    const thumb = thumbs[currentIndex];
+                    const thumbImg = thumb.querySelector('img');
+                    const thumbImgSrc = thumbImg.getAttribute('src');
+                    productImg.setAttribute('src', thumbImgSrc)
+                }
+            }
+        }
+        /* reset values */
+        xDown = null;
+        yDown = null;
+    })
 
 });
 
@@ -193,40 +696,372 @@ productCards.forEach(card => {
 const videosButtons = document.querySelectorAll('.videos__item-button');
 
 videosButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        if (event.target == button)
-            button.previousElementSibling.click()
-    });
+    button.addEventListener('click', fakeClickOnVideoButton);
 });
 
-/* Смена кнопки "Добавить в корзину" на счётчик */
-
-import { changeCartButtonOnCounter } from './productCards.js';
-
-productCards.forEach(card => {
-    card.addEventListener('click', changeCartButtonOnCounter);
-});
+function fakeClickOnVideoButton(event) {
+    if (event.target == this) {
+        this.previousElementSibling.click()
+    }
+}
 
 /* Форма поиска в шапке */
 
 const headerSearchForm = document.querySelector('.header__search');
-const headerSearchInput = headerSearchForm.querySelector('.header__search-input');
-const headerSearchResult = headerSearchForm.querySelector('.search-result');
+if (headerSearchForm) {
+    const headerSearchInput = headerSearchForm.querySelector('.header__search-input');
 
-headerSearchInput.addEventListener('input', () => {
+    headerSearchInput.addEventListener('input', hideShowHeaderSearchDropdown);
+}
+
+function hideShowHeaderSearchDropdown() {
+    const headerSearchResult = headerSearchForm.querySelector('.search-result');
+
     addClass(headerSearchResult, 'active');
-    if (!headerSearchInput.value.length) {
-        removeClass(headerSearchResult, 'active');
+
+    if (!this.value.length) {
+        removeClass(headerSearchResult, 'active')
+    }
+}
+
+/* Смена контента в попапе каталога */
+
+const catalogPopupMenuItems = document.querySelectorAll('.catalog-popup__menu-item');
+const catalogPopupContent = document.querySelectorAll('.catalog-popup__categories-menu');
+
+catalogPopupMenuItems.forEach(changeContentInCatalogPopup)
+
+function changeContentInCatalogPopup(item, index) {
+    item.addEventListener('mouseover', function () {
+        const currentContent = catalogPopupContent[index];
+        hideOtherItems(catalogPopupContent, 'active');
+        addClass(currentContent, 'active')
+    });
+};
+
+/* Скрытие/показ фильтров */
+
+const filterItems = document.querySelector('.filter-items');
+
+if (filterItems) {
+    filterItems.addEventListener('click', showHideFilter);
+
+    function showHideFilter(event) {
+        const target = event.target;
+        const filterItem = target.closest('.filter-item');
+
+        if (!filterItem) return;
+        const filterItemHeader = filterItem.querySelector('.filter-item__header');
+        const filterItemFooter = filterItem.querySelector('.filter-item__footer');
+
+        if (target == filterItemHeader) {
+            toggleClass(filterItem, 'hidden');
+        } else if (target == filterItemFooter) {
+            if (!containClass(filterItem, 'expand')) {
+                filterItemFooter.textContent = 'Скрыть';
+                addClass(filterItem, 'expand');
+            } else {
+                filterItemFooter.textContent = 'Больше';
+                removeClass(filterItem, 'expand');
+            }
+        } else {
+            return;
+        }
+    };
+};
+
+/* Ползунок в каталоге */
+
+const rangeSliders = document.querySelectorAll('.filter-item__slider');
+
+function initRangeSliders(filterSliders) {
+    filterSliders.forEach(rangeSlider => {
+        noUiSlider.create(rangeSlider, {
+            start: [0, 1000000],
+            connect: true,
+            step: 100,
+            range: {
+                'min': 0,
+                'max': 1000000,
+            },
+        });
+        const inputs = rangeSlider.nextElementSibling;
+        const inputMin = inputs.firstElementChild;
+        const inputMax = inputs.lastElementChild;
+        const inputsRange = [inputMin, inputMax];
+
+        rangeSlider.noUiSlider.on('update', function (values, handle) {
+            inputsRange[handle].value = Math.round(values[handle]);
+        });
+
+        function setRangeSlider(i, value) {
+            let arr = [null, null];
+            arr[i] = value;
+            rangeSlider.noUiSlider.set(arr)
+        }
+
+        inputsRange.forEach((input, index) => {
+            input.addEventListener('change', (event) => {
+                setRangeSlider(index, event.currentTarget.value)
+            });
+        })
+    });
+}
+
+initRangeSliders(rangeSliders);
+
+/* Смена отображения карточек в каталоге */
+
+const productsViewBtnsParent = document.querySelector('.products-view-buttons');
+
+if (productsViewBtnsParent) {
+    productsViewBtnsParent.addEventListener('click', swapProductsDisplay);
+}
+
+function swapProductsDisplay(event) {
+    const productsViewBtns = this.querySelectorAll('.products-view-btn');
+    const currentBtn = event.target.closest('.products-view-btn');
+
+    if (!currentBtn) return;
+
+    const productsRows = document.querySelector('.products__main.rows');
+    const productsTiles = document.querySelector('.products__main.tiles');
+
+    hideOtherItems(productsViewBtns, 'active');
+    addClass(currentBtn, 'active');
+
+    if (containClass(currentBtn, 'tiles')) {
+        removeClass(productsRows, 'active');
+        addClass(productsTiles, 'active');
+    } else if (containClass(currentBtn, 'row')) {
+        removeClass(productsTiles, 'active');
+        addClass(productsRows, 'active');
+    };
+};
+
+/* Кастомный Select */
+
+import { ItcCustomSelect } from './itc-custom-select.js';
+
+let categorySelect = document.querySelector('#category-sort');
+let orderSelect = document.querySelector('#order-select');
+let orderSelectEntity = document.querySelector('#order-select-entity');
+
+if (categorySelect) {
+    categorySelect = new ItcCustomSelect('#category-sort');
+}
+
+if (orderSelect) {
+    orderSelect = new ItcCustomSelect('#order-select');
+}
+if (orderSelectEntity) {
+    orderSelectEntity = new ItcCustomSelect('#order-select-entity');
+}
+
+/* Галереи FANCYBOX */
+
+document.addEventListener('DOMContentLoaded', checkFancyBox);
+
+function checkFancyBox() {
+    const fastviewFancyElements = document.querySelectorAll('[data-fancybox="fastview-gallery"]');
+    const productFancyElements = document.querySelectorAll('[data-fancybox="product-gallery"]');
+    const videosFancyElements = document.querySelectorAll('[data-fancybox="video"]');
+
+    if (fastviewFancyElements.length) {
+        Fancybox.bind('[data-fancybox="fastview-gallery"]', {});
+    }
+    if (productFancyElements.length) {
+        Fancybox.bind('[data-fancybox="product-gallery"]', {});
+    }
+    if (videosFancyElements.length) {
+        Fancybox.bind('[data-fancybox="video"]', {
+            Carousel: {
+                infinite: false,
+                defaultType: 'html',
+            },
+            autoFocus: false,
+            Html: {
+                videoTpl: `
+                    <video class="fancybox__html5video" playsinline loop controlsList="nodownload" poster="{{poster}}">
+                         <source src="{{src}}" type="{{format}}" />Sorry, your browser doesn't support embedded videos.
+                     </video>
+                 `,
+            }
+        });
+    }
+};
+
+/* Слайдер страницы авторизации */
+
+import { authSwiper } from './sliders.js';
+
+document.addEventListener('click', function (event) {
+    if (event.target.closest('.auth-check-btn--login')) {
+        goToLoginForm()
+    }
+
+    if (event.target.closest('.auth-check-btn--register')) {
+        goToRegisterForm()
+    }
+
+    if (event.target.closest('.go-to-password-recovery')) {
+        authSwiper.slideTo(4)
+    }
+
+    if (event.target.closest('.auth-form__show-password')) {
+        showHidePassword(event)
     }
 });
 
-/* Смена контента в попапе каталога */
-import { catalogPopupMenuItems, changeContentInCatalogPopup } from './popups.js';
+authSwiper.on('slideChange', changeHeadertitle);
 
-catalogPopupMenuItems.forEach(changeContentInCatalogPopup);
+function changeHeadertitle() {
+    let title = document.querySelector('.header__mobile-title');
 
-/* Кнопки избранного/сравнения/корзины и смена количества товаров */
+    if (this.activeIndex === 0 || this.activeIndex === 1) {
+        title.textContent = 'Вход'
+    }
+    if (this.activeIndex === 2 || this.activeIndex === 3) {
+        title.textContent = 'Регистрация'
+    }
+    if (this.activeIndex === 4 || this.activeIndex === 5) {
+        title.textContent = 'Восстановление пароля'
+    }
+}
 
-import { addProductsToCart } from './productCards.js';
+function goToLoginForm() {
+    authSwiper.slideTo(1, 300, false);
+};
 
-productCards.forEach(addProductsToCart)
+function goToRegisterForm() {
+    authSwiper.slideTo(2, 300, false);
+};
+
+function showHidePassword(event) {
+    const btn = event.target;
+    const passwordInput = event.target.previousElementSibling;
+    let inputType = passwordInput.getAttribute('type');
+
+    if (inputType === 'password') {
+        passwordInput.setAttribute('type', 'text');
+        addClass(btn, 'active');
+        return;
+    }
+
+    passwordInput.setAttribute('type', 'password');
+    removeClass(btn, 'active')
+};
+
+/* Функция для табов */
+
+const swapContentOnTabs = (tabsArr, tab, contentArr, index) => {
+    hideOtherItems(tabsArr, 'active');
+
+    if (!containClass(tab, 'active') && !containClass(contentArr[index], 'active')) {
+        hideOtherItems(contentArr, 'active')
+        addClass(tab, 'active')
+        addClass(contentArr[index], 'active')
+    }
+
+    addClass(tab, 'active')
+}
+
+/* Табы в сравнении */
+
+const compareTabs = document.querySelectorAll('.rect-btn--compare-category');
+const compareProductArr = document.querySelectorAll('.swiper-compare');
+
+compareTabs.forEach((tab, index) => {
+    tab.addEventListener('click', function() {
+        swapContentOnTabs(compareTabs, tab, compareProductArr, index);
+    })
+});
+
+/* Табы в оформлении заказа */
+
+const orderTabs = document.querySelectorAll('.rect-btn--order-make');
+const orderContentArr = document.querySelectorAll('.order-make__inner');
+
+orderTabs.forEach((tab, index) => {
+    tab.addEventListener('click', function() {
+        swapContentOnTabs(orderTabs, tab, orderContentArr, index)
+    })
+});
+
+/* Свернуть/развернуть поля форм в оформлении заказа */
+
+function toggleOrderMakeItem() {
+    toggleClass(this, 'active')
+}
+
+if (window.innerWidth <= 992) {
+    const orderMakeItemTitle = document.querySelectorAll('.order-make__item-title');
+    orderMakeItemTitle.forEach(item => {
+        item.addEventListener('click', toggleOrderMakeItem)
+    })
+}
+
+/* Табы в личном кабинете */
+
+const personalTabs = document.querySelectorAll('.personal__aside-item');
+const personalContentArr = document.querySelectorAll('.personal__item');
+
+personalTabs.forEach((tab, index) => {
+    tab.addEventListener('click', function() {
+        swapContentOnTabs(personalTabs, tab, personalContentArr, index);
+    })
+});
+
+/* Разделы в личном кабинете */
+
+const personalTiles = document.querySelectorAll('.personal__tile');
+const personalTabsTile = document.querySelectorAll('.personal__aside-item.tile');
+const personalContentTile = document.querySelectorAll('.personal__item.tile');
+
+personalTiles.forEach((tile, index) => {
+    tile.addEventListener('click', () => {
+        removeClass(personalTabs[0], 'active');
+        swapContentOnTabs(personalTabsTile, personalTabsTile[index], personalContentTile, index + 1);
+    });
+});
+
+/* Кнопка "Назад" */
+const headerMobileAuthReturn = document.querySelector('.header__mobile-auth-return');
+
+if (window.innerWidth <= 992 && headerMobileAuthReturn) {
+    
+    headerMobileAuthReturn.addEventListener('click', returnToPrevContent);
+
+    function returnToPrevContent(event) {
+        if (!containClass(personalContentArr[0], 'active')) {
+            event.preventDefault();
+            hideOtherItems(personalContentArr, 'active');
+            addClass(personalContentArr[0], 'active')
+        }
+    }
+}
+
+/* Выбор цвета на странице товара */
+
+const productBox = document.querySelector('.product-box');
+const mobileProductBox = document.querySelector('.mobile-product-info');
+
+if (productBox) {
+    const productColorsList = productBox.querySelector('.product-box__colors-list');
+    productColorsList.addEventListener('click', moveColorFrame);
+}
+if (mobileProductBox) {
+    const mobileProductColorsList = mobileProductBox.querySelector('.product-box__colors-list');
+    mobileProductColorsList.addEventListener('click',moveColorFrame);
+}
+
+/* Табы на странице товара */
+
+const productTabs = document.querySelectorAll('.product-tabs__item');
+const productContentArray = document.querySelectorAll('.product-info__inner');
+
+productTabs.forEach((tab, index) => {
+    tab.addEventListener('click', function() {
+        swapContentOnTabs(productTabs, tab, productContentArray, index);
+    })
+})

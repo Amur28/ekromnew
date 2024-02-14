@@ -346,4 +346,9 @@ a.tinkoff {
     margin-top: 30px;
 }
 
+.itc-select {
+    width: auto;
+    display: inline-block;
+}
+
 /* ORDER END */
