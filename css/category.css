@@ -46,8 +46,6 @@
     max-height: 83px;
 }
 
-
-
 .filter-item.hidden .filter-item__header::after {
     transform: rotate(180deg);
 }

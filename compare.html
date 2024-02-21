@@ -602,9 +602,9 @@
 
                     </div>
                 </div>
-                <div class="catalog-popup" id="catalogPopup">
+                <div class="catalog-popup" id="catalogPopup" data-modal>
                     <div class="container">
-                        <div class="catalog-popup__wrapper">
+                        <div class="catalog-popup__wrapper" data-modal-container>
                             <nav class="catalog-popup__menu">
                                 <ul class="catalog-popup__menu-list">
                                     <li class="catalog-popup__menu-item">
@@ -633,7 +633,8 @@
                                         </div>
                                     </li>
                                     <li class="catalog-popup__menu-item">
-                                        <a class="catalog-popup__menu-link" href="./category.html">Стиральные и сушильные
+                                        <a class="catalog-popup__menu-link" href="./category.html">Стиральные и
+                                            сушильные
                                             машины</a>
                                         <div class="catalog-popup__meni-icon">
                                             <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
@@ -693,7 +694,8 @@
                                         </div>
                                     </li>
                                     <li class="catalog-popup__menu-item">
-                                        <a class="catalog-popup__menu-link" href="./category.html">Техника для уборки</a>
+                                        <a class="catalog-popup__menu-link" href="./category.html">Техника для
+                                            уборки</a>
                                         <div class="catalog-popup__meni-icon">
                                             <svg width="7" height="8" viewBox="0 0 7 8" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1533,7 +1535,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                
+
                                 <div class="promo-banner" style="background-image: url('./img/catalog-banner.png');">
                                     <p class="catalog-popup__categories-text">
                                         Не можете выбрать?
@@ -1656,8 +1658,8 @@
 
                 </div>
             </div>
-            <div class="header-menu">
-                <div class="header-menu__inner">
+            <div class="header-menu" data-modal>
+                <div class="header-menu__inner" data-modal-container>
                     <button class="header-menu__close close-btn close-btn--header-menu">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -5784,7 +5786,6 @@
         });
     </script>
     <script src="./js/fancybox.umd.js"></script>
-    <script src="./js/mobile.js" type="module"></script>
     <script src="./js/script.js" type="module"></script>
 </body>
 

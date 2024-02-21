@@ -422,6 +422,10 @@
 
 @media (max-width: 992px) {
 
+    .fast-view-btn {
+        display: none;
+    }
+
     img,
     video {
         filter: grayscale(0) !important;
@@ -650,8 +654,10 @@
         opacity: 1;
     }
 
-    .bestseller .thumbs-progressbar {
+    .bestseller .thumbs-progressbar,
+    .compare .thumbs-progressbar {
         opacity: 0;
+        display: none;
     }
 
     #mobile-bottom-menu {

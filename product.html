@@ -601,9 +601,9 @@
 
                     </div>
                 </div>
-                <div class="catalog-popup" id="catalogPopup">
+                <div class="catalog-popup" id="catalogPopup" data-modal>
                     <div class="container">
-                        <div class="catalog-popup__wrapper">
+                        <div class="catalog-popup__wrapper" data-modal-container>
                             <nav class="catalog-popup__menu">
                                 <ul class="catalog-popup__menu-list">
                                     <li class="catalog-popup__menu-item">
@@ -1657,8 +1657,8 @@
 
                 </div>
             </div>
-            <div class="header-menu">
-                <div class="header-menu__inner">
+            <div class="header-menu" data-modal>
+                <div class="header-menu__inner" data-modal-container>
                     <button class="header-menu__close close-btn close-btn--header-menu">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -4895,7 +4895,7 @@
     </div>
 
     <div id="questionForm" class="modal" data-modal>
-        <div class="container modal-container" >
+        <div class="container modal-container">
             <form class="question-form" action="#" data-modal-container>
                 <button class="close-btn close-btn--question" type="button">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -5854,7 +5854,6 @@
     </script>
 
     <script src="./js/fancybox.umd.js"></script>
-    <script src="./js/mobile.js" type="module"></script>
     <script src="./js/script.js" type="module"></script>
 </body>
 

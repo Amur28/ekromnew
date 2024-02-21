@@ -4,6 +4,12 @@ import { addClass, removeClass, containClass, hideOtherItems, toggleClass, check
 
 const body = document.body;
 
+if (authSwiper.slides.length) {
+    document.addEventListener('DOMContentLoaded', function() {
+        history.pushState(null, null, '/auth.html#auth-start')
+    })
+}
+
 const clientWidth = window.innerWidth;
 
 /* Липкий HEADER */
@@ -122,13 +128,15 @@ function checkModalClick(event) {
     if (closeBtn) {
         const isCloseBtn = target == closeBtn || closeBtn.contains(target);
         if (isCloseBtn) {
-            removeClass(this, 'active')
-            removeClass(body, 'active')
+            removeClass(this, 'active');
+            removeClass(body, 'active');
+            removeClass(mobileOverlay, 'active');
         }
     }
     if (!isModal) {
         removeClass(this, 'active');
         removeClass(body, 'active');
+        removeClass(mobileOverlay, 'active');
     }
 
 };
@@ -637,14 +645,18 @@ productCards.forEach(card => {
 
     const productImgBox = card.querySelector('.product-card__img-box');
 
-    productImgBox.addEventListener('touchstart', (event) => {
+    productImgBox.addEventListener('touchstart', cardTouchStart);
+
+    productImgBox.addEventListener('touchmove', cardTouchMove);
+
+    function cardTouchStart(event) {
         xDown = event.touches[0].clientX;
         yDown = event.touches[0].clientY;
-    });
+    }
 
-    productImgBox.addEventListener('touchmove', function(event) {
-        if(containClass(card.parentNode, 'swiper-slide')) return;
-        
+    function cardTouchMove(event) {
+        if (containClass(card.parentNode, 'swiper-slide')) return;
+
         if (!xDown || !yDown) {
             return;
         }
@@ -687,7 +699,7 @@ productCards.forEach(card => {
         /* reset values */
         xDown = null;
         yDown = null;
-    })
+    }
 
 });
 
@@ -972,7 +984,7 @@ const compareTabs = document.querySelectorAll('.rect-btn--compare-category');
 const compareProductArr = document.querySelectorAll('.swiper-compare');
 
 compareTabs.forEach((tab, index) => {
-    tab.addEventListener('click', function() {
+    tab.addEventListener('click', function () {
         swapContentOnTabs(compareTabs, tab, compareProductArr, index);
     })
 });
@@ -983,7 +995,7 @@ const orderTabs = document.querySelectorAll('.rect-btn--order-make');
 const orderContentArr = document.querySelectorAll('.order-make__inner');
 
 orderTabs.forEach((tab, index) => {
-    tab.addEventListener('click', function() {
+    tab.addEventListener('click', function () {
         swapContentOnTabs(orderTabs, tab, orderContentArr, index)
     })
 });
@@ -1007,7 +1019,7 @@ const personalTabs = document.querySelectorAll('.personal__aside-item');
 const personalContentArr = document.querySelectorAll('.personal__item');
 
 personalTabs.forEach((tab, index) => {
-    tab.addEventListener('click', function() {
+    tab.addEventListener('click', function () {
         swapContentOnTabs(personalTabs, tab, personalContentArr, index);
     })
 });
@@ -1025,22 +1037,6 @@ personalTiles.forEach((tile, index) => {
     });
 });
 
-/* Кнопка "Назад" */
-const headerMobileAuthReturn = document.querySelector('.header__mobile-auth-return');
-
-if (window.innerWidth <= 992 && headerMobileAuthReturn) {
-    
-    headerMobileAuthReturn.addEventListener('click', returnToPrevContent);
-
-    function returnToPrevContent(event) {
-        if (!containClass(personalContentArr[0], 'active')) {
-            event.preventDefault();
-            hideOtherItems(personalContentArr, 'active');
-            addClass(personalContentArr[0], 'active')
-        }
-    }
-}
-
 /* Выбор цвета на странице товара */
 
 const productBox = document.querySelector('.product-box');
@@ -1052,7 +1048,7 @@ if (productBox) {
 }
 if (mobileProductBox) {
     const mobileProductColorsList = mobileProductBox.querySelector('.product-box__colors-list');
-    mobileProductColorsList.addEventListener('click',moveColorFrame);
+    mobileProductColorsList.addEventListener('click', moveColorFrame);
 }
 
 /* Табы на странице товара */
@@ -1061,7 +1057,215 @@ const productTabs = document.querySelectorAll('.product-tabs__item');
 const productContentArray = document.querySelectorAll('.product-info__inner');
 
 productTabs.forEach((tab, index) => {
-    tab.addEventListener('click', function() {
+    tab.addEventListener('click', function () {
         swapContentOnTabs(productTabs, tab, productContentArray, index);
     })
+});
+
+/* Открытие/скрытие бокового меню на мобильной версии сайта */
+
+const headerMenu = document.querySelector('.header-menu');
+const mobileOverlay = document.querySelector('.mobile-overlay');
+const aside = document.querySelector('.aside');
+
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+function handleTouchStart(event) {
+    xDown = event.touches[0].clientX;
+    yDown = event.touches[0].clientY;
+};
+
+function handleTouchMove(event) {
+    if (!xDown || !yDown) {
+        return;
+    }
+    let xUp = event.touches[0].clientX;
+    let yUp = event.touches[0].clientY;
+
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+    // немного поясню здесь. Тут берутся модули движения по оси абсцисс и ординат (почему модули? потому что если движение сделано влево или вниз, то его показатель будет отрицательным) и сравнивается, чего было больше: движения по абсциссам или ординатам. Нужно это для того, чтобы, если пользователь провел вправо, но немного наискосок вниз, сработал именно коллбэк для движения вправо, а ни как-то иначе.
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+        if (!headerMenu) return;
+        if (xDiff > 0) {
+            if (containClass(headerMenu, 'active')) {
+                removeClass(headerMenu, 'active');
+                removeClass(mobileOverlay, 'active');
+            }
+            if (!aside) return;
+            if (containClass(aside, 'active')) {
+                removeClass(aside, 'active');
+                removeClass(mobileOverlay, 'active');
+            }
+        } else if (xDiff < 0 && xDown <= 15) {
+            addClass(headerMenu, 'active');
+            addClass(mobileOverlay, 'active');
+        }
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
+}
+
+if (clientWidth <= 992 && headerMenu) {
+    /* Открытие/скрытие бокового меню по клику */
+    const headerMobileMenu = document.querySelector('.header__mobile')
+    const headerMobileMenuBtn = headerMobileMenu.querySelector('.header__mobile-menu');
+
+    headerMobileMenuBtn.addEventListener('click', showHeaderMenu);
+
+    function showHeaderMenu() {
+        addClass(headerMenu, 'active');
+        addClass(mobileOverlay, 'active');
+    }
+
+    /* Раскрытие/скрытие списков в боковом меню шапки и футере */
+    const headerNav = headerMenu.querySelector('.header-menu__nav');
+    const footerNav = document.querySelector('.footer__nav');
+
+    footerNav.addEventListener('click', toggleMobileDropdown);
+    headerNav.addEventListener('click', toggleMobileDropdown);
+
+    function toggleMobileDropdown(event) {
+        const currentNavItem = event.target.closest('h4');
+
+        if (!currentNavItem) return;
+
+        toggleClass(currentNavItem, 'active')
+    }
+
+    /* Форма поиска */
+
+    const headerMobileSearch = document.querySelector('.header__mobile-search');
+    const headerMobileForm = headerMobileSearch.querySelector('form');
+    const headerMobileSearchResult = headerMobileSearch.querySelector('.search-result');
+    const headerSearchReset = headerMobileSearch.querySelector('.header__mobile-search-reset');
+    const headerMobileInput = headerMobileSearch.querySelector('input');
+
+    /* Открытие/скрытие строки поиска на мобильной версии */
+
+    document.addEventListener('click', showHideSearch);
+
+    function showHideSearch(event) {
+        const isHeaderMobile = event.target == headerMobileMenu || headerMobileMenu.contains(event.target)
+        const headerMobileSearchButton = event.target.closest('.header__mobile-button');
+        const headerMobileSearchHideButton = event.target.closest('.header__mobile-search-hide');
+
+        if (headerMobileSearchButton) {
+            addClass(headerMobileSearch, 'active');
+        } else if (headerMobileSearchHideButton || !isHeaderMobile) {
+            hideSearch([headerMobileSearch, headerMobileSearchResult, headerSearchReset], headerMobileInput);
+        }
+    }
+
+    function hideSearch(arr, input) {
+        arr.forEach(item => {
+            removeClass(item, 'active');
+        });
+        input.value = '';
+    }
+
+    /* Сброс текста из строки поиска */
+
+    headerMobileForm.addEventListener('reset', resetHeaderSearch);
+
+    function resetHeaderSearch() {
+        removeClass(headerSearchReset, 'active');
+        removeClass(headerMobileSearchResult, 'active')
+    }
+
+    /* Ввод текста в строку поиска */
+
+    headerMobileInput.addEventListener('input', showHideSearchResult);
+
+    function showHideSearchResult() {
+        addClass(headerSearchReset, 'active');
+        addClass(headerMobileSearchResult, 'active');
+
+        if (!headerMobileInput.value.length) {
+            removeClass(headerSearchReset, 'active');
+            removeClass(headerMobileSearchResult, 'active');
+        }
+    }
+}
+
+/* Кнопки добавления в корзину на мобильной версии */
+
+const mobileCartButtons = document.querySelectorAll('.product-card__mobile-cart');
+
+mobileCartButtons.forEach(btn => {
+    btn.addEventListener('click', changeMobileCartButtons);
 })
+
+function changeMobileCartButtons() {
+    const mobileFooterButtons = this.nextElementSibling;
+    addClass(this, 'hide');
+    addClass(mobileFooterButtons, 'active')
+}
+
+/* Открытие скрытие меню фильтров в каталоге */
+
+const filterBtn = document.querySelector('.rect-btn--product-header-mobile');
+
+if (filterBtn && aside) {
+    filterBtn.addEventListener('click', showAside);
+
+    function showAside() {
+        addClass(aside, 'active');
+        addClass(mobileOverlay, 'active');
+    }
+
+    aside.addEventListener('click', hideAside);
+
+    function hideAside(event) {
+        const asideInner = this.querySelector('.aside__inner');
+        if (!asideInner.contains(event.target)) {
+            removeClass(aside, 'active');
+            removeClass(mobileOverlay, 'active')
+        }
+    }
+}
+
+/* Header more */
+
+const headerMobileMore = document.querySelector('.header__mobile-more-btn');
+
+if (headerMobileMore) {
+    document.addEventListener('click', openCloseDropDown);
+
+    function openCloseDropDown(event) {
+        const headerMobileMoreDropdown = headerMobileMore.nextElementSibling;
+        if (event.target.closest('.header__mobile-more-btn')) {
+            addClass(headerMobileMoreDropdown, 'active')
+        }
+        if (event.target === headerMobileMore || headerMobileMore.contains(event.target) || event.target === headerMobileMoreDropdown || headerMobileMoreDropdown.contains(event.target)) {
+            return;
+        }
+        if (event.target !== headerMobileMoreDropdown && containClass(headerMobileMoreDropdown, 'active')) {
+            removeClass(headerMobileMoreDropdown, 'active')
+        }
+    }
+}
+
+/* Кнопка "Выбрать все" */
+
+const headerMobileCheckbox = document.querySelector('.cart-mobile__choice-label input');
+
+if (headerMobileCheckbox) {
+    headerMobileCheckbox.addEventListener('input', checkAllProducts);
+}
+
+function checkAllProducts() {
+    const productCheckboxes = document.querySelectorAll('.cart-item__checkbox input');
+
+    productCheckboxes.forEach(toggleCheckboxes)
+}
+
+function toggleCheckboxes(item) {
+    if (headerMobileCheckbox.checked === true) {
+        item.checked = true
+    } else {
+        item.checked = false
+    }
+}

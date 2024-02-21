@@ -321,4 +321,9 @@ export const authSwiper = new Swiper('.swiper-auth', {
     hashNavigation: {
         watchState: true,
     },
+    on: {
+        slideChange: function(swiper) {
+            
+        }
+    }
 })
