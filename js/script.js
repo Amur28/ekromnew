@@ -51,7 +51,7 @@ function showOrHideContentOnScroll() {
             const headerDropdown = headerTopInfoLink.nextElementSibling;
             removeClass(headerDropdown, 'active')
         }
-    } else if (scrollPosition() < lastScrollPos && containClass(stickyHeader, 'scroll') && scrollPosition() < 200) {
+    } else if (scrollPosition() < lastScrollPos && containClass(stickyHeader, 'scroll')) {
         removeScroll(elementsArr);
     }
     if (!catalogPopup) return;
