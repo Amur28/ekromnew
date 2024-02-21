@@ -1116,6 +1116,11 @@ body.active {
     position: relative;
 }
 
+.bestseller__inner:has(.skeleton) .swiper-button-next,
+.bestseller__inner:has(.skeleton) .swiper-button-prev{
+    opacity: 0;
+}
+
 .banner-slider {
     border-radius: 20px;
 }
@@ -1329,6 +1334,11 @@ body.active {
 .categories__inner {
     position: relative;
     margin-top: 50px;
+}
+
+.categories__inner:has(.skeleton) .swiper-button-next,
+.categories__inner:has(.skeleton) .swiper-button-prev{
+    opacity: 0;
 }
 
 .categories-slide {
