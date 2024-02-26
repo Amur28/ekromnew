@@ -294,8 +294,6 @@ function showQuestionForm() {
 const fastViewPopup = document.getElementById('fastView');
 const fastViewBtnList = document.querySelectorAll('.fast-view-btn');
 
-
-
 function showFastView() {
     addClass(fastViewPopup, 'active');
     addClass(body, 'active');
@@ -308,16 +306,6 @@ fastViewBtnList.forEach(btn => {
 if (fastViewPopup) {
     fastViewPopup.addEventListener('click', fakeClickOnImg);
 
-    function fakeClickOnImg(event) {
-        const target = event.target;
-        const currentSlide = this.querySelector('.swiper-slide-active');
-        const currentSlideImg = currentSlide.firstElementChild;
-        const isSlide = target == fastviewZoomImg || fastviewZoomImg.contains(target);
-        if (isSlide) {
-            currentSlideImg.click()
-        }
-    }
-
     const productBoxColorsList = fastViewPopup.querySelector('.product-box__colors-list');
     productBoxColorsList.addEventListener('click', moveColorFrame);
 
@@ -325,6 +313,17 @@ if (fastViewPopup) {
 
     fastviewZoomImg.addEventListener('mouseleave', removeZoom)
     fastviewZoomImg.addEventListener('mousemove', initZoom)
+}
+
+function fakeClickOnImg(event) {
+    const target = event.target;
+    const currentSlide = this.querySelector('.swiper-slide-active');
+    const imgBox = this.querySelector('.zoom-img')
+    const currentSlideImg = currentSlide.firstElementChild;
+    const isSlide = target == imgBox || imgBox.contains(target);
+    if (isSlide) {
+        currentSlideImg.click()
+    }
 }
 
 /* Выбор цвета в окне быстрого просмотра */
@@ -824,50 +823,26 @@ initRangeSliders(rangeSliders);
 
 /* Смена отображения карточек в каталоге */
 
-const productsViewBtnsParent = document.querySelector('.products-view-buttons');
+const categoryDisplayTabs = document.querySelectorAll('.swap-display-button');
+const categoryContents = document.querySelectorAll('.products__main');
 
-if (productsViewBtnsParent) {
-    productsViewBtnsParent.addEventListener('click', swapProductsDisplay);
-}
-
-function swapProductsDisplay(event) {
-    const productsViewBtns = this.querySelectorAll('.products-view-btn');
-    const currentBtn = event.target.closest('.products-view-btn');
-
-    if (!currentBtn) return;
-
-    const productsRows = document.querySelector('.products__main.rows');
-    const productsTiles = document.querySelector('.products__main.tiles');
-
-    hideOtherItems(productsViewBtns, 'active');
-    addClass(currentBtn, 'active');
-
-    if (containClass(currentBtn, 'tiles')) {
-        removeClass(productsRows, 'active');
-        addClass(productsTiles, 'active');
-    } else if (containClass(currentBtn, 'row')) {
-        removeClass(productsTiles, 'active');
-        addClass(productsRows, 'active');
-    };
-};
+categoryDisplayTabs.forEach((tab, index) => {
+    tab.addEventListener('click', function() {
+        swapContentOnTabs(categoryDisplayTabs, tab, categoryContents, index)
+    })
+})
 
 /* Кастомный Select */
 
 import { ItcCustomSelect } from './itc-custom-select.js';
 
-let categorySelect = document.querySelector('#category-sort');
-let orderSelect = document.querySelector('#order-select');
-let orderSelectEntity = document.querySelector('#order-select-entity');
+let selectItem = document.querySelectorAll('.itc-select');
 
-if (categorySelect) {
-    categorySelect = new ItcCustomSelect('#category-sort');
-}
-
-if (orderSelect) {
-    orderSelect = new ItcCustomSelect('#order-select');
-}
-if (orderSelectEntity) {
-    orderSelectEntity = new ItcCustomSelect('#order-select-entity');
+if (selectItem.length) {
+    selectItem.forEach(item => {
+        const selectId = item.getAttribute('id');
+        new ItcCustomSelect(`#${selectId}`);
+    })
 }
 
 /* Галереи FANCYBOX */
@@ -1044,7 +1019,11 @@ const mobileProductBox = document.querySelector('.mobile-product-info');
 
 if (productBox) {
     const productColorsList = productBox.querySelector('.product-box__colors-list');
+    const productZoomImg = productBox.querySelector('.zoom-img');
     productColorsList.addEventListener('click', moveColorFrame);
+    productZoomImg.addEventListener('mousemove', initZoom);
+    productZoomImg.addEventListener('mouseleave', removeZoom);
+    productBox.addEventListener('click', fakeClickOnImg)
 }
 if (mobileProductBox) {
     const mobileProductColorsList = mobileProductBox.querySelector('.product-box__colors-list');
@@ -1110,6 +1089,7 @@ function handleTouchMove(event) {
 
 if (clientWidth <= 992 && headerMenu) {
     /* Открытие/скрытие бокового меню по клику */
+
     const headerMobileMenu = document.querySelector('.header__mobile')
     const headerMobileMenuBtn = headerMobileMenu.querySelector('.header__mobile-menu');
 

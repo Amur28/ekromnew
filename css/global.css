@@ -501,7 +501,7 @@ select::-ms-expand {
     transition: var(--alt-transition);
 }
 
-.mobile-bottom-menu__item.active a svg path {
+.mobile-bottom-menu__item.active:first-child a svg path {
     fill: var(--main-blue);
 }
 

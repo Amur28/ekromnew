@@ -5,8 +5,37 @@
 }
 
 .product .label-container {
-    z-index: 5;
+    z-index: 10;
     width: 100%;
+    display: flex;
+}
+
+.product .label-container .label.special {
+    display: flex;
+    border-radius: 0;
+    left: -10px;
+    gap: 13px;
+    align-items: center;
+    order: 0;
+    font-size: 20px;
+    padding: 12px;
+    order: -1;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.product .label-container .label.special:hover {
+    clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%);
+    padding-right: 40px;
+    color: #fff;
+}
+
+.product .label-container .label.special:hover p {
+    display: block;
+}
+
+.product .label-container .label.special p {
+    display: none;
 }
 
 /* PRODUCT END */

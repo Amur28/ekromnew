@@ -1,0 +1,27 @@
+.favorites {
+    padding-bottom: 50px;
+}
+
+.favorites__header,
+.favorites__header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.favorites__header {
+    gap: 22px;
+}
+
+.favorites__header-right {
+    gap: 10px;
+}
+
+.rect-btn--favorites-clear {
+    padding: 9px 12px;
+}
+
+.products__main.favorite.tiles {
+    grid-template-columns: repeat(auto-fit, minmax(calc(270px - 15px), 1fr));
+    justify-content: space-between;
+}
