@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/nouislider.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
-    <title>Категория</title>
+    <title>Результаты поиска</title>
 </head>
 
 <body>
@@ -1937,34 +1937,28 @@
                             </a>
                             <span class="slash">/</span>
                         </li>
-                        <li class="breadcrumbs__item">
-                            <a href="./catalog.html">Каталог</a>
-                            <span class="slash">/</span>
-                        </li>
                         <li class="breadcrumbs__item current">
-                            <span>Мойки</span>
+                            <span>Результаты поиска</span>
                         </li>
                     </ul>
                     <div class="page-banner skeleton">
                         <div class="title title--banner">
                             <h2>
-                                Мойки
+                                Результаты поиска
                             </h2>
                             <div class="counter">
                                 1390
                             </div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <div class="tags__item skeleton blue">
-                            <a href="./category.html">Нержавеющая сталь</a>
-                        </div>
-                        <div class="tags__item skeleton blue">
-                            <a href="./category.html">Каменные</a>
-                        </div>
-                        <div class="tags__item skeleton blue">
-                            <a href="./category.html">Комбинированные</a>
-                        </div>
+                    <div class="info-search">
+                        <form class="info-search-form">
+                            <input type="text" value="Мойка кухонная Dr.Gans">
+                            <button class="info-search-submit">
+                                <img src="./img/icons/search-icon.svg" alt="">
+                            </button>
+                        </form>
+                        
                     </div>
                 </div>
             </div>
@@ -2171,33 +2165,33 @@
                                     </button>
                                 </div>
                                 <div class="products__header-right skeleton">
-                                    <div class="itc-select" id="category-sort">
+                                    <div class="itc-select" id="search-sort">
                                         <button type="button" class="itc-select__toggle" name="sort" value="price-asc"
                                             data-select="toggle" data-index="0">По цене (возрастание)</button>
                                         <div class="itc-select__dropdown">
                                             <ul class="itc-select__options">
                                                 <li class="itc-select__option itc-select__option_selected"
-                                                    data-select="option" data-value="price-asc" data-index="0">
+                                                    data-select="option" data-value="search-price-asc" data-index="0">
                                                     По цене (возрастание)
                                                 </li>
                                                 <li class="itc-select__option" data-select="option"
-                                                    data-value="price-desc" data-index="1">
+                                                    data-value="search-price-desc" data-index="1">
                                                     По цене (убывание)
                                                 </li>
                                                 <li class="itc-select__option" data-select="option"
-                                                    data-value="available-asc" data-index="2">
+                                                    data-value="search-available-asc" data-index="2">
                                                     По наличию (возрастание)
                                                 </li>
                                                 <li class="itc-select__option" data-select="option"
-                                                    data-value="available-desc" data-index="3">
+                                                    data-value="search-available-desc" data-index="3">
                                                     По наличию (убывание)
                                                 </li>
                                                 <li class="itc-select__option" data-select="option"
-                                                    data-value="popular-asc" data-index="4">
+                                                    data-value="search-popular-asc" data-index="4">
                                                     По популярности (возрастание)
                                                 </li>
                                                 <li class="itc-select__option" data-select="option"
-                                                    data-value="popular-desc" data-index="5">
+                                                    data-value="search-popular-desc" data-index="5">
                                                     По популярности (убывание)
                                                 </li>
                                             </ul>

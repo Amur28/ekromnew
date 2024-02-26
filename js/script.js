@@ -723,6 +723,7 @@ if (headerSearchForm) {
     const headerSearchInput = headerSearchForm.querySelector('.header__search-input');
 
     headerSearchInput.addEventListener('input', hideShowHeaderSearchDropdown);
+    document.addEventListener('click', hideHeaderSearchResult);
 }
 
 function hideShowHeaderSearchDropdown() {
@@ -732,6 +733,14 @@ function hideShowHeaderSearchDropdown() {
 
     if (!this.value.length) {
         removeClass(headerSearchResult, 'active')
+    }
+}
+
+function hideHeaderSearchResult(event) {
+    const headerSearchResult = headerSearchForm.querySelector('.search-result');
+    if (event.target !== headerSearchForm || !headerSearchForm.contains(event.target)) {
+        removeClass(headerSearchResult, 'active')
+        headerSearchForm.querySelector('.header__search-input').value = ''
     }
 }
 
@@ -1128,7 +1137,7 @@ if (clientWidth <= 992 && headerMenu) {
     document.addEventListener('click', showHideSearch);
 
     function showHideSearch(event) {
-        const isHeaderMobile = event.target == headerMobileMenu || headerMobileMenu.contains(event.target)
+        const isHeaderMobile = event.target == headerMobileMenu || headerMobileMenu.contains(event.target);
         const headerMobileSearchButton = event.target.closest('.header__mobile-button');
         const headerMobileSearchHideButton = event.target.closest('.header__mobile-search-hide');
 

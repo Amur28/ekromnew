@@ -2299,11 +2299,13 @@
         font-size: 12px;
     }
     #category-sort button,
-    #favorite-sort button {
+    #favorite-sort button,
+    #search-sort button {
         font-size: 12px;
     }
     #category-sort button::after,
-    #favorite-sort button::after {
+    #favorite-sort button::after,
+    #search-sort button::after {
         margin-left: 0.5em;
     }
     .rect-btn--favorites-clear {
@@ -2312,6 +2314,9 @@
     }
     .favorites__header {
         gap: 5px;
+    }
+    .info-search-form input {
+        padding: 10px 50px;
     }
 }
 

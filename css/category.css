@@ -434,7 +434,8 @@
 }
 
 #category-sort button,
-#favorite-sort button {
+#favorite-sort button,
+#search-sort button {
     border: 1px solid var(--main-blue);
     background-color: transparent;
     border-radius: 5px;
@@ -451,14 +452,16 @@
 }
 
 #category-sort button::after,
-#favorite-sort button::after {
+#favorite-sort button::after,
+#search-sort button::after {
     background-image: url('../img/icons/arrow-filter-blue.svg');
     width: 9px;
     height: 6px;
 }
 
 #category-sort .itc-select__dropdown,
-#favorite-sort .itc-select__dropdown {
+#favorite-sort .itc-select__dropdown,
+#search-sort .itc-select__dropdown {
     max-height: none;
 }
 

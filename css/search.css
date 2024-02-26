@@ -1,0 +1,26 @@
+.info-search {
+    margin-top: 25px;
+}
+
+.info-search-form {
+    position: relative;
+}
+
+.info-search-form input {
+    display: block;
+    width: 100%;
+    padding: 15px 50px;
+    border-radius: 30px;
+    border: 1px solid var(--main-blue);
+    background: transparent;
+    color: #8c8c8c;
+}
+
+.info-search-submit {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+    width: 14px;
+    height: 14px;
+}
