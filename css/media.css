@@ -89,8 +89,12 @@
         display: flex;
     }
 
-    .brands__item {
+    .brands__item,
+    .actions__item {
         width: 100%;
+    }
+    .actions__item img {
+        max-width: none;
     }
 
     .products__main.tiles {
@@ -1121,7 +1125,8 @@
     .personal__item.tile p {
         color: #fff;
     }
-    .brands__content {
+    .brands__content,
+    .actions__content {
         gap: 20px;
         grid-template-rows: 1fr;
     }
@@ -2324,7 +2329,8 @@
     .info-search-form input {
         padding: 10px 50px;
     }
-    .brands__content {
+    .brands__content,
+    .actions__content {
         grid-template-columns: 1fr;
     }
     .brand-descr {
@@ -2332,6 +2338,20 @@
     }
     .title--banner img {
         max-width: 150px;
+    }
+    .actions__header-link {
+        font-size: 10px;
+    }
+    .actions__header-link svg{
+        width: 10px;
+        height: 8px;
+    }
+    .itc-select:not(#order-select):not(#order-select-entity)#actions-sort button{
+        padding: 5px;
+        font-size: 10px;
+    }
+    .actions__item img {
+        height: 150px;
     }
 }
 
@@ -2593,6 +2613,9 @@
     .tags__item {
         min-width: auto;
     }
+    .itc-select:not(#order-select):not(#order-select-entity)#actions-sort button{
+        font-size: 10px;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -2739,7 +2762,8 @@
         z-index: 5;
     }
 
-    .complects__link:hover svg path {
+    .complects__link:hover svg path,
+    .actions__header-link:hover svg path {
         fill: var(--main-blue);
     }
 
@@ -2960,6 +2984,9 @@
     }
     .tags__item:hover a {
         color: #fff;
+    }
+    .actions__item:hover svg path {
+        stroke: var(--main-blue);
     }
     /* HOVER END */
 }
