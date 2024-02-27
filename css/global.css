@@ -454,6 +454,23 @@ select::-ms-expand {
     height: 100%;
 }
 
+.tags__item.current {
+    background-color: transparent;
+    border: 1px solid var(--main-blue);
+}
+
+.tags__item.current a {
+    color: var(--main-blue);
+}
+
+.tags__item.current:hover {
+    background: transparent;
+}
+
+.tags__item:not(.current) a {
+    color: #fff;
+}
+
 /* INFO END */
 
 /* MOBILE-BOTTOM MENU START */

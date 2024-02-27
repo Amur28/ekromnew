@@ -233,6 +233,10 @@ label.order-make__card .order-make__card-title {
     height: 4px;
 }
 
+.order-make__item-content .itc-select__dropdown {
+    right: auto;
+}
+
 .order-make__pickup-address {
     display: flex;
     align-items: center;

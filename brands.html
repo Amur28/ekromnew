@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
-    <title>Оформление заказа</title>
+    <title>Бренды</title>
 </head>
 <body>
     <div class="wrapper">
@@ -1559,19 +1559,373 @@
             </div>
             <div class="header__mobile">
                 <div class="container">
-                    <div class="header__mobile-inner header__mobile-inner--cart">
-                        <button class="header__mobile-auth-return" onclick="window.history.back()">
-                            <img src="./img/icons/return-catalog-white.svg" alt="">
-                        </button>
-                        <h2 class="header__mobile-title header__mobile-title--cart">
-                            Оформление заказа
-                        </h2>
+                    <div class="header__mobile-inner">
+                        <div class="header__mobile-left">
+                            <button class="header__mobile-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <a class="header__logo" href="index.html" aria-label="Перейти на главную страницу сайта">
+                                <img src="./img/icons/logo.svg" alt="">
+                            </a>
+                        </div>
+
+                        <ul class="header__mobile-links">
+                            <li class="header__mobile-link">
+                                <a href="tel:+73433799868">
+                                    <img src="./img/icons/header-mobile/phone.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="header__mobile-link">
+                                <button class="header__mobile-button">
+                                    <img src="./img/icons/header-mobile/search.svg" alt="">
+                                </button>
+                            </li>
+                            <li class="header__mobile-link">
+                                <a href="./auth.html">
+                                    <img src="./img/icons/header-mobile/user.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="header__mobile-link">
+                                <a href="./cart.html">
+                                    <img src="./img/icons/header-mobile/cart.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+                <div class="header__mobile-search">
+                    <div class="container">
+                        <form class="header__mobile-search-form">
+
+                            <div class="header__mobile-search-input-box">
+                                <button type="submit">
+                                    <img src="./img/icons/search-icon.svg" alt="">
+                                </button>
+                                <input type="text" name="header-mobile-search">
+                                <button class="header__mobile-search-reset" type="reset">
+                                    <img src="./img/icons/close-icon.svg" alt="">
+                                </button>
+                            </div>
+                            <button class="header__mobile-search-hide" type="button">
+                                Отменить
+                            </button>
+
+                            <div class="search-result">
+                                <div class="search-result__row">
+                                    <div class="search-result__product">
+                                        <div class="search-result__img">
+                                            <img src="./img/product/product.webp" alt="">
+                                        </div>
+                                        <div class="product-info">
+                                            <a class="product-info__name" href="./product.html">
+                                                Мойка кухонная Dr.Gans Берта-760
+                                            </a>
+                                            <p class="product-info__price">
+                                                6 781 ₽
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="search-counter collapse">
+                                        <button class="minus" type="button">-</button>
+                                        <span>1</span>
+                                        <button class="plus" type="button">+</button>
+                                    </div>
+
+                                </div>
+                                <div class="search-result__row">
+                                    <div class="search-result__product">
+                                        <div class="search-result__img">
+                                            <img src="./img/product/product.webp" alt="">
+                                        </div>
+                                        <div class="product-info">
+                                            <a class="product-info__name" href="./product.html">
+                                                Мойка кухонная Dr.Gans Берта-760
+                                            </a>
+                                            <p class="product-info__price">
+                                                6 781 ₽
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="search-counter">
+                                        <button class="minus" type="button">-</button>
+                                        <span>1</span>
+                                        <button class="plus" type="button">+</button>
+                                    </div>
+
+                                </div>
+                                <a class="rect-btn rect-btn--search-result blue" href="./search.html">Все результаты</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="header-menu" data-modal>
+                <div class="header-menu__inner" data-modal-container>
+                    <button class="header-menu__close close-btn close-btn--header-menu">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                    <div class="header-city">
+                        <div class="header-city__icon">
+                            <img src="./img/icons/city-icon.svg" alt="City icon">
+                        </div>
+                        <div class="header-city__text">
+                            <p class="header-city__descr">
+                                Город
+                            </p>
+                            <div class="header-city__select">
+                                <button class="header-city__button">Екатеринбург</button>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="header-menu__nav">
+                        <div class="header-menu__nav-box">
+                            <h4 class="header-menu__nav-title">
+                                Каталог
+                            </h4>
+                            <ul class="header-menu__nav-list">
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Мойки
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Смесители
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Кухонные вытяжки
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Варочные панели
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Духовые шкафы
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link header-menu__nav-link--show" href="./catalog.html">
+                                        Показать все
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-menu__nav-box">
+                            <h4 class="header-menu__nav-title">
+                                Информация
+                            </h4>
+                            <ul class="header-menu__nav-list">
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./delivery.html">
+                                        Доставка
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./guarantee.html">
+                                        Гарантия
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./service.html">
+                                        Сервисные центры
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./confidence.html">
+                                        Конфиденциальность
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./return.html">
+                                        Обмен и возврат товара
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-menu__nav-box">
+                            <h4 class="header-menu__nav-title">
+                                О нас
+                            </h4>
+                            <ul class="header-menu__nav-list">
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./about.html">
+                                        О компании
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./contacts.html">
+                                        Контакты
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./news.html">
+                                        Новости
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./referal.html">
+                                        Реферальная программа
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./feedback.html">
+                                        Обратная связь
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-menu__nav-box">
+                            <h4 class="header-menu__nav-title">
+                                Контакты
+                            </h4>
+                            <ul class="header-menu__nav-list">
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./about.html">
+                                        О компании
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./contacts.html">
+                                        Контакты
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./news.html">
+                                        Новости
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./referal.html">
+                                        Реферальная программа
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./feedback.html">
+                                        Обратная связь
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="header-menu__panel">
+                        <a class="header-menu__panel-item" href="./personal.html">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/user.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span>
+                                    Личный кабинет
+                                </span>
+                            </span>
+
+                        </a>
+                        <a class="header-menu__panel-item" href="./compare.html">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/compare.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span>
+                                    Сравнение
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="./favorites.html">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/heart.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span>
+                                    Избранное
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="./cart.html">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/cart.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span>
+                                    Корзина
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="tel:+73433799868">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/footer/footer-tel.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span class="suptitle">
+                                    Телефон
+                                </span>
+                                <span>
+                                    8 (343) 379-98-68
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="mailto:sale@ekrom.ru">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/footer/footer-mail.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span class="suptitle">
+                                    Почта
+                                </span>
+                                <span>
+                                    sale@ekrom.ru
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="https://yandex.ru/maps/-/CDu7NFNp" target="_blank">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/footer/footer-geo.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span class="suptitle">
+                                    Адрес офиса
+                                </span>
+                                <span>
+                                    г. Екатеринбург, ул. Карла Либкнехта, 22, оф. 419, 4 этаж
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="header-menu__socials">
+                        <a class="header-menu-link round-btn round-btn--header-menu vk" href="https://vk.com/ekromshop"
+                            target="_blank" aria-label="Перейти в ВК сообщество компании">
+                            <img src="./img/icons/footer/vk.svg" alt="">
+                        </a>
+                        <a class="header-menu-link round-btn round-btn--header-menu youtube" href="#"
+                            aria-label="Перейти на YouTube-канал компании">
+                            <img src="./img/icons/footer/youtube.svg" alt="">
+                        </a>
+                        <a class="header-menu-link round-btn round-btn--header-menu telegram"
+                            href="https://t.me/ekromshop" target="_blank"
+                            aria-label="Перейти в телеграм-канал компании">
+                            <img src="./img/icons/footer/telegram.svg" alt="">
+                        </a>
+                        <a class="header-menu-link round-btn round-btn--header-menu whatsapp" href="#"
+                            aria-label="Написать в whatsapp">
+                            <img src="./img/icons/footer/whatsapp.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </header>
-    
-        <main class="order-page">
+
+        <main>
             <div class="info">
                 <div class="container">
                     <ul class="breadcrumbs">
@@ -1587,643 +1941,183 @@
                             </a>
                             <span class="slash">/</span>
                         </li>
-                        <li class="breadcrumbs__item">
-                            <a href="./cart.html">Корзина</a>
-                            <span class="slash">/</span>
-                        </li>
                         <li class="breadcrumbs__item current">
-                            <span>Оформление заказа</span>
+                            <span>Бренды</span>
                         </li>
                     </ul>
                     <div class="page-banner skeleton">
                         <div class="title title--banner">
                             <h2>
-                                Оформление заказа
+                                Бренды
                             </h2>
+                            <div class="counter">
+                                43
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <div class="tags__item skeleton blue current">
+                            <a href="./category.html">Все</a>
+                        </div>
+                        <div class="tags__item skeleton blue">
+                            <a href="./category.html">Техника</a>
+                        </div>
+                        <div class="tags__item skeleton blue">
+                            <a href="./category.html">Кухонная сантехника</a>
+                        </div>
+                        <div class="tags__item skeleton blue">
+                            <a href="./category.html">Сантехника для ванной</a>
                         </div>
                     </div>
                 </div>
             </div>
-    
-            <div class="order">
+            <div class="brands">
                 <div class="container">
-                    <div class="order__inner">
-                        <div class="order-make">
-                            <div class="order-tabs skeleton">
-                                <label class="rect-btn rect-btn--order-make individual active">
-                                    Физическое лицо
-                                    <input type="radio" name="order-tab" checked>
-                                </label>
-                                <label class="rect-btn rect-btn--order-make entity">
-                                    Юридическое лицо
-                                    <input type="radio" name="order-tab">
-                                </label>
+                    <div class="brands__header">
+                        <div class="itc-select skeleton" id="brands-sort">
+                            <button type="button" class="itc-select__toggle" name="sort" value="brands-popular-asc"
+                                data-select="toggle" data-index="0">По популярности (возрастание)</button>
+                            <div class="itc-select__dropdown">
+                                <ul class="itc-select__options">
+                                    <li class="itc-select__option itc-select__option_selected" data-select="option"
+                                        data-value="brands-popular-asc" data-index="0">
+                                        По популярности (возрастание)
+                                    </li>
+                                    <li class="itc-select__option" data-select="option"
+                                        data-value="brands-alphabet-asc" data-index="1">
+                                        По алфавиту (от А до Я)
+                                    </li>
+                                    <li class="itc-select__option" data-select="option"
+                                        data-value="brands-alphabet-desc" data-index="4">
+                                        По алфавиту (от Я до А)
+                                    </li>
+                                    <li class="itc-select__option" data-select="option"
+                                        data-value="brands-popular-desc" data-index="5">
+                                        По популярности (убывание)
+                                    </li>
+                                </ul>
                             </div>
-    
-                            <div class="order-make__inner individual active">
-                                <div class="order-make__item skeleton">
-                                    <h4 class="order-make__item-title active">
-                                        <span class="number">Шаг 1.</span>
-                                        &nbsp;
-                                        <span class="name">Укажите данные получателя</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>ФИО <span>*</span></p>
-                                                    <input type="text" placeholder="Введите Ваше ФИО" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>Ваш телефон <span>*</span></p>
-                                                    <input type="tel" placeholder="+7 (___) __ - __ - __" required>
-                                                </label>
-                                                <label>
-                                                    <p>Ваше e-mail <span>*</span></p>
-                                                    <input type="email" placeholder="Введите email" required>
-                                                    <p class="hint"><span>*&nbsp;</span>-&nbsp;обязательные поля</p>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Комментарий</p>
-                                                    <textarea type="text" placeholder="Оставьте пожелание или комментарий к заказу"></textarea>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                                <div class="order-make__item skeleton">
-                                    <h4 class="order-make__item-title active">
-                                        <span class="number">Шаг 2.</span>
-                                        &nbsp;
-                                        <span class="name">Выберите способ доставки</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex cards">
-                                                <label class="order-make__card">
-                                                    <input class="order-pickup" type="radio" name="order-delivery-individual">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Самовывоз со склада
-                                                        </h5>
-                                                        <div class="order-make__pickup">
-                                                            <div class="itc-select" id="order-select">
-                                                                <button type="button" class="itc-select__toggle" name="order-select-individual" value="ekaterinburg-individual"
-                                                                    data-select="toggle" data-index="0">в Екатеринбурге</button>
-                                                                <div class="itc-select__dropdown">
-                                                                    <ul class="itc-select__options">
-                                                                        <li class="itc-select__option itc-select__option_selected"
-                                                                            data-select="option" data-value="ekaterinburg-individual" data-index="0">
-                                                                            в Екатеринбурге
-                                                                        </li>
-                                                                        <li class="itc-select__option" data-select="option"
-                                                                            data-value="tyumen-individual" data-index="1">
-                                                                            в Тюмени
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="order-make__pickup-address">
-                                                                <img class="order-make__pickup-address-icon" src="./img/icons/order-icon.svg" alt="">
-                                                                <div class="order-make__pickup-text">
-                                                                    <p>
-                                                                        ул. Промышленный проезд, ст.4
-                                                                    </p>
-                                                                    <p>
-                                                                        Пн - Вс 10:00 - 20:00
-                                                                    </p>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div> 
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-courier" type="radio" name="order-delivery-individual" >
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Доставка курьером
-                                                        </h5>
-                                                        
-                                                        <ul class="order-make__card-list">
-                                                            <li>Екатеринбург</li>
-                                                            <li>Тюмень</li>
-                                                        </ul>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-quick" type="radio" name="order-delivery-individual">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Срочная доставка курьером
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                            Только по Екатеринбургу
-                                                        </p>
-        
-                                                        <p class="order-make__card-cost">
-                                                            Стоимость уточняйте у менеджера&nbsp;
-                                                            <a href="tel:+73433799868">
-                                                                +7 (343) 379-98-68
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-service" type="radio" name="order-delivery-individual">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Службой доставки
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           Регионы России
-                                                        </p>
-        
-                                                        <p class="order-make__card-cost">
-                                                            Стоимость уточняйте у менеджера&nbsp;
-                                                            <a href="tel:+73433799868">
-                                                                +7 (343) 379-98-68
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                                <div class="order-make__item delivery-inputs skeleton">
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Адрес доставки <span>*</span></p>
-                                                    <input type="text" placeholder="Например: город Екатеринбург, ул. Карла Либкнехта, 22, офис 419" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label class="index">
-                                                    <p>Индекс <span>*</span></p>
-                                                    <input type="text" placeholder="______" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Комментарий</p>
-                                                    <textarea type="text" placeholder="Оставьте пожелание или комментарий к заказу"></textarea>
-                                                </label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="order-make__item skeleton">
-                                    <h4 class="order-make__item-title active">
-                                        <span class="number">Шаг 3.</span>
-                                        &nbsp;
-                                        <span class="name">Выберите способ оплаты</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex cards">
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Картой
-                                                        </h5>
-                                                        <ul class="order-make__card-pays">
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/google-pay.svg" alt="">
-                                                            </li>
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/apple-pay.svg" alt="">
-                                                            </li>
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/visa.svg" alt="">
-                                                            </li>
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/mastercard.svg" alt="">
-                                                            </li>
-                                                            <li>
-                                                                <img src="./img/icons/pay-systems/mir-pay.svg" alt="">
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Наличными
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                            Курьеру, в магазине или при доставке CDEK
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Через интернет-банкинг по счету
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                            Менеджер свяжется с вами, чтобы выставить счет
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Онлайн на сайте
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           После оформления заказ вы будете перенаправлены на страницу оплаты
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            В рассрочку
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           После оформления заказа с вами свяжется менеджер
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            В кредит от "Тинькофф"
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           С условиями можно ознакомиться
-                                                           <a class="tinkoff" href="#">на сайте банка</a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="order-make__inner entity">
-                                <div class="order-make__item skeleton">
-                                    <h4 class="order-make__item-title active">
-                                        <span class="number">Шаг 1.</span>
-                                        &nbsp;
-                                        <span class="name">Укажите данные получателя</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>Название компании <span>*</span></p>
-                                                    <input type="text" placeholder="Введите название компании или ИП" required>
-                                                </label>
-                                                <label>
-                                                    <p>Юридический адрес</p>
-                                                    <input type="text" placeholder="Введите адрес" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>ИНН</p>
-                                                    <input type="number" placeholder="Введите 10 цифр" required>
-                                                </label>
-                                                <label>
-                                                    <p>КПП</p>
-                                                    <input type="number" placeholder="Введите 9 цифр" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>Контактное лицо<span>*</span></p>
-                                                    <input type="text" placeholder="Введите ФИО" required>
-                                                </label>
-                                                <label>
-                                                    <p>E-mail <span>*</span></p>
-                                                    <input type="email" placeholder="Введите email" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row flex">
-                                                <label>
-                                                    <p>Ваш телефон<span>*</span></p>
-                                                    <input type="text" placeholder="+7 (___) __ - __ - __" required>
-                                                </label>
-                                                <label>
-                                                    <p>Факс</p>
-                                                    <input type="number" placeholder="Введите номер факса" required>
-                                                    <p class="hint"><span>*&nbsp;</span>-&nbsp;обязательные поля</p>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                                <div class="order-make__item skeleton">
-                                    <h4 class="order-make__item-title active">
-                                        <span class="number">Шаг 2.</span>
-                                        &nbsp;
-                                        <span class="name">Выберите способ доставки</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex cards">
-                                                <label class="order-make__card">
-                                                    <input class="order-pickup" type="radio" name="order-delivery-entity">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Самовывоз со склада
-                                                        </h5>
-                                                        <div class="order-make__pickup">
-                                                            <div class="itc-select" id="order-select-entity">
-                                                                <button type="button" class="itc-select__toggle" name="order-select-entity" value="ekaterinburg-entity"
-                                                                    data-select="toggle" data-index="0">в Екатеринбурге</button>
-                                                                <div class="itc-select__dropdown">
-                                                                    <ul class="itc-select__options">
-                                                                        <li class="itc-select__option itc-select__option_selected"
-                                                                            data-select="option" data-value="ekaterinburg-entity" data-index="0">
-                                                                            в Екатеринбурге
-                                                                        </li>
-                                                                        <li class="itc-select__option" data-select="option"
-                                                                            data-value="tyumen-entity" data-index="1">
-                                                                            в Тюмени
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="order-make__pickup-address">
-                                                                <img class="order-make__pickup-address-icon" src="./img/icons/order-icon.svg" alt="">
-                                                                <div class="order-make__pickup-text">
-                                                                    <p>
-                                                                        ул. Промышленный проезд, ст.4
-                                                                    </p>
-                                                                    <p>
-                                                                        Пн - Вс 10:00 - 20:00
-                                                                    </p>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div> 
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-courier" type="radio" name="order-delivery-entity" >
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Доставка курьером
-                                                        </h5>
-                                                        
-                                                        <ul class="order-make__card-list">
-                                                            <li>Екатеринбург</li>
-                                                            <li>Тюмень</li>
-                                                        </ul>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-quick" type="radio" name="order-delivery-entity">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Срочная доставка курьером
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                            Только по Екатеринбургу
-                                                        </p>
-        
-                                                        <p class="order-make__card-cost">
-                                                            Стоимость уточняйте у менеджера&nbsp;
-                                                            <a href="tel:+73433799868">
-                                                                +7 (343) 379-98-68
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input class="order-delivery-service" type="radio" name="order-delivery-entity">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Службой доставки
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           Регионы России
-                                                        </p>
-        
-                                                        <p class="order-make__card-cost">
-                                                            Стоимость уточняйте у менеджера&nbsp;
-                                                            <a href="+73433799868">
-                                                                +7 (343) 379-98-68
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                                <div class="order-make__item delivery-inputs skeleton">
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Адрес доставки <span>*</span></p>
-                                                    <input type="text" placeholder="Например: город Екатеринбург, ул. Карла Либкнехта, 22, офис 419" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label class="index">
-                                                    <p>Индекс <span>*</span></p>
-                                                    <input type="text" placeholder="______" required>
-                                                </label>
-                                            </div>
-                                            <div class="order-make__form-row">
-                                                <label>
-                                                    <p>Комментарий</p>
-                                                    <textarea type="text" placeholder="Оставьте пожелание или комментарий к заказу"></textarea>
-                                                </label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="order-make__item skeleton">
-                                    <h4 class="order-make__item-title active">
-                                        <span class="number">Шаг 3.</span>
-                                        &nbsp;
-                                        <span class="name">Выберите способ оплаты</span>
-                                    </h4>
-        
-                                    <div class="order-make__item-content">
-                                        <form class="order-make__form" action="">
-                                            <div class="order-make__form-row flex cards">
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            Рассчетный счет
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           После оформления заказа вы будете перенаправлены на страницу оплаты
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                                <label class="order-make__card">
-                                                    <input type="radio" name="order-pay">
-                                                    <div class="order-make__card-info">
-                                                        <h5 class="order-make__card-title">
-                                                            По реквизитам
-                                                        </h5>
-        
-                                                        <p class="order-make__card-text">
-                                                           Перевод банком "Сбербанк"
-                                                        </p>
-                                                    </div>
-                                                </label>
-                                            </div>
-        
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
                         </div>
-                        <aside class="cart-aside">
-                            <div class="cart-total skeleton">
-                                <div class="cart-total__header">
-                                    <div class="cart-total__header-result">
-                                        <div class="cart-total__header-text">
-                                            <p>Итого</p>
-                                            <p>2 товара</p>
-                                        </div>
-                                        
-                                        <p class="cart-total__sum">
-                                            50 800 ₽
-                                        </p>
-                                    </div>
-                                    <ul class="cart-calc">
-                                        <li class="cart-calc__price">
-                                            <p>Стоимость товаров</p>
-                                            <p class="price">58 800 ₽</p>
-                                        </li>
-                                        <li class="cart-calc__price">
-                                            <p>Ваша скидка</p>
-                                            <p class="price price--sale">8 000 ₽</p>
-                                        </li>
-                                        <li class="cart-calc__price">
-                                            <p>Итого <span>(без учета доставки)</span></p>
-                                            <p class="price">50 800 ₽</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <form class="cart-promocode">
-                                    <input class="promocode-input" type="text" placeholder="Введите промокод">
-                                    <button class="promocode-button" type="submit">
-                                        <img src="./img/icons/cart-arrow.svg" alt="">
-                                    </button>
-                                </form>
-                                <div class="promocode-error">
-                                    <div class="promocode-message">
-                                        <img src="./img/icons/promocode-icon.svg" alt="">
-                                        <span class="promocode">SALE</span> &nbsp;
-                                        <span class="text">не найден</span>
-                                    </div>
-                                    <div class="cart-item__delete">
-                                        <button class="cart-item__delete-btn">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M7.03125 3.59375H6.875C6.96094 3.59375 7.03125 3.52344 7.03125 3.4375V3.59375H12.9688V3.4375C12.9688 3.52344 13.0391 3.59375 13.125 3.59375H12.9688V5H14.375V3.4375C14.375 2.74805 13.8145 2.1875 13.125 2.1875H6.875C6.18555 2.1875 5.625 2.74805 5.625 3.4375V5H7.03125V3.59375ZM16.875 5H3.125C2.7793 5 2.5 5.2793 2.5 5.625V6.25C2.5 6.33594 2.57031 6.40625 2.65625 6.40625H3.83594L4.31836 16.6211C4.34961 17.2871 4.90039 17.8125 5.56641 17.8125H14.4336C15.1016 17.8125 15.6504 17.2891 15.6816 16.6211L16.1641 6.40625H17.3438C17.4297 6.40625 17.5 6.33594 17.5 6.25V5.625C17.5 5.2793 17.2207 5 16.875 5ZM14.2832 16.4062H5.7168L5.24414 6.40625H14.7559L14.2832 16.4062Z"
-                                                    fill="#5D6C7B"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <button class="rect-btn rect-btn--order blue">
-                                    <span class="rect-btn--order-text">
-                                        Оформить заказ
-                                    </span>
-                                    <span class="rect-btn--order-sum">
-                                        <span>2 товара,</span>&nbsp;
-                                        <span>23 562 ₽</span>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="product-box__delivery-options skeleton">
-                                <h5 class="product-box__delivery-title">
-                                    Способы получения заказа
-                                </h5>
-                                <div class="option pickup">
-                                    <a href="./delivery.html">Самовывоз за 15 минут</a>
-                                    <p>с нашего склада - бесплатно</p>
-                                </div>
-                                <div class="option delivery">
-                                    <a href="./delivery.html">Доставка до дома</a>
-                                    <p>
-                                        При заказе от 20 000 ₽ доставка по Екатеринбургу - бесплатно
-                                    </p>
-                                </div>
-                            </div>
-                        </aside>
                     </div>
-                </div>
-            </div>
-    
-            <div class="order-apply">
-                <div class="container">
-                    <a class="order-apply__return-to-catalog skeleton" href="./catalog.html">
-                        Вернуться в каталог
-                    </a>
-                    <div class="order-apply__box skeleton">
-                        <div class="order-apply__text-box">
-                            <p class="order-apply__message">
-                            Спасибо, ваш заказ принят
-                        </p>
-                        <p class="order-apply__text">
-                            Менеджер свяжется с Вами в течение 5 минут в рабочее время. Если Вы оставили заявку в нерабочее время — начнем следующий день со звонка Вам.
-                        </p>
-                        <p class="order-apply__text">
-                            А пока ожидаете — ознакомьтесь с товарами, которые могут дополнить ваш заказ.
-                        </p>
-                        <a class="rect-btn rect-btn--return-to-catalog white" href="./catalog.html">
-                            Перейти в каталог
+                    <div class="brands__content">
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/1.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/maunfeld.png" alt="">
+                            </span>
                         </a>
-                        </div>
-                        
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/2.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/kuppersberg.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/3.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/korting.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/1.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/maunfeld.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/2.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/kuppersberg.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/3.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/korting.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/1.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/maunfeld.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/2.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/kuppersberg.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/3.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/korting.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/1.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/maunfeld.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/2.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/kuppersberg.png" alt="">
+                            </span>
+                        </a>
+                        <a class="brands__item skeleton" href="./brand.html">
+                            <span class="brands__item-preview" style="background-image: url('./img/brands/3.jpg');"></span>
+                            <span class="brands__item-name">
+                                <img src="./img/brands/korting.png" alt="">
+                            </span>
+                        </a>
                     </div>
+                    <ul class="products-pagination skeleton">
+                        <li class="products-pagination-btn products-pagination-btn-arrow disabled">
+                            <a href="#">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.8987 1.9843V0.927467C6.8987 0.835866 6.79343 0.78528 6.72233 0.841334L0.559053 5.6552C0.506687 5.69592 0.464315 5.74807 0.435168 5.80766C0.406021 5.86725 0.390869 5.93271 0.390869 5.99905C0.390869 6.06539 0.406021 6.13085 0.435168 6.19044C0.464315 6.25003 0.506687 6.30217 0.559053 6.3429L6.72233 11.1568C6.7948 11.2128 6.8987 11.1622 6.8987 11.0706V10.0138C6.8987 9.9468 6.86726 9.88254 6.8153 9.84153L1.89343 5.99973L6.8153 2.15657C6.86726 2.11555 6.8987 2.0513 6.8987 1.9843Z"
+                                        fill="#5D6C7B" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="products-pagination-btn current">
+                            <a href="#">1</a>
+                        </li>
+                        <li class="products-pagination-btn">
+                            <a href="#">2</a>
+                        </li>
+                        <li class="products-pagination-btn">
+                            <a href="#">3</a>
+                        </li>
+                        <li class="products-pagination-btn">
+                            <a href="#">4</a>
+                        </li>
+                        <li class="products-pagination-btn">
+                            <a href="#">5</a>
+                        </li>
+                        <li class="products-pagination-btn products-pagination-btn--divider">
+                            <span>...</span>
+                        </li>
+                        <li class="products-pagination-btn">
+                            <a href="#">50</a>
+                        </li>
+                        <li class="products-pagination-btn products-pagination-btn-arrow">
+                            <a href="#">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.46854 5.65545L0.305274 0.841586C0.289169 0.828907 0.269815 0.821028 0.249434 0.818853C0.229052 0.816678 0.208471 0.820295 0.190053 0.82929C0.171635 0.838285 0.156128 0.852292 0.145312 0.869703C0.134496 0.887114 0.12881 0.907222 0.128907 0.927719V1.98456C0.128907 2.05155 0.160353 2.11581 0.212306 2.15682L5.13417 5.99999L0.212306 9.84315C0.158986 9.88417 0.128907 9.94842 0.128907 10.0154V11.0723C0.128907 11.1639 0.234181 11.2144 0.305274 11.1584L6.46854 6.34452C6.52092 6.30366 6.5633 6.25139 6.59245 6.19168C6.62159 6.13198 6.63674 6.06642 6.63674 5.99999C6.63674 5.93355 6.62159 5.86799 6.59245 5.80829C6.5633 5.74858 6.52092 5.69632 6.46854 5.65545Z"
+                                        fill="#282739" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-    
             <div class="feedback-banner skeleton">
                 <div class="container">
                     <div class="feedback-banner__inner">
@@ -2237,11 +2131,11 @@
                             </button>
                         </form>
                     </div>
-    
+
                 </div>
             </div>
         </main>
-    
+
         <footer class="footer">
             <div class="container">
                 <div class="footer__inner">
@@ -2484,7 +2378,6 @@
 
         </footer>
     </div>
-    
 
     <div id="questionForm" class="modal" data-modal>
         <div class="container modal-container" >
@@ -2770,7 +2663,7 @@
                     </svg>
                 </a>
             </li>
-            <li class="mobile-bottom-menu__item active">
+            <li class="mobile-bottom-menu__item">
                 <a href="./cart.html">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.60758 1.5L3.89258 4.2225" stroke="white" stroke-width="1.2" stroke-miterlimit="10"
@@ -2827,7 +2720,6 @@
             });
         });
     </script>
-    
     <script src="./js/script.js" type="module"></script>
 </body>
 </html>

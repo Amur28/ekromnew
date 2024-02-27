@@ -1,0 +1,15 @@
+.brands {
+    margin-bottom: 50px;
+}
+
+.brands__header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.brands__content {
+    margin-top: 50px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(calc(440px - 40px), 1fr));
+}
