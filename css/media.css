@@ -2958,7 +2958,7 @@
         height: auto;
         border-radius: 5px;
     }
-    .tags__item a:hover {
+    .tags__item:hover a {
         color: #fff;
     }
     /* HOVER END */

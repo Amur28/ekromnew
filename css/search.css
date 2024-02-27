@@ -24,3 +24,8 @@
     width: 14px;
     height: 14px;
 }
+
+.page-empty .recs {
+    margin-top: 50px;
+    padding: 0;
+}

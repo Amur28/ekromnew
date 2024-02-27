@@ -26,6 +26,16 @@
     font-weight: 600;
 }
 
+.page-empty__list {
+    margin-top: 10px;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.page-empty__list li:not(:first-child) {
+    margin-top: 5px;
+}
+
 .page-empty__text {
     margin-top: 10px;
 }

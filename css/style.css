@@ -1,6 +1,10 @@
+@import url('./nouislider.min.css');
+@import url('./fancybox.min.css');
+@import url('./swiper.min.css');
+@import url('./splide.min.css');
+@import url('./itc-custom-select.css');
 @import url('./font.css');
 @import url('./global.css');
-@import url('./itc-custom-select.css');
 @import url('./category.css');
 @import url('./catalog.css');
 @import url('./cart.css');

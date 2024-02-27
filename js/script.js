@@ -3,13 +3,6 @@ import './sliders.js';
 import { addClass, removeClass, containClass, hideOtherItems, toggleClass, checkClassAndClick } from './functions.js';
 
 const body = document.body;
-
-if (authSwiper.slides.length) {
-    document.addEventListener('DOMContentLoaded', function() {
-        history.pushState(null, null, '/auth.html#auth-start')
-    })
-}
-
 const clientWidth = window.innerWidth;
 
 /* Липкий HEADER */
