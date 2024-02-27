@@ -1906,6 +1906,9 @@
     .brands__content {
         margin-top: 20px;
     }
+    .brand-descr {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -2324,6 +2327,12 @@
     .brands__content {
         grid-template-columns: 1fr;
     }
+    .brand-descr {
+        font-size: 12px;
+    }
+    .title--banner img {
+        max-width: 150px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -2580,6 +2589,9 @@
     }
     span.brands__item-name {
         height: 30px;
+    }
+    .tags__item {
+        min-width: auto;
     }
 }
 
@@ -2946,6 +2958,8 @@
         height: auto;
         border-radius: 5px;
     }
-
+    .tags__item a:hover {
+        color: #fff;
+    }
     /* HOVER END */
 }

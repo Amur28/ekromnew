@@ -439,6 +439,7 @@ select::-ms-expand {
     border-radius: 20px;
     transition: var(--default-transition);
     padding: 6px 12px;
+    min-width: 150px;
 }
 
 .tags__item.skeleton {
@@ -454,21 +455,13 @@ select::-ms-expand {
     height: 100%;
 }
 
-.tags__item.current {
+.tags__item:not(.current) {
     background-color: transparent;
     border: 1px solid var(--main-blue);
 }
 
-.tags__item.current a {
-    color: var(--main-blue);
-}
-
-.tags__item.current:hover {
-    background: transparent;
-}
-
 .tags__item:not(.current) a {
-    color: #fff;
+    color: var(--main-blue);
 }
 
 /* INFO END */

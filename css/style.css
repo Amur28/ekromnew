@@ -13,6 +13,7 @@
 @import url('./favorites.css');
 @import url('./search.css');
 @import url('./brands.css');
+@import url('./brand.css');
 
 /* HEADER START */
 
@@ -1697,8 +1698,8 @@ body.active {
     display: block;
     font-weight: 600;
     line-height: normal;
-    max-height: 3.5em;
-    height: 3.5em;
+    max-height: 2.5em;
+    height: 2.5em;
 }
 
 .product-card__article {

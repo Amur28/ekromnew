@@ -737,10 +737,11 @@ function hideShowHeaderSearchDropdown() {
 }
 
 function hideHeaderSearchResult(event) {
+    const target = event.target;
     const headerSearchResult = headerSearchForm.querySelector('.search-result');
-    if (event.target !== headerSearchForm || !headerSearchForm.contains(event.target)) {
-        removeClass(headerSearchResult, 'active')
-        headerSearchForm.querySelector('.header__search-input').value = ''
+    const isResult = target == headerSearchResult || headerSearchResult.contains(target);
+    if (!isResult) {
+        removeClass(headerSearchResult, 'active');
     }
 }
 

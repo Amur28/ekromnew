@@ -11,6 +11,7 @@
 }
 
 .aside {
+    width: 260px;
     min-width: 260px;
     transition: var(--alt-transition);
 }
