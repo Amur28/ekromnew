@@ -2644,12 +2644,16 @@
         color: #fff;
     }
 
-    .blue:hover {
+    .blue:hover,
+    .rect-btn--contact-tab.active:hover,
+    .rect-btn--contact-info-tab.active:hover {
         background-color: var(--hover-blue);
         color: #fff;
     }
 
-    .transparent:hover {
+    .transparent:hover,
+    .rect-btn--contact-tab:hover,
+    .rect-btn--contact-info-tab:hover {
         background-color: var(--main-blue);
         color: #fff;
     }

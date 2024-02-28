@@ -1,0 +1,48 @@
+.page-banner.page-banner--contacts {
+    background: linear-gradient(90deg, rgba(83, 124, 229, .85) 20%, rgba(255, 255, 255, .1)), url('../img/contacts-banner.jpg');
+}
+
+.page-banner.page-banner--contacts .title h2 {
+    color: #fff;
+}
+
+.contacts__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.rect-btn--contact-tab,
+.rect-btn--contact-info-tab {
+    border: 1px solid var(--main-blue);
+    color: var(--main-blue);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 15px 25px;
+}
+
+.rect-btn--contact-tab.active,
+.rect-btn--contact-info-tab.active {
+    background-color: var(--main-blue);
+    color: #fff;
+    transition: var(--default-transition);
+}
+
+.info:has(.page-banner--contacts) {
+    padding-bottom: 50px;
+}
+
+.contacts-city__inner {
+    display: flex;
+}
+
+.contacts-city__maps {
+    width: 100%;
+    max-width: 610px;
+    height: 480px;
+}
+
+.contacts-city__maps .contacts-city__map {
+    width: 100%;
+    height: 100%;
+}
