@@ -21,7 +21,8 @@
     padding: 9px 12px;
 }
 
-.products__main.favorite.tiles {
+.products__main.favorite.tiles,
+.action .products__main.tiles {
     grid-template-columns: repeat(auto-fit, minmax(calc(270px - 15px), 1fr));
     justify-content: space-between;
 }

@@ -2,23 +2,32 @@
     max-width: 240px;
 }
 
-.brand-descr {
+.brand-descr,
+.action-descr {
     font-size: 16px;
 }
 
-.brand-descr b {
+.brand-descr b,
+.action-descr b {
     font-weight: 500;
 }
 
-.brand-descr ul {
+.brand-descr ul,
+.action-descr ul {
     list-style-type: disc;
     list-style-position: inside;
 }
 
-.brand-descr ul li:not(:first-child) {
+.brand-descr ul li:not(:first-child),
+.action-descr ul li:not(:first-child) {
     margin-top: 5px;
 }
 
-.brand {
+.brand,
+.action {
     padding: 50px 0;
+}
+
+.action .category__inner {
+    margin-top: 30px;
 }
