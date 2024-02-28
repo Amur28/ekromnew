@@ -29,6 +29,8 @@
     max-height: 200px;
     height: 200px;
     object-fit: cover;
+    filter: grayscale(1);
+    transition: var(--default-transition);
 }
 
 .actions__item span {

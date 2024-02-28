@@ -2988,5 +2988,8 @@
     .actions__item:hover svg path {
         stroke: var(--main-blue);
     }
+    .actions__item:hover img {
+        filter: grayscale(0);
+    }
     /* HOVER END */
 }
