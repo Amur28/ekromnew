@@ -19,6 +19,7 @@
     font-size: 16px;
     font-weight: 400;
     padding: 15px 25px;
+    border-radius: 5px;
 }
 
 .rect-btn--contact-tab.active,
@@ -32,8 +33,145 @@
     padding-bottom: 50px;
 }
 
+.contacts-city {
+    padding: 50px 0 100px;
+}
+
 .contacts-city__inner {
     display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contacts-city__info-item:not(.active),
+.contacts-city:not(.active) {
+    display: none;
+}
+
+.contacts-city__title {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.contacts-city__info-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.contacts-city__info-item {
+    margin-top: 30px;
+}
+
+.contacts-city__info-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.contacts-city__info-half {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.contacts-city__info-half .contacts-city__info-tel p {
+    color: var(--subtitle-color)
+}
+
+.contacts-city__info-half .contacts-city__info-tel a {
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.contacts-city__info-row img {
+    width: 21px;
+    height: 21px;
+}
+
+.contacts-city__info-address .city-address {
+    font-size: 18px;
+}
+
+.contacts-city__info-address a {
+    color: #6f73ee;
+}
+
+.contacts-city__info-address .city-time {
+    margin-top: 15px;
+    color: var(--subtitle-color);
+}
+
+.contacts-city__info-address {
+    max-width: 450px;
+}
+
+.contacts-city__info-address p:not(:first-child) {
+    margin-top: 10px;
+}
+
+.contacts-city__info-address b {
+    font-weight: 500;
+}
+
+.contacts-city__departments {
+    background-color: var(--filter-bg-color);
+    margin-top: 100px;
+    padding: 45px 145px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: space-between;
+    gap: 20px;
+}
+.contacts-city__departments-item {
+    display: flex;
+    flex-direction: column;
+}
+.contacts-city__departments-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    height: 2.5em;
+}
+.contacts-city__departments-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.contacts-city__departments-inner {
+    margin-top: 35px;
+}
+.contacts-city__departments-row:not(:first-of-type) {
+    margin-top: 20px;
+}
+.contacts-city__departments-value a{
+    font-weight: 500;
+    font-size: 16px;
+}
+.contacts-city__departments-time {
+    color: var(--subtitle-color);
+    margin-top: 5px;
+}
+.contacts-city__departments-download-template {
+    font-size: 12px;
+    color: var(--main-blue);
+    margin-top: 20px;
+}
+.rect-btn--departments {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 160px;
+    padding: 10px 13px;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+.contacts-city__departments-text a {
+    color: var(--main-blue);
+    font-weight: 500;
 }
 
 .contacts-city__maps {
@@ -43,6 +181,143 @@
 }
 
 .contacts-city__maps .contacts-city__map {
+    border-radius: 10px;
     width: 100%;
     height: 100%;
+}
+
+.contacts-city__maps .placemark-inner {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 12px;
+    color: #000;
+    white-space: nowrap;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.contacts-city__maps .placemark-inner .placemark-img {
+    width: 30px;
+    height: 48px;
+    background-image: url('../img/icons/map-placemark.svg');
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.contacts-city__maps .placemark-inner .placemark-address {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 4px 8px;
+    background-color: hsla(0, 0%, 100%, .12);
+    -webkit-box-shadow: 0 4px 4px rgba(0,0,0,.25), inset 0 -1px 4px hsla(0,0%,100%,.8), inset 0 4px 5px #fff;
+    -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, .25), inset 0 -1px 4px hsla(0, 0%, 100%, .8), inset 0 4px 5px #fff;
+    box-shadow: 0 4px 4px rgba(0,0,0,.25), inset 0 -1px 4px hsla(0,0%,100%,.8), inset 0 4px 5px #fff;
+    backdrop-filter: blur(15px);
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 10px;
+}
+
+.contacts-city__maps .placemark-inner .placemark-address-name {
+    font-weight: 600;
+}
+
+.contacts-social__inner {
+    padding: 0 145px;
+    display: flex;
+    gap: 145px;
+    justify-content: space-between;
+    align-items: center;
+}
+.contacts-social__left h3{
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.contacts-social__left p {
+    margin-top: 45px;
+    font-size: 18px;
+    color: #8c8c8c;
+}
+.contacts-social__right {
+    background-color: var(--filter-bg-color);
+    padding: 30px 35px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 355px;
+}
+.contacts-social__link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+}
+.contacts-social__link:not(:first-child) {
+    margin-top: 10px;
+}
+.contacts-social__link.vk {
+    background-color: #4B729F;
+}
+.contacts-social__link.instagram {
+    background: linear-gradient(10deg, rgb(255, 193, 7), rgb(244, 67, 54), rgb(156, 39, 176));
+}
+.contacts-social__link.youtube {
+    background-color: #E53935;
+}
+.contacts-social__link.telegram {
+    background-color: #039BE5;
+}
+.contacts-requisites {
+    margin-top: 80px;
+    margin-bottom: 95px;
+}
+.contacts-requisites__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.contacts-requisites__item h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.contacts-requisites__item p {
+    color: #8c8c8c;
 }

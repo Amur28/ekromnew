@@ -1252,3 +1252,24 @@ function toggleCheckboxes(item) {
         item.checked = false
     }
 }
+
+/* Смена филиалов на странице контактов */
+
+const contactTabsArray = document.querySelectorAll('.rect-btn--contact-tab');
+const contactCityArray = document.querySelectorAll('.contacts-city');
+
+contactTabsArray.forEach((tab, index) => {
+    tab.addEventListener('click', function() {
+        swapContentOnTabs(contactTabsArray, tab, contactCityArray, index)
+    })
+});
+
+contactCityArray.forEach(city => {
+    const contactInfoBtnArray = city.querySelectorAll('.rect-btn--contact-info-tab');
+    const contactInfoContentArr = city.querySelectorAll('.contacts-city__info-item');
+    contactInfoBtnArray.forEach((tab, index) => {
+        tab.addEventListener('click', function() {
+            swapContentOnTabs(contactInfoBtnArray, tab, contactInfoContentArr, index)
+        })
+    });
+})

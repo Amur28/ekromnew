@@ -2995,5 +2995,12 @@
     .actions__item:hover img {
         filter: grayscale(0);
     }
+    .contacts-city__departments-text a:hover,
+    .contacts-city__departments-download-template:hover {
+        color: var(--search-color);
+    }
+    .contacts-social__link:hover {
+        color: #fff;
+    }
     /* HOVER END */
 }
