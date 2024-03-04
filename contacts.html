@@ -20,8 +20,8 @@
                 behaviors: ["default", "scrollZoom"],
                 controls: [],
             }, {
-                // searchControlProvider: 'yandex#search',
                 maxZoom: 18,
+                autoFitToViewPort: 'always',
             });
 
             let tyumenMap = new ymaps.Map(document.getElementById('tyumen-map'), {
@@ -30,8 +30,8 @@
                 behaviors: ["default", "scrollZoom"],
                 controls: [],
             }, {
-                // searchControlProvider: 'yandex#search',
                 maxZoom: 18,
+                autoFitToViewPort: 'always',
             });
 
             let myPlacemarkLayout = ymaps.templateLayoutFactory.createClass(
@@ -131,18 +131,17 @@
             const contactInfoTabsTyumenArray = document.querySelectorAll('.rect-btn--contact-info-tab[data-city="tyumen"]');
 
             contactInfoTabsEkbArray.forEach((item, index) => {
-                item.addEventListener('click', function() {
-                    console.log('hi')
+                item.addEventListener('click', function () {
                     goToPoint(ekbOfficeMap, this, ekbCollection)
                 })
             });
 
-            // contactInfoTabsTyumenArray.forEach((item, index) => {
-            //     item.addEventListener('click', function() {
-            //         console.log('hi')
-            //         goToPoint(ekbOfficeMap, this)
-            //     })
-            // });
+            contactInfoTabsTyumenArray.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    console.log('hi')
+                    goToPoint(tyumenMap, this, tyumenCollection)
+                })
+            });
 
             function goToPoint(map, btn, collection) {
                 const placemarkArray = collection.toArray()
@@ -155,10 +154,10 @@
                     }
                     return coords
                 })
-                map.setCenter(coords, 17, {duration: 500})
+                map.setCenter(coords, 17, { duration: 500 })
             }
         }
-        
+
     </script>
     <title>Контакты</title>
 </head>
@@ -2126,16 +2125,19 @@
                                     Адреса шоурумов, складов и офисов:
                                 </h3>
                                 <div class="contacts-city__info-tabs">
-                                    <button class="rect-btn rect-btn--contact-info-tab active" data-map="ekb-office" data-city="ekb">
+                                    <button class="rect-btn rect-btn--contact-info-tab active" data-map="ekb-office"
+                                        data-city="ekb">
                                         Офис
                                     </button>
-                                    <button class="rect-btn rect-btn--contact-info-tab" data-map="astroom" data-city="ekb">
+                                    <button class="rect-btn rect-btn--contact-info-tab" data-map="astroom"
+                                        data-city="ekb">
                                         ИЦ ASTROOM
                                     </button>
                                     <button class="rect-btn rect-btn--contact-info-tab" data-map="ema" data-city="ekb">
                                         МЦ ЭМА
                                     </button>
-                                    <button class="rect-btn rect-btn--contact-info-tab" data-map="ekb-stock" data-city="ekb">
+                                    <button class="rect-btn rect-btn--contact-info-tab" data-map="ekb-stock"
+                                        data-city="ekb">
                                         Центральный склад
                                     </button>
                                 </div>
@@ -2179,7 +2181,8 @@
                                                 <b>Бесплатная парковка</b> (напротив ресторана Bukowski Grill)
                                             </p>
                                             <p>
-                                                Перед посещением магазина, пожалуйста, <b>уточняйте наличие рассматриваемой
+                                                Перед посещением магазина, пожалуйста, <b>уточняйте наличие
+                                                    рассматриваемой
                                                     вами модели по телефону</b>&nbsp;у менеджера
                                             </p>
                                         </div>
@@ -2222,7 +2225,8 @@
                                         <img src="./img/icons/contacts-warning.svg" alt="">
                                         <div class="contacts-city__info-address">
                                             <p>
-                                                Перед посещением магазина, пожалуйста, <b>уточняйте наличие рассматриваемой
+                                                Перед посещением магазина, пожалуйста, <b>уточняйте наличие
+                                                    рассматриваемой
                                                     вами модели по телефону</b>&nbsp;у менеджера
                                             </p>
                                         </div>
@@ -2265,7 +2269,8 @@
                                         <img src="./img/icons/contacts-warning.svg" alt="">
                                         <div class="contacts-city__info-address">
                                             <p>
-                                                Перед посещением магазина, пожалуйста, <b>уточняйте наличие рассматриваемой
+                                                Перед посещением магазина, пожалуйста, <b>уточняйте наличие
+                                                    рассматриваемой
                                                     вами модели по телефону</b>&nbsp;у менеджера
                                             </p>
                                         </div>
@@ -2309,7 +2314,8 @@
                                         <img src="./img/icons/contacts-warning.svg" alt="">
                                         <div class="contacts-city__info-address">
                                             <p>
-                                                Перед посещением магазина, пожалуйста, <b>уточняйте наличие рассматриваемой
+                                                Перед посещением магазина, пожалуйста, <b>уточняйте наличие
+                                                    рассматриваемой
                                                     вами модели по телефону</b>&nbsp;у менеджера
                                             </p>
                                         </div>
@@ -2351,8 +2357,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <a class="contacts-city__departments-download-template" download href="./files/file.pdf">
+
+                                <a class="contacts-city__departments-download-template" download
+                                    href="./files/file.pdf">
                                     Скачать шаблон обращения
                                 </a>
                                 <button class="rect-btn rect-btn--departments blue">
@@ -2398,9 +2405,14 @@
                                 <h3 class="contacts-city__departments-title">
                                     Написать директору
                                 </h3>
-                                <p class="contacts-city__departments-text">
-                                    Если у вас возникли предложения или пожелания, которые помогут улучшить работу нашей компании, вы можете написать через <a href="#">специальную форму</a> напрямую руководителю компании.
-                                </p>
+                                <div class="contacts-city__departments-inner">
+                                    <p class="contacts-city__departments-text">
+                                        Если у вас возникли предложения или пожелания, которые помогут улучшить работу
+                                        нашей
+                                        компании, вы можете написать через <a href="#">специальную форму</a> напрямую
+                                        руководителю компании.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2411,7 +2423,7 @@
                                     Адреса шоурумов, складов и офисов:
                                 </h3>
                                 <div class="contacts-city__info-tabs">
-                                    <button class="rect-btn rect-btn--contact-info-tab active" data-map="ekb-office">
+                                    <button class="rect-btn rect-btn--contact-info-tab active" data-map="tyumen-office" data-city="tyumen">
                                         Офис
                                     </button>
                                 </div>
@@ -2453,7 +2465,8 @@
                                         <img src="./img/icons/contacts-warning.svg" alt="">
                                         <div class="contacts-city__info-address">
                                             <p>
-                                                Перед посещением магазина, пожалуйста,<b>уточняйте наличие рассматриваемой вами модели по телефону</b>&nbsp;у менеджера
+                                                Перед посещением магазина, пожалуйста,<b>уточняйте наличие
+                                                    рассматриваемой вами модели по телефону</b>&nbsp;у менеджера
                                             </p>
                                         </div>
                                     </div>
@@ -2467,7 +2480,7 @@
                                             </p>
                                             <a href="">Как пройти?</a>
                                             <p>
-                                                Пн-Пт 
+                                                Пн-Пт
                                             </p>
                                         </div>
                                     </div>
@@ -2477,7 +2490,7 @@
                                             <div class="contacts-city__info-tel">
                                                 <p>Телефон</p>
                                                 <a href="tel:+73433799868">
-                                                    8 
+                                                    8
                                                 </a>
                                             </div>
                                         </div>
@@ -2539,8 +2552,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <a class="contacts-city__departments-download-template" download href="./files/file.pdf">
+
+                                <a class="contacts-city__departments-download-template" download
+                                    href="./files/file.pdf">
                                     Скачать шаблон обращения
                                 </a>
                                 <button class="rect-btn rect-btn--departments blue">
@@ -2586,9 +2600,13 @@
                                 <h3 class="contacts-city__departments-title">
                                     Написать директору
                                 </h3>
-                                <p class="contacts-city__departments-text">
-                                    Если у вас возникли предложения или пожелания, которые помогут улучшить работу нашей компании, вы можете написать через <a href="#">специальную форму</a> напрямую руководителю компании.
-                                </p>
+                                <div class="contacts-city__departments-title">
+                                    <p class="contacts-city__departments-text">
+                                        Если у вас возникли предложения или пожелания, которые помогут улучшить работу нашей
+                                        компании, вы можете написать через <a href="#">специальную форму</a> напрямую
+                                        руководителю компании.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2603,7 +2621,8 @@
                         </div>
                         <div class="contacts-social__right">
                             <a class="contacts-social__link vk" href="https://vk.com/ekromshop">
-                                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="20" height="12" viewBox="0 0 20 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M16.5958 6.85675C16.2725 6.44842 16.365 6.26675 16.5958 5.90175C16.6 5.89758 19.2692 2.20925 19.5442 0.958415L19.5458 0.957581C19.6825 0.501748 19.5458 0.166748 18.885 0.166748H16.6983C16.1417 0.166748 15.885 0.454248 15.7475 0.775915C15.7475 0.775915 14.6342 3.44092 13.0592 5.16842C12.5508 5.66758 12.3158 5.82758 12.0383 5.82758C11.9017 5.82758 11.6892 5.66758 11.6892 5.21175V0.957581C11.6892 0.410915 11.5333 0.166748 11.0725 0.166748H7.63417C7.285 0.166748 7.0775 0.421748 7.0775 0.659248C7.0775 1.17758 7.865 1.29675 7.94667 2.75508V5.91925C7.94667 6.61258 7.82083 6.74008 7.54167 6.74008C6.79833 6.74008 4.99417 4.06425 3.925 1.00175C3.70917 0.407581 3.49833 0.167581 2.9375 0.167581H0.75C0.125833 0.167581 0 0.455081 0 0.776748C0 1.34508 0.743333 4.17092 3.45667 7.90425C5.265 10.4526 7.81167 11.8334 10.1283 11.8334C11.5208 11.8334 11.6908 11.5267 11.6908 10.9992C11.6908 8.56425 11.565 8.33425 12.2625 8.33425C12.5858 8.33425 13.1425 8.49425 14.4425 9.72342C15.9283 11.1809 16.1725 11.8334 17.0042 11.8334H19.1908C19.8142 11.8334 20.13 11.5267 19.9483 10.9217C19.5325 9.64925 16.7225 7.03175 16.5958 6.85675V6.85675Z"
                                         fill="white" />
@@ -2611,7 +2630,8 @@
                                 <span>Вконтакте</span>
                             </a>
                             <a class="contacts-social__link instagram" href="#">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_582_3689)">
                                         <path
                                             d="M13.75 0H6.25C2.79875 0 0 2.79875 0 6.25V13.75C0 17.2013 2.79875 20 6.25 20H13.75C17.2013 20 20 17.2013 20 13.75V6.25C20 2.79875 17.2013 0 13.75 0ZM18.125 13.75C18.125 16.1625 16.1625 18.125 13.75 18.125H6.25C3.8375 18.125 1.875 16.1625 1.875 13.75V6.25C1.875 3.8375 3.8375 1.875 6.25 1.875H13.75C16.1625 1.875 18.125 3.8375 18.125 6.25V13.75Z"
@@ -2632,7 +2652,8 @@
                                 <span>Сеть с картинками</span>
                             </a>
                             <a class="contacts-social__link youtube" href="#">
-                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M0.435184 12.8952C0.843517 14.3435 2.09268 14.6085 2.17602 14.6593C4.23185 15.2193 15.7552 15.221 17.8419 14.6593C19.271 14.246 19.5335 12.9785 19.5827 12.8952C20.1269 10.0002 20.1627 6.226 19.5577 2.941L19.5827 3.10433C19.1744 1.656 17.9252 1.391 17.8419 1.34016C15.8135 0.78933 4.26018 0.768497 2.17602 1.34016C0.746851 1.75433 0.484351 3.021 0.435184 3.10433C-0.147316 6.14683 -0.176483 9.63766 0.435184 12.8952ZM8.00685 11.0427V4.96516L13.2285 8.0085L8.00685 11.0427Z"
                                         fill="white" />
@@ -2640,7 +2661,8 @@
                                 <span>YouTube</span>
                             </a>
                             <a class="contacts-social__link telegram" href="https://t.me/ekromshop">
-                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M7.84765 11.6508L7.51682 16.3041C7.99015 16.3041 8.19515 16.1008 8.44098 15.8566L10.6602 13.7358L15.2585 17.1033C16.1018 17.5733 16.696 17.3258 16.9235 16.3274L19.9418 2.1841L19.9427 2.18326C20.2102 0.936598 19.4918 0.449098 18.6702 0.754931L0.928482 7.54743C-0.282352 8.01743 -0.264019 8.69243 0.722648 8.99826L5.25848 10.4091L15.7943 3.8166C16.2901 3.48826 16.741 3.66993 16.3701 3.99826L7.84765 11.6508Z"
                                         fill="white" />
