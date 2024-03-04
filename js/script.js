@@ -830,7 +830,7 @@ const categoryDisplayTabs = document.querySelectorAll('.swap-display-button');
 const categoryContents = document.querySelectorAll('.products__main');
 
 categoryDisplayTabs.forEach((tab, index) => {
-    tab.addEventListener('click', function() {
+    tab.addEventListener('click', function () {
         swapContentOnTabs(categoryDisplayTabs, tab, categoryContents, index)
     })
 })
@@ -1259,7 +1259,7 @@ const contactTabsArray = document.querySelectorAll('.rect-btn--contact-tab');
 const contactCityArray = document.querySelectorAll('.contacts-city');
 
 contactTabsArray.forEach((tab, index) => {
-    tab.addEventListener('click', function() {
+    tab.addEventListener('click', function () {
         swapContentOnTabs(contactTabsArray, tab, contactCityArray, index)
     })
 });
@@ -1268,8 +1268,77 @@ contactCityArray.forEach(city => {
     const contactInfoBtnArray = city.querySelectorAll('.rect-btn--contact-info-tab');
     const contactInfoContentArr = city.querySelectorAll('.contacts-city__info-item');
     contactInfoBtnArray.forEach((tab, index) => {
-        tab.addEventListener('click', function() {
+        tab.addEventListener('click', function () {
             swapContentOnTabs(contactInfoBtnArray, tab, contactInfoContentArr, index)
         })
     });
 })
+
+/* Открытие формы рекламации на странице контактов */
+
+const contactsComplaintBtn = document.querySelectorAll('.rect-btn--departments');
+contactsComplaintBtn.forEach(btn => {
+    btn.addEventListener('click', showComplaintForm);
+});
+
+function showComplaintForm() {
+    const complaintForm = document.querySelector('#complaintForm')
+    addClass(complaintForm, 'active')
+    addClass(body, 'active')
+}
+
+/* Открытие формы заявления директору на странице контактов */
+
+const contactsCeoBtn = document.querySelectorAll('.contacts-city__departments-text a');
+console.log(contactsCeoBtn)
+contactsCeoBtn.forEach(btn => {
+    btn.addEventListener('click', showCeoForm);
+});
+
+function showCeoForm(event) {
+    event.preventDefault()
+    const ceoForm = document.querySelector('#ceoForm')
+    addClass(ceoForm, 'active')
+    addClass(body, 'active')
+}
+
+/* Вставка имени прикрепленного файла в форме рекламации на странице контактов */
+const contactsForms = document.querySelectorAll('.contact-form')
+
+if (contactsForms.length) {
+    contactsForms.forEach(form => {
+        const contactsFileInput = form.querySelector('.contacts-form-label-file input');
+        contactsFileInput.addEventListener('change', changeFileParagraphText)
+    
+        function changeFileParagraphText() {
+            const files = this.files;
+            const paragraph = this.previousElementSibling;
+            let filesString = '';
+            for (let i = 0; i < files.length; i++) {
+                const fileName = files[i].name;
+                if (i === files.length - 1) {
+                    filesString += `${fileName}`
+                } else {
+                    filesString += `${fileName}, `
+                }
+    
+            }
+            paragraph.textContent = filesString
+        }
+    
+        /* Удаление файлов из инпута в форме рекламации на странице контактов */
+    
+        const contactsClearFileBtn = form.querySelector('.contacts-form-file-row button');
+        contactsClearFileBtn.addEventListener('click', clearFileInput)
+    
+        function clearFileInput() {
+            const paragraph = contactsFileInput.previousElementSibling;
+            if (contactsFileInput.value !== '') {
+                contactsFileInput.value = '';
+                paragraph.textContent = 'Выберите файлы';
+            }
+        };
+    })
+    
+}
+

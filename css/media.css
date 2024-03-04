@@ -3014,7 +3014,8 @@
         color: #fff;
     }
 
-    .close-btn--city-select:hover svg path {
+    .close-btn--city-select:hover svg path,
+    .close-btn--complaint:hover svg path {
         fill: var(--main-blue);
     }
 
@@ -3142,7 +3143,6 @@
     }
     .contacts-social__link:hover {
         color: #fff;
-        opacity: .8;
     }
     /* HOVER END */
 }

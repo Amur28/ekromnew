@@ -351,3 +351,165 @@
 .contacts-requisites__item p {
     color: #8c8c8c;
 }
+
+.contacts-modal__inner {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 45px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    min-width: 790px;
+}
+
+.contacts-modal__inner .contacts-form-img {
+    width: 100%;
+    background-color: #ccc;
+    max-width: 40%;
+    border-radius: 10px;
+}
+
+.contacts-form h3 {
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.contacts-form-subtext {
+    margin-top: 20px;
+}
+
+.contacts-form-subtext a {
+    color: var(--main-blue);
+    font-weight: 500;
+}
+
+.contacts-form-question {
+    font-size: 12px;
+    margin-top: 35px;
+    color: var(--subtitle-color);
+}
+.contacts-form__inner {
+    max-width: 310px;
+}
+.contacts-form-connect {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+.contacts-form-connect__label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 35px;
+    border: 1px solid #eaebed;
+    border-radius: 5px;
+    cursor: pointer;
+    filter: grayscale(1);
+}
+.contacts-form-connect__label input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.contacts-form-connect__label:has(input:checked) {
+    filter: grayscale(0);
+}
+.contacts-form input[type=number] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: 1px solid #eaebed;
+    font-size: 16px;
+}
+.contacts-form input[type=number]::placeholder {
+    font-size: 16px;
+}
+.contacts-form__inner textarea {
+    width: 100%;
+    border: 1px solid #eaebed;
+    border-radius: 5px;
+    resize: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    margin-top: 25px;
+}
+.contacts-form__inner textarea::placeholder {
+    font-size: 16px;
+}
+.contacts-form-file-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.contacts-form-label-file {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    gap: 10px;
+}
+.contacts-form-label-file input {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+}
+.contacts-form-label-file p {
+    color: var(--subtitle-color);
+}
+.contacts-form-confidence {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.contacts-form-confidence:has(input:checked)::after {
+    opacity: 1;
+}
+.contacts-form-confidence::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--subtitle-color);
+    border-radius: 2px;
+    background-color: #fff;
+}
+.contacts-form-confidence::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    content: '';
+    width: 11px;
+    height: 9px;
+    background: url(../img/icons/check.svg) center center / cover no-repeat;
+    transition: var(--alt-transition);
+    opacity: 0;
+}
+.contacts-form-confidence input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.contacts-form-confidence p {
+    font-size: 12px;
+    padding-left: 25px;
+}
+.contacts-form-confidence p a {
+    color: var(--main-blue);
+}
+.rect-btn--contacts-form {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}

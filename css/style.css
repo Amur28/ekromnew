@@ -2479,6 +2479,8 @@ a.footer__nav-link--show {
 #popupStatus,
 #citySelect,
 #authRegister,
+#complaintForm,
+#ceoForm,
 #authLogin {
     visibility: hidden;
     opacity: 0;
@@ -2487,9 +2489,11 @@ a.footer__nav-link--show {
 
 #fastView.active,
 #questionForm.active,
-/* #popupStatus.active, */
+#popupStatus.active,
 #citySelect.active,
 #authRegister.active,
+#complaintForm.active,
+#ceoForm.active,
 #authLogin.active {
     visibility: visible;
     opacity: 1;
@@ -2499,7 +2503,9 @@ a.footer__nav-link--show {
 #questionForm.active .question-form,
 #authRegister.active .auth__inner,
 #authLogin.active .auth__inner,
-#citySelect.active .city-select {
+#citySelect.active .city-select,
+#complaintForm.active .modal-container,
+#ceoForm.active .modal-container {
     animation: zoomIn .3s;
 }
 
