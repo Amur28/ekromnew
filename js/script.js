@@ -1,7 +1,6 @@
 'use strict';
 import './sliders.js';
 import { addClass, removeClass, containClass, hideOtherItems, toggleClass, checkClassAndClick } from './functions.js';
-
 const body = document.body;
 const clientWidth = window.innerWidth;
 
@@ -1290,7 +1289,6 @@ function showComplaintForm() {
 /* Открытие формы заявления директору на странице контактов */
 
 const contactsCeoBtn = document.querySelectorAll('.contacts-city__departments-text a');
-console.log(contactsCeoBtn)
 contactsCeoBtn.forEach(btn => {
     btn.addEventListener('click', showCeoForm);
 });
@@ -1338,7 +1336,5 @@ if (contactsForms.length) {
                 paragraph.textContent = 'Выберите файлы';
             }
         };
-    })
-    
+    })   
 }
-
