@@ -438,7 +438,7 @@ select::-ms-expand {
     height: 40px;
     border-radius: 20px;
     transition: var(--default-transition);
-    
+
     min-width: 150px;
 }
 
@@ -842,4 +842,74 @@ select::-ms-expand {
     color: #fff;
     text-align: left;
     font-size: 10px;
+}
+
+.toast {
+    border: none;
+}
+
+.toast-container {
+    top: auto;
+    bottom: 10px;
+    left: 15px;
+    z-index: 999;
+}
+
+.toast_show {
+    display: block;
+}
+
+.toast_message .toast__body {
+    border-radius: 5px;
+    border: none;
+    padding: 25px;
+    padding-right: 50px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.toast_message .toast__body a {
+    display: inline-block;
+    margin-top: 30px;
+    font-weight: 500;
+    color: var(--main-blue);
+    position: relative;
+}
+
+.toast_message .toast__body a::after {
+    content: '';
+    background-image: url('../img/icons/cart-arrow.svg');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    display: block;
+    width: 19px;
+    height: 16px;
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toast_message .toast__close {
+    background: transparent url('../img/icons/close-blue.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+}
+
+.round-btn--go-to-top {
+    position: fixed;
+    bottom: -50px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    z-index: 950;
+}
+
+.round-btn--go-to-top.scroll {
+    bottom: 50px;
+}
+
+.round-btn--go-to-top svg path {
+    transition: var(--default-transition);
 }

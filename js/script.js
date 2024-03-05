@@ -29,6 +29,7 @@ function removeScroll(arr) {
 };
 
 const catalogPopup = document.querySelector('.catalog-popup');
+// const goTopBtn = document.querySelector('.round-btn--go-to-top')
 
 function showOrHideContentOnScroll() {
     const defaultOffset = 500;
@@ -58,6 +59,23 @@ function showOrHideContentOnScroll() {
 
 window.addEventListener('scroll', showOrHideContentOnScroll)
 
+// class GoTop {
+//     constructor(el) {
+//         this.el = el;
+//         this.el.addEventListener('click', () => {
+//             this.goToTopPls()
+//         });
+//     }
+//     goToTopPls() {
+//         window.scrollTo({
+//             top: 0,
+//             left: 0,
+//             behavior: 'smooth',
+//         })
+//     }
+// }
+
+// const btnTop = new GoTop(goTopBtn)
 /* Инициализация бегущей строки брендов */
 
 function initBrandsMarquee() {
@@ -404,6 +422,20 @@ function removeZoom() {
 
 /* События для карточек товаров */
 
+const toastObj = {
+    compareText: 'Товар добавлен в список сравнения!',
+    compareHref: './compare.html',
+    compareLinkText: 'Перейти в сравнение',
+    cartText: 'Товар добавлен в корзину!',
+    cartHref: './cart.html',
+    cartLinkText: 'Перейти в корзину',
+    favLinkText: 'Перейти в избранное',
+    favText: 'Товар добавлен в список избранного!',
+    favHref: './favorites.html',
+    authText: 'Вы успешно авторизовались в системе!',
+    pickText: 'Подберите товар с умной системой!',
+}
+
 const productCards = document.querySelectorAll('.product-card');
 let xDown = null;
 let yDown = null;
@@ -432,6 +464,61 @@ productCards.forEach(card => {
 
         addClass(cartButton, 'hide');
         removeClass(counter, 'hide');
+    }
+
+    /* Всплывающие уведомления */
+
+    card.addEventListener('click', showToast);
+
+    function createLink(hrefText, linkText) {
+        const link = document.createElement('a');
+        link.setAttribute('href', hrefText);
+        link.textContent = linkText;
+        return link
+    }
+
+    function addLinkToToast(hrefText, linkText) {
+        const container = document.querySelectorAll('.toast_message');
+        container.forEach(item => {
+            const toastBody = item.querySelector('.toast__body')
+            if (toastBody.querySelector('a') == null) {
+                toastBody.append(createLink(hrefText, linkText))
+            }
+
+        })
+    }
+
+    function createToast(toastText, hrefText, linkText) {
+        new Toast({
+            title: false,
+            text: toastText,
+            theme: 'default',
+            autohide: true,
+            interval: 3500,
+        })
+        addLinkToToast(hrefText, linkText)
+    }
+
+    function showToast(event) {
+        const productCardRoundBtn = event.target.closest('.round-btn');
+        if (!productCardRoundBtn) return;
+
+        const classes = Array.from(productCardRoundBtn.classList)
+        if (!containClass(productCardRoundBtn, 'active')) {
+            switch (classes[1]) {
+                case 'round-btn--fav':
+                    createToast(toastObj.favText, toastObj.favHref, toastObj.favLinkText)
+                    break;
+                case 'round-btn--compare':
+                    createToast(toastObj.compareText, toastObj.compareHref, toastObj.compareLinkText)
+                    break;
+                case 'round-btn--cart':
+                    createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
+                    break;
+                default:
+                    console.log('gogosd')
+            };
+        }
     }
 
     /* Кнопки избранного/сравнения/корзины */
@@ -1307,7 +1394,7 @@ if (contactsForms.length) {
     contactsForms.forEach(form => {
         const contactsFileInput = form.querySelector('.contacts-form-label-file input');
         contactsFileInput.addEventListener('change', changeFileParagraphText)
-    
+
         function changeFileParagraphText() {
             const files = this.files;
             const paragraph = this.previousElementSibling;
@@ -1319,16 +1406,16 @@ if (contactsForms.length) {
                 } else {
                     filesString += `${fileName}, `
                 }
-    
+
             }
             paragraph.textContent = filesString
         }
-    
+
         /* Удаление файлов из инпута в форме рекламации на странице контактов */
-    
+
         const contactsClearFileBtn = form.querySelector('.contacts-form-file-row button');
         contactsClearFileBtn.addEventListener('click', clearFileInput)
-    
+
         function clearFileInput() {
             const paragraph = contactsFileInput.previousElementSibling;
             if (contactsFileInput.value !== '') {
@@ -1336,5 +1423,5 @@ if (contactsForms.length) {
                 paragraph.textContent = 'Выберите файлы';
             }
         };
-    })   
+    })
 }

@@ -3208,5 +3208,8 @@
     .contacts-social__link:hover {
         color: #fff;
     }
+    .round-btn--go-to-top:hover svg path{
+        fill: var(--hover-blue);
+    }
     /* HOVER END */
 }
