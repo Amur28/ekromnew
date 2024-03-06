@@ -29,7 +29,6 @@ function removeScroll(arr) {
 };
 
 const catalogPopup = document.querySelector('.catalog-popup');
-// const goTopBtn = document.querySelector('.round-btn--go-to-top')
 
 function showOrHideContentOnScroll() {
     const defaultOffset = 500;
@@ -44,7 +43,7 @@ function showOrHideContentOnScroll() {
             const headerDropdown = headerTopInfoLink.nextElementSibling;
             removeClass(headerDropdown, 'active')
         }
-    } else if (scrollPosition() < lastScrollPos && containClass(stickyHeader, 'scroll')) {
+    } else if (scrollPosition() < lastScrollPos && containClass(stickyHeader, 'scroll') && scrollPosition() < defaultOffset) {
         removeScroll(elementsArr);
     }
     if (!catalogPopup) return;
@@ -59,23 +58,6 @@ function showOrHideContentOnScroll() {
 
 window.addEventListener('scroll', showOrHideContentOnScroll)
 
-// class GoTop {
-//     constructor(el) {
-//         this.el = el;
-//         this.el.addEventListener('click', () => {
-//             this.goToTopPls()
-//         });
-//     }
-//     goToTopPls() {
-//         window.scrollTo({
-//             top: 0,
-//             left: 0,
-//             behavior: 'smooth',
-//         })
-//     }
-// }
-
-// const btnTop = new GoTop(goTopBtn)
 /* Инициализация бегущей строки брендов */
 
 function initBrandsMarquee() {

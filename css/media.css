@@ -1536,7 +1536,8 @@
     .personal__tiles {
         justify-content: space-between;
     }
-    .products__main.favorite.tiles {
+    .products__main.favorite.tiles,
+    .products__main.action.tiles {
         grid-template-columns: repeat(2, 1fr);
         justify-content: space-between;
     }
