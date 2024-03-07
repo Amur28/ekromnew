@@ -2072,9 +2072,13 @@
     }
 
     .product-card__prices {
+        display: flex;
+        align-items: center;
         margin-top: 5px;
     }
-
+    .product-card__price-old::before {
+        top: 40%;
+    }
     .rect-btn--showroom {
         font-size: 12px;
         padding: 5px 10px;
