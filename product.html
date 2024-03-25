@@ -173,18 +173,60 @@
                                     <img src="./img/icons/user.svg" alt="Личный кабинет">
                                 </button>
                                 <div class="auth-popup">
-                                    <h5 class="auth-popup__title">
-                                        Добро пожаловать!
-                                    </h5>
-                                    <p>
-                                        Войдите в аккаунт, чтобы воспользоваться личным кабинетом
-                                    </p>
-                                    <button class="rect-btn rect-btn--login blue">
-                                        Войти
-                                    </button>
-                                    <button class="rect-btn rect-btn--register transparent">
-                                        Зарегистрироваться
-                                    </button>
+                                    <div class="auth-popup__inner auth-popup__inner--not-logged">
+                                        <h5 class="auth-popup__title">
+                                            Добро пожаловать!
+                                        </h5>
+                                        <p>
+                                            Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                                        </p>
+                                        <button class="rect-btn rect-btn--login blue">
+                                            Войти
+                                        </button>
+                                        <button class="rect-btn rect-btn--register transparent">
+                                            Зарегистрироваться
+                                        </button>
+                                    </div>
+                                    <div class="auth-popup__inner auth-popup__inner--logged">
+                                        <div class="auth-popup__user">
+                                            <a class="auth-popup__user-img" href="./personal.html">
+                                                <img src="./img/icons/user.svg" alt="">
+                                            </a>
+                                            <div class="auth-popup__name">
+                                                <p class="auth-popup__user-name">
+                                                    Иван Иванов
+                                                </p>
+                                                <p>
+                                                    Физическое лицо
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="auth-popup__links">
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/user.svg" alt="">
+                                                Личный кабинет
+                                            </a>
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/clock-auth.svg" alt="">
+                                                История заказов
+                                            </a>
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/ruble.svg" alt="">
+                                                Текущие заказы
+                                            </a>
+                                        </div>
+                                        <div class="auth-popup__discount">
+                                            <p class="auth-popup__discount-value">
+                                                Ваша скидка:&nbsp;<span>3</span>%
+                                            </p>
+                                            <a class="auth-popup__discount-link" href="./personal.html">
+                                                Подробнее о вашей скидке
+                                            </a>
+                                        </div>
+                                        <button class="rect-btn rect-btn--exit blue">
+                                            Выйти
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="header-panel__item">
@@ -446,22 +488,64 @@
                         </div>
                         <nav class="header-panel">
                             <div class="header-panel__item">
-                                <button class="round-btn round-btn--header auth-btn">
+                                <a class="round-btn round-btn--header auth-btn" href="./auth.html">
                                     <img src="./img/icons/user.svg" alt="Личный кабинет">
-                                </button>
+                                </a>
                                 <div class="auth-popup">
-                                    <h5 class="auth-popup__title">
-                                        Добро пожаловать!
-                                    </h5>
-                                    <p>
-                                        Войдите в аккаунт, чтобы воспользоваться личным кабинетом
-                                    </p>
-                                    <button class="rect-btn rect-btn--login blue">
-                                        Войти
-                                    </button>
-                                    <button class="rect-btn rect-btn--register transparent">
-                                        Зарегистрироваться
-                                    </button>
+                                    <div class="auth-popup__inner auth-popup__inner--not-logged">
+                                        <h5 class="auth-popup__title">
+                                            Добро пожаловать!
+                                        </h5>
+                                        <p>
+                                            Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                                        </p>
+                                        <button class="rect-btn rect-btn--login blue">
+                                            Войти
+                                        </button>
+                                        <button class="rect-btn rect-btn--register transparent">
+                                            Зарегистрироваться
+                                        </button>
+                                    </div>
+                                    <div class="auth-popup__inner auth-popup__inner--logged">
+                                        <div class="auth-popup__user">
+                                            <a class="auth-popup__user-img" href="./personal.html">
+                                                <img src="./img/icons/user.svg" alt="">
+                                            </a>
+                                            <div class="auth-popup__name">
+                                                <p class="auth-popup__user-name">
+                                                    Иван Иванов
+                                                </p>
+                                                <p>
+                                                    Физическое лицо
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="auth-popup__links">
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/user.svg" alt="">
+                                                Личный кабинет
+                                            </a>
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/clock-auth.svg" alt="">
+                                                История заказов
+                                            </a>
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/ruble.svg" alt="">
+                                                Текущие заказы
+                                            </a>
+                                        </div>
+                                        <div class="auth-popup__discount">
+                                            <p class="auth-popup__discount-value">
+                                                Ваша скидка:&nbsp;<span>3</span>%
+                                            </p>
+                                            <a class="auth-popup__discount-link" href="./personal.html">
+                                                Подробнее о вашей скидке
+                                            </a>
+                                        </div>
+                                        <button class="rect-btn rect-btn--exit blue">
+                                            Выйти
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="header-panel__item">
@@ -1917,8 +2001,8 @@
                             aria-label="Перейти в телеграм-канал компании">
                             <img src="./img/icons/footer/telegram.svg" alt="">
                         </a>
-                        <a class="header-menu-link round-btn round-btn--header-menu whatsapp" href="https://wa.me/79220328123"
-                            aria-label="Написать в whatsapp">
+                        <a class="header-menu-link round-btn round-btn--header-menu whatsapp"
+                            href="https://wa.me/79220328123" aria-label="Написать в whatsapp">
                             <img src="./img/icons/footer/whatsapp.svg" alt="">
                         </a>
                     </div>
@@ -1975,26 +2059,6 @@
                                     <div class="product-box__status">
                                         В наличии
                                     </div>
-                                </div>
-                                <div class="product-box__tool product-box__tool--compare">
-                                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.653809 3.30005H12.1707C13.5521 3.30005 14.6671 4.41672 14.6671 5.80005V8.56672"
-                                            stroke="#282739" stroke-width="1.2" stroke-miterlimit="10"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M3.28339 0.666748L0.653809 3.30006L3.28339 5.93342" stroke="#282739"
-                                            stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M14.6671 14.7H3.15024C1.76888 14.7 0.653809 13.5834 0.653809 12.2V9.43335"
-                                            stroke="#282739" stroke-width="1.2" stroke-miterlimit="10"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M12.0376 17.3333L14.6671 14.7L12.0376 12.0667" stroke="#282739"
-                                            stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                    <button>Сравнить</button>
                                 </div>
                                 <div class="product-box__tool product-box__tool--share">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -2155,26 +2219,6 @@
                                             В наличии
                                         </div>
                                     </div>
-                                    <div class="product-box__tool product-box__tool--compare">
-                                        <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.653809 3.30005H12.1707C13.5521 3.30005 14.6671 4.41672 14.6671 5.80005V8.56672"
-                                                stroke="#282739" stroke-width="1.2" stroke-miterlimit="10"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M3.28339 0.666748L0.653809 3.30006L3.28339 5.93342"
-                                                stroke="#282739" stroke-width="1.2" stroke-miterlimit="10"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path
-                                                d="M14.6671 14.7H3.15024C1.76888 14.7 0.653809 13.5834 0.653809 12.2V9.43335"
-                                                stroke="#282739" stroke-width="1.2" stroke-miterlimit="10"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M12.0376 17.3333L14.6671 14.7L12.0376 12.0667" stroke="#282739"
-                                                stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                        <button>Сравнить</button>
-                                    </div>
                                     <div class="product-box__tool product-box__tool--share">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -2223,7 +2267,7 @@
                                 </div>
 
                                 <div class="product-box__brand">
-                                    <a class="product-box__brand-link" href="">
+                                    <a class="product-box__brand-link" href="./brand.html">
                                         <img class="lazyload" src="./img/brands/lex.webp" alt="">
                                     </a>
                                 </div>
@@ -2240,9 +2284,39 @@
                                                 <p class="price-type">Ваша цена</p>
                                             </div>
                                         </div>
-                                        <button class="round-btn round-btn--fav">
-                                            <img src="./img/icons/heart-card.svg" alt="">
-                                        </button>
+                                        <div class="product-box__tools-btns">
+                                            <button class="round-btn round-btn--fav round-btn-card skeleton"
+                                                aria-label="Добавить в избранное">
+                                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.50925 15.7583C9.22632 15.8583 8.76032 15.8583 8.47739 15.7583C6.06417 14.9333 0.671875 11.4917 0.671875 5.65833C0.671875 3.08333 2.74392 1 5.2986 1C6.8131 1 8.15286 1.73333 8.99332 2.86667C9.83379 1.73333 11.1819 1 12.688 1C15.2427 1 17.3148 3.08333 17.3148 5.65833C17.3148 11.4917 11.9225 14.9333 9.50925 15.7583Z"
+                                                        stroke="#537CE5" stroke-width="1.2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </button>
+                                            <button class="round-btn round-btn--compare round-btn-card skeleton"
+                                                aria-label="Добавить в сравнение">
+                                                <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.653809 3.30005H12.1707C13.5521 3.30005 14.6671 4.41672 14.6671 5.80005V8.56672"
+                                                        stroke="#537CE5" stroke-width="1.2" stroke-miterlimit="10"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M3.28339 0.666748L0.653809 3.30006L3.28339 5.93342"
+                                                        stroke="#537CE5" stroke-width="1.2" stroke-miterlimit="10"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.6671 14.7H3.15024C1.76888 14.7 0.653809 13.5834 0.653809 12.2V9.43335"
+                                                        stroke="#537CE5" stroke-width="1.2" stroke-miterlimit="10"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M12.0376 17.3333L14.6671 14.7L12.0376 12.0667"
+                                                        stroke="#537CE5" stroke-width="1.2" stroke-miterlimit="10"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </button>
+                                        </div>
+
                                     </div>
                                     <div class="product-box__delivery">
                                         <img src="./img/icons/delivery.svg" alt="">
@@ -2255,8 +2329,17 @@
                                         </div>
                                     </div>
                                     <div class="product-box__price-buttons">
-                                        <button class="rect-btn rect-btn--add-to-cart blue">Добавить в
-                                            корзину</button>
+                                        <div class="product-box__buy-buttons">
+                                            <button class="rect-btn rect-btn--add-to-cart blue">
+                                                Добавить в корзину
+                                            </button>
+                                            <div class="product-card__counter hide">
+                                                <button class="minus">-</button>
+                                                <span>1</span>
+                                                <button class="plus">+</button>
+                                            </div>
+                                        </div>
+
                                         <button class="rect-btn rect-btn--click-buy transparent">Купить в 1
                                             клик</button>
                                     </div>
@@ -2673,13 +2756,50 @@
                                     </div>
 
                                 </div>
-                                <button class="round-btn round-btn--fav">
-                                    <img src="./img/icons/heart-card.svg" alt="">
-                                </button>
+                                <div class="product-box__tools-btns">
+                                    <button class="round-btn round-btn--fav round-btn-card skeleton"
+                                        aria-label="Добавить в избранное">
+                                        <svg width="18" height="17" viewBox="0 0 18 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9.50925 15.7583C9.22632 15.8583 8.76032 15.8583 8.47739 15.7583C6.06417 14.9333 0.671875 11.4917 0.671875 5.65833C0.671875 3.08333 2.74392 1 5.2986 1C6.8131 1 8.15286 1.73333 8.99332 2.86667C9.83379 1.73333 11.1819 1 12.688 1C15.2427 1 17.3148 3.08333 17.3148 5.65833C17.3148 11.4917 11.9225 14.9333 9.50925 15.7583Z"
+                                                stroke="#537CE5" stroke-width="1.2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button class="round-btn round-btn--compare round-btn-card skeleton"
+                                        aria-label="Добавить в сравнение">
+                                        <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.653809 3.30005H12.1707C13.5521 3.30005 14.6671 4.41672 14.6671 5.80005V8.56672"
+                                                stroke="#537CE5" stroke-width="1.2" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M3.28339 0.666748L0.653809 3.30006L3.28339 5.93342"
+                                                stroke="#537CE5" stroke-width="1.2" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M14.6671 14.7H3.15024C1.76888 14.7 0.653809 13.5834 0.653809 12.2V9.43335"
+                                                stroke="#537CE5" stroke-width="1.2" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M12.0376 17.3333L14.6671 14.7L12.0376 12.0667"
+                                                stroke="#537CE5" stroke-width="1.2" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                             <div class="product-box__price-buttons">
-                                <button class="rect-btn rect-btn--add-to-cart blue">Добавить в
-                                    корзину</button>
+                                <div class="product-box__buy-buttons">
+                                    <button class="rect-btn rect-btn--add-to-cart blue">
+                                        Добавить в корзину
+                                    </button>
+                                    <div class="product-card__counter hide">
+                                        <button class="minus">-</button>
+                                        <span>1</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                </div>
                                 <button class="rect-btn rect-btn--click-buy transparent">Купить в 1
                                     клик</button>
                             </div>
@@ -2741,7 +2861,7 @@
                         <a class="product-box__brand-link" href="">
                             <img class="lazyload" src="./img/brands/lex.webp" alt="">
                         </a>
-                        <a class="rect-btn rect-btn--brand blue" href="./brands.html">
+                        <a class="rect-btn rect-btn--brand blue" href="./brand.html">
                             Все товары бренда
                         </a>
                     </div>
@@ -4890,8 +5010,8 @@
                                 aria-label="Перейти в телеграм-канал компании">
                                 <img src="./img/icons/footer/telegram.svg" alt="">
                             </a>
-                            <a class="footer__socials-link round-btn round-btn--footer whatsapp" href="https://wa.me/79220328123"
-                                aria-label="Написать в whatsapp">
+                            <a class="footer__socials-link round-btn round-btn--footer whatsapp"
+                                href="https://wa.me/79220328123" aria-label="Написать в whatsapp">
                                 <img src="./img/icons/footer/whatsapp.svg" alt="">
                             </a>
                         </div>
@@ -4936,7 +5056,8 @@
                                 <input type="checkbox" required name="question-checkbox">
                                 <p>
                                     Отправляя форму Вы соглашаетесь с
-                                    <a href="./confidence.html">обработкой персональных данных и политикой конфеденциальности</a>
+                                    <a href="./confidence.html">обработкой персональных данных и политикой
+                                        конфеденциальности</a>
                                 </p>
                             </label>
 
@@ -4947,6 +5068,14 @@
                         </button>
                     </div>
 
+                </div>
+                <div class="question-form__success">
+                    <h2 class="question-form__title">
+                        Ваше обращение успешно отправлено! <br> С вами свяжется наш менеджер
+                    </h2>
+                    <a class="rect-btn rect-btn--question-form-success white" href="./catalog.html">
+                        К покупкам!
+                    </a>
                 </div>
             </form>
         </div>
@@ -5066,35 +5195,15 @@
                 </div>
             </div>
             <div class="auth__box auth__box--verify">
-                <div class="auth__header">
-                    <button class="round-btn round-btn--auth">
-                        <img src="./img/icons/arrow-back.svg" alt="">
-                    </button>
-                </div>
                 <h4 class="auth__title auth__title--verify">
                     Регистрация
                 </h4>
                 <p class="auth__text">
-                    Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
+                    Ваш аккаунт успешно создан! 
                 </p>
-                <form class="auth__form auth__form--verify" action="#">
-                    <div class="auth__form-group">
-                        <label for="verifyFormInput">
-                            Верификационный код
-                        </label>
-                        <input id="verifyFormInput" type="text" required placeholder="______">
-                        <div class="auth__form-subtext">
-                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
-                        </div>
-                    </div>
-                    <button class="rect-btn rect-btn--auth-register blue" type="submit">
-                        Зарегистрироваться
-                    </button>
-                </form>
-                <div class="auth__footer">
-                    <span>Уже есть аккаунт?</span>
-                    <a href="#">Войти</a>
-                </div>
+                <a class="rect-btn rect-btn--auth-register blue" href="./catalog.html">
+                    К покупкам
+                </a>
             </div>
         </div>
 
@@ -5124,9 +5233,21 @@
                         <input id="loginFormPassword" type="password" required placeholder="••••••"
                             style="background-image: url('./img/icons/auth-form/lock.svg');">
                     </div>
-                    <a class="auth__form-forgot" href="#">
-                        Забыли пароль?
-                    </a>
+                    <div class="auth__form-tools">
+                        <div class="auth__form-remember">
+                            <label>
+                                <input type="checkbox">
+                                Запомнить меня
+                                <div class="auth__form-remember-slider">
+                                    <div class="auth__form-remember-slider-circle"></div>
+                                </div>
+                            </label>
+                        </div>
+                        <a class="auth__form-forgot" href="#">
+                            Забыли пароль?
+                        </a>
+                    </div>
+                    
                     <button class="rect-btn rect-btn--auth-register blue" type="submit">
                         Войти
                     </button>
@@ -5146,17 +5267,14 @@
                     Восстановление пароля
                 </h4>
                 <p class="auth__text">
-                    Восстановите пароль, чтобы воспользоваться личным кабинетом
+                    Укажите адрес электронной почты, который вы использовали при регистрации. Мы вышлем на него инструкцию по восстановлению пароля
                 </p>
                 <form class="auth__form auth__form--recover" action="#">
                     <div class="auth__form-group">
                         <label for="recoverFormInput">
-                            Верификационный код
+                            Email
                         </label>
-                        <input id="recoverFormInput" type="text" required placeholder="______">
-                        <div class="auth__form-subtext">
-                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
-                        </div>
+                        <input id="recoverFormInput" type="email" required placeholder="email@ekrom.ru">
                     </div>
                     <button class="rect-btn rect-btn--auth-register blue" type="submit">
                         Сбросить пароль
@@ -5166,6 +5284,14 @@
                     <span>Уже есть аккаунт?</span>
                     <a href="#">Войти</a>
                 </div>
+            </div>
+            <div class="auth__box auth__box--recovery-note">
+                <h4 class="auth__title auth__title--recover">
+                    Восстановление пароля
+                </h4>
+                <p class="auth__text">
+                    Инструкция по восстановлению пароля отправлена на вашу почту
+                </p>
             </div>
         </div>
 
@@ -5430,7 +5556,7 @@
                         </div>
 
                         <div class="product-box__brand">
-                            <a class="product-box__brand-link" href="">
+                            <a class="product-box__brand-link" href="./brand.html">
                                 <img class="lazyload" src="./img/brands/lex.webp" alt="">
                             </a>
                         </div>

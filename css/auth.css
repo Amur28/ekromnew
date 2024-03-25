@@ -22,6 +22,14 @@
     text-align: center;
 }
 
+.auth-box.auth-verify {
+    padding: 30px;
+}
+
+.auth-box .rect-btn--auth {
+    text-align: center;
+}
+
 .auth {
     padding: 30px 0;
 }
@@ -30,12 +38,18 @@
     padding: 0 20px;
 }
 
+.auth-box.auth-start .rect-btn--auth,
+.auth-box.auth-password-success .rect-btn--auth,
+.auth-box.auth-welcome .rect-btn--auth {
+    width: 50%;
+}
+
 .auth-title {
     font-size: 16px;
     font-weight: 500;
 }
 
-.swiper-auth-slide {
+.auth-box {
     padding: 20px 40px;
     background-color: #fff;
     border-radius: 10px;
@@ -43,45 +57,48 @@
 
 .auth-text {
     color: var(--text-grey-color);
-}
-
-.auth-start .auth-text {
     margin-top: 7px;
 }
 
 .rect-btn--auth {
     display: block;
     width: 100%;
-    margin-top: 30px;
+    margin: 30px auto 0;
 }
 
 .rect-btn--auth.transparent {
     margin-top: 10px;
 }
 
-.auth-tools {
+.auth-tools,
+.auth__form-tools {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
 }
 
-.auth-remember {
+.auth-remember,
+.auth__form-remember {
     position: relative;
 }
 
-.swiper-auth input[type=checkbox] {
+.auth-box input[type=checkbox],
+.auth__form-remember input[type=checkbox] {
     opacity: 0;
     z-index: -1;
     position: absolute;
 }
 
-.auth-remember label {
+.auth-remember label,
+.auth__form-remember label {
     font-size: 12px;
     color: var(--text-grey-color);
     padding-left: 35px;
+    cursor: pointer;
 }
 
-.auth-remember__slider {
+.auth-remember__slider,
+.auth__form-remember-slider {
     position: absolute;
     width: 30px;
     height: 16px;
@@ -93,7 +110,8 @@
     transition: .2s;
 }
 
-.auth-remember__slider-circle {
+.auth-remember__slider-circle,
+.auth__form-remember-slider-circle {
     position: absolute;
     top: 50%;
     transform: translate(10%, -50%);
@@ -105,11 +123,13 @@
     transition: .2s;
 }
 
-.auth-remember input:checked ~ .auth-remember__slider {
+.auth-remember input:checked ~ .auth-remember__slider,
+.auth__form-remember input:checked ~ .auth__form-remember-slider {
     background-color: var(--main-blue);
 }
 
-.auth-remember input:checked ~ .auth-remember__slider .auth-remember__slider-circle {
+.auth-remember input:checked ~ .auth-remember__slider .auth-remember__slider-circle,
+.auth__form-remember input:checked ~ .auth__form-remember-slider .auth__form-remember-slider-circle {
     transform: translate(120%, -50%);
 }
 
@@ -119,7 +139,8 @@
 }
 
 .auth-form {
-    margin-top: 12px;
+    max-width: 50%;
+    margin: 30px auto 0;
 }
 
 .auth-form__label {
@@ -130,6 +151,7 @@
 
 .auth-form__label--checkbox {
     display: flex;
+    cursor: pointer;
 }
 
 .auth-form__label--checkbox p {

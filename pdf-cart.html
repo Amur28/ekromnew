@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Rubik';
+            src: local('Rubik'), local('Rubik-Regular'), url('../fonts/Rubik-Regular.ttf'), url('../fonts/Rubik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Rubik';
+            src: local('Rubik Medium'), local('Rubik-Medium'), url('../fonts/Rubik-Medium.ttf'), url('../fonts/Rubik-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Rubik';
+            src: local('Rubik SemiBold'), local('Rubik-SemiBold'), url('../fonts/Rubik-SemiBold.ttf'), url('../fonts/Rubik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 730px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #27282b;
+            padding: 28px 34px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-phone {
+            font-size: 14px;
+            color: #8c8c8c;
+        }
+
+        .cart-title {
+            font-size: 10px;
+            color: #888;
+        }
+
+        .cart-content {
+            padding-top: 20px;
+        }
+
+        .cart-products {
+            margin-top: 20px;
+        }
+
+        .cart-row__title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #282739;
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        .cart-row__content {
+            margin-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(93, 108, 123, .17);
+        }
+
+        .cart-row__left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cart-row__img {
+            width: 79px;
+            height: 79px;
+            border-radius: 10px;
+            border: 1px solid rgba(93, 108, 123, .17);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .cart-row__img img {
+            width: 100%;
+        }
+
+        .cart-row__props-list {
+            width: 200px;
+        }
+
+        .cart-row__props-list li {
+            display: flex;
+            gap: 10px;
+            font-size: 10px;
+        }
+
+        .cart-row__props-list li .name {
+            color: #888;
+            position: relative;
+            width: 70%;
+        }
+
+        .cart-row__props-list li .name span {
+            background-color: #fff;
+            position: relative;
+        }
+
+        .cart-row__props-list li .name::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1px dotted #d9d9d9;
+            display: block;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+        }
+
+        .cart-row__props-list li .value {
+            color: #282739;
+        }
+
+        .cart-row__article {
+            font-size: 10px;
+            margin-top: 9px;
+            color: #888;
+        }
+
+        .cart-row__article span {
+            color: #6c7683;
+        }
+
+        .cart-row__middle {
+            color: #888;
+            font-size: 12px;
+        }
+
+        .cart-row__old-price {
+            color: #5d6c7b;
+            font-weight: 600;
+            font-size: 12px;
+            position: relative;
+            text-decoration: line-through;
+            text-align: right;
+        }
+
+        .cart-row__price {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 9px;
+        }
+
+        .cart-row__price .cart-row__current-price {
+            font-weight: 600;
+            font-size: 12px;
+            color: #282739;
+        }
+
+        .cart-row__price .cart-row__discount-label {
+            border-radius: 5px;
+            background-color: #f63b00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1px 5px;
+            color: #fff;
+            font-size: 10px;
+        }
+
+        .cart-row__right {
+            width: 20%;
+        }
+
+        .footer-inner {
+            padding-top: 21px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-info {
+            color: #888;
+            font-size: 10px;
+        }
+        .footer-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+        }
+        .footer-list li + li {
+            margin-top: 9px;
+        }
+        .footer-list li p.name {
+            font-size: 10px;
+        }
+        .footer-list li p.value {
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .footer-list li.footer-discount p.value {
+            color: #f63b00;
+        }
+        .footer-list li:last-child .name span {
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-inner">
+                <a class="header-logo" href="./index.html">
+                    <img src="./img/icons/logo.svg" alt="">
+                </a>
+                <a class="header-phone" href="tel:+73433799868">
+                    +7 (343) 379-98-68
+                </a>
+            </div>
+
+        </header>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="cart-content">
+                <p class="cart-title">
+                    Корзина от <span class="cart-date">22.03.2024</span>&nbsp;<span
+                        class="cart-tiem">11:04</span>&nbsp;(<span class="cart-city">г. Екатеринбург</span>)
+                </p>
+                <div class="cart-products">
+                    <div class="cart-row">
+                        <a class="cart-row__title" href="./product.html">
+                            Мойка кухонная Dr.Gans Берта-760
+                        </a>
+                        <div class="cart-row__content">
+                            <div class="cart-row__left">
+                                <div class="cart-row__img">
+                                    <img src="./img/product/product.webp" alt="">
+                                </div>
+                                <div class="cart-row__props">
+                                    <ul class="cart-row__props-list">
+                                        <li>
+                                            <p class="name">
+                                                <span>Конфигурация</span>
+                                            </p>
+                                            <p class="value">Овальная</p>
+                                        </li>
+                                        <li>
+                                            <p class="name">
+                                                <span>Цвет</span>
+                                            </p>
+                                            <p class="value">Белый</p>
+                                        </li>
+                                        <li>
+                                            <p class="name">
+                                                <span>Ширина мойки, мм</span>
+                                            </p>
+                                            <p class="value">760</p>
+                                        </li>
+                                        <li>
+                                            <p class="name">
+                                                <span>Глубина мойки, мм</span>
+                                            </p>
+                                            <p class="value">510</p>
+                                        </li>
+                                        <li>
+                                            <p class="name">
+                                                <span>Наличие пляжа</span>
+                                            </p>
+                                            <p class="value">Да</p>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-row__article">
+                                        Артикул:&nbsp;<span>25.040.B0580.401</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-row__middle">
+                                <span>1</span>&nbsp;шт
+                            </div>
+                            <div class="cart-row__right">
+                                <div class="cart-row__price">
+                                    <p class="cart-row__current-price">
+                                        <span>9 900</span>&nbsp;₽
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <a class="cart-row__title" href="./product.html">
+                            Мойка кухонная Dr.Gans Берта-760
+                        </a>
+                        <div class="cart-row__content">
+                            <div class="cart-row__left">
+                                <div class="cart-row__img">
+                                    <img src="./img/product/product.webp" alt="">
+                                </div>
+                                <div class="cart-row__props">
+                                    <ul class="cart-row__props-list">
+                                        <li>
+                                            <p class="name">
+                                                <span>Конфигурация</span>
+                                            </p>
+                                            <p class="value">Овальная</p>
+                                        </li>
+                                        <li>
+                                            <p class="name">
+                                                <span>Цвет</span>
+                                            </p>
+                                            <p class="value">Белый</p>
+                                        </li>
+                                        <li>
+                                            <p class="name">
+                                                <span>Ширина мойки, мм</span>
+                                            </p>
+                                            <p class="value">760</p>
+                                        </li>
+                                        <li>
+                                            <p class="name">
+                                                <span>Глубина мойки, мм</span>
+                                            </p>
+                                            <p class="value">510</p>
+                                        </li>
+                                        <li>
+                                            <p class="name">
+                                                <span>Наличие пляжа</span>
+                                            </p>
+                                            <p class="value">Да</p>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-row__article">
+                                        Артикул:&nbsp;<span>25.040.B0580.401</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-row__middle">
+                                <span>1</span>&nbsp;шт
+                            </div>
+                            <div class="cart-row__right">
+                                <p class="cart-row__old-price">
+                                    <span>39 900</span>&nbsp;₽
+                                </p>
+                                <div class="cart-row__price">
+                                    <div class="cart-row__discount-label">
+                                        -35%
+                                    </div>
+                                    <p class="cart-row__current-price">
+                                        <span>9 900</span>&nbsp;₽
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-info">Стоимость товаров актуальна на момент печати&nbsp;<span
+                        class="date">22.03.2024</span>&nbsp;<span class="time">11:04</span></p>
+                <ul class="footer-list">
+                    <li>
+                        <p class="name">Стоимость товаров</p>
+                        <p class="value">58 800 ₽</p>
+                    </li>
+                    <li class="footer-discount">
+                        <p class="name">Вы сэкономили</p>
+                        <p class="value">8 000 ₽</p>
+                    </li>
+                    <li>
+                        <p class="name">Итого<br><span>(без учета доставки)</span></p>
+                        <p class="value">50 800 ₽</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

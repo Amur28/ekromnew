@@ -186,54 +186,25 @@ function toggleAuthPopup(event) {
     toggleClass(authPopup, 'active');
 }
 
-document.addEventListener('click', closeAuthPopup);
-
-function closeAuthPopup(event) {
-    const target = event.target;
-    const authPopups = document.querySelectorAll('.auth-popup');
-    authPopups.forEach(item => {
-        const isPopup = target == item || item.contains(target);
-        if (!isPopup) {
-            removeClass(item, 'active')
-        }
-    })
-};
-
 /* Форма авторизации */
 
-const authRegisterBtns = document.querySelectorAll('.rect-btn--register');
-const authLoginBtns = document.querySelectorAll('.rect-btn--login');
-const authRegister = document.getElementById('authRegister');
-const authLogin = document.getElementById('authLogin');
+const authPopups = document.querySelectorAll('.auth-popup');
 
-if (authLogin) {
-    showAuthForm(authLoginBtns, authLogin);
-    hideAuthForm(authLogin);
+authPopups.forEach(item => {
+    item.addEventListener('click', showHideAuthForms);
+})
+
+function showHideAuthForms(event) {
+    if (event.target.closest('.rect-btn--register')) {
+        showAuthForm('authRegister');
+    } else if (event.target.closest('.rect-btn--login')) {
+        showAuthForm('authLogin')
+    }
 }
 
-if (authRegister) {
-    showAuthForm(authRegisterBtns, authRegister);
-    hideAuthForm(authRegister);
-}
-
-function showAuthForm(arr, el) {
-    arr.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const parentPopup = btn.parentNode;
-            removeClass(parentPopup, 'active');
-            addClass(el, 'active');
-            addClass(body, 'active')
-        })
-    })
-}
-
-function hideAuthForm(el) {
-    el.addEventListener('click', (event) => {
-        const authInner = el.querySelector('.auth__inner');
-        let target = event.target;
-        checkClassAndClick(authInner, 'active', target, el);
-        checkClassAndClick(authInner, 'active', target, body);
-    });
+function showAuthForm(el) {
+    const authForm = document.getElementById(`${el}`);
+    addClass(authForm, 'active')
 }
 
 /* FAQ section */
@@ -279,6 +250,15 @@ faqBtn.forEach(btn => {
 function showQuestionForm() {
     addClass(questionForm, 'active');
     addClass(body, 'active');
+}
+
+questionForm.addEventListener('submit', showQuestionSuccess);
+
+function showQuestionSuccess() {
+    const questionInner = this.querySelector('.question-form__inner');
+    const questionSuccess = questionInner.nextElementSibling;
+    questionInner.style.display = 'none';
+    questionSuccess.style.display = 'block';
 }
 
 /* Окно быстрого просмотра */
@@ -418,6 +398,55 @@ const toastObj = {
     pickText: 'Подберите товар с умной системой!',
 }
 
+function createLink(hrefText, linkText) {
+    const link = document.createElement('a');
+    link.setAttribute('href', hrefText);
+    link.textContent = linkText;
+    return link
+}
+
+function addLinkToToast(hrefText, linkText) {
+    const container = document.querySelectorAll('.toast_message');
+    container.forEach(item => {
+        const toastBody = item.querySelector('.toast__body')
+        if (toastBody.querySelector('a') == null) {
+            toastBody.append(createLink(hrefText, linkText))
+        }
+
+    })
+}
+
+function createToast(toastText, hrefText, linkText) {
+    new Toast({
+        title: false,
+        text: toastText,
+        theme: 'default',
+        autohide: true,
+        interval: 4000,
+    })
+    addLinkToToast(hrefText, linkText)
+}
+
+function showToast(event) {
+    const productCardRoundBtn = event.target.closest('.round-btn');
+    if (!productCardRoundBtn) return;
+
+    const classes = Array.from(productCardRoundBtn.classList)
+    if (!containClass(productCardRoundBtn, 'active')) {
+        switch (classes[1]) {
+            case 'round-btn--fav':
+                createToast(toastObj.favText, toastObj.favHref, toastObj.favLinkText)
+                break;
+            case 'round-btn--compare':
+                createToast(toastObj.compareText, toastObj.compareHref, toastObj.compareLinkText)
+                break;
+            case 'round-btn--cart':
+                createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
+                break;
+        };
+    }
+}
+
 const productCards = document.querySelectorAll('.product-card');
 let xDown = null;
 let yDown = null;
@@ -451,57 +480,6 @@ productCards.forEach(card => {
     /* Всплывающие уведомления */
 
     card.addEventListener('click', showToast);
-
-    function createLink(hrefText, linkText) {
-        const link = document.createElement('a');
-        link.setAttribute('href', hrefText);
-        link.textContent = linkText;
-        return link
-    }
-
-    function addLinkToToast(hrefText, linkText) {
-        const container = document.querySelectorAll('.toast_message');
-        container.forEach(item => {
-            const toastBody = item.querySelector('.toast__body')
-            if (toastBody.querySelector('a') == null) {
-                toastBody.append(createLink(hrefText, linkText))
-            }
-
-        })
-    }
-
-    function createToast(toastText, hrefText, linkText) {
-        new Toast({
-            title: false,
-            text: toastText,
-            theme: 'default',
-            autohide: true,
-            interval: 3500,
-        })
-        addLinkToToast(hrefText, linkText)
-    }
-
-    function showToast(event) {
-        const productCardRoundBtn = event.target.closest('.round-btn');
-        if (!productCardRoundBtn) return;
-
-        const classes = Array.from(productCardRoundBtn.classList)
-        if (!containClass(productCardRoundBtn, 'active')) {
-            switch (classes[1]) {
-                case 'round-btn--fav':
-                    createToast(toastObj.favText, toastObj.favHref, toastObj.favLinkText)
-                    break;
-                case 'round-btn--compare':
-                    createToast(toastObj.compareText, toastObj.compareHref, toastObj.compareLinkText)
-                    break;
-                case 'round-btn--cart':
-                    createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
-                    break;
-                default:
-                    console.log('gogosd')
-            };
-        }
-    }
 
     /* Кнопки избранного/сравнения/корзины */
 
@@ -951,49 +929,11 @@ function checkFancyBox() {
 
 /* Слайдер страницы авторизации */
 
-import { authSwiper } from './sliders.js';
-
 document.addEventListener('click', function (event) {
-    if (event.target.closest('.auth-check-btn--login')) {
-        goToLoginForm()
-    }
-
-    if (event.target.closest('.auth-check-btn--register')) {
-        goToRegisterForm()
-    }
-
-    if (event.target.closest('.go-to-password-recovery')) {
-        authSwiper.slideTo(4)
-    }
-
-    if (event.target.closest('.auth-form__show-password')) {
-        showHidePassword(event)
-    }
+    const passwordBtn = event.target.closest('.auth-form__show-password');
+    if (!passwordBtn) return;
+    showHidePassword(event)
 });
-
-authSwiper.on('slideChange', changeHeadertitle);
-
-function changeHeadertitle() {
-    let title = document.querySelector('.header__mobile-title');
-
-    if (this.activeIndex === 0 || this.activeIndex === 1) {
-        title.textContent = 'Вход'
-    }
-    if (this.activeIndex === 2 || this.activeIndex === 3) {
-        title.textContent = 'Регистрация'
-    }
-    if (this.activeIndex === 4 || this.activeIndex === 5) {
-        title.textContent = 'Восстановление пароля'
-    }
-}
-
-function goToLoginForm() {
-    authSwiper.slideTo(1, 300, false);
-};
-
-function goToRegisterForm() {
-    authSwiper.slideTo(2, 300, false);
-};
 
 function showHidePassword(event) {
     const btn = event.target;
@@ -1032,6 +972,14 @@ const compareProductArr = document.querySelectorAll('.swiper-compare');
 compareTabs.forEach((tab, index) => {
     tab.addEventListener('click', function () {
         swapContentOnTabs(compareTabs, tab, compareProductArr, index);
+        const currentContent = document.querySelector('.swiper-compare.active')
+        if (currentContent.classList.contains('show')) {
+            compareDiffButton.classList.add('show')
+            compareDiffButton.textContent = 'Показать все свойства'
+        } else if(!currentContent.classList.contains('show')) {
+            compareDiffButton.classList.remove('show');
+            compareDiffButton.textContent = 'Показать только различия'
+        }
     })
 });
 
@@ -1091,14 +1039,74 @@ const mobileProductBox = document.querySelector('.mobile-product-info');
 if (productBox) {
     const productColorsList = productBox.querySelector('.product-box__colors-list');
     const productZoomImg = productBox.querySelector('.zoom-img');
+
     productColorsList.addEventListener('click', moveColorFrame);
     productZoomImg.addEventListener('mousemove', initZoom);
     productZoomImg.addEventListener('mouseleave', removeZoom);
-    productBox.addEventListener('click', fakeClickOnImg)
+    productBox.addEventListener('click', fakeClickOnImg);
+    productBox.addEventListener('click', changeOnCounter);
 }
+
 if (mobileProductBox) {
     const mobileProductColorsList = mobileProductBox.querySelector('.product-box__colors-list');
     mobileProductColorsList.addEventListener('click', moveColorFrame);
+    mobileProductBox.addEventListener('click', changeOnCounter)
+}
+
+/* Смена кнопки "Добавить в корзину" на счетчик на странице товара */
+
+function changeOnCounter(event) {
+    const cartBtn = event.target.closest('.rect-btn--add-to-cart');
+    const roundBtn = event.target.closest('.round-btn')
+
+    if (cartBtn) {
+        const counter = cartBtn.nextElementSibling;
+        removeClass(counter, 'hide');
+        addClass(cartBtn, 'hide')
+    
+        counter.addEventListener('click', changeProductBoxQuantity);
+        createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
+    } else if (roundBtn) {
+        const classes = Array.from(roundBtn.classList);
+        if (!containClass(roundBtn, 'active')) {
+            switch (classes[1]) {
+                case 'round-btn--fav':
+                    createToast(toastObj.favText, toastObj.favHref, toastObj.favLinkText)
+                    break;
+                case 'round-btn--compare':
+                    createToast(toastObj.compareText, toastObj.compareHref, toastObj.compareLinkText)
+                    break;
+                case 'round-btn--cart':
+                    createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
+                    break;
+            };
+        }
+        toggleClass(roundBtn, 'active')
+    }
+    
+}
+
+function changeProductBoxQuantity(event) {
+    const counterSpan = this.querySelector('span');
+    let counterSpanValue = +counterSpan.textContent
+    if (event.target.closest('.plus')) {
+        changeOnPlus(counterSpan, counterSpanValue)
+    } else if (event.target.closest('.minus')) {
+        changeOnMinus(counterSpan, counterSpanValue, this)
+    }
+}
+
+function changeOnPlus(span, spanValue) {
+    span.textContent =  `${spanValue + 1}`
+}
+
+function changeOnMinus(span, spanValue, counter) {
+    if (spanValue === 1) {
+        addClass(counter, 'hide');
+        removeClass(counter.previousElementSibling, 'hide')
+        return
+    }
+    span.textContent =  `${spanValue - 1}`
 }
 
 /* Табы на странице товара */
@@ -1406,4 +1414,58 @@ if (contactsForms.length) {
             }
         };
     })
+}
+
+/* Кнопка "Показать только различия" на странице сравнения */
+
+const compareDiffButton = document.querySelector('.rect-btn--compare-differents');
+
+if (compareDiffButton) {
+    compareDiffButton.addEventListener('click', showDiffs);
+}
+
+
+
+function showDiffs() {
+    const currentCompareList = document.querySelector('.swiper-compare.active');
+    const compareCards = currentCompareList.querySelectorAll('.compare__products-column');
+    if (compareDiffButton.classList.contains('show')) {
+        const properties = currentCompareList.querySelectorAll('.compare__products-property');
+        properties.forEach(item => {
+            item.style.display = 'flex';
+        })
+        compareDiffButton.classList.remove('show')
+        currentCompareList.classList.remove('show')
+        compareDiffButton.textContent = 'Показать только различия'
+        return;
+    }
+    let rows = [];
+    
+    for (let i = 0; i < compareCards.length - 1; i++) {
+        const props = compareCards[i].querySelectorAll('.compare__products-property');
+        for (let j = 0; j < props.length; j++) {
+            if (rows.length < props.length) {
+                rows[j] = []
+            }
+            if (props[j].lastElementChild.textContent === '') {
+                rows[j].push('')
+            } else {
+                rows[j].push(props[j].lastElementChild.textContent)
+            }
+        }
+    }
+    for (let k = 0; k < rows.length; k++) {
+        const newArr = rows[k].filter(function (el) {
+            return el == rows[k][0]
+        })
+        if (newArr.length === rows[k].length) {
+            for (let i = 0; i < compareCards.length - 1; i++) {
+                let currProps = compareCards[i].querySelectorAll('.compare__products-property');
+                currProps[k].style.display = 'none'
+            }
+        }
+    }
+    compareDiffButton.classList.add('show')
+    currentCompareList.classList.add('show')
+    compareDiffButton.textContent = 'Показать все свойства'
 }

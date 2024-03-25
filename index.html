@@ -173,18 +173,60 @@
                                     <img src="./img/icons/user.svg" alt="Личный кабинет">
                                 </button>
                                 <div class="auth-popup">
-                                    <h5 class="auth-popup__title">
-                                        Добро пожаловать!
-                                    </h5>
-                                    <p>
-                                        Войдите в аккаунт, чтобы воспользоваться личным кабинетом
-                                    </p>
-                                    <button class="rect-btn rect-btn--login blue">
-                                        Войти
-                                    </button>
-                                    <button class="rect-btn rect-btn--register transparent">
-                                        Зарегистрироваться
-                                    </button>
+                                    <div class="auth-popup__inner auth-popup__inner--not-logged">
+                                        <h5 class="auth-popup__title">
+                                            Добро пожаловать!
+                                        </h5>
+                                        <p>
+                                            Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                                        </p>
+                                        <button class="rect-btn rect-btn--login blue">
+                                            Войти
+                                        </button>
+                                        <button class="rect-btn rect-btn--register transparent">
+                                            Зарегистрироваться
+                                        </button>
+                                    </div>
+                                    <div class="auth-popup__inner auth-popup__inner--logged">
+                                        <div class="auth-popup__user">
+                                            <a class="auth-popup__user-img" href="./personal.html">
+                                                <img src="./img/icons/user.svg" alt="">
+                                            </a>
+                                            <div class="auth-popup__name">
+                                                <p class="auth-popup__user-name">
+                                                    Иван Иванов
+                                                </p>
+                                                <p>
+                                                    Физическое лицо
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="auth-popup__links">
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/user.svg" alt="">
+                                                Личный кабинет
+                                            </a>
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/clock-auth.svg" alt="">
+                                                История заказов
+                                            </a>
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/ruble.svg" alt="">
+                                                Текущие заказы
+                                            </a>
+                                        </div>
+                                        <div class="auth-popup__discount">
+                                            <p class="auth-popup__discount-value">
+                                                Ваша скидка:&nbsp;<span>3</span>%
+                                            </p>
+                                            <a class="auth-popup__discount-link" href="./personal.html">
+                                                Подробнее о вашей скидке
+                                            </a>
+                                        </div>
+                                        <button class="rect-btn rect-btn--exit blue">
+                                            Выйти
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="header-panel__item">
@@ -446,22 +488,64 @@
                         </div>
                         <nav class="header-panel">
                             <div class="header-panel__item">
-                                <button class="round-btn round-btn--header auth-btn">
+                                <a class="round-btn round-btn--header auth-btn" href="./auth.html">
                                     <img src="./img/icons/user.svg" alt="Личный кабинет">
-                                </button>
+                                </a>
                                 <div class="auth-popup">
-                                    <h5 class="auth-popup__title">
-                                        Добро пожаловать!
-                                    </h5>
-                                    <p>
-                                        Войдите в аккаунт, чтобы воспользоваться личным кабинетом
-                                    </p>
-                                    <button class="rect-btn rect-btn--login blue">
-                                        Войти
-                                    </button>
-                                    <button class="rect-btn rect-btn--register transparent">
-                                        Зарегистрироваться
-                                    </button>
+                                    <div class="auth-popup__inner auth-popup__inner--not-logged">
+                                        <h5 class="auth-popup__title">
+                                            Добро пожаловать!
+                                        </h5>
+                                        <p>
+                                            Войдите в аккаунт, чтобы воспользоваться личным кабинетом
+                                        </p>
+                                        <button class="rect-btn rect-btn--login blue">
+                                            Войти
+                                        </button>
+                                        <button class="rect-btn rect-btn--register transparent">
+                                            Зарегистрироваться
+                                        </button>
+                                    </div>
+                                    <div class="auth-popup__inner auth-popup__inner--logged">
+                                        <div class="auth-popup__user">
+                                            <a class="auth-popup__user-img" href="./personal.html">
+                                                <img src="./img/icons/user.svg" alt="">
+                                            </a>
+                                            <div class="auth-popup__name">
+                                                <p class="auth-popup__user-name">
+                                                    Иван Иванов
+                                                </p>
+                                                <p>
+                                                    Физическое лицо
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="auth-popup__links">
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/user.svg" alt="">
+                                                Личный кабинет
+                                            </a>
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/clock-auth.svg" alt="">
+                                                История заказов
+                                            </a>
+                                            <a class="rect-btn rect-btn--logged blue" href="./personal.html">
+                                                <img src="./img/icons/ruble.svg" alt="">
+                                                Текущие заказы
+                                            </a>
+                                        </div>
+                                        <div class="auth-popup__discount">
+                                            <p class="auth-popup__discount-value">
+                                                Ваша скидка:&nbsp;<span>3</span>%
+                                            </p>
+                                            <a class="auth-popup__discount-link" href="./personal.html">
+                                                Подробнее о вашей скидке
+                                            </a>
+                                        </div>
+                                        <button class="rect-btn rect-btn--exit blue">
+                                            Выйти
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="header-panel__item">
@@ -6758,30 +6842,15 @@
                     </div>
 
                 </div>
+                <div class="question-form__success">
+                    <h2 class="question-form__title">
+                        Ваше обращение успешно отправлено! <br> С вами свяжется наш менеджер
+                    </h2>
+                    <a class="rect-btn rect-btn--question-form-success white" href="./catalog.html">
+                        К покупкам!
+                    </a>
+                </div>
             </form>
-        </div>
-    </div>
-
-    <div id="popupStatus">
-        <div class="popup">
-            <p class="popup-text">
-                Товар добавлен в список сравнения!
-            </p>
-            <a class="popup-link" href="./compare.html">
-                Перейти в сравнение
-                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M11.4596 5.45962C11.7135 5.20578 11.7135 4.79422 11.4596 4.54038L7.32304 0.403806C7.0692 0.149965 6.65765 0.149965 6.40381 0.403806C6.14997 0.657647 6.14997 1.0692 6.40381 1.32304L10.0808 5L6.40381 8.67696C6.14997 8.9308 6.14997 9.34235 6.40381 9.59619C6.65765 9.85003 7.0692 9.85003 7.32304 9.59619L11.4596 5.45962ZM0 5.65H11V4.35H0V5.65Z"
-                        fill="#282739"></path>
-                </svg>
-            </a>
-            <button class="close-btn close-btn--popup">
-                <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z"
-                        fill="#537ce5" />
-                </svg>
-            </button>
         </div>
     </div>
 
@@ -6899,35 +6968,15 @@
                 </div>
             </div>
             <div class="auth__box auth__box--verify">
-                <div class="auth__header">
-                    <button class="round-btn round-btn--auth">
-                        <img src="./img/icons/arrow-back.svg" alt="">
-                    </button>
-                </div>
                 <h4 class="auth__title auth__title--verify">
                     Регистрация
                 </h4>
                 <p class="auth__text">
-                    Зарегистрируйте аккаунт, чтобы воспользоваться личным кабинетом
+                    Ваш аккаунт успешно создан! 
                 </p>
-                <form class="auth__form auth__form--verify" action="#">
-                    <div class="auth__form-group">
-                        <label for="verifyFormInput">
-                            Верификационный код
-                        </label>
-                        <input id="verifyFormInput" type="text" required placeholder="______">
-                        <div class="auth__form-subtext">
-                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
-                        </div>
-                    </div>
-                    <button class="rect-btn rect-btn--auth-register blue" type="submit">
-                        Зарегистрироваться
-                    </button>
-                </form>
-                <div class="auth__footer">
-                    <span>Уже есть аккаунт?</span>
-                    <a href="#">Войти</a>
-                </div>
+                <a class="rect-btn rect-btn--auth-register blue" href="./catalog.html">
+                    К покупкам
+                </a>
             </div>
         </div>
 
@@ -6957,9 +7006,21 @@
                         <input id="loginFormPassword" type="password" required placeholder="••••••"
                             style="background-image: url('./img/icons/auth-form/lock.svg');">
                     </div>
-                    <a class="auth__form-forgot" href="#">
-                        Забыли пароль?
-                    </a>
+                    <div class="auth__form-tools">
+                        <div class="auth__form-remember">
+                            <label>
+                                <input type="checkbox">
+                                Запомнить меня
+                                <div class="auth__form-remember-slider">
+                                    <div class="auth__form-remember-slider-circle"></div>
+                                </div>
+                            </label>
+                        </div>
+                        <a class="auth__form-forgot" href="#">
+                            Забыли пароль?
+                        </a>
+                    </div>
+                    
                     <button class="rect-btn rect-btn--auth-register blue" type="submit">
                         Войти
                     </button>
@@ -6979,17 +7040,14 @@
                     Восстановление пароля
                 </h4>
                 <p class="auth__text">
-                    Восстановите пароль, чтобы воспользоваться личным кабинетом
+                    Укажите адрес электронной почты, который вы использовали при регистрации. Мы вышлем на него инструкцию по восстановлению пароля
                 </p>
                 <form class="auth__form auth__form--recover" action="#">
                     <div class="auth__form-group">
                         <label for="recoverFormInput">
-                            Верификационный код
+                            Email
                         </label>
-                        <input id="recoverFormInput" type="text" required placeholder="______">
-                        <div class="auth__form-subtext">
-                            <span>Код отправлен на номер</span><span class="verify-phone">+7952812</span>
-                        </div>
+                        <input id="recoverFormInput" type="email" required placeholder="email@ekrom.ru">
                     </div>
                     <button class="rect-btn rect-btn--auth-register blue" type="submit">
                         Сбросить пароль
@@ -6999,6 +7057,14 @@
                     <span>Уже есть аккаунт?</span>
                     <a href="#">Войти</a>
                 </div>
+            </div>
+            <div class="auth__box auth__box--recovery-note">
+                <h4 class="auth__title auth__title--recover">
+                    Восстановление пароля
+                </h4>
+                <p class="auth__text">
+                    Инструкция по восстановлению пароля отправлена на вашу почту
+                </p>
             </div>
         </div>
 
@@ -7075,14 +7141,6 @@
 
     <div class="mobile-overlay">
     </div>
-
-    <button class="round-btn round-btn--go-to-top">
-        <svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M54.5655 -2.37941e-06C29.1684 -3.48955e-06 6.51051 18.2314 1.19781 43.0574C-1.45647 55.4621 0.331586 68.6528 6.25329 79.8785C11.9525 90.6793 21.296 99.411 32.4748 104.359C44.1027 109.506 57.4519 110.403 69.6735 106.893C81.4641 103.507 91.9185 96.0769 99.0359 86.1023C113.917 65.2492 111.928 35.9587 94.4198 17.2718C84.1601 6.31968 69.5845 -1.7229e-06 54.5655 -2.37941e-06ZM57.5131 28.392L72.7519 43.6129C76.556 47.4108 70.6565 53.3042 66.8524 49.5035L59.1983 41.8576L59.1983 77.2095C59.1983 79.7313 57.089 81.8365 54.5641 81.8365C52.0391 81.8365 49.9299 79.7313 49.9299 77.2095L49.9299 41.6813L42.2424 49.1771C38.4021 52.9251 32.5568 46.9789 36.4152 43.2157L51.6512 28.3573C53.2835 26.7632 55.8975 26.7784 57.5131 28.392Z"
-                fill="#537CE5" />
-        </svg>
-    </button>
 
     <script>
         const allSkeletons = document.querySelectorAll('.skeleton');

@@ -312,17 +312,12 @@ export const compareSwiper = new Swiper('.swiper-compare', {
     },
 })
 
-export const authSwiper = new Swiper('.swiper-auth', {
-    slidesPerView: 1,
-    autoHeight: true,
-    effect: 'fade',
-    allowTouchMove: false,
-    hashNavigation: {
-        watchState: true,
-    },
-    on: {
-        slideChange: function(swiper) {
-            
-        }
-    }
-})
+// export const authSwiper = new Swiper('.swiper-auth', {
+//     slidesPerView: 1,
+//     autoHeight: true,
+//     effect: 'fade',
+//     // allowTouchMove: false,
+//     hashNavigation: {
+//         watchState: true,
+//     },
+// })
