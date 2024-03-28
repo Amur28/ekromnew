@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Rubik';
+            src: local('Rubik'), local('Rubik-Regular'), url('../fonts/Rubik-Regular.ttf'), url('../fonts/Rubik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Rubik';
+            src: local('Rubik Medium'), local('Rubik-Medium'), url('../fonts/Rubik-Medium.ttf'), url('../fonts/Rubik-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Rubik';
+            src: local('Rubik SemiBold'), local('Rubik-SemiBold'), url('../fonts/Rubik-SemiBold.ttf'), url('../fonts/Rubik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        * {
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            color: #282739;
+            box-sizing: inherit;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .container {
+            width: 730px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #27282b;
+            padding: 28px 34px;
+        }
+
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__phone {
+            font-size: 14px;
+            color: #8c8c8c;
+        }
+
+        main {
+            padding: 20px 20px 0 20px;
+        }
+
+        .product__title {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .product__tools {
+            margin-top: 8px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .product__available {
+            display: flex;
+            gap: 9px;
+            align-items: center;
+        }
+
+        .product__available .color {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+        }
+
+        .product__available span {
+            font-size: 12px;
+        }
+
+        .product__article {
+            font-size: 12px;
+        }
+
+        .product__article span {
+            color: #5d6c7b;
+            font-weight: 500;
+        }
+
+        .product__info {
+            margin-top: 8px;
+            display: flex;
+            gap: 25px;
+        }
+
+        .product__info .product__img {
+            width: 260px;
+            height: 260px;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        .product__info-right {
+            width: calc(100% - 246px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product__info-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .product__info-price {
+            padding: 14px 38px 14px 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, .25);
+            width: 50%;
+        }
+
+        .product__info-price .price {
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .product__info-brand {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product__info-middle {
+            display: flex;
+            gap: 17px;
+            align-items: flex-start;
+        }
+
+        .product__info-middle .product__info-delivery p {
+            font-size: 16px;
+            color: #5d6c7b;
+        }
+
+        .product__info-middle .product__info-delivery .title {
+            font-weight: 500;
+            color: #282739;
+        }
+
+        .product__colors {
+            background-color: #f4f7fb;
+            border-radius: 10px;
+            padding: 13px 10px;
+        }
+
+        .product__colors-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+            margin-top: 13px;
+            position: relative;
+        }
+
+        .product__colors-list .frame {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #537ce5;
+            top: 0;
+            left: 0;
+        }
+
+        .product__colors-item {
+            width: 20px;
+            height: 20px;
+            background-color: #d9d9d9;
+        }
+        .description {
+            margin-top: 67px;
+        }
+        .description__title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .description__box {
+            margin-top: 26px;
+        }
+        .description__box p {
+            color: #5d6c7b;
+        }
+        .props {
+            max-width: 330px;
+            margin: 50px auto 0 auto;
+        }
+        .props__title {
+            font-size: 10px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .props__row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eaebed;
+        }
+        .props__row:last-child {
+            margin-bottom: 15px;
+        }
+        .props__row p {
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header__inner">
+                <a class="header__logo" href="./index.html">
+                    <img src="./img/icons/logo.svg" alt="">
+                </a>
+                <a class="header__phone" href="tel:+73433799868">
+                    +7 (343) 379-98-68
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="product">
+                <a class="product__title" href="./product.html">
+                    Варочная панель lex evh 320 bl
+                </a>
+                <div class="product__tools">
+                    <div class="product__available">
+                        <div class="color" style="background-color: #75d14a;"></div>
+                        <span>В наличии</span>
+                    </div>
+                    <div class="product__article">
+                        Артикул:&nbsp;<span>CHYO000174</span>
+                    </div>
+                </div>
+                <div class="product__info">
+                    <img class="product__img" src="./img/card-gallery/2.webp" alt="">
+                    <div class="product__info-right">
+                        <div class="product__info-top">
+                            <div class="product__info-price">
+                                <p class="price">9 900 ₽</p>
+                                <p>Розничная цена</p>
+                            </div>
+                            <a class="product__info-brand" href="./brand.html">
+                                <img src="./img/brands/lex.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product__info-middle">
+                            <img src="./img/icons/delivery.svg" alt="">
+                            <div class="product__info-delivery">
+                                <p class="title">Доставка по РФ</p>
+                                <p>
+                                    от 1 дня при заказе до 01.09
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product__colors">
+                            <div class="product__colors-title">
+                                Цвет&nbsp;—&nbsp;<span class="value">Белый</span>
+                            </div>
+                            <ul class="product__colors-list">
+                                <li class="frame"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                                <li class="product__colors-item"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description__title">
+                    Описание
+                </p>
+                <div class="description__box">
+                    <p>
+                        Компактная электрическая варочная панель LEX EVH 320 BL шириной встраивания 300 мм.
+                        Традиционный нагревательный элемент HiLight обеспечивает надежную работу и равномерность
+                        приготовления блюд.
+                        Устройство снабжено функцией блокировки панели, индикаторами остаточного тепла, комбинированной
+                        системой защиты от перегрева и выкипания и программируемым таймером автоматического отключения.
+                    </p>
+                    <br>
+                    <p>
+                        Модель произведена по уникальной технологии UltraSlimBoby и имеет толщину корпуса 40 мм., что позволяет устанавливать варочную поверхность в тонкие, бюджетные столешницы.
+                    </p>
+                </div>
+            </div>
+            <div class="props">
+                <ul class="props__list">
+                    <li class="props__title">
+                        Основные характеристики
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Тип варочной поверхности</p>
+                        <p class="value">электрическая</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Материал поверхности</p>
+                        <p class="value">стеклокерамика</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Кол-во конфорок, шт</p>
+                        <p class="value">2</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Тип управления</p>
+                        <p class="value">сенсорное</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Страна сборки</p>
+                        <p class="value">Китай</p>
+                    </li>
+                </ul>
+                <ul class="props__list">
+                    <li class="props__title">
+                        Общая информация
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Производитель</p>
+                        <p class="value">Lex</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Цвет варочной поверхности</p>
+                        <p class="value">черный</p>
+                    </li>
+                </ul>
+                <ul class="props__list">
+                    <li class="props__title">
+                        Габариты
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Габариты без упаковки (В*Ш*Г)</p>
+                        <p class="value">4.7x29x51</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Размеры ниши для встраивания (В*Ш*Г)</p>
+                        <p class="value">44x27.5x49</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Вес, кг</p>
+                        <p class="value">4.8</p>
+                    </li>
+                </ul>
+                <ul class="props__list">
+                    <li class="props__title">
+                        Функции
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Количество уровней мощности</p>
+                        <p class="value">9</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Автоматическое выключение</p>
+                        <p class="value">да</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Звуковой сигнал</p>
+                        <p class="value">да</p>
+                    </li>
+                    <li class="props__row">
+                        <p class="name">Таймер</p>
+                        <p class="value">да</p>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -419,7 +419,7 @@
 .contacts-form-connect__label:has(input:checked) {
     filter: grayscale(0);
 }
-.contacts-form input[type=number] {
+.contacts-form input[type=tel] {
     width: 100%;
     margin-top: 20px;
     padding: 15px 25px;
@@ -427,7 +427,7 @@
     border: 1px solid #eaebed;
     font-size: 16px;
 }
-.contacts-form input[type=number]::placeholder {
+.contacts-form input[type=tel]::placeholder {
     font-size: 16px;
 }
 .contacts-form__inner textarea {

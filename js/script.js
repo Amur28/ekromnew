@@ -427,25 +427,58 @@ function createToast(toastText, hrefText, linkText) {
     addLinkToToast(hrefText, linkText)
 }
 
+function findClassName(element) {
+    const fav = 'round-btn--fav';
+    const compare = 'round-btn--compare';
+    const cart = 'round-btn--cart';
+    if (element === fav) return fav;
+    if (element === compare) return compare;
+    if (element === cart) return cart;
+}
+
 function showToast(event) {
     const productCardRoundBtn = event.target.closest('.round-btn');
-    if (!productCardRoundBtn) return;
+    const cartFavBtn = event.target.closest('.cart-item__fav-btn')
+    if (productCardRoundBtn) {
+        const classes = Array.from(productCardRoundBtn.classList)
 
-    const classes = Array.from(productCardRoundBtn.classList)
-    if (!containClass(productCardRoundBtn, 'active')) {
-        switch (classes[1]) {
-            case 'round-btn--fav':
-                createToast(toastObj.favText, toastObj.favHref, toastObj.favLinkText)
-                break;
-            case 'round-btn--compare':
-                createToast(toastObj.compareText, toastObj.compareHref, toastObj.compareLinkText)
-                break;
-            case 'round-btn--cart':
-                createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
-                break;
-        };
+        if (!containClass(productCardRoundBtn, 'active')) {
+            switch (classes.filter(findClassName)[0]) {
+                case 'round-btn--fav':
+                    createToast(toastObj.favText, toastObj.favHref, toastObj.favLinkText)
+                    break;
+                case 'round-btn--compare':
+                    createToast(toastObj.compareText, toastObj.compareHref, toastObj.compareLinkText)
+                    break;
+                case 'round-btn--cart':
+                    createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
+                    break;
+            };
+        }
+    } else if (cartFavBtn) {
+        if (!containClass(cartFavBtn, 'active')) {
+            createToast(toastObj.favText, toastObj.favHref, toastObj.favLinkText)
+
+        }
+        toggleClass(cartFavBtn, 'active')
     }
+
+    if (this.classList.contains('row')) {
+        const buyCartRowBtn = event.target.closest('.product-card__buy-cart');
+
+        if (!buyCartRowBtn) return;
+
+        createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
+    }
+
+
 }
+
+const cartPage = document.querySelector('.cart-page')
+if (cartPage) {
+    cartPage.addEventListener('click', showToast)
+}
+
 
 const productCards = document.querySelectorAll('.product-card');
 let xDown = null;
@@ -976,7 +1009,7 @@ compareTabs.forEach((tab, index) => {
         if (currentContent.classList.contains('show')) {
             compareDiffButton.classList.add('show')
             compareDiffButton.textContent = 'Показать все свойства'
-        } else if(!currentContent.classList.contains('show')) {
+        } else if (!currentContent.classList.contains('show')) {
             compareDiffButton.classList.remove('show');
             compareDiffButton.textContent = 'Показать только различия'
         }
@@ -1063,7 +1096,7 @@ function changeOnCounter(event) {
         const counter = cartBtn.nextElementSibling;
         removeClass(counter, 'hide');
         addClass(cartBtn, 'hide')
-    
+
         counter.addEventListener('click', changeProductBoxQuantity);
         createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
     } else if (roundBtn) {
@@ -1083,7 +1116,7 @@ function changeOnCounter(event) {
         }
         toggleClass(roundBtn, 'active')
     }
-    
+
 }
 
 function changeProductBoxQuantity(event) {
@@ -1097,7 +1130,7 @@ function changeProductBoxQuantity(event) {
 }
 
 function changeOnPlus(span, spanValue) {
-    span.textContent =  `${spanValue + 1}`
+    span.textContent = `${spanValue + 1}`
 }
 
 function changeOnMinus(span, spanValue, counter) {
@@ -1106,7 +1139,7 @@ function changeOnMinus(span, spanValue, counter) {
         removeClass(counter.previousElementSibling, 'hide')
         return
     }
-    span.textContent =  `${spanValue - 1}`
+    span.textContent = `${spanValue - 1}`
 }
 
 /* Табы на странице товара */
@@ -1424,8 +1457,6 @@ if (compareDiffButton) {
     compareDiffButton.addEventListener('click', showDiffs);
 }
 
-
-
 function showDiffs() {
     const currentCompareList = document.querySelector('.swiper-compare.active');
     const compareCards = currentCompareList.querySelectorAll('.compare__products-column');
@@ -1440,7 +1471,7 @@ function showDiffs() {
         return;
     }
     let rows = [];
-    
+
     for (let i = 0; i < compareCards.length - 1; i++) {
         const props = compareCards[i].querySelectorAll('.compare__products-property');
         for (let j = 0; j < props.length; j++) {
@@ -1469,3 +1500,44 @@ function showDiffs() {
     currentCompareList.classList.add('show')
     compareDiffButton.textContent = 'Показать все свойства'
 }
+
+/* Валидация форм */
+
+[].forEach.call(document.querySelectorAll('input[type="tel"]'), function (input) {
+    let keyCode;
+
+    function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        let pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        let matrix = '+7 (___) ___ __ __',
+            i = 0,
+            def = matrix.replace(/\D/g, ''),
+            val = this.value.replace(/\D/g, ''),
+            new_value = matrix.replace(/[_\d]/g, function (a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+
+        i = new_value.indexOf('_');
+        if (i != -1) {
+            i < 5 && (i = 3);
+            new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substring(0, this.value.length).replace(/_+/g,
+            function (a) {
+                return '\\d{1,' + a.length + '}'
+            }).replace(/[+()]/g, '\\$&');
+        reg = new RegExp('^' + reg + '$');
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {
+            this.value = new_value;
+        }
+        if (event.type === 'blur' && this.value.length < 5) {
+            this.value = ''
+        }
+    }
+
+    input.addEventListener('input', mask, false)
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
+    input.addEventListener("keydown", mask, false);
+})

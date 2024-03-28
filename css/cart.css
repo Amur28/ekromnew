@@ -534,6 +534,18 @@ form.cart-promocode .promocode-input::placeholder {
     font-size: 14px;
 }
 
+.cart-item__buttons .cart-item__fav-btn.active {
+    background-color: var(--main-blue);
+}
+
+.cart-item__buttons .cart-item__fav-btn.active path {
+    stroke: #fff;
+}
+
+.cart-item__fav-btn.active path {
+    stroke: var(--main-blue);
+}
+
 /* CART END */
 
 .cart-list__header-item {
