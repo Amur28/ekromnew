@@ -327,6 +327,7 @@ select::-ms-expand {
     overflow: hidden !important;
     background: linear-gradient(90deg, #eee, #d3d3d3, #eee) !important;
     border: none !important;
+    pointer-events: none;
 }
 
 .skeleton::before {
