@@ -130,6 +130,11 @@ function checkModalClick(event) {
         removeClass(body, 'active');
         removeClass(mobileOverlay, 'active');
     }
+    if (event.target.closest('.rect-btn--question-form-success')) {
+        removeClass(this, 'active');
+        removeClass(body, 'active');
+        removeClass(mobileOverlay, 'active');
+    }
 
 };
 
@@ -254,7 +259,8 @@ function showQuestionForm() {
 
 questionForm.addEventListener('submit', showQuestionSuccess);
 
-function showQuestionSuccess() {
+function showQuestionSuccess(event) {
+    event.preventDefault()
     const questionInner = this.querySelector('.question-form__inner');
     const questionSuccess = questionInner.nextElementSibling;
     questionInner.style.display = 'none';
@@ -438,7 +444,8 @@ function findClassName(element) {
 
 function showToast(event) {
     const productCardRoundBtn = event.target.closest('.round-btn');
-    const cartFavBtn = event.target.closest('.cart-item__fav-btn')
+    const cartFavBtn = event.target.closest('.cart-item__fav-btn');
+    const productCardMobileCartBtn = event.target.closest('.product-card__mobile-cart')
     if (productCardRoundBtn) {
         const classes = Array.from(productCardRoundBtn.classList)
 
@@ -461,6 +468,8 @@ function showToast(event) {
 
         }
         toggleClass(cartFavBtn, 'active')
+    } else if (productCardMobileCartBtn) {
+        createToast(toastObj.cartText, toastObj.cartHref, toastObj.cartLinkText)
     }
 
     if (this.classList.contains('row')) {

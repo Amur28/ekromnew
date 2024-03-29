@@ -2805,6 +2805,20 @@
     .mobile-product-info .product-card__counter .minus {
         padding: 10px 50px 10px 50px;
     }
+    .toast-container {
+        width: 200px;
+    }
+    .toast_message .toast__body {
+        padding: 15px 30px 15px 15px;
+        font-size: 12px;
+    }
+    .toast_message .toast__body a {
+        margin-top: 15px;
+    }
+    .toast_message .toast__body a::after {
+        width: 12px;
+        height: 9px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -3112,6 +3126,9 @@
     p.check-acc,
     p.check-acc .auth-check-btn--register {
         font-size: 10px;
+    }
+    .complects__item-img img {
+        max-height: 250px;
     }
 }
 
