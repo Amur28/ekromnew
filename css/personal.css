@@ -35,11 +35,23 @@
     transition: color .5s;
 }
 
-.personal__aside-item.active {
+.personal__aside-item:has(input:checked) {
     border: 2px solid var(--main-blue);
     color: var(--main-blue);
     font-weight: 500;
 }
+
+.personal__aside-item input {
+    z-index: -1;
+    position: absolute;
+    opacity: 0;
+}
+
+/* .personal__aside-item.active {
+    border: 2px solid var(--main-blue);
+    color: var(--main-blue);
+    font-weight: 500;
+} */
 
 .personal__aside-item.active a {
     color: var(--main-blue);

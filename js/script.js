@@ -1073,6 +1073,28 @@ personalTiles.forEach((tile, index) => {
     });
 });
 
+function changeContentOnTabsInPersonal(tabsArr, tab, contentArr, index) {
+    hideOtherPersonalItems()
+}
+
+function hideOtherPersonalItems(elArr) {
+    elArr.forEach(item => {
+
+    })
+}
+
+// const swapContentOnTabs = (tabsArr, tab, contentArr, index) => {
+//     hideOtherItems(tabsArr, 'active');
+
+//     if (!containClass(tab, 'active') && !containClass(contentArr[index], 'active')) {
+//         hideOtherItems(contentArr, 'active')
+//         addClass(tab, 'active')
+//         addClass(contentArr[index], 'active')
+//     }
+
+//     addClass(tab, 'active')
+// }
+
 /* Выбор цвета на странице товара */
 
 const productBox = document.querySelector('.product-box');
