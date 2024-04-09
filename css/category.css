@@ -790,12 +790,22 @@ ul.products-pagination {
     border: 1px solid var(--main-blue);
 }
 
+.aside__inner {
+    position: relative;
+}
+
 .product-card.row .product-card__buy-click,
 .product-card.row .product-card__buy-cart {
     width: calc(100% - 55px);
     border-radius: 5px;
     padding: 15px 40px;
     font-size: 16px;
+    white-space: nowrap;
+}
+
+.aside__inner-close-btn.close-btn svg {
+    width: 20px;
+    height: 20px;
 }
 
 .product-card.row .product-card__buy-click.skeleton,

@@ -1343,9 +1343,9 @@ if (filterBtn && aside) {
 
     function hideAside(event) {
         const asideInner = this.querySelector('.aside__inner');
-        if (!asideInner.contains(event.target)) {
+        if (!asideInner.contains(event.target) || event.target.closest('.aside__inner-close-btn')) {
             removeClass(aside, 'active');
-            removeClass(mobileOverlay, 'active')
+            removeClass(mobileOverlay, 'active');
         }
     }
 }

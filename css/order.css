@@ -164,6 +164,7 @@ label.order-make__card {
     cursor: pointer;
     transition: var(--alt-transition);
     position: relative;
+    border: 1px solid transparent;
 }
 
 label.order-make__card .order-make__card-title::before,
@@ -191,7 +192,7 @@ label.order-make__card .order-make__card-title::after {
 }
 
 label.order-make__card:has(input:checked) {
-    border: 1px solid var(--main-blue);
+    border-color: var(--main-blue);
 }
 
 label.order-make__card:has(input:checked) .order-make__card-pays img {
