@@ -47,12 +47,6 @@
     opacity: 0;
 }
 
-/* .personal__aside-item.active {
-    border: 2px solid var(--main-blue);
-    color: var(--main-blue);
-    font-weight: 500;
-} */
-
 .personal__aside-item.active a {
     color: var(--main-blue);
     font-weight: 500;
@@ -113,4 +107,212 @@
 .personal__tile-link svg path {
     transition: var(--default-transition);
 }
+
+.require {
+    position: relative;
+}
+
+.require::after {
+    content: '*';
+    color: var(--ruby-color);
+}
+
+.personal__form-hint,
+.personal__form-buttons {
+    position: relative;
+    width: 100%;
+    max-width: 632px;
+}
+
+.personal__form--change-password .personal__form-label {
+    position: relative;
+}
+
+.personal__form--entity .personal__form-buttons,
+.personal__form--entity .personal__form-hint {
+    max-width: 760px;
+}
+
+.personal__form-label-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.personal__form input {
+    display: block;
+    width: 100%;
+    max-width: 632px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: 1px solid #8c8c8c;
+    font-size: 16px;
+}
+
+.personal__form--change-password .personal__form-label input {
+    border-radius: 10px;
+}
+
+.personal__form--entity .personal__form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    max-width: 760px;
+}
+
+.personal__form--entity .personal__form-label {
+    width: 50%;
+}
+
+.personal__form-row:not(:first-child) {
+    margin-top: 20px;
+}
+
+.personal__form-row-text {
+    width: 50%;
+    font-size: 16px;
+    color: var(--subtitle-color);
+}
+
+.personal__form-label input::placeholder {
+    font-size: 16px;
+    color: var(--subtitle-color);
+}
+
+.personal__form-hint {
+    text-align: right;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.personal__form-hint span {
+    color: var(--ruby-color);
+}
+
+.personal__form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.personal__form-buttons button {
+    padding: 15px 32px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.personal__form--change-password .personal__form-label {
+    display: block;
+    max-width: 380px;
+}
+
+.personal__form--change-password .personal__form-label:not(:first-child) {
+    margin-top: 20px;
+}
+
+.personal__form--change-password .personal__form-row {
+    display: flex;
+    align-items: center;
+}
+
+.personal__form--change-password .personal__form-row input {
+    margin-top: 5px;
+}
+
+.rect-btn--personal-change-password {
+    margin-top: 40px;
+    padding: 18px 32px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.personal__progress {
+    width: 100%;
+    padding: 10px 30px 20px 30px;
+    background-color: var(--main-blue);
+    color: #fff;
+    border-radius: 20px;
+}
+.personal__progress-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.personal__progress-value {
+    font-size: 42px;
+    font-weight: 500;
+}
+.personal__progress-descr {
+    max-width: 90px;
+    font-size: 16px;
+}
+.personal__progress-line {
+    position: relative;
+    height: 7px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+.personal__progress-point {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.personal__progress-point p {
+    position: absolute;
+    font-size: 18px;
+    bottom: calc(100% + 7px);
+}
+.personal__progress-current {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 100%;
+    border-radius: 20px;
+}
+.personal__progress-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.personal__progress-sum {
+    font-size: 18px;
+}
+.personal__progress-sum .sum {
+    font-weight: 500;
+}
+.personal__progress-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.personal__sale {
+    margin-top: 35px;
+}
+
+.personal__sale-text {
+    font-size: 18px;
+}
+
+.personal__sale-text:not(:first-child) {
+    margin-top: 1em;
+}
+
+.personal__sale-text .blue-text {
+    color: var(--main-blue);
+    font-weight: 500;
+}
+
 /* PERSONAL END */

@@ -972,7 +972,7 @@ function checkFancyBox() {
 /* Слайдер страницы авторизации */
 
 document.addEventListener('click', function (event) {
-    const passwordBtn = event.target.closest('.auth-form__show-password');
+    const passwordBtn = event.target.closest('.show-password-btn');
     if (!passwordBtn) return;
     showHidePassword(event)
 });
@@ -1056,7 +1056,7 @@ const personalContentArr = document.querySelectorAll('.personal__item');
 
 personalTabs.forEach((tab, index) => {
     tab.addEventListener('click', function () {
-        swapContentOnTabs(personalTabs, tab, personalContentArr, index);
+        changeContentOnTabsInPersonal(tab, personalContentArr, index);
     })
 });
 
@@ -1068,32 +1068,19 @@ const personalContentTile = document.querySelectorAll('.personal__item.tile');
 
 personalTiles.forEach((tile, index) => {
     tile.addEventListener('click', () => {
-        removeClass(personalTabs[0], 'active');
-        swapContentOnTabs(personalTabsTile, personalTabsTile[index], personalContentTile, index + 1);
+        changeContentOnTabsInPersonal(personalTabsTile[index], personalContentTile, index + 1);
     });
 });
 
-function changeContentOnTabsInPersonal(tabsArr, tab, contentArr, index) {
-    hideOtherPersonalItems()
+function changeContentOnTabsInPersonal(tab, contentArr, index) {
+    const input = tab.querySelector('input');
+
+    if (!containClass(tab, 'active') && !containClass(contentArr[index], 'active')) {
+        hideOtherItems(contentArr, 'active')
+        addClass(contentArr[index], 'active')
+        input.checked = true
+    }
 }
-
-function hideOtherPersonalItems(elArr) {
-    elArr.forEach(item => {
-
-    })
-}
-
-// const swapContentOnTabs = (tabsArr, tab, contentArr, index) => {
-//     hideOtherItems(tabsArr, 'active');
-
-//     if (!containClass(tab, 'active') && !containClass(contentArr[index], 'active')) {
-//         hideOtherItems(contentArr, 'active')
-//         addClass(tab, 'active')
-//         addClass(contentArr[index], 'active')
-//     }
-
-//     addClass(tab, 'active')
-// }
 
 /* Выбор цвета на странице товара */
 

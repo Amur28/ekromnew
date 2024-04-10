@@ -192,7 +192,7 @@
     opacity: 1;
 }
 
-.auth-form__label .auth-form__show-password {
+.show-password-btn {
     position: absolute;
     background-color: var(--main-blue);
     width: 30px;
@@ -211,7 +211,8 @@
     background-image: url('../img/icons/auth-form/open-eye.svg');
 }
 
-.auth-form__label input:not([type=checkbox]) {
+.auth-form__label input:not([type=checkbox]),
+.personal__form--change-password .personal__form-label input {
     width: 100%;
     border: 1px solid var(--main-blue);
     padding: 10px 15px 10px 45px;
@@ -235,7 +236,8 @@
 }
 
 .auth-form__label input[type=password],
-.auth-form__label input.password-input {
+.auth-form__label input.password-input,
+.personal__form--change-password .personal__form-label input {
     background-image: url('../img/icons/auth-form/lock.svg');
 }
 

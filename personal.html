@@ -1709,7 +1709,7 @@
                     <div class="personal__inner">
                         <aside class="personal__aside">
                             <div class="personal__aside-items">
-                                <label class="personal__aside-item active skeleton" tabindex="0">
+                                <label class="personal__aside-item skeleton" tabindex="0">
                                     <input type="radio" name="personal" checked>
                                     Мой кабинет
                                 </label>
@@ -1779,7 +1779,7 @@
                             </div>
                         </aside>
 
-                        <div class="personal__item active tile">
+                        <div class="personal__item tile active">
                             <div class="personal__tiles">
                                 <div class="personal__tile skeleton">
                                     <svg width="100" height="100" viewBox="0 0 92 92" fill="none"
@@ -1964,14 +1964,162 @@
                             <p>Текущие заказы</p>
                         </div>
                         <div class="personal__item tile">
-                            <p>
-                                Текущая скидка
-                            </p>
+                            <div class="personal__progress">
+                                <div class="personal__progress-title">
+                                    <p class="personal__progress-value">
+                                        1%
+                                    </p>
+                                    <p class="personal__progress-descr">
+                                        Скидка покупателя
+                                    </p>
+                                </div>
+                                <div class="personal__progress-line">
+                                    <div class="personal__progress-point">
+                                        <p></p>
+                                    </div>
+                                    <div class="personal__progress-point">
+                                        <p>3%</p>
+                                    </div>
+                                    <div class="personal__progress-point">
+                                        <p>5%</p>
+                                    </div>
+                                    <div class="personal__progress-point">
+                                        <p>10%</p>
+                                    </div>
+                                    <div class="personal__progress-current" style="width: 20%;"></div>
+                                </div>
+                                <div class="personal__progress-footer">
+                                    <div class="personal__progress-sum">
+                                        <span>Сумма покупок на&nbsp;<span class="date">25.03.2024:</span>&nbsp;<span class="sum">73 961₽</span></span>
+                                    </div>
+                                    <button class="personal__progress-hint">
+                                        i
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="personal__sale">
+                                <p class="personal__sale-text">
+                                    <span class="blue-text">1% скидка после второго заказа:</span>&nbsp;После того как клиент совершит свой второй заказ в магазине, ему будет предоставлена скидка в размере 1% от общей суммы заказа.
+                                </p>
+                                <p class="personal__sale-text">
+                                    <span class="blue-text">3% скидка после покупки на сумму от 100 000 рублей:</span>&nbsp;При покупке товаров на общую сумму от 100 000 рублей клиент получает скидку в размере 3%.
+                                </p>
+                                <p class="personal__sale-text">
+                                    <span class="blue-text">5% скидка после покупки на сумму от 500 000 рублей:</span>&nbsp;Если сумма покупки достигает или превышает отметку в 500 000 рублей, клиент получает скидку в размере 5%.
+                                </p>
+                                <p class="personal__sale-text">
+                                    <span class="blue-text">10% скидка после покупки на сумму от 1 000 000 рублей:</span>&nbsp;При покупке на сумму от 1 000 000 рублей клиент получает максимальную скидку в размере 10%.
+                                </p>
+                                <p class="personal__sale-text">
+                                    Эти условия действуют для розничных клиентов компании Екром. Условия для юридических лиц <span class="blue-text">уточните у наших менеджеров.</span>
+                                </p>
+                            </div>
                         </div>
                         <div class="personal__item tile">
-                            <p>
-                                Личные данные
-                            </p>
+                            <form class="personal__form personal__form--individual">
+                                <div class="personal__form-row">
+                                    <label class="personal__form-label">
+                                        <p class="require">Ф.И.О.</p>
+                                        <div class="personal__form-label-row">
+                                            <input type="text" placeholder="Введите ваше Ф.И.О." required>
+                                            <p class="personal__form-row-text">
+                                                Заполните, чтобы мы знали, как к вам обращаться
+                                            </p>
+                                        </div>
+                                    </label>
+
+                                </div>
+                                <div class="personal__form-row">
+                                    <label class="personal__form-label">
+                                        <p class="require">Ваш телефон</p>
+                                        <div class="personal__form-label-row">
+                                            <input type="tel" placeholder="+7 (___) __ - __ - __" required>
+                                            <p class="personal__form-row-text">
+                                                Необходим для уточнения деталей заказа
+                                            </p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="personal__form-row">
+                                    <label class="personal__form-label">
+                                        <p class="require">Ваш e-mail</p>
+                                        <div class="personal__form-label-row">
+                                            <input type="email" placeholder="Введите ваш e-mail" required>
+                                            <p class="personal__form-row-text">
+                                                Для отправки уведомлений о статусе заказа. <br>Используйте как логин для
+                                                входа в личный кабинет
+                                            </p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <p class="personal__form-hint">
+                                    <span>*</span>&nbsp;- обязательные поля
+                                </p>
+                                <div class="personal__form-buttons">
+                                    <button class="rect-btn rect-btn--personal-form transparent" type="button">
+                                        Зарегистрироваться как Юр. лицо
+                                    </button>
+                                    <button class="rect-btn rect-btn--personal-form blue" type="submit">
+                                        Сохранить изменения
+                                    </button>
+                                </div>
+                            </form>
+
+                            <form class="personal__form personal__form--entity">
+                                <div class="personal__form-row">
+                                    <label class="personal__form-label">
+                                        <p class="require">Название компании</p>
+                                        <input type="text" placeholder="Введите название компании или ИП" required>
+                                    </label>
+                                    <label class="personal__form-label">
+                                        <p>Юридический адрес</p>
+                                        <input type="text" placeholder="Введите адрес" required>
+                                    </label>
+
+                                </div>
+                                <div class="personal__form-row">
+                                    <label class="personal__form-label">
+                                        <p>ИНН</p>
+                                        <input type="number" placeholder="Введите 10 цифр" required>
+                                    </label>
+                                    <label class="personal__form-label">
+                                        <p>КПП</p>
+                                        <input type="number" placeholder="Введите 9 цифр" required>
+                                    </label>
+                                </div>
+                                <div class="personal__form-row">
+                                    <label class="personal__form-label">
+                                        <p class="require">Контактное лицо</p>
+                                        <input type="text" placeholder="Введите ваше Ф.И.О." required>
+                                    </label>
+                                    <label class="personal__form-label">
+                                        <p class="require">E-mail</p>
+                                        <input type="email" placeholder="Введите email" required>
+                                    </label>
+                                </div>
+                                <div class="personal__form-row">
+                                    <label class="personal__form-label">
+                                        <p class="require">Ваш телефон</p>
+                                        <input type="tel" placeholder="+7 (___) __ - __ - __" required>
+                                    </label>
+                                    <label class="personal__form-label">
+                                        <p>Факс</p>
+                                        <input type="number" placeholder="Введите номер факса" required>
+                                    </label>
+                                </div>
+                                <p class="personal__form-hint">
+                                    <span>*</span>&nbsp;- обязательные поля
+                                </p>
+                                <div class="personal__form-buttons">
+                                    <button class="rect-btn rect-btn--personal-form transparent" type="button">
+                                        Зарегистрироваться как розничный покупатель
+                                    </button>
+                                    <button class="rect-btn rect-btn--personal-form blue" type="submit">
+                                        Сохранить изменения
+                                    </button>
+                                </div>
+                            </form>
+
                         </div>
                         <div class="personal__item tile">
                             <p>
@@ -1983,10 +2131,22 @@
                                 Профили заказов
                             </p>
                         </div>
-                        <div class="personal__item">
-                            <p>
-                                Сменить пароль
-                            </p>
+                        <div class="personal__item ">
+                            <form class="personal__form personal__form--change-password">
+                                <label class="personal__form-label">
+                                    <p>Новый пароль</p>
+                                    <input type="password" placeholder="••••••" required="">
+                                    <button class="personal__show-password show-password-btn" type="button"></button>
+                                </label>
+                                <label class="personal__form-label">
+                                    <p>Повторите пароль</p>
+                                    <input type="password" placeholder="••••••" required="">
+                                    <button class="personal__show-password show-password-btn" type="button"></button>
+                                </label>
+                                <button class="rect-btn rect-btn--personal-change-password blue">
+                                    Сохранить изменения
+                                </button>
+                            </form>
                         </div>
 
                     </div>
@@ -2227,8 +2387,9 @@
                                 aria-label="Перейти в ВК сообщество компании">
                                 <img src="./img/icons/footer/vk.svg" alt="">
                             </a>
-                            <a class="footer__socials-link round-btn round-btn--footer youtube" href="https://www.youtube.com/@ekromtech"
-                                aria-label="Перейти на YouTube-канал компании" target="_blank">
+                            <a class="footer__socials-link round-btn round-btn--footer youtube"
+                                href="https://www.youtube.com/@ekromtech" aria-label="Перейти на YouTube-канал компании"
+                                target="_blank">
                                 <img src="./img/icons/footer/youtube.svg" alt="">
                             </a>
                             <a class="footer__socials-link round-btn round-btn--footer telegram"
@@ -2374,7 +2535,7 @@
                     Регистрация
                 </h4>
                 <p class="auth__text">
-                    Ваш аккаунт успешно создан! 
+                    Ваш аккаунт успешно создан!
                 </p>
                 <a class="rect-btn rect-btn--auth-register blue" href="./catalog.html">
                     К покупкам
@@ -2422,7 +2583,7 @@
                             Забыли пароль?
                         </a>
                     </div>
-                    
+
                     <button class="rect-btn rect-btn--auth-register blue" type="submit">
                         Войти
                     </button>
@@ -2442,7 +2603,8 @@
                     Восстановление пароля
                 </h4>
                 <p class="auth__text">
-                    Укажите адрес электронной почты, который вы использовали при регистрации. Мы вышлем на него инструкцию по восстановлению пароля
+                    Укажите адрес электронной почты, который вы использовали при регистрации. Мы вышлем на него
+                    инструкцию по восстановлению пароля
                 </p>
                 <form class="auth__form auth__form--recover" action="#">
                     <div class="auth__form-group">

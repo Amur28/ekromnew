@@ -930,3 +930,7 @@ select::-ms-expand {
 .aside__inner .aside__inner-close-btn {
     display: none;
 }
+
+.show-password-btn.active {
+    background-image: url('../img/icons/auth-form/open-eye.svg');
+}
