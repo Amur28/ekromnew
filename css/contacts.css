@@ -10,14 +10,17 @@
     max-width: 50%;
 }
 
-.contacts__tabs {
+.contacts__tabs,
+.about-office__tabs {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 
 .rect-btn--contact-tab,
-.rect-btn--contact-info-tab {
+.rect-btn--contact-info-tab,
+.rect-btn--about-office-tab,
+.rect-btn--city-tab {
     border: 1px solid var(--main-blue);
     color: var(--main-blue);
     font-size: 16px;
@@ -27,7 +30,9 @@
 }
 
 .rect-btn--contact-tab.active,
-.rect-btn--contact-info-tab.active {
+.rect-btn--contact-info-tab.active,
+.rect-btn--about-office-tab.active,
+.rect-btn--city-tab.active {
     background-color: var(--main-blue);
     color: #fff;
     transition: var(--default-transition);
@@ -57,56 +62,67 @@
     font-size: 20px;
 }
 
-.contacts-city__info-tabs {
+.contacts-city__info-tabs,
+.about-office__city-tabs {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     margin-top: 40px;
 }
 
-.contacts-city__info-item {
+.contacts-city__info-item,
+.about-office__info-item {
     margin-top: 30px;
 }
 
-.contacts-city__info-row {
+.contacts-city__info-row,
+.about-office__info-row  {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.contacts-city__info-row:not(:first-of-type) {
+.contacts-city__info-row:not(:first-of-type),
+.about-office__info-row:not(:first-of-type) {
     margin-top: 35px;
 }
 
-.contacts-city__info-half {
+.contacts-city__info-half,
+.about-office__info-half {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.contacts-city__info-half .contacts-city__info-tel p {
+.contacts-city__info-half .contacts-city__info-tel p,
+.about-office__info-half .about-office__info-tel p {
     color: var(--subtitle-color)
 }
 
-.contacts-city__info-half .contacts-city__info-tel a {
+.contacts-city__info-half .contacts-city__info-tel a,
+.about-office__info-half .about-office__info-tel a {
     font-size: 18px;
     white-space: nowrap;
 }
 
-.contacts-city__info-row img {
+.contacts-city__info-row img,
+.about-office__info-row img {
     width: 21px;
     height: 21px;
 }
 
-.contacts-city__info-address .city-address {
+.contacts-city__info-address .city-address,
+.about-office__info-address .city-address {
     font-size: 18px;
 }
 
-.contacts-city__info-address a {
+.contacts-city__info-address a,
+.about-office__info-address a {
     color: #6f73ee;
 }
 
-.contacts-city__info-address .city-time {
+.contacts-city__info-address .city-time,
+.about-office__info-address .city-time {
     margin-top: 15px;
     color: var(--subtitle-color);
 }
@@ -115,11 +131,13 @@
     max-width: 450px;
 }
 
-.contacts-city__info-address p:not(:first-child) {
+.contacts-city__info-address p:not(:first-child),
+.about-office__info-address p:not(:first-child) {
     margin-top: 10px;
 }
 
-.contacts-city__info-address b {
+.contacts-city__info-address b,
+.about-office__info-address b {
     font-weight: 500;
 }
 

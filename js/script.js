@@ -1414,6 +1414,27 @@ contactCityArray.forEach(city => {
     });
 })
 
+/* Смена филиалов на странице "О компании" */
+
+const aboutTabsArray = document.querySelectorAll('.rect-btn--about-office-tab');
+const aboutCityArray = document.querySelectorAll('.about-office__city');
+
+aboutTabsArray.forEach((tab, index) => {
+    tab.addEventListener('click', function () {
+        swapContentOnTabs(aboutTabsArray, tab, aboutCityArray, index)
+    })
+});
+
+aboutCityArray.forEach(city => {
+    const aboutInfoBtnArray = city.querySelectorAll('.rect-btn--city-tab');
+    const aboutInfoContentArr = city.querySelectorAll('.about-office__info-item');
+    aboutInfoBtnArray.forEach((tab, index) => {
+        tab.addEventListener('click', function () {
+            swapContentOnTabs(aboutInfoBtnArray, tab, aboutInfoContentArr, index)
+        })
+    });
+})
+
 /* Открытие формы рекламации на странице контактов */
 
 const contactsComplaintBtn = document.querySelectorAll('.rect-btn--departments');

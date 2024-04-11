@@ -1,0 +1,186 @@
+/* ABOUT START */
+
+main.about .info {
+    padding-bottom: 73px;
+}
+
+.about-promo {
+    padding-bottom: 85px;
+}
+
+.about-promo__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 75px;
+}
+
+.about-promo__text {
+    width: 100%;
+}
+
+.about-promo__tagline {
+    font-size: 25px;
+
+    span {
+        font-weight: 500;
+    }
+}
+
+.about-promo__descr {
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.about-promo__copyright {
+    margin-top: 1em;
+    color: var(--text-grey-color);
+}
+
+.about-promo__swiper-container {
+    position: relative;
+}
+
+.swiper.swiper-about-promo {
+    width: 100%;
+    max-width: 609px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+section.advantages {
+    padding-bottom: 55px;
+}
+.advantages__question {
+    background-color: var(--filter-bg-color);
+    border-radius: 10px;
+    padding: 57px 30px;
+}
+.advantages__question-title {
+    font-size: 42px;
+    font-weight: 500;
+    text-align: center;
+}
+.advantages__question-text {
+    margin-top: 20px;
+    text-align: center;
+}
+.advantages__question-items {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.advantages__question-items li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    width: 20%;
+}
+.advantages__question-items li img {
+    height: 65px;
+}
+.advantages__question-item-text p:not(.advantages__question-item-title) {
+    font-size: 20px;
+}
+.advantages__question-item-title {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--main-blue);
+}
+.advantages__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 75px;
+    margin-top: 45px;
+}
+.advantages__items li {
+    width: 33%;
+    padding: 25px 30px;
+    border-radius: 10px;
+    background-color: var(--main-blue);  
+    color: #fff; 
+    text-align: center;
+}
+.advantages__items-title {
+    font-size: 25px;
+    font-weight: 500;
+}
+.advantages__items-text {
+    margin-top: 1em;
+    font-size: 20px;
+}
+section.about-offices {
+    padding: 30px 0 130px 0;
+}
+.about-offices__title {
+    font-size: 25px;
+    font-weight: 500;
+}
+.about-office__city.active {
+    display: flex;
+}
+.about-office__city {
+    display: none;
+    justify-content: space-between;
+    gap: 65px;
+    padding-top: 50px;
+}
+.about-office__city-swiper {
+    position: relative;
+}
+.swiper-office-city,
+.swiper-office-city-tyumen {
+    width: 100%;
+    max-width: 610px;
+    height: 555px;
+}
+.swiper-office-city .swiper-slide img,
+.swiper-office-city-tyumen .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.swiper-container {
+}
+.swiper-slide {
+}
+.swiper-pagination {
+}
+.swiper-pagination-office-city {
+    
+}
+.about-office__city-info {
+}
+.about-office__city-tabs {
+    margin-top: 0;
+}
+.rect-btn--city-tab {
+}
+.about-office__info-item {
+    display: none;
+}
+
+.about-office__info-item.active {
+    display: block;
+}
+.about-office__info-row {
+}
+.about-office__info-address {
+}
+.city-address {
+}
+.city-time {
+}
+.about-office__info-half {
+}
+.about-office__info-tel {
+}
+
+
+/* ABOUT END */

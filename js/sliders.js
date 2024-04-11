@@ -312,6 +312,30 @@ export const compareSwiper = new Swiper('.swiper-compare', {
     },
 })
 
+export const aboutPromoSwiper = new Swiper('.swiper-about-promo', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-about-promo-pagination',
+        clickable: true,
+    }
+})
+
+export const aboutOfficeSwiper = new Swiper('.swiper-office-city', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination-office-city',
+        clickable: true,
+    }
+})
+
+export const aboutOfficeTyumenSwiper = new Swiper('.swiper-office-city-tyumen', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination-office-city-tyumen',
+        clickable: true,
+    }
+})
+
 // export const authSwiper = new Swiper('.swiper-auth', {
 //     slidesPerView: 1,
 //     autoHeight: true,
