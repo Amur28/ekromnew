@@ -3,14 +3,16 @@
     text-align: center;
 }
 
-.header__mobile-auth-return {
+.header__mobile-auth-return,
+.header__mobile-personal-return {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header__mobile-auth-return img {
+.header__mobile-auth-return img,
+.header__mobile-personal-return img {
     width: 20px;
 }
 

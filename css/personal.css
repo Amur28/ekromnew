@@ -33,10 +33,11 @@
     cursor: pointer;
     font-size: 18px;
     transition: color .5s;
+    border: 2px solid  transparent;
 }
 
 .personal__aside-item:has(input:checked) {
-    border: 2px solid var(--main-blue);
+    border-color: var(--main-blue);
     color: var(--main-blue);
     font-weight: 500;
 }
@@ -314,5 +315,27 @@
     color: var(--main-blue);
     font-weight: 500;
 }
-
+.personal__bonuses-individual-text {
+    font-size: 20px;
+    font-weight: 700;
+}
+.rect-btn--bonuses-register {
+    padding: 18px 32px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 75px;
+}
+.personal__bonuses {
+}
+.personal__bonuses-entity {
+}
+.personal__bonuses-entity-text p {
+    font-size: 18px;
+}
+.personal__bonuses-entity-text ul {
+    font-size: 18px;
+    margin-top: 1em;
+    list-style-type: "- ";
+    list-style-position: inside;
+}
 /* PERSONAL END */

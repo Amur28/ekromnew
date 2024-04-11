@@ -1082,6 +1082,19 @@ function changeContentOnTabsInPersonal(tab, contentArr, index) {
     }
 }
 
+/* Кнопка "Назад" в личном кабинете на мобильной версии */
+
+const personalReturnBtn = document.querySelector('.header__mobile-personal-return');
+
+if (personalReturnBtn) {
+    personalReturnBtn.addEventListener('click', returnToPersonal)
+}
+
+function returnToPersonal() {
+    hideOtherItems(personalContentArr, 'active')
+    addClass(personalContentArr[0], 'active')
+}
+
 /* Выбор цвета на странице товара */
 
 const productBox = document.querySelector('.product-box');
@@ -1559,3 +1572,25 @@ function showDiffs() {
     input.addEventListener("blur", mask, false);
     input.addEventListener("keydown", mask, false);
 })
+
+/* Размер скидки в личном кабинете */
+
+const personalProgress = document.querySelector('.personal__progress');
+
+if (personalProgress) {
+    setProgress()
+}
+
+function setProgress() {
+    const sum = personalProgress.querySelector('.sum');
+    const progressLine = personalProgress.querySelector('.personal__progress-current');
+    let sumValue = sum.textContent;
+    const maxValue = 1000000
+    sumValue = parseInt(String(sumValue).replace(/ /g, ''))
+    const width = (sumValue / maxValue) * 100
+    if (width >= 100) {
+        progressLine.style.width = '100%'
+        return
+    }
+    progressLine.style.width = `${width}%`
+}
