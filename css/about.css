@@ -146,21 +146,8 @@ section.about-offices {
     height: 100%;
     object-fit: contain;
 }
-.swiper-container {
-}
-.swiper-slide {
-}
-.swiper-pagination {
-}
-.swiper-pagination-office-city {
-    
-}
-.about-office__city-info {
-}
 .about-office__city-tabs {
     margin-top: 0;
-}
-.rect-btn--city-tab {
 }
 .about-office__info-item {
     display: none;
@@ -169,18 +156,9 @@ section.about-offices {
 .about-office__info-item.active {
     display: block;
 }
-.about-office__info-row {
-}
-.about-office__info-address {
-}
-.city-address {
-}
-.city-time {
-}
-.about-office__info-half {
-}
-.about-office__info-tel {
-}
 
+.about-office__tabs {
+    margin-top: 30px;
+}
 
 /* ABOUT END */
