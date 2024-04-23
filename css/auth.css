@@ -209,6 +209,10 @@
     transition: background-img 0s;
 }
 
+label[data-input-required]:has(input:invalid) .show-password-btn {
+    display: none;
+}
+
 .auth-form__label .auth-form__show-password.active {
     background-image: url('../img/icons/auth-form/open-eye.svg');
 }

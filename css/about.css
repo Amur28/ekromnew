@@ -47,11 +47,6 @@ main.about .info {
     border-radius: 10px;
 }
 
-.swiper-slide img {
-    width: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-}
 section.advantages {
     padding-bottom: 55px;
 }
@@ -68,6 +63,7 @@ section.advantages {
 .advantages__question-text {
     margin-top: 20px;
     text-align: center;
+    font-size: 18px;
 }
 .advantages__question-items {
     margin-top: 50px;
@@ -145,6 +141,7 @@ section.about-offices {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 10px;
 }
 .about-office__city-tabs {
     margin-top: 0;

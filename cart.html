@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper wrapper-cart">
         <header class="header" id="stickyHeader">
             <div class="header__top">
                 <div class="container">
@@ -1645,50 +1645,375 @@
             </div>
             <div class="header__mobile">
                 <div class="container">
-                    <div class="header__mobile-inner header__mobile-inner--cart">
-                        <button class="header__mobile-auth-return" onclick="window.history.back()">
-                            <img src="./img/icons/return-catalog-white.svg" alt="">
-                        </button>
-                        <h2 class="header__mobile-title header__mobile-title--cart">
-                            Корзина
-                        </h2>
-                        <div class="header__mobile-more">
-                            <button class="header__mobile-more-btn">
+                    <div class="header__mobile-inner">
+                        <div class="header__mobile-left">
+                            <button class="header__mobile-menu">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </button>
-                            <div class="header__mobile-more-dropdown">
-                                <ul>
-                                    <li>
-                                        <button>Поделиться</button>
-                                    </li>
-                                    <li>
-                                        <button>Сохранить в Excel</button>
-                                    </li>
-                                    <li>
-                                        <button>Сохранить в PDF</button>
-                                    </li>
-                                </ul>
+                            <a class="header__logo" href="index.html" aria-label="Перейти на главную страницу сайта">
+                                <img src="./img/icons/logo.svg" alt="">
+                            </a>
+                        </div>
+
+                        <ul class="header__mobile-links">
+                            <li class="header__mobile-link">
+                                <a href="tel:+73433799868">
+                                    <img src="./img/icons/header-mobile/phone.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="header__mobile-link">
+                                <button class="header__mobile-button">
+                                    <img src="./img/icons/header-mobile/search.svg" alt="">
+                                </button>
+                            </li>
+                            <li class="header__mobile-link">
+                                <a href="./auth.html">
+                                    <img src="./img/icons/header-mobile/user.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="header__mobile-link">
+                                <a href="./cart.html">
+                                    <img src="./img/icons/header-mobile/cart.svg" alt="">
+                                </a>
+                                <span class="mobile-counter">15</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header__mobile-search">
+                    <div class="container">
+                        <form class="header__mobile-search-form">
+
+                            <div class="header__mobile-search-input-box">
+                                <button type="submit">
+                                    <img src="./img/icons/search-icon.svg" alt="">
+                                </button>
+                                <input type="text" name="header-mobile-search">
+                                <button class="header__mobile-search-reset" type="reset">
+                                    <img src="./img/icons/close-icon.svg" alt="">
+                                </button>
+                            </div>
+                            <button class="header__mobile-search-hide" type="button">
+                                Отменить
+                            </button>
+
+                            <div class="search-result">
+                                <div class="search-result__row">
+                                    <div class="search-result__product">
+                                        <div class="search-result__img">
+                                            <img src="./img/product/product.webp" alt="">
+                                        </div>
+                                        <div class="product-info">
+                                            <a class="product-info__name" href="./product.html">
+                                                Мойка кухонная Dr.Gans Берта-760
+                                            </a>
+                                            <p class="product-info__price">
+                                                6 781 ₽
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="search-counter collapse">
+                                        <button class="minus" type="button">-</button>
+                                        <span>1</span>
+                                        <button class="plus" type="button">+</button>
+                                    </div>
+
+                                </div>
+                                <div class="search-result__row">
+                                    <div class="search-result__product">
+                                        <div class="search-result__img">
+                                            <img src="./img/product/product.webp" alt="">
+                                        </div>
+                                        <div class="product-info">
+                                            <a class="product-info__name" href="./product.html">
+                                                Мойка кухонная Dr.Gans Берта-760
+                                            </a>
+                                            <p class="product-info__price">
+                                                6 781 ₽
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="search-counter">
+                                        <button class="minus" type="button">-</button>
+                                        <span>1</span>
+                                        <button class="plus" type="button">+</button>
+                                    </div>
+
+                                </div>
+                                <a class="rect-btn rect-btn--search-result blue" href="./search.html">Все результаты</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="header-menu" data-modal>
+                <div class="header-menu__inner" data-modal-container>
+                    <button class="header-menu__close close-btn close-btn--header-menu">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                    <div class="header-city">
+                        <div class="header-city__icon">
+                            <img src="./img/icons/city-icon.svg" alt="City icon">
+                        </div>
+                        <div class="header-city__text">
+                            <p class="header-city__descr">
+                                Город
+                            </p>
+                            <div class="header-city__select">
+                                <button class="header-city__button">Екатеринбург <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.9336 0.816406H5.74194H1.06695C0.266945 0.816406 -0.133055 1.78307 0.433612 2.34974L4.75028 6.6664C5.44195 7.35807 6.56695 7.35807 7.25861 6.6664L8.90028 5.02474L11.5753 2.34974C12.1336 1.78307 11.7336 0.816406 10.9336 0.816406Z"
+                                        fill="white" />
+                                </svg></button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="cart-mobile__choice">
-                <div class="container">
-                    <div class="cart-mobile__choice-inner">
-                        <label class="cart-mobile__choice-label">
-                            <p>
-                                Выбрать все
-                            </p>
-                            <input type="checkbox">
-                        </label>
-                        <button class="cart-mobile__choice-delete">
-                            Удалить выбранные
-                        </button>
+                    <nav class="header-menu__nav">
+                        <div class="header-menu__nav-box">
+                            <h4 class="header-menu__nav-title">
+                                Каталог
+                            </h4>
+                            <ul class="header-menu__nav-list">
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Мойки
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Смесители
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Кухонные вытяжки
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Варочные панели
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./category.html">
+                                        Духовые шкафы
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link header-menu__nav-link--show" href="./catalog.html">
+                                        Показать все
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-menu__nav-box">
+                            <h4 class="header-menu__nav-title">
+                                Информация
+                            </h4>
+                            <ul class="header-menu__nav-list">
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./delivery.html">
+                                        Доставка
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./guarantee.html">
+                                        Гарантия
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./service.html">
+                                        Сервисные центры
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./confidence.html">
+                                        Конфиденциальность
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./return.html">
+                                        Обмен и возврат товара
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-menu__nav-box">
+                            <h4 class="header-menu__nav-title">
+                                О нас
+                            </h4>
+                            <ul class="header-menu__nav-list">
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./about.html">
+                                        О компании
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./contacts.html">
+                                        Контакты
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./news.html">
+                                        Новости
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./referal.html">
+                                        Реферальная программа
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./feedback.html">
+                                        Обратная связь
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-menu__nav-box">
+                            <h4 class="header-menu__nav-title">
+                                Контакты
+                            </h4>
+                            <ul class="header-menu__nav-list">
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./about.html">
+                                        О компании
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./contacts.html">
+                                        Контакты
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./news.html">
+                                        Новости
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./referal.html">
+                                        Реферальная программа
+                                    </a>
+                                </li>
+                                <li class="header-menu__nav-item">
+                                    <a class="header-menu__nav-link" href="./feedback.html">
+                                        Обратная связь
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="header-menu__panel">
+                        <a class="header-menu__panel-item" href="./personal.html">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/user.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span>
+                                    Личный кабинет
+                                </span>
+                            </span>
+
+                        </a>
+                        <a class="header-menu__panel-item" href="./compare.html">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/compare.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span>
+                                    Сравнение
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="./favorites.html">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/heart.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span>
+                                    Избранное
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="./cart.html">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/cart.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span>
+                                    Корзина
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="tel:+73433799868">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/footer/footer-tel.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span class="suptitle">
+                                    Телефон
+                                </span>
+                                <span>
+                                    8 (343) 379-98-68
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="mailto:sale@ekrom.ru">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/footer/footer-mail.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span class="suptitle">
+                                    Почта
+                                </span>
+                                <span>
+                                    sale@ekrom.ru
+                                </span>
+                            </span>
+                        </a>
+                        <a class="header-menu__panel-item" href="https://yandex.ru/maps/-/CDu7NFNp" target="_blank">
+                            <span class="header-menu__panel-img">
+                                <img src="./img/icons/footer/footer-geo.svg" alt="">
+                            </span>
+                            <span class="header-menu__panel-text">
+                                <span class="suptitle">
+                                    Адрес офиса
+                                </span>
+                                <span>
+                                    г. Екатеринбург, ул. Карла Либкнехта, 22, оф. 419, 4 этаж
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="header-menu__socials">
+                        <a class="header-menu-link round-btn round-btn--header-menu vk" href="https://vk.com/ekromshop"
+                            target="_blank" aria-label="Перейти в ВК сообщество компании">
+                            <img src="./img/icons/footer/vk.svg" alt="">
+                        </a>
+                        <a class="header-menu-link round-btn round-btn--header-menu youtube"
+                            href="https://www.youtube.com/@ekromtech" aria-label="Перейти на YouTube-канал компании"
+                            target="_blank">
+                            <img src="./img/icons/footer/youtube.svg" alt="">
+                        </a>
+                        <a class="header-menu-link round-btn round-btn--header-menu telegram"
+                            href="https://t.me/ekromshop" target="_blank"
+                            aria-label="Перейти в телеграм-канал компании">
+                            <img src="./img/icons/footer/telegram.svg" alt="">
+                        </a>
+                        <a class="header-menu-link round-btn round-btn--header-menu whatsapp"
+                            href="https://wa.me/79220328123" aria-label="Написать в whatsapp" target="_blank">
+                            <img src="./img/icons/footer/whatsapp.svg" alt="">
+                        </a>
                     </div>
                 </div>
+
             </div>
         </header>
     
@@ -5097,39 +5422,59 @@
                 </p>
                 <form class="auth__form auth__form--register" action="#">
                     <div class="auth__form-group">
-                        <label for="registerFormEmail">
-                            Email
-                        </label>
-                        <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru"
+                        <label data-input-required>
+                            <p>Email</p>
+                            <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru"
                             style="background-image: url('./img/icons/auth-form/email.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="registerFormPhone">
-                            Телефон
-                        </label>
-                        <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx"
+                        <label data-input-required>
+                            <p>Телефон</p>
+                            <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx"
                             style="background-image: url('./img/icons/auth-form/phone.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="registerFormName">
-                            Ваше имя
-                        </label>
-                        <input id="registerFormName" type="text" required placeholder="Иван Иванов"
+                        <label data-input-required>
+                            <p>Ваше имя</p>
+                            <input id="registerFormName" type="text" required placeholder="Иван Иванов"
                             style="background-image: url('./img/icons/auth-form/user.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="registerFormPassword">
-                            Пароль
-                        </label>
-                        <input id="registerFormPassword" type="password" required placeholder="••••••"
+                        <label data-input-required>
+                            <p>Пароль</p>
+                            <input id="registerFormPassword" type="password" required placeholder="••••••"
                             style="background-image: url('./img/icons/auth-form/lock.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="registerFormConfirmPassword">
-                            Подтвердите пароль
-                        </label>
-                        <input id="registerFormConfirmPassword" type="password" required placeholder="••••••"
+                        <label data-input-required>
+                            <p>Подтвердите пароль</p> 
+                            <input id="registerFormConfirmPassword" type="password" required placeholder="••••••"
                             style="background-image: url('./img/icons/auth-form/lock.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                       
                     </div>
                     <div class="auth__form-group auth__form-group--checkbox">
                         <input id="registerFormEntity" type="checkbox">
@@ -5151,7 +5496,7 @@
                     Регистрация
                 </h4>
                 <p class="auth__text">
-                    Ваш аккаунт успешно создан! 
+                    Ваш аккаунт успешно создан!
                 </p>
                 <a class="rect-btn rect-btn--auth-register blue" href="./catalog.html">
                     К покупкам
@@ -5172,18 +5517,26 @@
                 </p>
                 <form class="auth__form auth__form--login" action="#">
                     <div class="auth__form-group">
-                        <label for="loginFormEmail">
-                            Email
-                        </label>
-                        <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru"
+                        <label data-input-required>
+                            <p>Email</p>
+                            <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru"
                             style="background-image: url('./img/icons/auth-form/email.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="loginFormPassword">
-                            Пароль
-                        </label>
-                        <input id="loginFormPassword" type="password" required placeholder="••••••"
+                        <label data-input-required>
+                            <p>Пароль</p>
+                            <input id="loginFormPassword" type="password" required placeholder="••••••"
                             style="background-image: url('./img/icons/auth-form/lock.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-tools">
                         <div class="auth__form-remember">
@@ -5199,7 +5552,7 @@
                             Забыли пароль?
                         </a>
                     </div>
-                    
+
                     <button class="rect-btn rect-btn--auth-register blue" type="submit">
                         Войти
                     </button>
@@ -5219,14 +5572,19 @@
                     Восстановление пароля
                 </h4>
                 <p class="auth__text">
-                    Укажите адрес электронной почты, который вы использовали при регистрации. Мы вышлем на него инструкцию по восстановлению пароля
+                    Укажите адрес электронной почты, который вы использовали при регистрации. Мы вышлем на него
+                    инструкцию по восстановлению пароля
                 </p>
                 <form class="auth__form auth__form--recover" action="#">
                     <div class="auth__form-group">
-                        <label for="recoverFormInput">
-                            Email
+                        <label data-input-required>
+                            <p>Email</p>
+                            <input id="recoverFormInput" type="email" required placeholder="email@ekrom.ru">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
                         </label>
-                        <input id="recoverFormInput" type="email" required placeholder="email@ekrom.ru">
+                        
                     </div>
                     <button class="rect-btn rect-btn--auth-register blue" type="submit">
                         Сбросить пароль
@@ -5264,19 +5622,36 @@
                         <h2 class="question-form__title">
                             Задайте свой вопрос и мы с вами свяжемся!
                         </h2>
-                        <textarea name="question-textarea" id="questionTextArea" cols="30" rows="10"
-                            placeholder="Напишите ваш вопрос здесь" required></textarea>
+                        <label data-input-required>
+                            <textarea name="question-textarea" id="questionTextArea" cols="30" rows="10" placeholder="Напишите ваш вопрос здесь" required></textarea>
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="question-form__user-fields">
-                        <input id="questionPhoneInput" type="tel" placeholder="+7 (9xx) xxx-xx-xx" required>
-                        <input id="questionMailInput" type="email" placeholder="xxxxxx@xx.xx" required>
+                        <label data-input-required>
+                            <input id="questionPhoneInput" type="tel" placeholder="+7 (9xx) xxx-xx-xx" required
+                                pattern="^(\+7|7|8)?[\s\-]?\(?[0-9][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                            
+                        </label>
+                        <label data-input-required>
+                            <input id="questionMailInput" type="email" placeholder="xxxxxx@xx.xx" required>
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
                         <div class="question-form__checkbox">
                             <label>
                                 <input type="checkbox" required name="question-checkbox">
                                 <p>
                                     Отправляя форму Вы соглашаетесь с
                                     <a href="./confidence.html">обработкой персональных данных и политикой
-                                        конфеденциальности</a>
+                                        конфиденциальности</a>
                                 </p>
                             </label>
 
@@ -5302,7 +5677,7 @@
 
     <div id="mobile-bottom-menu">
         <ul class="mobile-bottom-menu__inner">
-            <li class="mobile-bottom-menu__item">
+            <li class="mobile-bottom-menu__item active">
                 <a href="./index.html">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -5325,7 +5700,7 @@
                     <span>Кабинет</span>
                 </a>
             </li>
-            <li class="mobile-bottom-menu__item active">
+            <li class="mobile-bottom-menu__item">
                 <a href="./cart.html">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.60758 1.5L3.89258 4.2225" stroke="white" stroke-width="1.2" stroke-miterlimit="10"
@@ -5343,6 +5718,7 @@
                     </svg>
                     <span>Корзина</span>
                 </a>
+                <span class="mobile-counter">15</span>
             </li>
             <li class="mobile-bottom-menu__item">
                 <a href="./favorites.html">
@@ -5352,6 +5728,7 @@
                             stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <span>Избранное</span>
+                    <span class="mobile-counter">15</span>
                 </a>
             </li>
             <li class="mobile-bottom-menu__item">
@@ -5369,6 +5746,7 @@
                             stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <span>Сравнение</span>
+                    <span class="mobile-counter">15</span>
                 </a>
             </li>
         </ul>

@@ -1,4 +1,4 @@
-.brands {
+.brands:has(.brands__header) {
     margin-bottom: 50px;
 }
 

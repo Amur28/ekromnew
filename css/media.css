@@ -365,7 +365,7 @@
     }
 
     .product-info__doc-name {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .recs-list,
@@ -710,6 +710,7 @@
 
     .oval-btn--brand-banner {
         font-size: 11px;
+        text-align: center;
     }
 
     .videos__banner {
@@ -726,7 +727,7 @@
     }
 
     .faq__item {
-        padding: 10px;
+        padding: 10px 40px 10px 10px;
     }
 
     .thumbs-progressbar {
@@ -920,7 +921,6 @@
     }
 
     .product-info__docs {
-        justify-content: flex-start;
         gap: 15px;
     }
 
@@ -1510,6 +1510,18 @@
     section.about-offices {
         padding-bottom: 80px;
     }
+    .order-confidence {
+        align-items: center;
+    }
+    .order-confidence::before {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .order-confidence::after {
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
 @media (max-width: 820px) {
@@ -1934,6 +1946,9 @@
         justify-content: center;
         gap: 30px;
     }
+    .faq__inner {
+        margin-top: 35px;
+    }
 }
 
 @media (max-width: 620px) {
@@ -2258,7 +2273,7 @@
 
     .product-box__name-box .product-box__tools .product-box__tool button,
     .product-box__name-box .product-box__tools .product-box__status {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .product-box__name-box .product-box__tools {
@@ -2267,12 +2282,17 @@
     }
 
     .product-box__name-box .product-box__tools .product-box__tool svg {
+        overflow: visible;
         width: 14px;
         height: 14px;
     }
 
     .product-box__additional * {
-        font-size: 11px;
+        font-size: 12px;
+    }
+
+    .product-box__additional .views {
+        display: none;
     }
 
     .product-box__name {
@@ -2596,7 +2616,7 @@
     }
 
     .product-tabs__item label {
-        font-size: 12px;
+        font-size: 14px;
         padding: 10px;
     }
 
@@ -2607,7 +2627,7 @@
     }
 
     .mobile-product-info .rect-btn--brand {
-        font-size: 12px;
+        font-size: 14px;
         padding: 10px 5px;
     }
 
@@ -2630,8 +2650,14 @@
     }
 
     .product-info__property-title h4,
-    .product-info__inner.delivery-payment .product-info__title,
+    .product-info__inner.delivery-payment .product-info__title {
+        font-size: 20px;
+    }
+
     .product-info__guarantee-text h4 {
+        font-size: 14px;
+    }
+    .product-info__list-title h5 {
         font-size: 14px;
     }
 
@@ -2681,8 +2707,18 @@
         height: 10px;
     }
 
-    .cart-item__name-link,
+    .cart-item__name-link {
+        font-size: 10px;
+    }
     .cart-item__right .cart-item__sum .current-price {
+        font-size: 12px;
+    }
+
+    .cart-page .page-empty .page-empty__title {
+        font-size: 20px;
+    }
+
+    .cart-page .page-empty .page-empty__text {
         font-size: 12px;
     }
 
@@ -2739,8 +2775,8 @@
     .round-btn--fav svg,
     .round-btn--compare svg,
     .round-btn--cart svg {
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 12px;
     }
 
     .question-form__title {
@@ -2831,7 +2867,7 @@
         gap: 10px;
     }
     .rect-btn--order-make {
-        font-size: 10px;
+        font-size: 12px;
     }
     .order-make__item-title span {
         font-size: 12px;
@@ -2850,7 +2886,7 @@
         padding: 10px;
     }
     .rect-btn--order .rect-btn--order-text {
-        font-size: 12px;
+        font-size: 16px;
     }
     .promocode-button img {
         width: 15px;
@@ -2976,6 +3012,54 @@
     section.advantages {
         padding-bottom: 15px;
     }
+    .videos__inner {
+        margin-top: 20px;
+    }
+    section.videos {
+        padding-top: 30px;
+    }
+    section.faq {
+        padding-bottom: 30px;
+    }
+    .brands__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--main-blue);
+        border-radius: 10px;
+        padding: 12px 0;
+        color: #fff;
+        font-size: 12px;
+    }
+    .brands__link svg {
+        display: none;
+    }
+    .videos__inner {
+        display: block;
+    }
+    .rect-btn--videos {
+        display: block;
+        margin-top: 20px;
+        font-size: 12px;
+    }
+    .feedback-banner {
+        display: none;
+    }
+    h4.footer__nav-title,
+    .header-menu .header-menu__nav-title {
+        font-size: 16px;
+    }
+    .promo-banner {
+        background-size: contain;
+    }
+    .filter-item.check:first-child .filter-item__label::before {
+        transform: none;
+        top: 4px;
+    }
+    .filter-item.check:first-child .filter-item__label::after {
+        transform: none;
+        top: 8px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -2991,16 +3075,10 @@
         font-size: 20px;
     }
 
-    .title p {
-        font-size: 14px;
-    }
-
-    .popular-card__title {
-        font-size: 14px;
-    }
-
+    .title p,
+    .popular-card__title,
     .rect-btn--popular {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .complects__item-name,
@@ -3044,8 +3122,8 @@
     .round-btn--fav,
     .round-btn--compare,
     .round-btn--cart {
-        width: 23px;
-        height: 23px;
+        width: 30px;
+        height: 30px;
     }
 
     .product-card__counter button.minus {

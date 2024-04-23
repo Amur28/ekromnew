@@ -131,9 +131,9 @@ function checkModalClick(event) {
         removeClass(mobileOverlay, 'active');
     }
     if (event.target.closest('.rect-btn--question-form-success')) {
-        removeClass(this, 'active');
-        removeClass(body, 'active');
-        removeClass(mobileOverlay, 'active');
+        // removeClass(this, 'active');
+        // removeClass(body, 'active');
+        // removeClass(mobileOverlay, 'active');
     }
 
 };
@@ -1614,4 +1614,10 @@ function setProgress() {
         return
     }
     progressLine.style.width = `${width}%`
+}
+
+/* ВАЛИДАЦИИ ФОРМ */
+
+function validate() {
+    
 }

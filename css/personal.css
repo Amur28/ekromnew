@@ -143,12 +143,16 @@
 
 .personal__form input {
     display: block;
-    width: 100%;
+    width: 50%;
     max-width: 632px;
     padding: 15px 25px;
     border-radius: 5px;
     border: 1px solid #8c8c8c;
     font-size: 16px;
+}
+
+.personal__form--entity input {
+    width: 100%;
 }
 
 .personal__form--change-password .personal__form-label input {
@@ -325,9 +329,9 @@
     font-weight: 400;
     margin-top: 75px;
 }
-.personal__bonuses {
-}
+
 .personal__bonuses-entity {
+    margin-top: 20px;
 }
 .personal__bonuses-entity-text p {
     font-size: 18px;
@@ -338,4 +342,17 @@
     list-style-type: "- ";
     list-style-position: inside;
 }
+form.personal__form--individual label[data-input-required] span.require-icon {
+    width: 20px;
+    height: 20px;
+    left: 45%;
+}
+form.personal__form--entity label[data-input-required] {
+    display: block;
+} 
+form.personal__form--entity label[data-input-required] span.require-icon {
+    width: 20px;
+    height: 20px;
+    top: 50%;
+} 
 /* PERSONAL END */

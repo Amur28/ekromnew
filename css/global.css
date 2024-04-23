@@ -62,6 +62,7 @@ input {
     padding: 0;
     margin: 0;
     border-radius: 10px;
+    outline: none;
 }
 
 input::placeholder {
@@ -455,6 +456,7 @@ select::-ms-expand {
     width: 100%;
     height: 100%;
     padding: 6px 12px;
+    font-size: 16px;
 }
 
 .tags__item:not(.current) {
@@ -738,6 +740,7 @@ select::-ms-expand {
     color: #fff;
     position: relative;
     margin-left: 20px;
+    font-size: 12px;
 }
 
 .not-found__return::after {
@@ -793,6 +796,11 @@ select::-ms-expand {
 .not-found__subtext,
 .not-found__subtext a {
     color: var(--text-grey-color);
+    font-size: 12px;
+}
+
+.not-found__subtext a {
+    display: block;
 }
 
 .not-found__code p {
@@ -933,4 +941,33 @@ select::-ms-expand {
 
 .show-password-btn.active {
     background-image: url('../img/icons/auth-form/open-eye.svg');
+}
+
+.mobile-counter {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background-color: var(--ruby-color);
+    font-size: 10px;
+    line-height: 1;
+    color: #fff;
+    top: -10px;
+    right: -5px;
+}
+
+.header__mobile-link {
+    position: relative;
+}
+
+.header__mobile-link .mobile-counter {
+    top: -15px;
+    right: -10px;
+}
+
+.header-city__button svg {
+    margin-left: 8px;
 }

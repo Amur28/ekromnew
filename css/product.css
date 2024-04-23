@@ -237,6 +237,11 @@
     font-weight: 500;
 }
 
+.product-info__doc-link {
+    font-size: 12px;
+    color: var(--main-blue);
+}
+
 .product-info__key-features {
     margin-top: 35px;
 }
@@ -408,6 +413,7 @@
 .product-info__guarantee-text h4 {
     font-size: 25px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .product-info__guarantee-text p {

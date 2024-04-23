@@ -28,6 +28,14 @@
     padding: 50px 0;
 }
 
+.brand {
+    padding-top: 30px;
+}
+
 .action .category__inner {
     margin-top: 30px;
+}
+
+.brand-descr .tags {
+    margin-top: 50px;
 }

@@ -1991,7 +1991,7 @@
                                 </div>
                                 <div class="personal__progress-footer">
                                     <div class="personal__progress-sum">
-                                        <span>Сумма покупок на&nbsp;<span class="date">25.03.2024:</span>&nbsp;<span class="sum">73 961₽</span></span>
+                                        <span>Сумма покупок на&nbsp;<span class="date">25.03.2024:</span>&nbsp;<span class="sum">451 023₽</span></span>
                                     </div>
                                     <button class="personal__progress-hint">
                                         i
@@ -2021,41 +2021,47 @@
                                 <div class="personal__form-row">
                                     <label class="personal__form-label">
                                         <p class="require">Ф.И.О.</p>
-                                        <div class="personal__form-label-row">
+                                        <label class="personal__form-label-row" data-input-required>
                                             <input type="text" placeholder="Введите ваше Ф.И.О." required>
                                             <p class="personal__form-row-text">
                                                 Заполните, чтобы мы знали, как к вам обращаться
                                             </p>
-                                        </div>
+                                            <span class="require-icon">
+                                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                                            </span>
+                                        </label>
                                     </label>
 
                                 </div>
                                 <div class="personal__form-row">
                                     <label class="personal__form-label">
                                         <p class="require">Ваш телефон</p>
-                                        <div class="personal__form-label-row">
+                                        <label class="personal__form-label-row" data-input-required>
                                             <input type="tel" placeholder="+7 (___) __ - __ - __" required>
                                             <p class="personal__form-row-text">
                                                 Необходим для уточнения деталей заказа
                                             </p>
-                                        </div>
+                                            <span class="require-icon">
+                                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                                            </span>
+                                        </label>
                                     </label>
                                 </div>
                                 <div class="personal__form-row">
                                     <label class="personal__form-label">
                                         <p class="require">Ваш e-mail</p>
-                                        <div class="personal__form-label-row">
+                                        <label class="personal__form-label-row" data-input-required>
                                             <input type="email" placeholder="Введите ваш e-mail" required>
                                             <p class="personal__form-row-text">
                                                 Для отправки уведомлений о статусе заказа. <br>Используйте как логин для
                                                 входа в личный кабинет
                                             </p>
-                                        </div>
+                                            <span class="require-icon">
+                                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                                            </span>
+                                        </label>
                                     </label>
                                 </div>
-                                <p class="personal__form-hint">
-                                    <span>*</span>&nbsp;- обязательные поля
-                                </p>
                                 <div class="personal__form-buttons">
                                     <button class="rect-btn rect-btn--personal-form transparent" type="button">
                                         Зарегистрироваться как Юр. лицо
@@ -2068,49 +2074,58 @@
 
                             <form class="personal__form personal__form--entity">
                                 <div class="personal__form-row">
-                                    <label class="personal__form-label">
+                                    <label class="personal__form-label" data-input-required>
                                         <p class="require">Название компании</p>
                                         <input type="text" placeholder="Введите название компании или ИП" required>
+                                        <span class="require-icon">
+                                            <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                                        </span>
                                     </label>
                                     <label class="personal__form-label">
                                         <p>Юридический адрес</p>
-                                        <input type="text" placeholder="Введите адрес" required>
+                                        <input type="text" placeholder="Введите адрес">
                                     </label>
 
                                 </div>
                                 <div class="personal__form-row">
                                     <label class="personal__form-label">
                                         <p>ИНН</p>
-                                        <input type="number" placeholder="Введите 10 цифр" required>
+                                        <input type="number" placeholder="Введите 10 цифр">
                                     </label>
                                     <label class="personal__form-label">
                                         <p>КПП</p>
-                                        <input type="number" placeholder="Введите 9 цифр" required>
+                                        <input type="number" placeholder="Введите 9 цифр">
                                     </label>
                                 </div>
                                 <div class="personal__form-row">
-                                    <label class="personal__form-label">
+                                    <label class="personal__form-label" data-input-required>
                                         <p class="require">Контактное лицо</p>
                                         <input type="text" placeholder="Введите ваше Ф.И.О." required>
+                                        <span class="require-icon">
+                                            <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                                        </span>
                                     </label>
-                                    <label class="personal__form-label">
+                                    <label class="personal__form-label" data-input-required>
                                         <p class="require">E-mail</p>
                                         <input type="email" placeholder="Введите email" required>
+                                        <span class="require-icon">
+                                            <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                                        </span>
                                     </label>
                                 </div>
                                 <div class="personal__form-row">
-                                    <label class="personal__form-label">
+                                    <label class="personal__form-label" data-input-required>
                                         <p class="require">Ваш телефон</p>
                                         <input type="tel" placeholder="+7 (___) __ - __ - __" required>
+                                        <span class="require-icon">
+                                            <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                                        </span>
                                     </label>
                                     <label class="personal__form-label">
                                         <p>Факс</p>
-                                        <input type="number" placeholder="Введите номер факса" required>
+                                        <input type="number" placeholder="Введите номер факса">
                                     </label>
                                 </div>
-                                <p class="personal__form-hint">
-                                    <span>*</span>&nbsp;- обязательные поля
-                                </p>
                                 <div class="personal__form-buttons">
                                     <button class="rect-btn rect-btn--personal-form transparent" type="button">
                                         Зарегистрироваться как розничный покупатель
@@ -2505,39 +2520,59 @@
                 </p>
                 <form class="auth__form auth__form--register" action="#">
                     <div class="auth__form-group">
-                        <label for="registerFormEmail">
-                            Email
-                        </label>
-                        <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru"
+                        <label data-input-required>
+                            <p>Email</p>
+                            <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru"
                             style="background-image: url('./img/icons/auth-form/email.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="registerFormPhone">
-                            Телефон
-                        </label>
-                        <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx"
+                        <label data-input-required>
+                            <p>Телефон</p>
+                            <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx"
                             style="background-image: url('./img/icons/auth-form/phone.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="registerFormName">
-                            Ваше имя
-                        </label>
-                        <input id="registerFormName" type="text" required placeholder="Иван Иванов"
+                        <label data-input-required>
+                            <p>Ваше имя</p>
+                            <input id="registerFormName" type="text" required placeholder="Иван Иванов"
                             style="background-image: url('./img/icons/auth-form/user.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="registerFormPassword">
-                            Пароль
-                        </label>
-                        <input id="registerFormPassword" type="password" required placeholder="••••••"
+                        <label data-input-required>
+                            <p>Пароль</p>
+                            <input id="registerFormPassword" type="password" required placeholder="••••••"
                             style="background-image: url('./img/icons/auth-form/lock.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="registerFormConfirmPassword">
-                            Подтвердите пароль
-                        </label>
-                        <input id="registerFormConfirmPassword" type="password" required placeholder="••••••"
+                        <label data-input-required>
+                            <p>Подтвердите пароль</p> 
+                            <input id="registerFormConfirmPassword" type="password" required placeholder="••••••"
                             style="background-image: url('./img/icons/auth-form/lock.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                       
                     </div>
                     <div class="auth__form-group auth__form-group--checkbox">
                         <input id="registerFormEntity" type="checkbox">
@@ -2580,18 +2615,26 @@
                 </p>
                 <form class="auth__form auth__form--login" action="#">
                     <div class="auth__form-group">
-                        <label for="loginFormEmail">
-                            Email
-                        </label>
-                        <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru"
+                        <label data-input-required>
+                            <p>Email</p>
+                            <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru"
                             style="background-image: url('./img/icons/auth-form/email.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-group">
-                        <label for="loginFormPassword">
-                            Пароль
-                        </label>
-                        <input id="loginFormPassword" type="password" required placeholder="••••••"
+                        <label data-input-required>
+                            <p>Пароль</p>
+                            <input id="loginFormPassword" type="password" required placeholder="••••••"
                             style="background-image: url('./img/icons/auth-form/lock.svg');">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="auth__form-tools">
                         <div class="auth__form-remember">
@@ -2632,10 +2675,14 @@
                 </p>
                 <form class="auth__form auth__form--recover" action="#">
                     <div class="auth__form-group">
-                        <label for="recoverFormInput">
-                            Email
+                        <label data-input-required>
+                            <p>Email</p>
+                            <input id="recoverFormInput" type="email" required placeholder="email@ekrom.ru">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
                         </label>
-                        <input id="recoverFormInput" type="email" required placeholder="email@ekrom.ru">
+                        
                     </div>
                     <button class="rect-btn rect-btn--auth-register blue" type="submit">
                         Сбросить пароль
@@ -2673,19 +2720,36 @@
                         <h2 class="question-form__title">
                             Задайте свой вопрос и мы с вами свяжемся!
                         </h2>
-                        <textarea name="question-textarea" id="questionTextArea" cols="30" rows="10"
-                            placeholder="Напишите ваш вопрос здесь" required></textarea>
+                        <label data-input-required>
+                            <textarea name="question-textarea" id="questionTextArea" cols="30" rows="10" placeholder="Напишите ваш вопрос здесь" required></textarea>
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        
                     </div>
                     <div class="question-form__user-fields">
-                        <input id="questionPhoneInput" type="tel" placeholder="+7 (9xx) xxx-xx-xx" required>
-                        <input id="questionMailInput" type="email" placeholder="xxxxxx@xx.xx" required>
+                        <label data-input-required>
+                            <input id="questionPhoneInput" type="tel" placeholder="+7 (9xx) xxx-xx-xx" required
+                                pattern="^(\+7|7|8)?[\s\-]?\(?[0-9][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                            
+                        </label>
+                        <label data-input-required>
+                            <input id="questionMailInput" type="email" placeholder="xxxxxx@xx.xx" required>
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
                         <div class="question-form__checkbox">
                             <label>
                                 <input type="checkbox" required name="question-checkbox">
                                 <p>
                                     Отправляя форму Вы соглашаетесь с
                                     <a href="./confidence.html">обработкой персональных данных и политикой
-                                        конфеденциальности</a>
+                                        конфиденциальности</a>
                                 </p>
                             </label>
 
@@ -2711,7 +2775,7 @@
 
     <div id="mobile-bottom-menu">
         <ul class="mobile-bottom-menu__inner">
-            <li class="mobile-bottom-menu__item">
+            <li class="mobile-bottom-menu__item ">
                 <a href="./index.html">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -2752,6 +2816,7 @@
                     </svg>
                     <span>Корзина</span>
                 </a>
+                <span class="mobile-counter">15</span>
             </li>
             <li class="mobile-bottom-menu__item">
                 <a href="./favorites.html">
@@ -2761,9 +2826,10 @@
                             stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <span>Избранное</span>
+                    <span class="mobile-counter">15</span>
                 </a>
             </li>
-            <li class="mobile-bottom-menu__item ">
+            <li class="mobile-bottom-menu__item">
                 <a href="./compare.html">
                     <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.68457 3.87012H11.0646C12.3096 3.87012 13.3146 4.87512 13.3146 6.12012V8.61012"
@@ -2778,6 +2844,7 @@
                             stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <span>Сравнение</span>
+                    <span class="mobile-counter">15</span>
                 </a>
             </li>
         </ul>

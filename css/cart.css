@@ -362,7 +362,7 @@
 }
 
 .cart-calc__price:first-child p {
-    color: #888;
+    color: var(--text-black-color);
 }
 
 .cart-calc__price p.price {
@@ -547,11 +547,6 @@ form.cart-promocode .promocode-input::placeholder {
 }
 
 /* CART END */
-
-.cart-list__header-item {
-    font-size: 14px;
-    font-weight: 500;
-}
 
 .cart-list__header-item:not(:first-of-type) {
     justify-self: center;

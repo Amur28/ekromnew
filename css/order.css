@@ -1,10 +1,13 @@
 /* ORDER START */
 
+main.order-page .order {
+    padding-bottom: 60px;
+}
+
 .order__inner {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 120px;
     gap: 10px;
 }
 
@@ -300,6 +303,7 @@ a.tinkoff {
 
 .order-apply {
     padding-top: 45px;
+    padding-bottom: 60px;
 }
 
 .order-apply__return-to-catalog {
@@ -326,7 +330,7 @@ a.tinkoff {
     padding: 55px 0 55px 145px;
     background-color: var(--main-blue);
     border-radius: 10px;
-    margin: 45px 0;
+    margin: 45px 0 0 0;
 }
 
 .order-apply__text-box {
@@ -349,11 +353,66 @@ a.tinkoff {
 
 .rect-btn--return-to-catalog {
     margin-top: 30px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .itc-select {
     width: auto;
     display: inline-block;
+}
+
+.itc-select .itc-select__option_selected {
+    gap: 5px;
+}
+
+.order-confidence {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.order-confidence p,
+.order-confidence a {
+    font-size: 12px;
+    color: #8c8c8c;
+}
+
+.order-confidence input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.order-confidence:has(input:checked)::after {
+    opacity: 1;
+}
+
+.order-confidence::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--subtitle-color);
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.order-confidence::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 2px;
+    width: 11px;
+    height: 9px;
+    background: url(../img/icons/check.svg) center center / cover no-repeat;
+    transition: var(--alt-transition);
+    opacity: 0;
 }
 
 /* ORDER END */

@@ -29,10 +29,10 @@
 }
 
 .catalog__categories-link {
-    color: var(--text-grey-color);
+    color: #74747a;
 }
 
 .catalog__categories-link--title {
     font-size: 18px;
-    color: var(--main-black);
+    color: #19214f;
 }
