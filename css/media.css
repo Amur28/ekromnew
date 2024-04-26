@@ -310,7 +310,8 @@
         gap: 0 5px;
     }
 
-    .product-box__tool svg {
+    .product-box__tool svg,
+    .product-box__tool img {
         width: 14px;
         height: 14px;
     }
