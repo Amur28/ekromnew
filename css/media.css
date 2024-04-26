@@ -1530,6 +1530,9 @@
     .product-box__tool:hover button {
         color: var(--text-black-color);
     }
+    .product-box__tool button {
+        color: var(--text-black-color);
+    }
 }
 
 @media (max-width: 820px) {
