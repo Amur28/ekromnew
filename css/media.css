@@ -1103,6 +1103,7 @@
         font-size: 36px;
         text-align: center;
         max-width: none;
+        margin-bottom: 15px;
     }
 
     .order-tabs {
@@ -1521,6 +1522,9 @@
     .order-confidence::after {
         top: 50%;
         transform: translateY(-50%);
+    }
+    .filter-title svg path {
+        fill: #fff;
     }
 }
 
@@ -2053,6 +2057,9 @@
     .about-office__city-swiper {
         height: auto;
     }
+    .city-select__city {
+        width: 50%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -2467,6 +2474,9 @@
     .contacts-city__departments-time {
         margin: 0;
     }
+    label[data-input-required] textarea + span.require-icon {
+        top: 65%;
+    }
 }
 
 @media (max-width: 500px) {
@@ -2801,10 +2811,6 @@
     #questionPhoneInput {
         margin-top: 0;
     }
-
-    #questionMailInput {
-        margin-top: 10px;
-    }
     .order-make__form-row label textarea {
         min-height: 50px;
     }
@@ -3059,6 +3065,12 @@
     .filter-item.check:first-child .filter-item__label::after {
         transform: none;
         top: 8px;
+    }
+    .city-select__city.active a::after {
+        left: -20px;
+    }
+    label[data-input-required] span.require-icon {
+        left: 85%;
     }
 }
 
@@ -3368,6 +3380,11 @@
     .advantages__question-items li {
         width: 100%;
     }
+    label[data-input-required] span.require-icon {
+        width: 20px;
+        height: 20px;
+        left: 85%;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -3648,6 +3665,10 @@
 
     .products__main .product-card:hover {
         border-radius: 10px 10px 0 0;
+    }
+
+    .products__main .product-card:hover .product-card__info-box {
+        border-radius: 0;
     }
 
     .products__main .product-card:has(.skeleton):hover .product-card__footer {

@@ -9297,7 +9297,13 @@
                             Оставьте свою почту и мы с вами свяжемся
                         </p>
                         <form class="feedback-banner__form">
-                            <input type="email" placeholder="Введите ваш email">
+                            <label data-input-required>
+                                <input type="email" placeholder="Введите ваш email" required>
+                                <span class="require-icon">
+                                    <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                                </span>
+                            </label>
+                            
                             <button class="rect-btn rect-btn--feedback-banner white" type="submit">
                                 Подписаться
                             </button>
@@ -10184,32 +10190,32 @@
                 Популярные города
             </p>
             <ul class="city-select__cities">
-                <li class="city-select__city">
-                    <span>Екатеринбург</span>
+                <li class="city-select__city active">
+                    <a href="/">Екатеринбург</a>
                 </li>
-                <li class="city-select__city">
-                    <span>Москва</span>
+                <li class="city-select__city ">
+                    <a href="/">Москва</a>
                 </li>
-                <li class="city-select__city">
-                    <span>Санкт-Петербург</span>
+                <li class="city-select__city ">
+                    <a href="/">Санкт-Петербург</a>
                 </li>
-                <li class="city-select__city">
-                    <span>Тюмень</span>
+                <li class="city-select__city ">
+                    <a href="/">Тюмень</a>
                 </li>
-                <li class="city-select__city">
-                    <span>Новосибирск</span>
+                <li class="city-select__city ">
+                    <a href="/">Новосибирск</a>
                 </li>
-                <li class="city-select__city">
-                    <span>Казань</span>
+                <li class="city-select__city ">
+                    <a href="/">Казань</a>
                 </li>
-                <li class="city-select__city">
-                    <span>Нижний Новгород</span>
+                <li class="city-select__city ">
+                    <a href="/">Нижний Новгород</a>
                 </li>
-                <li class="city-select__city">
-                    <span>Красноярск</span>
+                <li class="city-select__city ">
+                    <a href="/">Красноярск</a>
                 </li>
-                <li class="city-select__city">
-                    <span>Челябинск</span>
+                <li class="city-select__city ">
+                    <a href="/">Челябинск</a>
                 </li>
             </ul>
             <button class="close-btn close-btn--city-select">
