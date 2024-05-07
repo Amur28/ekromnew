@@ -186,7 +186,6 @@ body.active {
 
 .header-city {
     display: flex;
-    margin-left: 30px;
     gap: 12px;
 }
 
@@ -224,8 +223,7 @@ body.active {
 
 .header__search {
     position: relative;
-    margin-left: 68px;
-    max-width: 380px;
+    max-width: 550px;
     width: 100%;
     height: 48px;
 }
@@ -262,6 +260,7 @@ body.active {
 .header__search-input::placeholder {
     font-size: 16px;
     line-height: 1.5;
+    color: var(--text-grey-color);
 }
 
 .header__search-submit {
@@ -370,7 +369,7 @@ body.active {
 }
 
 .search-counter.collapse .minus,
-.search-counter.collapse span {
+.search-counter.collapse input {
     display: none;
 }
 
@@ -378,7 +377,7 @@ body.active {
     padding: 15px;
 }
 
-.search-counter span {
+.search-counter input {
     color: #fff;
 }
 
@@ -398,14 +397,15 @@ body.active {
 .working-period {
     color: var(--text-grey-color);
     display: flex;
-    gap: 20px;
-    margin-left: 30px;
-    font-size: 14px;
+    flex-direction: column;
+    gap: 0;
+    font-size: 12px;
 }
 
 .phone-number {
-    color: inherit;
+    color: #fff;
     display: block;
+    font-size: 16px;
 }
 
 .oval-btn--header {
@@ -415,7 +415,6 @@ body.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 22px;
 }
 
 .header__bottom {
@@ -732,7 +731,7 @@ body.active {
 }
 
 .wrapper-cart .header-panel__item.cart-item .round-btn--header {
-    background-color: var(--main-blue);
+    background-color: var(--button-blue);
 }
 
 .round-btn--header img {
@@ -1162,7 +1161,7 @@ body.active {
     transform: translateY(-50%) rotate(180deg);
 }
 
-.header__mobile-search-form input {
+.header__mobile-search-form input:not([type=number]) {
     width: 100%;
     padding: 10px 50px;
     border-radius: 30px;
@@ -1301,7 +1300,7 @@ body.active {
 .about-promo__swiper-container .swiper-about-promo-pagination .swiper-pagination-bullet-active,
 .about-office__city-swiper .swiper-pagination-office-city .swiper-pagination-bullet-active,
 .about-office__city-swiper .swiper-pagination-office-city-tyumen .swiper-pagination-bullet-active {
-    background-color: var(--main-blue);
+    background-color: var(--button-blue);
 }
 
 /* BANNER END */
@@ -1553,7 +1552,7 @@ body.active {
 }
 
 .complects__item-info {
-    background-color: #343538;
+    background-color: var(--main-blue);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1769,6 +1768,7 @@ body.active {
     gap: 10px;
     background-color: #fff;
     border-radius: 0 0 10px 10px;
+    transition: none;
 }
 
 .product-card__info-box~.product-card__footer-buttons {
@@ -1911,7 +1911,7 @@ body.active {
 }
 
 .product-card .round-btn.active {
-    background-color: var(--main-blue);
+    background-color: var(--button-blue);
 }
 
 .product-card__tools .round-btn--cart.active span {
@@ -1959,7 +1959,7 @@ body.active {
 }
 
 .product-card__color-label.checked {
-    border: 4px solid var(--main-blue);
+    border: 4px solid var(--hover-blue);
 }
 
 .product-card__color-item label>input {
@@ -2037,6 +2037,7 @@ body.active {
     font-size: inherit;
     line-height: inherit;
     text-align: center;
+    width: 1.5em;
 }
 
 .product-card__counter button {
@@ -2193,7 +2194,7 @@ section.showroom {
 }
 
 .swiper-pagination.showroom-pagination .swiper-pagination-bullet-active {
-    background-color: var(--main-blue);
+    background-color: var(--hover-blue);
 }
 
 .swiper-pagination.showroom-pagination .swiper-pagination-bullet+.swiper-pagination-bullet {
@@ -3194,7 +3195,7 @@ a.footer__nav-link--show {
 .question-form {
     max-width: 1280px;
     width: 100%;
-    background-color: var(--main-blue);
+    background-color: var(--button-blue);
     padding: 70px;
     border-radius: 10px;
     position: relative;
@@ -3486,10 +3487,10 @@ form.auth__form {
     color: var(--text-grey-color);
 }
 
-.auth__form-group input {
+.auth__form-group input[required] {
     width: 100%;
     padding: 5px 15px 5px 45px;
-    border: 1px solid var(--main-blue);
+    border-color: var(--main-blue);
     position: relative;
     background-position: 10px;
     background-size: 15px;
@@ -3641,9 +3642,14 @@ textarea:focus {
     border: 1px solid transparent;
 }
 
-input[required]:invalid,
-textarea[required]:invalid {
-    border: 1px solid #e53935;
+input[required],
+textarea[required] {
+    border: 1px solid transparent;
+}
+
+label.invalid input[required],
+label.invalid textarea[required] {
+    border-color: #e53935;
 }
 
 label[data-input-required] {
@@ -3652,14 +3658,13 @@ label[data-input-required] {
     align-items: center;
 }
 
-label[data-input-required]:has(input[required]:invalid) span.require-icon,
-label[data-input-required]:has(textarea[required]:invalid) span.require-icon {
+label.invalid span.require-icon {
     display: block;
 }
 
-label[data-input-required] span.require-icon {
+label span.require-icon {
     position: absolute;
-    left: 90%;
+    right: 10px;
     width: 30px;
     height: 33px;
     display: none;
@@ -3667,12 +3672,12 @@ label[data-input-required] span.require-icon {
     cursor: pointer;
 }
 
-label[data-input-required] span.require-icon:hover span.require-icon-hint {
+label.invalid span.require-icon:hover span.require-icon-hint {
     display: block;
 
 }
 
-label[data-input-required] span.require-icon-hint {
+label span.require-icon-hint {
     position: absolute;
     display: none;
     font-size: 18px;
@@ -3687,12 +3692,12 @@ label[data-input-required] span.require-icon-hint {
     z-index: 999;
 }
 
-label[data-input-required] span.require-icon-hint b {
+label span.require-icon-hint b {
     font-weight: 500;
     color: #e53935;
 }
 
-label[data-input-required] span.require-icon-hint:before {
+/* label[data-input-required] span.require-icon-hint:before {
     content: '';
     width: 0;
     height: 0;
@@ -3702,7 +3707,7 @@ label[data-input-required] span.require-icon-hint:before {
     border-width: 0 8px 8px 8px;
     border-style: solid;
     border-color: #fff transparent;
-}
+} */
 
 label[data-input-required] textarea + span.require-icon {
     top: 75%;
@@ -3738,4 +3743,13 @@ label[data-input-required] textarea + span.require-icon {
     font-size: 14px;
     padding: 10px 8px;
     color: var(--text-black-color);
+}
+
+.product-card__tools svg path,
+.round-btn svg path {
+    stroke: var(--button-blue);
+}
+
+.swap-display-button svg path {
+    fill: var(--main-blue);
 }

@@ -151,6 +151,10 @@
     font-size: 16px;
 }
 
+.personal__form input[required] {
+    border-color: #8c8c8c;
+}
+
 .personal__form--entity input {
     width: 100%;
 }
@@ -235,7 +239,7 @@
 
 .personal__progress {
     width: 100%;
-    padding: 10px 30px 20px 30px;
+    padding: 70px 30px 20px 30px;
     background-color: var(--main-blue);
     color: #fff;
     border-radius: 20px;
@@ -258,10 +262,10 @@
     height: 7px;
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     border-radius: 20px;
 }
+
 .personal__progress-point {
     position: relative;
     width: 18px;
@@ -269,11 +273,41 @@
     background-color: #fff;
     border-radius: 50%;
 }
-.personal__progress-point p {
-    position: absolute;
-    font-size: 18px;
-    bottom: calc(100% + 7px);
+
+.personal__progress-point:nth-child(2) {
+    left: calc(10% - 27px);
 }
+
+.personal__progress-point:nth-child(3) {
+    left: calc(50% - 45px);
+}
+
+.personal__progress-point:nth-child(4) {
+    left: calc(100% - 63px);
+} 
+
+.personal__progress-point-text {
+    position: absolute;
+    bottom: calc(100% + 7px);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.personal__progress-point:nth-child(4) .personal__progress-point-text {
+    right: 0;
+}
+
+.personal__progress-point .point-decimal {
+    font-size: 18px;
+}
+
+.personal__progress-point.current .point-decimal {
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 500;
+}
+
 .personal__progress-current {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.8);

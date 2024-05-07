@@ -781,6 +781,22 @@ productCards.forEach(card => {
         yDown = null;
     }
 
+    /* Удаление товара на странице сравнения */
+
+    card.addEventListener('click', deleteCompareCard);
+
+    function deleteCompareCard(event) {
+        const deleteBtn = event.target.closest('.close-btn--compare');
+        const compareColumn = this.parentNode;
+
+        if (!deleteBtn) return;
+        console.log(this.parentNode)
+        compareColumn.classList.add('deleted-compare')
+        setTimeout(function(){
+            compareColumn.remove()
+        }, 500)
+    }
+
 });
 
 /* Видео */
@@ -1605,19 +1621,50 @@ if (personalProgress) {
 function setProgress() {
     const sum = personalProgress.querySelector('.sum');
     const progressLine = personalProgress.querySelector('.personal__progress-current');
+    const points = personalProgress.querySelectorAll('.personal__progress-point');
     let sumValue = sum.textContent;
-    const maxValue = 1000000
-    sumValue = parseInt(String(sumValue).replace(/ /g, ''))
-    const width = (sumValue / maxValue) * 100
+    const maxValue = 1000000;
+    sumValue = parseInt(String(sumValue).replace(/ /g, ''));
+    const width = (sumValue / maxValue) * 100;
+
+    if (sumValue >= 0 && sumValue < 100000) {
+        points[0].classList.add('current')
+    } else if (sumValue >= 100000 && sumValue < 500000) {
+        points[1].classList.add('current');
+    } else if (sumValue >= 500000 && sumValue < 1000000) {
+        points[2].classList.add('current');
+    } else if (sumValue >= 1000000) {
+        points[3].classList.add('current')
+    }
+
     if (width >= 100) {
         progressLine.style.width = '100%'
         return
     }
+
     progressLine.style.width = `${width}%`
 }
 
 /* ВАЛИДАЦИИ ФОРМ */
 
-function validate() {
-    
+const requiredInputs = document.querySelectorAll('input[required]');
+const requiredTextareas = document.querySelectorAll('textarea[required]')
+
+
+requiredInputs.forEach(item => {
+    item.addEventListener('focus', showInputHint)
+    item.addEventListener('blur', hideInputHint)
+});
+
+requiredTextareas.forEach(item => {
+    item.addEventListener('focus', showInputHint)
+    item.addEventListener('blur', hideInputHint)
+})
+
+function showInputHint() {
+    this.parentNode.classList.add('invalid')
+}
+
+function hideInputHint() {
+    this.parentNode.classList.remove('invalid')
 }

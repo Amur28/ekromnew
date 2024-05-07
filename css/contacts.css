@@ -1,5 +1,5 @@
 .page-banner.page-banner--contacts {
-    background: linear-gradient(90deg, rgba(83, 124, 229, .85) 20%, rgba(255, 255, 255, .1)), url('../img/contacts-banner.jpg');
+    background: linear-gradient(90deg, var(--button-blue) 20%, rgba(255, 255, 255, .1)), url('../img/contacts-banner.jpg');
 }
 
 .page-banner.page-banner--contacts .title h2 {
@@ -21,7 +21,7 @@
 .rect-btn--contact-info-tab,
 .rect-btn--about-office-tab,
 .rect-btn--city-tab {
-    border: 1px solid var(--main-blue);
+    border: 1px solid var(--button-blue);
     color: var(--main-blue);
     font-size: 16px;
     font-weight: 400;
@@ -33,7 +33,7 @@
 .rect-btn--contact-info-tab.active,
 .rect-btn--about-office-tab.active,
 .rect-btn--city-tab.active {
-    background-color: var(--main-blue);
+    background-color: var(--button-blue);
     color: #fff;
     transition: var(--default-transition);
 }
@@ -118,7 +118,7 @@
 
 .contacts-city__info-address a,
 .about-office__info-address a {
-    color: #6f73ee;
+    color: var(--hover-blue);
 }
 
 .contacts-city__info-address .city-time,

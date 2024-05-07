@@ -24,7 +24,7 @@
 }
 
 .brand,
-.action {
+.action:not(.products__main) {
     padding: 50px 0;
 }
 

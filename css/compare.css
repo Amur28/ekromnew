@@ -218,3 +218,15 @@
 .compare-feedback__form-confidence label a {
     color: var(--main-blue);
 }
+
+.compare__products-column {
+    transition: opacity 0.5s linear;
+}
+
+.compare__products-column.deleted-compare {
+    opacity: 0;
+}
+
+@keyframes delete-compare-column {
+
+}

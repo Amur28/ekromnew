@@ -235,6 +235,13 @@
     padding: 0 22px 0 17px;
 }
 
+.cart-item__counter input,
+.search-counter input {
+    width: 1.5em;
+    text-align: center;
+    background: transparent;
+}
+
 .cart-item__counter button.plus {
     height: 100%;
     padding: 0 17px 0 22px;

@@ -1,9 +1,10 @@
 :root {
-    --main-blue: #537ce5;
-    --main-black: #27282b;
-    --bg-white: #ecf4ff;
+    --main-blue: #052B34;
+    --main-black: #272A2B;
+    --button-blue: #0b4250;
+    --bg-white: #F3F3F3;
     --main-green: #75D14A;
-    --text-black-color: #282739;
+    --text-black-color: #052B34;
     --text-grey-color: #8c8c8c;
     --to-order-color: #A6C3EE;
     --no-order-color: #6C7683;
@@ -14,7 +15,7 @@
     --red-color: #F63B00;
     --subtitle-color: #5d6c7b;
     --filter-bg-color: #f4f7fb;
-    --hover-blue: #486BC5;
+    --hover-blue: #31869A;
     --search-color: #343538;
 }
 
@@ -235,7 +236,7 @@ select::-ms-expand {
 }
 
 .blue {
-    background-color: var(--main-blue);
+    background-color: var(--button-blue);
     color: #fff;
     transition: var(--default-transition);
 }
@@ -401,7 +402,7 @@ select::-ms-expand {
 
 .page-banner {
     padding: 70px 0 70px 45px;
-    background: linear-gradient(90deg, #FFF 0.04%, #537CE5 99.64%);
+    background: linear-gradient(90deg, #FFF 0.04%, var(--main-blue) 99.64%);
     margin-top: 25px;
     border-radius: 20px;
 }
@@ -524,6 +525,10 @@ select::-ms-expand {
 
 .mobile-bottom-menu__item.active a span {
     color: var(--main-blue);
+}
+
+.mobile-bottom-menu__item.active a .mobile-counter {
+    color: #fff;
 }
 
 .mobile-bottom-menu__item.active:first-child a svg path {
@@ -970,4 +975,9 @@ select::-ms-expand {
 
 .header-city__button svg {
     margin-left: 8px;
+}
+
+.swiper-button-next.swiper-button-disabled, 
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 0.5;
 }

@@ -38,7 +38,7 @@
 }
 
 .filter-item {
-    background-color: var(--filter-bg-color);
+    background-color: #fff;
     border-radius: 10px;
 }
 
@@ -286,7 +286,7 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background-color: var(--main-blue);
+    background-color: var(--button-blue);
     left: -4px;
     transform: rotate(45deg);
     transition: var(--default-transition);
@@ -387,7 +387,7 @@
     padding: 21px 13px;
     margin-top: 20px;
     border-radius: 10px;
-    background: radial-gradient(295.17% 119.2% at 0% 100%, #537CE5 0%, #91AAEB 100%), radial-gradient(232.91% 127.46% at 6.27% 90.21%, rgba(255, 207, 113, 0.00) 0%, rgba(243, 167, 18, 0.00) 100%);
+    background: radial-gradient(295.17% 119.2% at 0% 100%, rgb(11, 66, 80) 0%, rgb(39, 40, 43) 100%);
 }
 
 .promo-feedback p {

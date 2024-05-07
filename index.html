@@ -82,7 +82,7 @@
                 <div class="container">
                     <div class="header__middle">
                         <a class="header__logo" href="index.html" aria-label="Перейти на главную страницу сайта">
-                            <img src="./img/icons/new-logo.svg" alt="">
+                            <img src="./img/icons/logo.svg" alt="">
                         </a>
                         <button class="oval-btn oval-btn--all-categories blue" id="allCategoriesBtn">
                             Все категории
@@ -129,7 +129,7 @@
                                     </div>
                                     <div class="search-counter collapse">
                                         <button class="minus" type="button">-</button>
-                                        <span>1</span>
+                                        <input type="number" value="1">
                                         <button class="plus" type="button">+</button>
                                     </div>
 
@@ -150,7 +150,7 @@
                                     </div>
                                     <div class="search-counter">
                                         <button class="minus" type="button">-</button>
-                                        <span>1</span>
+                                        <input type="number" value="33">
                                         <button class="plus" type="button">+</button>
                                     </div>
 
@@ -160,12 +160,12 @@
                         </form>
 
                         <div class="working-period">
-                            <p class="working-days">
-                                пн-пт 9:00 - 18:00; сб-вс выходной
-                            </p>
                             <a class="phone-number" href="tel:+73433799868">
                                 +7 (343) 379-98-68
                             </a>
+                            <p class="working-days">
+                                пн-пт 9:00 - 18:00; сб-вс выходной
+                            </p>
                         </div>
                         <nav class="header-panel">
                             <div class="header-panel__item">
@@ -1716,7 +1716,7 @@
                                     </div>
                                     <div class="search-counter collapse">
                                         <button class="minus" type="button">-</button>
-                                        <span>1</span>
+                                        <input type="number" value="1">
                                         <button class="plus" type="button">+</button>
                                     </div>
 
@@ -1737,7 +1737,7 @@
                                     </div>
                                     <div class="search-counter">
                                         <button class="minus" type="button">-</button>
-                                        <span>1</span>
+                                        <input type="number" value="1">
                                         <button class="plus" type="button">+</button>
                                     </div>
 
@@ -1767,11 +1767,12 @@
                                 Город
                             </p>
                             <div class="header-city__select">
-                                <button class="header-city__button">Екатеринбург <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M10.9336 0.816406H5.74194H1.06695C0.266945 0.816406 -0.133055 1.78307 0.433612 2.34974L4.75028 6.6664C5.44195 7.35807 6.56695 7.35807 7.25861 6.6664L8.90028 5.02474L11.5753 2.34974C12.1336 1.78307 11.7336 0.816406 10.9336 0.816406Z"
-                                        fill="white" />
-                                </svg></button>
+                                <button class="header-city__button">Екатеринбург <svg width="12" height="8"
+                                        viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.9336 0.816406H5.74194H1.06695C0.266945 0.816406 -0.133055 1.78307 0.433612 2.34974L4.75028 6.6664C5.44195 7.35807 6.56695 7.35807 7.25861 6.6664L8.90028 5.02474L11.5753 2.34974C12.1336 1.78307 11.7336 0.816406 10.9336 0.816406Z"
+                                            fill="white" />
+                                    </svg></button>
                             </div>
                         </div>
                     </div>
@@ -6829,12 +6830,13 @@
                             Задайте свой вопрос и мы с вами свяжемся!
                         </h2>
                         <label data-input-required>
-                            <textarea name="question-textarea" id="questionTextArea" cols="30" rows="10" placeholder="Напишите ваш вопрос здесь" required></textarea>
+                            <textarea name="question-textarea" id="questionTextArea" cols="30" rows="10"
+                                placeholder="Напишите ваш вопрос здесь" required></textarea>
                             <span class="require-icon">
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
                         </label>
-                        
+
                     </div>
                     <div class="question-form__user-fields">
                         <label data-input-required>
@@ -6843,7 +6845,7 @@
                             <span class="require-icon">
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
-                            
+
                         </label>
                         <label data-input-required>
                             <input id="questionMailInput" type="email" placeholder="xxxxxx@xx.xx" required>
@@ -6948,56 +6950,56 @@
                         <label data-input-required>
                             <p>Email</p>
                             <input id="registerFormEmail" type="email" required placeholder="email@ekrom.ru"
-                            style="background-image: url('./img/icons/auth-form/email.svg');">
+                                style="background-image: url('./img/icons/auth-form/email.svg');">
                             <span class="require-icon">
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
                         </label>
-                        
+
                     </div>
                     <div class="auth__form-group">
                         <label data-input-required>
                             <p>Телефон</p>
                             <input id="registerFormPhone" type="tel" required placeholder="+7(9xx)-xx-xx"
-                            style="background-image: url('./img/icons/auth-form/phone.svg');">
+                                style="background-image: url('./img/icons/auth-form/phone.svg');">
                             <span class="require-icon">
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
                         </label>
-                        
+
                     </div>
                     <div class="auth__form-group">
                         <label data-input-required>
                             <p>Ваше имя</p>
                             <input id="registerFormName" type="text" required placeholder="Иван Иванов"
-                            style="background-image: url('./img/icons/auth-form/user.svg');">
+                                style="background-image: url('./img/icons/auth-form/user.svg');">
                             <span class="require-icon">
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
                         </label>
-                        
+
                     </div>
                     <div class="auth__form-group">
                         <label data-input-required>
                             <p>Пароль</p>
                             <input id="registerFormPassword" type="password" required placeholder="••••••"
-                            style="background-image: url('./img/icons/auth-form/lock.svg');">
+                                style="background-image: url('./img/icons/auth-form/lock.svg');">
                             <span class="require-icon">
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
                         </label>
-                        
+
                     </div>
                     <div class="auth__form-group">
                         <label data-input-required>
-                            <p>Подтвердите пароль</p> 
+                            <p>Подтвердите пароль</p>
                             <input id="registerFormConfirmPassword" type="password" required placeholder="••••••"
-                            style="background-image: url('./img/icons/auth-form/lock.svg');">
+                                style="background-image: url('./img/icons/auth-form/lock.svg');">
                             <span class="require-icon">
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
                         </label>
-                       
+
                     </div>
                     <div class="auth__form-group auth__form-group--checkbox">
                         <input id="registerFormEntity" type="checkbox">
@@ -7043,23 +7045,23 @@
                         <label data-input-required>
                             <p>Email</p>
                             <input id="loginFormEmail" type="email" required placeholder="email@ekrom.ru"
-                            style="background-image: url('./img/icons/auth-form/email.svg');">
+                                style="background-image: url('./img/icons/auth-form/email.svg');">
                             <span class="require-icon">
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
                         </label>
-                        
+
                     </div>
                     <div class="auth__form-group">
                         <label data-input-required>
                             <p>Пароль</p>
                             <input id="loginFormPassword" type="password" required placeholder="••••••"
-                            style="background-image: url('./img/icons/auth-form/lock.svg');">
+                                style="background-image: url('./img/icons/auth-form/lock.svg');">
                             <span class="require-icon">
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
                         </label>
-                        
+
                     </div>
                     <div class="auth__form-tools">
                         <div class="auth__form-remember">
@@ -7107,7 +7109,7 @@
                                 <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
                             </span>
                         </label>
-                        
+
                     </div>
                     <button class="rect-btn rect-btn--auth-register blue" type="submit">
                         Сбросить пароль
