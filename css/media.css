@@ -8,7 +8,7 @@
     }
 
     .header__search {
-        max-width: 500px;
+        max-width: 350px;
     }
 
     .header__categories-item {
@@ -138,7 +138,7 @@
 
 @media (max-width: 1320px) {
     .header__search {
-        max-width: 450px;
+        max-width: 200px;
     }
 
     .oval-btn--header {
@@ -218,7 +218,9 @@
 }
 
 @media (max-width: 1200px) {
-
+    .phone-number {
+        font-size: 12px;
+    }
     .header-city,
     .header__search,
     .working-period,
@@ -227,7 +229,7 @@
     }
 
     .header__search {
-        max-width: 280px;
+        max-width: 240px;
     }
 
     .oval-btn--all-categories {
