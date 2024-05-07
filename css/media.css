@@ -1550,6 +1550,13 @@
     .rect-btn--bonuses-register {
         margin-top: 35px;
     }
+    .oval-btn--filter.reset {
+        color: #fff;
+    }
+    .noUi-connect,
+    .noUi-horizontal .noUi-handle {
+        background: var(--button-blue);
+    }
 }
 
 @media (max-width: 820px) {
@@ -3498,6 +3505,10 @@
         color: var(--hover-blue);
     }
 
+    .header-city__icon:hover {
+        background-color: var(--button-blue);
+    }
+
     .oval-btn--brand-banner:hover {
         color: #fff;
         background-color: var(--hover-blue);
@@ -3542,7 +3553,7 @@
     }
 
     .breadcrumbs__item--home a:hover svg path {
-        fill: var(--main-blue);
+        fill: var(--hover-blue);
     }
 
     .header-menu .round-btn--header-menu.vk:hover {
@@ -3579,7 +3590,7 @@
     }
 
     .header__top-link.actions:hover svg path {
-        fill: var(--text-black-color);
+        fill: var(--hover-blue);
     }
 
     .header__top-link:hover {
@@ -3607,7 +3618,7 @@
     }
 
     a.header__categories-link:hover span {
-        border-color: var(--main-blue);
+        border-color: var(--hover-blue);
     }
 
     .header__categories-submenu:hover {
@@ -3677,7 +3688,7 @@
     }
 
     .brands__link:hover svg path {
-        fill: var(--main-blue);
+        fill: var(--hover-blue);
     }
 
     .brands__marquee-card:hover img {
@@ -3698,7 +3709,7 @@
     }
 
     .footer__contacts .round-btn--footer:hover {
-        background-color: var(--main-blue);
+        background-color: var(--button-blue);
     }
 
     .round-btn--footer.vk:hover {

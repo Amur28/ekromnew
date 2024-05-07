@@ -32,6 +32,10 @@
     gap: 10px;
 }
 
+.filter-title svg path {
+    fill: var(--text-black-color);
+}
+
 .filter-items {
     margin-top: 50px;
     position: relative;
@@ -325,7 +329,7 @@
     margin-top: 25px;
     position: relative;
     margin-top: 10px;
-    border: 1px solid var(--main-blue);
+    border: 1px solid var(--button-blue);
     position: relative;
     overflow: hidden;
 }

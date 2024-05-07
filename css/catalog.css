@@ -34,5 +34,5 @@
 
 .catalog__categories-link--title {
     font-size: 18px;
-    color: #19214f;
+    color: var(--text-black-color);
 }

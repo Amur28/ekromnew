@@ -201,6 +201,8 @@ body.active {
     justify-content: center;
     background-color: #343538;
     border-radius: 50%;
+    cursor: pointer;
+    transition: var(--default-transition);
 }
 
 .header__city-select {
@@ -252,7 +254,7 @@ body.active {
 }
 
 .header__search-input:focus {
-    width: 210%;
+    width: 200%;
     position: absolute;
     outline: none;
 }
@@ -2040,6 +2042,7 @@ body.active {
     line-height: inherit;
     text-align: center;
     width: 1.5em;
+    width: 100%;
 }
 
 .product-card__counter button {
@@ -2250,7 +2253,6 @@ span.brands__item-name {
     font-size: 18px;
     line-height: 1.5;
     font-weight: 500;
-    color: var(--subtitle-color);
 }
 
 .brands__link svg path {

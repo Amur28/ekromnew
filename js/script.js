@@ -321,6 +321,7 @@ function moveColorFrame(event) {
 /*Выбор города*/
 
 const headerCityButton = document.querySelectorAll('.header-city__button');
+const headerCityIcon = document.querySelectorAll('.header-city__icon');
 
 function showCitySelect() {
     const citySelect = document.querySelector('#citySelect')
@@ -329,6 +330,9 @@ function showCitySelect() {
 }
 
 headerCityButton.forEach(button => {
+    button.addEventListener('click', showCitySelect)
+});
+headerCityIcon.forEach(button => {
     button.addEventListener('click', showCitySelect)
 });
 
