@@ -350,7 +350,7 @@
 }
 
 .personal__sale-text .blue-text {
-    color: var(--main-blue);
+    color: var(--hover-blue);
     font-weight: 500;
 }
 .personal__bonuses-individual-text {
@@ -379,7 +379,7 @@
 form.personal__form--individual label[data-input-required] span.require-icon {
     width: 20px;
     height: 20px;
-    left: 45%;
+    right: calc(50% + 20px);
 }
 form.personal__form--entity label[data-input-required] {
     display: block;

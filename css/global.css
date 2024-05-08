@@ -524,7 +524,7 @@ select::-ms-expand {
 }
 
 .mobile-bottom-menu__item.active a span {
-    color: var(--main-blue);
+    color: var(--hover-blue);
 }
 
 .mobile-bottom-menu__item.active a .mobile-counter {
@@ -532,11 +532,11 @@ select::-ms-expand {
 }
 
 .mobile-bottom-menu__item.active:first-child a svg path {
-    fill: var(--main-blue);
+    fill: var(--hover-blue);
 }
 
 .mobile-bottom-menu__item.active:not(:first-child) a svg path {
-    stroke: var(--main-blue);
+    stroke: var(--hover-blue);
 }
 
 /* MOBILE-BOTTOM MENU END */

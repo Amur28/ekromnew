@@ -283,7 +283,7 @@ body.active {
 }
 
 .search-result.active {
-    width: 210%;
+    width: 200%;
     display: block;
 }
 
@@ -1721,6 +1721,7 @@ body.active {
     align-items: center;
     cursor: pointer;
     z-index: 10;
+    display: none;
 }
 
 .fast-view-btn p {
@@ -2689,10 +2690,10 @@ a.footer__nav-link--show {
 }
 
 .fast-view__container {
-    min-height: 840px;
     background-color: var(--bg-white);
     border-radius: 10px;
     overflow: hidden;
+    max-height: 100%;
 }
 
 @keyframes zoomIn {

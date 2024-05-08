@@ -447,7 +447,7 @@
 .contacts-form input[type=tel]::placeholder {
     font-size: 16px;
 }
-.contacts-form__inner textarea {
+.contacts-form__inner textarea[required] {
     width: 100%;
     border: 1px solid #eaebed;
     border-radius: 5px;
