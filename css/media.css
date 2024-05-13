@@ -342,7 +342,8 @@
         height: 20px;
     }
 
-    .frame {
+    .frame,
+    .product-box__colors-color::before {
         border-width: 3px;
     }
 
@@ -523,6 +524,15 @@
 }
 
 @media (max-width: 992px) {
+
+    .swiper-videos,
+    .categories-slider {
+        margin-left: -15px;
+        margin-right: -15px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
     .aside__inner .aside__inner-close-btn {
         display: flex;
     }

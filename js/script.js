@@ -316,6 +316,9 @@ function moveColorFrame(event) {
     let posY = colorLabel.offsetTop;
 
     frame.style.cssText = `transform: translate(${posX}px, ${posY}px)`
+    setTimeout(function(){
+        frame.style.opacity = 0
+    }, 200)
 }
 
 /*Выбор города*/
