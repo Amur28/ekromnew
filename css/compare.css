@@ -227,6 +227,6 @@
     opacity: 0;
 }
 
-@keyframes delete-compare-column {
-
+.compare__products-inner .product-card__prices {
+    margin-top: 0;
 }

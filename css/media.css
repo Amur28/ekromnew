@@ -1642,6 +1642,9 @@
         color: var(--main-blue);
         background-color: #fff;
     }
+    .products__header-right {
+        width: auto;
+    }
 }
 
 @media (max-width: 820px) {
