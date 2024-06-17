@@ -525,6 +525,10 @@
 
 @media (max-width: 992px) {
 
+    .product-card__prices {
+        margin-top: 10px;
+    }
+
     .swiper-videos,
     .categories-slider {
         margin-left: -15px;
