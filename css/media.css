@@ -244,6 +244,9 @@
 }
 
 @media (max-width: 1200px) {
+    .header__categories-list {
+        gap: 5px;
+    }
     .oval-btn.oval-btn--all-categories {
         font-size: 0;
         gap: 0;
