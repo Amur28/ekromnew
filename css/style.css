@@ -1500,10 +1500,10 @@ body.active {
     background-color: #fff;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     gap: 10px;
     border-radius: 10px;
+    padding-top: 10px;
 }
 
 .categories-slide__link img {
