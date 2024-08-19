@@ -33,7 +33,7 @@ const catalogPopup = document.querySelector('.catalog-popup');
 function showOrHideContentOnScroll() {
     const defaultOffset = 500;
     const stickyHeader = document.querySelector('.header');
-    const cartAside = document.querySelector('.cart-aside');
+    const cartAside = document.querySelector('#bx-soa-total');
 
     const elementsArr = [stickyHeader, cartAside]
 
@@ -799,7 +799,7 @@ productCards.forEach(card => {
         if (!deleteBtn) return;
         console.log(this.parentNode)
         compareColumn.classList.add('deleted-compare')
-        setTimeout(function(){
+        setTimeout(function () {
             compareColumn.remove()
         }, 500)
     }
@@ -1674,4 +1674,37 @@ function showInputHint() {
 
 function hideInputHint() {
     this.parentNode.classList.remove('invalid')
+}
+
+/* ВАРИАНТЫ ДОСТАВКИ В КОРЗИНЕ */
+
+const bxSoaDelivery = document.querySelector('#bx-soa-delivery');
+const bxSoaPay = document.querySelector('#bx-soa-paysystem');
+
+
+changeTabs(bxSoaDelivery);
+changeTabs(bxSoaPay);
+
+
+// bxSoaPpCompanys.forEach(item => {
+//     item.addEventListener('click', changeDelivery)
+// });
+
+function changeTabs(parent) {
+    const tabs = parent.querySelectorAll('.bx-soa-pp-company');
+
+    tabs.forEach(item => {
+        item.addEventListener('click', function () {
+            if (item.classList.contains('bx-selected')) {
+                return
+            }
+
+            const label = item.querySelector('label');
+
+            hideOtherItems(tabs, 'bx-selected');
+            addClass(item, 'bx-selected');
+            label.click();
+        })
+
+    })
 }

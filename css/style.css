@@ -1901,16 +1901,6 @@ body.active {
     white-space: nowrap;
 }
 
-/* .product-card__price-old::before {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 50%;
-    width: 100%;
-    height: 1px;
-    background-color: var(--red-color);
-} */
-
 .product-card__info-box .product-card__color {
     display: none;
     padding: 0;
