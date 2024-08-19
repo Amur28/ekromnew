@@ -223,10 +223,6 @@
         padding: 0;
     }
 
-    .product-card.row .product-card__info-box {
-        margin-left: 25px;
-    }
-
     .product-card.row .product-card__buy-click,
     .product-card.row .product-card__buy-cart {
         padding: 15px 20px;
@@ -240,6 +236,13 @@
     }
     .header__bottom-nav {
         gap: 10px;
+    }
+    .product-card.row .product-card__color-label {
+        width: 20px;
+        height: 20px;
+    }
+    .product-card.row {
+        gap: 15px;
     }
 }
 
@@ -421,12 +424,35 @@
 
     .product-card.row .product-card__buy-click,
     .product-card.row .product-card__buy-cart {
-        padding: 15px;
+        padding: 10px 8px;
+        font-size: 14px;
+        min-width: 180px;
+    }
+
+    .product-card__footer-button-row {
+        gap: 10px;
+    }
+
+    .product-card.row .product-card__counter {
+        font-size: 14px;
+        min-width: 180px;
+    }
+
+    .product-card.row .product-card__counter button {
+        padding: 10px 0;
+    }
+
+    .product-card.row .product-card__property {
+        font-size: 12px;
+    }
+
+    .product-card.row .product-card__color {
+        gap: 10px;
     }
 
     .product-card.row .product-card__img-box {
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
     }
 
     .product-card.row .round-btn-card {
@@ -557,6 +583,11 @@
 
     .about-office__city-swiper {
         height: 500px;
+    }
+
+    .product-card.row .product-card__buy-click, 
+    .product-card.row .product-card__buy-cart {
+        min-width: 150px;
     }
 }
 
@@ -2776,6 +2807,7 @@
 
     .product-card__article {
         font-size: 9px;
+        margin-top: 1em;
     }
 
     .product-card__prices {
@@ -3983,10 +4015,6 @@
         fill: var(--hover-blue);
     }
 
-    .product-card:hover {
-        border-radius: 10px 10px 0 0;
-    }
-
     .thumbs:hover~.thumbs-progressbar {
         opacity: 1;
     }
@@ -4101,22 +4129,35 @@
         background-color: var(--hover-blue);
     }
 
-    .products__main .product-card:hover {
+    .products__main .product-card:not(.row):hover,
+    .bestseller .product-card:not(.skeleton):hover {
         border-radius: 10px 10px 0 0;
+        box-shadow: 0px 4px 4px 0 rgba(5, 43, 52, .25);
     }
 
-    .products__main .product-card:hover .product-card__info-box,
-    .compare__products-inner .product-card:hover .product-card__info-box {
+    .products__main .product-card.row:hover {
+        box-shadow: 0px 4px 4px 0 rgba(5, 43, 52, .25);
+    }
+
+    .products__main .product-card:hover .product-card__info-box {
         border-radius: 0;
     }
 
-    .products__main .product-card:has(.skeleton):hover .product-card__footer {
+    .products__main .product-card:has(.skeleton):hover .product-card__footer,
+    .bestseller .product-card:has(.skeleton):hover .product-card__footer {
         display: none;
     }
 
-    .products__main .product-card:hover .product-card__footer {
+    .products__main .product-card:has(.skeleton):hover,
+    .bestseller .product-card:has(.skeleton):hover .product-card__info-box{
+        border-radius: 10px;
+    }
+
+    .products__main .product-card:hover .product-card__footer,
+    .bestseller .product-card:hover .product-card__footer {
         display: block;
         border-radius: 0 0 5px 5px;
+        box-shadow: 0px 4px 4px 0 rgba(5, 43, 52, .25);
     }
 
     .products-pagination-btn a:hover {
