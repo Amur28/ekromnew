@@ -33,7 +33,7 @@
     cursor: pointer;
     font-size: 18px;
     transition: color .5s;
-    border: 2px solid  transparent;
+    border: 2px solid transparent;
 }
 
 .personal__aside-item:has(input:checked) {
@@ -244,19 +244,23 @@
     color: #fff;
     border-radius: 20px;
 }
+
 .personal__progress-title {
     display: flex;
     align-items: center;
     gap: 15px;
 }
+
 .personal__progress-value {
     font-size: 42px;
     font-weight: 500;
 }
+
 .personal__progress-descr {
     max-width: 90px;
     font-size: 16px;
 }
+
 .personal__progress-line {
     position: relative;
     height: 7px;
@@ -284,7 +288,7 @@
 
 .personal__progress-point:nth-child(4) {
     left: calc(100% - 63px);
-} 
+}
 
 .personal__progress-point-text {
     position: absolute;
@@ -314,17 +318,21 @@
     height: 100%;
     border-radius: 20px;
 }
+
 .personal__progress-footer {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
+
 .personal__progress-sum {
     font-size: 18px;
 }
+
 .personal__progress-sum .sum {
     font-weight: 500;
 }
+
 .personal__progress-hint {
     display: flex;
     align-items: center;
@@ -353,10 +361,12 @@
     color: var(--hover-blue);
     font-weight: 500;
 }
+
 .personal__bonuses-individual-text {
     font-size: 20px;
     font-weight: 700;
 }
+
 .rect-btn--bonuses-register {
     padding: 18px 32px;
     font-size: 18px;
@@ -367,26 +377,133 @@
 .personal__bonuses-entity {
     margin-top: 20px;
 }
+
 .personal__bonuses-entity-text p {
     font-size: 18px;
 }
+
 .personal__bonuses-entity-text ul {
     font-size: 18px;
     margin-top: 1em;
     list-style-type: "- ";
     list-style-position: inside;
 }
+
 form.personal__form--individual label[data-input-required] span.require-icon {
     width: 20px;
     height: 20px;
     right: calc(50% + 20px);
 }
+
 form.personal__form--entity label[data-input-required] {
     display: block;
-} 
+}
+
 form.personal__form--entity label[data-input-required] span.require-icon {
     width: 20px;
     height: 20px;
     top: 50%;
-} 
+}
+
+.profiles__header,
+.order__header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--button-blue);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.order__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.order__header button {
+    padding: 10px;
+}
+
+.profiles__main,
+.order__main {
+    position: relative;
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #8c8c8c;
+}
+
+.order__main {
+    border: none;
+}
+
+.profiles__main-row {
+    display: flex;
+    align-items: center;
+    padding: 40px 10px;
+}
+
+.profiles__title {
+    text-align: center;
+    width: 20%;
+    font-weight: 500;
+}
+
+.profiles__title.profiles__title--delete {
+    cursor: pointer;
+}
+
+.order:not(:first-child) {
+    margin-top: 15px;
+}
+
+.order__main-row {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #8c8c8c;
+}
+
+.order__main-name {
+    font-size: 18px;
+    color: #888;
+}
+
+.order__main-info,
+.order__main-status {
+    font-size: 18px;
+    display: flex;
+    align-items: baseline;
+}
+
+.order__main-info span.status,
+.order__main-status span.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.order__main-sum {
+    font-size: 18px;
+    color: var(--main-blue);
+}
+
+.order-button {
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--button-blue);
+}
+
+.order-buttons {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
 /* PERSONAL END */

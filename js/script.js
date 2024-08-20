@@ -316,7 +316,7 @@ function moveColorFrame(event) {
     let posY = colorLabel.offsetTop;
 
     frame.style.cssText = `transform: translate(${posX}px, ${posY}px)`
-    setTimeout(function(){
+    setTimeout(function () {
         frame.style.opacity = 0
     }, 200)
 }
@@ -1253,25 +1253,11 @@ function handleTouchMove(event) {
     yDown = null;
 }
 
-if (clientWidth <= 992 && headerMenu) {
-    /* Открытие/скрытие бокового меню по клику */
+if (clientWidth <= 992) {
 
-    const headerMobileMenu = document.querySelector('.header__mobile')
-    const headerMobileMenuBtn = headerMobileMenu.querySelector('.header__mobile-menu');
-
-    headerMobileMenuBtn.addEventListener('click', showHeaderMenu);
-
-    function showHeaderMenu() {
-        addClass(headerMenu, 'active');
-        addClass(mobileOverlay, 'active');
-    }
-
-    /* Раскрытие/скрытие списков в боковом меню шапки и футере */
-    const headerNav = headerMenu.querySelector('.header-menu__nav');
     const footerNav = document.querySelector('.footer__nav');
 
     footerNav.addEventListener('click', toggleMobileDropdown);
-    headerNav.addEventListener('click', toggleMobileDropdown);
 
     function toggleMobileDropdown(event) {
         const currentNavItem = event.target.closest('h4');
@@ -1281,59 +1267,81 @@ if (clientWidth <= 992 && headerMenu) {
         toggleClass(currentNavItem, 'active')
     }
 
-    /* Форма поиска */
+    if (headerMenu) {
+        /* Открытие/скрытие бокового меню по клику */
 
-    const headerMobileSearch = document.querySelector('.header__mobile-search');
-    const headerMobileForm = headerMobileSearch.querySelector('form');
-    const headerMobileSearchResult = headerMobileSearch.querySelector('.search-result');
-    const headerSearchReset = headerMobileSearch.querySelector('.header__mobile-search-reset');
-    const headerMobileInput = headerMobileSearch.querySelector('input');
+        const headerMobileMenu = document.querySelector('.header__mobile')
+        const headerMobileMenuBtn = headerMobileMenu.querySelector('.header__mobile-menu');
 
-    /* Открытие/скрытие строки поиска на мобильной версии */
+        headerMobileMenuBtn.addEventListener('click', showHeaderMenu);
 
-    document.addEventListener('click', showHideSearch);
-
-    function showHideSearch(event) {
-        const isHeaderMobile = event.target == headerMobileMenu || headerMobileMenu.contains(event.target);
-        const headerMobileSearchButton = event.target.closest('.header__mobile-button');
-        const headerMobileSearchHideButton = event.target.closest('.header__mobile-search-hide');
-
-        if (headerMobileSearchButton) {
-            addClass(headerMobileSearch, 'active');
-        } else if (headerMobileSearchHideButton || !isHeaderMobile) {
-            hideSearch([headerMobileSearch, headerMobileSearchResult, headerSearchReset], headerMobileInput);
+        function showHeaderMenu() {
+            addClass(headerMenu, 'active');
+            addClass(mobileOverlay, 'active');
         }
-    }
 
-    function hideSearch(arr, input) {
-        arr.forEach(item => {
-            removeClass(item, 'active');
-        });
-        input.value = '';
-    }
+        /* Раскрытие/скрытие списков в боковом меню шапки и футере */
+        const headerNav = headerMenu.querySelector('.header-menu__nav');
 
-    /* Сброс текста из строки поиска */
+        headerNav.addEventListener('click', toggleMobileDropdown);
 
-    headerMobileForm.addEventListener('reset', resetHeaderSearch);
 
-    function resetHeaderSearch() {
-        removeClass(headerSearchReset, 'active');
-        removeClass(headerMobileSearchResult, 'active')
-    }
 
-    /* Ввод текста в строку поиска */
+        /* Форма поиска */
 
-    headerMobileInput.addEventListener('input', showHideSearchResult);
+        const headerMobileSearch = document.querySelector('.header__mobile-search');
+        const headerMobileForm = headerMobileSearch.querySelector('form');
+        const headerMobileSearchResult = headerMobileSearch.querySelector('.search-result');
+        const headerSearchReset = headerMobileSearch.querySelector('.header__mobile-search-reset');
+        const headerMobileInput = headerMobileSearch.querySelector('input');
 
-    function showHideSearchResult() {
-        addClass(headerSearchReset, 'active');
-        addClass(headerMobileSearchResult, 'active');
+        /* Открытие/скрытие строки поиска на мобильной версии */
 
-        if (!headerMobileInput.value.length) {
+        document.addEventListener('click', showHideSearch);
+
+        function showHideSearch(event) {
+            const isHeaderMobile = event.target == headerMobileMenu || headerMobileMenu.contains(event.target);
+            const headerMobileSearchButton = event.target.closest('.header__mobile-button');
+            const headerMobileSearchHideButton = event.target.closest('.header__mobile-search-hide');
+
+            if (headerMobileSearchButton) {
+                addClass(headerMobileSearch, 'active');
+            } else if (headerMobileSearchHideButton || !isHeaderMobile) {
+                hideSearch([headerMobileSearch, headerMobileSearchResult, headerSearchReset], headerMobileInput);
+            }
+        }
+
+        function hideSearch(arr, input) {
+            arr.forEach(item => {
+                removeClass(item, 'active');
+            });
+            input.value = '';
+        }
+
+        /* Сброс текста из строки поиска */
+
+        headerMobileForm.addEventListener('reset', resetHeaderSearch);
+
+        function resetHeaderSearch() {
             removeClass(headerSearchReset, 'active');
-            removeClass(headerMobileSearchResult, 'active');
+            removeClass(headerMobileSearchResult, 'active')
+        }
+
+        /* Ввод текста в строку поиска */
+
+        headerMobileInput.addEventListener('input', showHideSearchResult);
+
+        function showHideSearchResult() {
+            addClass(headerSearchReset, 'active');
+            addClass(headerMobileSearchResult, 'active');
+
+            if (!headerMobileInput.value.length) {
+                removeClass(headerSearchReset, 'active');
+                removeClass(headerMobileSearchResult, 'active');
+            }
         }
     }
+
 }
 
 /* Кнопки добавления в корзину на мобильной версии */
@@ -1681,14 +1689,11 @@ function hideInputHint() {
 const bxSoaDelivery = document.querySelector('#bx-soa-delivery');
 const bxSoaPay = document.querySelector('#bx-soa-paysystem');
 
+if (bxSoaPay && bxSoaDelivery) {
+    changeTabs(bxSoaDelivery);
+    changeTabs(bxSoaPay);
+}
 
-changeTabs(bxSoaDelivery);
-changeTabs(bxSoaPay);
-
-
-// bxSoaPpCompanys.forEach(item => {
-//     item.addEventListener('click', changeDelivery)
-// });
 
 function changeTabs(parent) {
     const tabs = parent.querySelectorAll('.bx-soa-pp-company');

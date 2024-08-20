@@ -2355,6 +2355,16 @@
         border-spacing: 0;
     }
 
+    .profiles__title {
+        font-size: 12px;
+        width: auto;
+    }
+
+    .profiles__main-row,
+    .profiles__header {
+        justify-content: space-between;
+        gap: 5px;
+    }
 }
 
 @media (max-width: 620px) {
@@ -2482,6 +2492,20 @@
     }
     .bx-soa-pp {
         margin-top: 10px;
+    }
+    .order__main-name,
+    .order__main-info, 
+    .order__main-status,
+    .order__main-info span.status, 
+    .order__main-status span.status,
+    .order__main-sum,
+    .order-button,
+    .profiles__header, 
+    .order__header {
+        font-size: 14px;
+    }
+    .order__header button {
+        padding: 5px;
     }
 }
 
@@ -2943,6 +2967,27 @@
         height: auto;
         padding: 15px 18px;
         justify-content: flex-start;
+    }
+    .order__main-name,
+    .order__main-info, 
+    .order__main-status,
+    .order__main-info span.status, 
+    .order__main-status span.status,
+    .order__main-sum,
+    .order-button,
+    .profiles__header, 
+    .order__header {
+        font-size: 12px;
+    }
+    .order__header button {
+        padding: 2px;
+    }
+    .order__main-info {
+        flex-wrap: wrap;
+    }
+    .profiles__header, 
+    .order__header {
+        padding: 10px;
     }
 }
 
@@ -3673,6 +3718,12 @@
         gap: 0;
         flex-direction: column;
     }
+    .profiles__main-row {
+        padding: 20px 10px;
+    }
+    .profiles__title {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -4055,6 +4106,10 @@
     }
     .bx-soa-cart-d {
         font-size: 14px;
+    }
+    .profiles__header, 
+    .order__header {
+        font-size: 10px;
     }
 }
 
