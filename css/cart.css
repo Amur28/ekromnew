@@ -355,6 +355,10 @@
     padding-bottom: 35px;
 }
 
+.bx-soa-section:not(:first-child) {
+    margin-top: 35px;
+}
+
 .bx-soa-section-title {
     font-size: 18px;
     font-weight: 500;
