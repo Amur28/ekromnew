@@ -336,6 +336,28 @@ export const aboutOfficeTyumenSwiper = new Swiper('.swiper-office-city-tyumen', 
     }
 })
 
+export const tagsSwiper = new Swiper('.categories-with-img-slider', {
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '.categories-with-img-button-next',
+        prevEl: '.categories-with-img-button-prev',
+    },
+    breakpoints: {
+        1400: {
+            slidesPerView: 4.5,
+        },
+        1000: {
+            slidesPerView: 3.5,
+        },
+        700: {
+            slidesPerView: 2.5,
+        },
+        300: {
+            slidesPerView: 1.5,
+        }
+    }
+})
+
 // export const authSwiper = new Swiper('.swiper-auth', {
 //     slidesPerView: 1,
 //     autoHeight: true,

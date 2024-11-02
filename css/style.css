@@ -402,7 +402,7 @@ body.active {
     flex-direction: column;
     gap: 0;
     margin-left: 30px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .phone-number {
@@ -484,6 +484,7 @@ body.active {
 .catalog-popup__menu {
     padding: 35px 20px 0 20px;
     overflow-y: auto;
+    max-height: 100vh;
     min-width: 230px;
 }
 
@@ -492,6 +493,19 @@ body.active {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    padding: 12px 15px 12px 10px;
+    border-radius: 10px;
+    transition: var(--default-transition);
+    cursor: pointer;
+}
+
+.catalog-popup__menu-item:not(:first-child) {
+    margin-top: 20px;
+}
+
+.catalog-popup__menu-item:hover {
+    background-color: rgba(93, 108, 123, 0.15);
+    color: var(--button-blue);
 }
 
 .catalog-popup__menu-item:last-child {
@@ -499,9 +513,8 @@ body.active {
 }
 
 .catalog-popup__menu-link {
-    max-width: 180px;
+    /* max-width: 180px; */
     color: var(--text-black-color);
-    padding: 15px 0;
 }
 
 .catalog-popup__categories {
@@ -521,7 +534,7 @@ body.active {
 }
 
 .catalog-popup__categories::-webkit-scrollbar-thumb,
-.catalog-popup__menu::-webkit-scrollbar {
+.catalog-popup__menu::-webkit-scrollbar-thumb {
     background-color: rgba(93, 108, 123, .43);
     border-radius: 10px;
 }
@@ -552,6 +565,7 @@ body.active {
 
 .catalog-popup__categories-link--title {
     color: var(--text-black-color);
+    font-weight: 500;
 }
 
 .promo-banner {
@@ -1549,10 +1563,10 @@ body.active {
     left: 0;
     top: 30px;
     background-color: #f63b00;
-    padding: 15px 35px 15px 20px;
+    padding: 10px 20px 10px 10px;
     border-radius: 0 10px 10px 0;
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     z-index: 1;
 }
@@ -1628,6 +1642,10 @@ body.active {
 .complects-swiper-button-next,
 .complects-swiper-button-prev {
     display: none;
+}
+
+.complects__item-hint {
+    position: absolute;
 }
 
 /* COMPLECTS END */
@@ -2238,7 +2256,7 @@ section.showroom {
 
 .brands__item {
     display: block;
-    width: 440px;
+    /* width: 440px; */
     height: 220px;
     border-radius: 10px;
     overflow: hidden;
@@ -2246,6 +2264,12 @@ section.showroom {
 
 .brands__item span {
     display: block;
+    transition: var(--default-transition);
+    filter: contrast(100%);
+}
+
+.brands__item:hover span {
+    filter: contrast(125%);
 }
 
 .brands__item-preview {
@@ -2772,6 +2796,24 @@ a.footer__nav-link--show {
     color: var(--subtitle-color);
 }
 
+.product-box__additional .article {
+    position: relative;
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+.product-box__additional .article::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url('../img/icons/copy.svg') center / cover no-repeat;
+}
+
 .product-box__additional span {
     font-weight: 500;
 }
@@ -2836,6 +2878,7 @@ a.footer__nav-link--show {
 .slider-product-thumbs-slide img {
     width: 80%;
     height: 80%;
+    object-fit: contain;
 }
 
 .slider-fastview-thumbs .swiper-slide-thumb-active,
@@ -3088,7 +3131,7 @@ a.footer__nav-link--show {
 }
 
 .product-box__item--properties {
-    padding: 15px 0 15px 30px;
+    padding: 15px 15px 15px 30px;
     border-radius: 10px;
     max-height: 100%;
     overflow: auto;
@@ -3799,4 +3842,52 @@ label[data-input-required] textarea + span.require-icon {
 
 .swap-display-button svg path {
     fill: #9a9fa8;
+}
+
+.benefits__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+}
+
+.benefits__item {
+    display: flex;
+    align-items: center;
+    flex-basis: 25%;
+    gap: 18px;
+}
+
+.benefits__item p {
+    max-width: 260px;
+    color: var(--subtitle-color);
+    font-size: 16px;
+}
+
+section.popular {
+    padding-top: 75px;
+}
+
+.main-title h1 {
+    font-size: 42px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.about-main__text {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.about-main__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.about-main__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }

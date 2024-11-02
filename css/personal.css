@@ -425,6 +425,11 @@ form.personal__form--entity label[data-input-required] span.require-icon {
 
 .order__header button {
     padding: 10px;
+    transition: var(--alt-transition);
+}
+
+.order__header button.hide {
+    transform: rotate(180deg);
 }
 
 .profiles__main,
@@ -437,6 +442,9 @@ form.personal__form--entity label[data-input-required] span.require-icon {
 
 .order__main {
     border: none;
+    height: auto;
+    overflow: visible;
+    transition: var(--alt-transition);
 }
 
 .profiles__main-row {
@@ -504,6 +512,11 @@ form.personal__form--entity label[data-input-required] span.require-icon {
     display: flex;
     gap: 30px;
     margin-top: 10px;
+}
+
+.order__main.hide {
+    height: 0;
+    overflow: hidden;
 }
 
 /* PERSONAL END */

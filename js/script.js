@@ -760,6 +760,15 @@ productCards.forEach(card => {
         const progressBarArr = Array.from(progressBarItems);
         let currentIndex = progressBarArr.indexOf(currentItem);
 
+        // item.addEventListener('mouseover', function () {
+        //     const thumbImgSrc = this.dataset.img;
+        //     const currentProgressbarItem = progressBarItems[index];
+
+        //     hideOtherItems(progressBarItems, 'current');
+        //     addClass(currentProgressbarItem, 'current');
+        //     productImg.setAttribute('src', thumbImgSrc)
+        // });
+
         if (Math.abs(xDiff) > Math.abs(yDiff)) {
             if (xDiff > 0) {
                 if (nextItem) {
@@ -1711,5 +1720,60 @@ function changeTabs(parent) {
             label.click();
         })
 
+    })
+}
+
+const article = document.querySelector('.article')
+
+if (article) {
+    article.addEventListener('click', function() {
+        navigator.clipboard.writeText(article.querySelector('span').innerText)
+     });
+}
+
+const orders = document.querySelectorAll('.order');
+
+orders.forEach(order => {
+    order.addEventListener('click', (e) => {
+        const target = e.target;
+        const orderHeader = order.querySelector('.order__header')
+        const button = orderHeader.querySelector('button');
+        const orderMain = orderHeader.nextElementSibling;
+        if (target == button || button.contains(target)) {
+            toggleClass(orderMain, 'hide');
+            toggleClass(button, 'hide');
+        }
+    })
+})
+
+const categoriesMoreBtn = document.querySelector('.tags__button');
+
+if (categoriesMoreBtn) {
+    categoriesMoreBtn.addEventListener('click', function() {
+        const tags = this.previousElementSibling;
+        if (this.innerText == 'Показать еще') {
+            this.innerText = 'Скрыть'
+        } else {
+            this.innerText = 'Показать еще'
+        }
+        toggleClass(tags, 'active')
+    })
+}
+
+const aboutText = document.querySelector('.about-text');
+
+if (aboutText) {
+    const aboutTextButton = aboutText.querySelector('.about-text__button');
+    const aboutTextInner = aboutText.querySelector('.about-text__inner');
+
+    aboutTextButton.addEventListener('click', function() {
+        const span = this.firstElementChild
+        if (span.textContent == 'Развернуть') {
+            span.textContent = 'Скрыть'
+        } else {
+            span.textContent = 'Развернуть'
+        }
+
+        toggleClass(aboutTextInner, 'active')
     })
 }
