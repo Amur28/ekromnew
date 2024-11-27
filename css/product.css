@@ -103,6 +103,29 @@
     stroke: #fff;
 }
 
+.product-box__cost-sale {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-box__cost-sale-label {
+    border-radius: 5px;
+    background-color: var(--red-color);
+    padding: 3px 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.product-box__cost-sale-old {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--no-order-color);
+    text-decoration: line-through;
+    text-decoration-color: var(--red-color);
+}
+
 /* PRODUCT END */
 
 /* PRODUCT TABS START */

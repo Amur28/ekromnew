@@ -143,6 +143,10 @@
     .header__categories-link {
         font-size: 13px;
     }
+
+    .benefits-main__item h3 {
+        font-size: 32px;
+    }
 }
 
 @media (max-width: 1320px) {
@@ -623,6 +627,16 @@
 
     .personal__progress-point.current .point-decimal {
         font-size: 32px;
+    }
+
+    .benefits-main__inner {
+        flex-wrap: wrap;
+        padding: 30px;
+        gap: 20px 0;
+    }
+
+    .benefits-main__item {
+        flex-basis: 50%;
     }
 }
 
@@ -2402,6 +2416,10 @@
     .benefits__item p {
         max-width: none;
     }
+
+    .benefits-main__item h3 {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 620px) {
@@ -3032,6 +3050,18 @@
     }
     .benefits__item p {
         font-size: 14px;
+    }
+
+    .benefits-main__inner {
+        flex-direction: column;
+    }
+
+    .benefits-main__item {
+        flex-basis: 1;
+    }
+
+    .benefits-main__item h3 {
+        font-size: 20px;
     }
 }
 
@@ -4204,6 +4234,10 @@
         color: var(--hover-blue);
     }
 
+    .tags--other .tags__item a:hover {
+        color: #fff;
+    }
+
     .header-city__icon:hover {
         background-color: var(--button-blue);
     }
@@ -4222,7 +4256,6 @@
     .rect-btn--contact-tab.active:hover,
     .rect-btn--contact-info-tab.active:hover {
         background-color: var(--hover-blue);
-        color: #fff;
     }
 
     .rect-btn--contact-tab.active:hover,
