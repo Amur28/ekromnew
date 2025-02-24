@@ -2,12 +2,14 @@
     margin-bottom: 50px;
 }
 
-.brands__header {
+.brands__header,
+.news__header {
     display: flex;
     justify-content: flex-end;
 }
 
-.brands__content {
+.brands__content,
+.news__content {
     margin-top: 50px;
     display: grid;
     gap: 40px;

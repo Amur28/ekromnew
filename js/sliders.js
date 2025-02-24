@@ -358,12 +358,26 @@ export const tagsSwiper = new Swiper('.categories-with-img-slider', {
     }
 })
 
-// export const authSwiper = new Swiper('.swiper-auth', {
-//     slidesPerView: 1,
-//     autoHeight: true,
-//     effect: 'fade',
-//     // allowTouchMove: false,
-//     hashNavigation: {
-//         watchState: true,
-//     },
-// })
+export const articleSwiper = new Swiper('.article__swiper', {
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: true,
+    },
+    slidesPerView: 1,
+    speed: 500,
+    spaceBetween: 0,
+    pagination: {
+        el: '.article__swiper-pagination',
+    }
+});
+
+    // export const authSwiper = new Swiper('.swiper-auth', {
+    //     slidesPerView: 1,
+    //     autoHeight: true,
+    //     effect: 'fade',
+    //     // allowTouchMove: false,
+    //     hashNavigation: {
+    //         watchState: true,
+    //     },
+    // })

@@ -86,7 +86,8 @@
     }
 
     .brands__item,
-    .actions__item {
+    .actions__item,
+    .news__item {
         width: 100%;
     }
 
@@ -251,6 +252,7 @@
         width: 50%;
         justify-content: center;
     }
+
     section.popular {
         padding-top: 30px;
     }
@@ -1386,7 +1388,8 @@
     }
 
     .brands__content,
-    .actions__content {
+    .actions__content,
+    .news__content {
         gap: 20px;
         grid-template-rows: 1fr;
     }
@@ -1803,6 +1806,22 @@
     .main-title {
         padding-top: 95px;
     }
+
+    .product-info__inner .about-hint {
+        margin-top: 35px;
+    }
+
+    .product-info__inner .product-name .about-hint {
+        display: none;
+    }
+
+    .product-info__inner .documentation .about-hint {
+        display: flex;
+    }
+
+    .product__info {
+        margin-bottom: 50px;
+    }
 }
 
 @media (max-width: 820px) {
@@ -1915,6 +1934,7 @@
 }
 
 @media (max-width: 768px) {
+
     .title h2,
     .title h1 {
         font-size: 36px;
@@ -2406,13 +2426,15 @@
     }
 
     .benefits__inner {
-        flex-direction: column;
+        gap: 15px 0;
     }
 
     .benefits__item {
         width: 100%;
         justify-content: flex-start;
+        flex-basis: 50%;
     }
+
     .benefits__item p {
         max-width: none;
     }
@@ -2542,36 +2564,37 @@
         flex-direction: column;
         gap: 15px;
     }
+
     .bx-soa-section {
         padding-bottom: 20px;
     }
+
     .bx-soa-pp {
         margin-top: 10px;
     }
+
     .order__main-name,
-    .order__main-info, 
+    .order__main-info,
     .order__main-status,
-    .order__main-info span.status, 
+    .order__main-info span.status,
     .order__main-status span.status,
     .order__main-sum,
     .order-button,
-    .profiles__header, 
+    .profiles__header,
     .order__header {
         font-size: 14px;
     }
+
     .order__header button {
         padding: 5px;
     }
 }
 
 @media (max-width: 576px) {
+
     .title h2,
     .title h1 {
         font-size: 26px;
-    }
-
-    .banner__inner .banner-pagination {
-        gap: 15px;
     }
 
     .popular-card__title {
@@ -2925,7 +2948,8 @@
         justify-content: space-between;
     }
 
-    .brands__content {
+    .brands__content,
+    .news__content {
         margin-top: 20px;
     }
 
@@ -3019,37 +3043,40 @@
     }
 
     .banner__inner .banner-pagination {
-        position: static;
-        height: auto;
-        padding: 15px 18px;
-        justify-content: flex-start;
+        display: none;
     }
+
     .order__main-name,
-    .order__main-info, 
+    .order__main-info,
     .order__main-status,
-    .order__main-info span.status, 
+    .order__main-info span.status,
     .order__main-status span.status,
     .order__main-sum,
     .order-button,
-    .profiles__header, 
+    .profiles__header,
     .order__header {
         font-size: 12px;
     }
+
     .order__header button {
         padding: 2px;
     }
+
     .order__main-info {
         flex-wrap: wrap;
     }
-    .profiles__header, 
+
+    .profiles__header,
     .order__header {
         padding: 10px;
     }
+
     .main-title {
         padding-top: 0;
     }
+
     .benefits__item p {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .benefits-main__inner {
@@ -3057,11 +3084,16 @@
     }
 
     .benefits-main__item {
-        flex-basis: 1;
+        flex-basis: 100%;
     }
 
     .benefits-main__item h3 {
         font-size: 20px;
+    }
+
+    .benefits__item img {
+        width: 38px;
+        height: 38px;
     }
 }
 
@@ -3553,7 +3585,8 @@
     }
 
     .brands__content,
-    .actions__content {
+    .actions__content,
+    .news__content {
         grid-template-columns: 1fr;
     }
 
@@ -3771,67 +3804,79 @@
     .personal__form input {
         padding: 10px;
     }
+
     .cart-product .text .name,
     .bx-soa-item-td-text .price {
         font-size: 14px;
     }
+
     .img-box {
         flex: 0 0 50px;
         max-width: 50px;
         height: 50px;
     }
+
     .bx-price-old {
         font-size: 12px;
     }
+
     .del {
         width: 30px;
         height: 30px;
         padding: 5px;
     }
+
     .cart-product .text .item-info {
         gap: 0;
         flex-direction: column;
     }
+
     .profiles__main-row {
         padding: 20px 10px;
     }
+
     .profiles__title {
         font-size: 10px;
     }
+
     .page-banner {
         background: none !important;
     }
+
     .title h2 {
         color: var(--main-blue);
     }
+
     .tags__item-category {
         padding: 5px;
     }
+
     .tags__inner {
         max-height: 30px;
     }
+
     .tags__button::after {
         top: 0.75em;
     }
+
     .tags__button {
         font-size: 14px;
     }
+
     .itc-select-box p {
         display: none;
     }
+
     .about-text__inner {
         font-size: 12px;
     }
+
     .seo-tags {
         font-size: 12px;
     }
 }
 
 @media (max-width: 400px) {
-    .banner {
-        padding: 0;
-    }
-
     section {
         padding: 15px 0;
     }
@@ -4076,16 +4121,24 @@
         padding: 5px;
     }
 
-    .brands__item {
+    .brands__item,
+    .news__item {
         height: 160px;
     }
 
-    .brands__item-preview {
+    .brands__item-preview,
+    .news__item-preview {
         height: calc(100% - 30px);
     }
 
-    span.brands__item-name {
+    span.brands__item-name,
+    .news__item span.news__item-name {
         height: 30px;
+    }
+
+    .news__item span.news__item-name {
+        padding: 5px 5px 10px 5px;
+        font-size: 10px;
     }
 
     .tags__item {
@@ -4173,43 +4226,55 @@
     .personal__progress-sum .sum {
         display: block;
     }
-    .cart-product .text .name, 
+
+    .cart-product .text .name,
     .bx-soa-item-td-text .price {
         font-size: 12px;
     }
+
     .bx-price-old {
         font-size: 10px;
     }
+
     .basket-item-block-amount {
         max-width: 80px;
     }
+
     .del {
         width: 25px;
         height: 25px;
         padding: 3px;
     }
-    #clear-basket, #print_order_button {
+
+    #clear-basket,
+    #print_order_button {
         font-size: 12px;
     }
+
     .cart-list__tools {
         gap: 10px;
     }
+
     .bx-soa-pp-company label {
         font-size: 12px;
     }
-    .cart-product .text .item-info .item-available, 
+
+    .cart-product .text .item-info .item-available,
     .cart-product .text .item-info .item-color,
     .bx-soa-pp-company-graf-description {
         font-size: 10px;
     }
-    .bx-soa-pp-company label::after, 
+
+    .bx-soa-pp-company label::after,
     .bx-soa-pp-company label::before {
         top: 50%;
     }
+
     .bx-soa-cart-d {
         font-size: 14px;
     }
-    .profiles__header, 
+
+    .profiles__header,
     .order__header {
         font-size: 10px;
     }
@@ -4230,6 +4295,7 @@
     .catalog-popup__menu-item:hover a {
         color: var(--hover-blue);
     }
+
     a:hover {
         color: var(--hover-blue);
     }
@@ -4413,6 +4479,10 @@
 
     .brands__item:hover {
         transform: scale(1.05);
+    }
+
+    .news__item:hover {
+        color: var(--main-blue);
     }
 
     .brands__link:hover svg path {
@@ -4637,6 +4707,14 @@
 
     .round-btn--go-to-top:hover svg path {
         fill: var(--hover-blue);
+    }
+
+    a.blue:hover {
+        color: #fff;
+    }
+
+    .discount-header-btn:hover {
+        box-shadow: 0 0 10px 5px rgba(212, 79, 104, 1);
     }
 
     /* HOVER END */

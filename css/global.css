@@ -508,6 +508,29 @@ select::-ms-expand {
     display: block;
 }
 
+.tags.tags--other {
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.tags__item {
+    padding: 0;
+}
+
+.tags__item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    color: inherit;
+}
+
+.tags__item:not(.current) {
+    background: transparent;
+    border: 1px solid var(--main-blue);
+    color: var(--main-blue);
+}
+
 .tags__button {
     position: relative;
     padding-right: 20px;

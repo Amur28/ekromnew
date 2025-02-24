@@ -29,13 +29,15 @@ function removeScroll(arr) {
 };
 
 const catalogPopup = document.querySelector('.catalog-popup');
+const goTop = document.querySelector('.go-top')
 
 function showOrHideContentOnScroll() {
     const defaultOffset = 500;
     const stickyHeader = document.querySelector('.header');
     const cartAside = document.querySelector('#bx-soa-total');
+    const articleAside = document.querySelector('.article__aside')
 
-    const elementsArr = [stickyHeader, cartAside]
+    const elementsArr = [stickyHeader, cartAside, articleAside]
 
     if (scrollPosition() > lastScrollPos && !containClass(stickyHeader, 'scroll') && scrollPosition() > defaultOffset) {
         addScroll(elementsArr);
@@ -1723,14 +1725,6 @@ function changeTabs(parent) {
     })
 }
 
-const article = document.querySelector('.article')
-
-if (article) {
-    article.addEventListener('click', function() {
-        navigator.clipboard.writeText(article.querySelector('span').innerText)
-     });
-}
-
 const orders = document.querySelectorAll('.order');
 
 orders.forEach(order => {
@@ -1749,7 +1743,7 @@ orders.forEach(order => {
 const categoriesMoreBtn = document.querySelector('.tags__button');
 
 if (categoriesMoreBtn) {
-    categoriesMoreBtn.addEventListener('click', function() {
+    categoriesMoreBtn.addEventListener('click', function () {
         const tags = this.previousElementSibling;
         if (this.innerText == 'Показать еще') {
             this.innerText = 'Скрыть'
@@ -1766,7 +1760,7 @@ if (aboutText) {
     const aboutTextButton = aboutText.querySelector('.about-text__button');
     const aboutTextInner = aboutText.querySelector('.about-text__inner');
 
-    aboutTextButton.addEventListener('click', function() {
+    aboutTextButton.addEventListener('click', function () {
         const span = this.firstElementChild
         if (span.textContent == 'Развернуть') {
             span.textContent = 'Скрыть'
@@ -1777,3 +1771,68 @@ if (aboutText) {
         toggleClass(aboutTextInner, 'active')
     })
 }
+
+/* Список новостей блога */
+
+const newsItems = document.querySelectorAll('.news__wrapper');
+
+newsItems.forEach(item => {
+    const newsText = item.querySelector('.news__item-descr');
+    let text = newsText.innerText;
+
+    if (text.length > 220) {
+        let newText = text.slice(0, 217)
+        newsText.innerText = newText + '...'
+    }
+
+});
+
+const popularLinks = document.querySelectorAll('.popular__link');
+
+popularLinks.forEach(item => {
+    item.addEventListener('click', function () {
+        const link = item.querySelector('a');
+        link.click()
+    })
+})
+
+
+
+const articleContent = document.querySelector('.article__content');
+
+if (articleContent) {
+    const anchors = articleContent.querySelectorAll('.anchor');
+    const articleAside = document.querySelector('.article__aside')
+    const asideLinks = articleAside.querySelectorAll('a');
+    window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+        anchors.forEach((anchor, index) => {
+            if (anchor.offsetTop <= fromTop && anchor.offsetTop + articleContent.offsetHeight > fromTop) {
+                asideLinks[index].classList.add("active");
+            } else {
+                asideLinks[index].classList.remove("active");
+            }
+        });
+    });
+}
+
+document.querySelectorAll('a[href^="#"').forEach(link => {
+
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        let href = this.getAttribute('href').substring(1);
+
+        const scrollTarget = document.getElementById(href);
+
+        const topOffset = document.querySelector('.article__aside').offsetHeight;
+        // const topOffset = 0; // если не нужен отступ сверху 
+        const elementPosition = scrollTarget.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - topOffset;
+
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
