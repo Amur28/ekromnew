@@ -640,8 +640,68 @@ a.map_toogle {
     margin-top: 15px;
 }
 
+.select-client__tools {
+    display: flex;
+    gap: 10px;
+}
 
+.select-client__inner {
+    border-radius: 5px;
+    background: #fff;
+    padding: 20px;
+    position: relative;
+}
 
+.select-client__inner .close-btn svg path {
+    fill: var(--button-blue);
+}
+
+.select-client__inner .clients__dropdown-list {
+    max-height: 210px;
+}
+
+.select-client__search {
+    position: relative;
+}
+
+.select-client__search input {
+    border: 1px solid var(--button-blue);
+    padding: 9px 50px;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+.select-client__search button {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+}
+
+.select-client__tools .clients__new {
+    padding: 9px 20px;
+    font-size: 16px;
+}
+
+#selectClient .clients {
+    margin-top: 10px;
+}
+
+#selectClient .clients {
+    max-height: 500px;
+    overflow: auto;
+}
+
+#selectClient .clients::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(93, 108, 123, 0.25);
+    border-radius: 10px;
+}
+
+#selectClient .clients::-webkit-scrollbar-thumb {
+    background: rgba(93, 108, 123, 0.25);
+    border-radius: 10px;
+}
 
 
 

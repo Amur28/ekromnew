@@ -5345,6 +5345,785 @@
         </ul>
     </div>
 
+    <div id="selectClient" class="modal" data-modal>
+        <div class="container modal-container" data-modal-container>
+            <div class="select-client__inner">
+                <button class="close-btn close-btn--question" type="button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z" fill="white"></path>
+                    </svg>
+                </button>
+                <div class="select-client__tools">
+                    <div class="select-client__search">
+                        <input type="search">
+                        <button type="button">
+                            <img src="./img/icons/search-icon.svg" alt="">
+                        </button>
+                    </div>
+                    <button class="clients__new oval-btn oval-btn--new-client blue" type="button">
+                        + Новый клиент
+                    </button>
+                </div>
+                <div class="clients">
+                    <div class="clients__header">
+                        <div class="clients__title">
+                            Клиент
+                        </div>
+                        <div class="clients__title">
+                            Почта
+                        </div>
+                        <div class="clients__title">
+                            Телефон
+                        </div>
+                        <div class="clients__title">
+                            Тип клиента
+                        </div>
+                        <div class="clients__title">
+                            ИНН
+                        </div>
+                        <div class="clients__title">
+                            Кол-во подборок
+                        </div>
+                        <div class="clients__title">
+                            Комментарий
+                        </div>
+                    </div>
+                    <div class="clients__main">
+                        <div class="clients__main-row">
+                            <div class="clients__row">
+                                <div class="clients__check">
+                                    <button>
+                                        Выбрать
+                                    </button>
+                                </div>
+                                <div class="clients__title">
+                                    Иван Иванов
+                                </div>
+                                <div class="clients__title can-edit">
+                                    ivan@yandex.ru
+                                </div>
+                                <div class="clients__title">
+                                    +79999999999
+                                </div>
+                                <div class="clients__title">
+                                    Юр. лицо
+                                </div>
+                                <div class="clients__title">
+                                    1234567891
+                                </div>
+                                <button class="clients__title" type="button">
+                                    15
+                                    <svg width="9" height="6" viewBox="0 0 9 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8.82102 1.11837L4.9321 5.28756C4.69346 5.5434 4.30654 5.5434 4.0679 5.28755L0.178983 1.11837C-0.0596609 0.862525 -0.0596609 0.447723 0.178983 0.191881C0.417625 -0.0639609 0.804543 -0.0639609 1.04319 0.191881L4.5 3.89783L7.95681 0.191882C8.19546 -0.0639606 8.58237 -0.0639606 8.82102 0.191882C9.05966 0.447724 9.05966 0.862526 8.82102 1.11837Z"
+                                            fill="#052B34" />
+                                    </svg>
+                                </button>
+                                <div class="clients__title can-edit">
+                                    Lorem ipsum dolor sit amet.
+                                </div>
+                            </div>
+                            <div class="clients__dropdown">
+                                <div class="clients__dropdown-header">
+                                    <div class="clients__dropdown-header-title">
+                                        Дата
+                                    </div>
+                                    <div class="clients__dropdown-header-title">
+                                        PDF
+                                    </div>
+                                    <div class="clients__dropdown-header-title">
+                                        Сумма
+                                    </div>
+                                </div>
+                                <div class="clients__dropdown-list">
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clients__main-row">
+                            <div class="clients__row">
+                                <div class="clients__check">
+                                    <button>
+                                        Выбрать
+                                    </button>
+                                </div>
+                                <div class="clients__title">
+                                    Иван Иванов
+                                </div>
+                                <div class="clients__title">
+                                    ivan@yandex.ru
+                                </div>
+                                <div class="clients__title">
+                                    +79999999999
+                                </div>
+                                <div class="clients__title">
+                                    Юр. лицо
+                                </div>
+                                <div class="clients__title">
+                                    1234567891
+                                </div>
+                                <button class="clients__title" type="button">
+                                    10
+                                    <svg width="9" height="6" viewBox="0 0 9 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8.82102 1.11837L4.9321 5.28756C4.69346 5.5434 4.30654 5.5434 4.0679 5.28755L0.178983 1.11837C-0.0596609 0.862525 -0.0596609 0.447723 0.178983 0.191881C0.417625 -0.0639609 0.804543 -0.0639609 1.04319 0.191881L4.5 3.89783L7.95681 0.191882C8.19546 -0.0639606 8.58237 -0.0639606 8.82102 0.191882C9.05966 0.447724 9.05966 0.862526 8.82102 1.11837Z"
+                                            fill="#052B34" />
+                                    </svg>
+                                </button>
+                                <div class="clients__title can-edit">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, dolorem.
+                                </div>
+                            </div>
+                            <div class="clients__dropdown">
+                                <div class="clients__dropdown-header">
+                                    <div class="clients__dropdown-header-title">
+                                        Дата
+                                    </div>
+                                    <div class="clients__dropdown-header-title">
+                                        PDF
+                                    </div>
+                                    <div class="clients__dropdown-header-title">
+                                        Сумма
+                                    </div>
+                                </div>
+                                <div class="clients__dropdown-list">
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clients__main-row">
+                            <div class="clients__row">
+                                <div class="clients__check">
+                                    <button>
+                                        Выбрать
+                                    </button>
+                                </div>
+                                <div class="clients__title">
+                                    Иван Иванов
+                                </div>
+                                <div class="clients__title">
+                                    ivan@yandex.ru
+                                </div>
+                                <div class="clients__title">
+                                    +79999999999
+                                </div>
+                                <div class="clients__title">
+                                    Физ. лицо
+                                </div>
+                                <div class="clients__title">
+                                    -
+                                </div>
+                                <button class="clients__title" type="button">
+                                    2
+                                    <svg width="9" height="6" viewBox="0 0 9 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8.82102 1.11837L4.9321 5.28756C4.69346 5.5434 4.30654 5.5434 4.0679 5.28755L0.178983 1.11837C-0.0596609 0.862525 -0.0596609 0.447723 0.178983 0.191881C0.417625 -0.0639609 0.804543 -0.0639609 1.04319 0.191881L4.5 3.89783L7.95681 0.191882C8.19546 -0.0639606 8.58237 -0.0639606 8.82102 0.191882C9.05966 0.447724 9.05966 0.862526 8.82102 1.11837Z"
+                                            fill="#052B34" />
+                                    </svg>
+                                </button>
+                                <div class="clients__title can-edit">
+                                    Lorem, ipsum.
+                                </div>
+                            </div>
+                            <div class="clients__dropdown">
+                                <div class="clients__dropdown-header">
+                                    <div class="clients__dropdown-header-title">
+                                        Дата
+                                    </div>
+                                    <div class="clients__dropdown-header-title">
+                                        PDF
+                                    </div>
+                                    <div class="clients__dropdown-header-title">
+                                        Сумма
+                                    </div>
+                                </div>
+                                <div class="clients__dropdown-list">
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clients__main-row">
+                            <div class="clients__row">
+                                <div class="clients__check">
+                                    <button>
+                                        Выбрать
+                                    </button>
+                                </div>
+                                <div class="clients__title">
+                                    Иван Иванов
+                                </div>
+                                <div class="clients__title">
+                                    ivan@yandex.ru
+                                </div>
+                                <div class="clients__title">
+                                    +79999999999
+                                </div>
+                                <div class="clients__title">
+                                    Юр. лицо
+                                </div>
+                                <div class="clients__title">
+                                    1234567891
+                                </div>
+                                <button class="clients__title" type="button">
+                                    7
+                                    <svg width="9" height="6" viewBox="0 0 9 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8.82102 1.11837L4.9321 5.28756C4.69346 5.5434 4.30654 5.5434 4.0679 5.28755L0.178983 1.11837C-0.0596609 0.862525 -0.0596609 0.447723 0.178983 0.191881C0.417625 -0.0639609 0.804543 -0.0639609 1.04319 0.191881L4.5 3.89783L7.95681 0.191882C8.19546 -0.0639606 8.58237 -0.0639606 8.82102 0.191882C9.05966 0.447724 9.05966 0.862526 8.82102 1.11837Z"
+                                            fill="#052B34" />
+                                    </svg>
+                                </button>
+                                <div class="clients__title can-edit">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                                    enim recusandae, vitae at, commodi inventore temporibus possimus
+                                    voluptates cumque sint tenetur rerum id sequi repellendus voluptatibus
+                                    accusamus eos, quibusdam dolorem cupiditate culpa adipisci deserunt
+                                    nulla!
+                                </div>
+                            </div>
+                            <div class="clients__dropdown">
+                                <div class="clients__dropdown-header">
+                                    <div class="clients__dropdown-header-title">
+                                        Дата
+                                    </div>
+                                    <div class="clients__dropdown-header-title">
+                                        PDF
+                                    </div>
+                                    <div class="clients__dropdown-header-title">
+                                        Сумма
+                                    </div>
+                                </div>
+                                <div class="clients__dropdown-list">
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                    <div class="clients__dropdown-list-row">
+                                        <div class="clients__dropdown-list-title">
+                                            14.10.2024 15:40:44
+                                        </div>
+                                        <a class="clients__dropdown-list-title" href="#">
+                                            Открыть PDF-файл
+                                        </a>
+                                        <div class="clients__dropdown-list-title">
+                                            850 433 ₽
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div id="newClient" class="modal" data-modal>
+        <div class="modal-container">
+            <div class="new-client-form" action="#" data-modal-container>
+                <button class="close-btn close-btn--question" type="button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.46583 9.99906L0.733148 4.26638C-0.244383 3.29135 -0.244383 1.7063 0.733148 0.731273C1.70818 -0.243758 3.29323 -0.243758 4.26826 0.731273L10.0009 6.46395L15.7336 0.731273C16.7086 -0.243758 18.2937 -0.243758 19.2687 0.731273C20.2438 1.7063 20.2438 3.29135 19.2687 4.26638L13.536 9.99906L19.2687 15.7317C20.2438 16.7068 20.2438 18.2918 19.2687 19.2669C18.2937 20.2419 16.7086 20.2419 15.7336 19.2669L10.0009 13.5342L4.26826 19.2669C3.29323 20.2419 1.70818 20.2419 0.733148 19.2669C-0.244383 18.2918 -0.244383 16.7068 0.733148 15.7317L6.46583 9.99906Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <form class="personal__form personal__form--entity">
+                    <div class="personal__form-row select">
+                        <label class="personal__form-label" data-input-required="">
+                            <p class="require">Название компании</p>
+                            <input type="text" placeholder="Введите название компании или ИП" required="">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        <div class="personal__form-label">
+                            <p>Тип клиента</p>
+                            <div class="itc-select" id="new-client-type">
+                                <button type="button" class="itc-select__toggle" name="sort" value="entity"
+                                    data-select="toggle" data-index="0">Юр. лицо</button>
+                                <div class="itc-select__dropdown">
+                                    <ul class="itc-select__options">
+                                        <li class="itc-select__option js-sort-change itc-select__option_selected"
+                                            data-select="option" data-value="entity" data-index="0">
+                                            Юр. лицо
+                                        </li>
+                                        <li class="itc-select__option js-sort-change " data-select="option"
+                                            data-value="individual" data-index="1">
+                                            Физ. лицо
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="personal__form-row individual">
+                        <label class="personal__form-label" data-input-required="">
+                            <p class="require">Телефон</p>
+                            <input type="tel" placeholder="+7 (___) __ - __ - __" required="">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        <label class="personal__form-label" data-input-required="">
+                            <p class="require">E-mail</p>
+                            <input type="email" placeholder="Введите email" required="">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="personal__form-row">
+                        <label class="personal__form-label" data-input-required="">
+                            <p class="require">ИНН</p>
+                            <input type="number" placeholder="Введите 10 цифр" required="">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        <label class="personal__form-label" data-input-required="">
+                            <p class="require">Телефон</p>
+                            <input type="tel" placeholder="+7 (___) __ - __ - __" required="">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="personal__form-row">
+                        <label class="personal__form-label" data-input-required="">
+                            <p class="require">Контактное лицо</p>
+                            <input type="text" placeholder="Введите ваше Ф.И.О." required="">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                        <label class="personal__form-label" data-input-required="">
+                            <p class="require">E-mail</p>
+                            <input type="email" placeholder="Введите email" required="">
+                            <span class="require-icon">
+                                <span class="require-icon-hint"><b>!</b>&nbsp;Заполните это поле</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="personal__form-row comment">
+                        <label class="personal__form-label">
+                            <p>Комментарий</p>
+                            <input type="text" placeholder="Оставьте комментарий по клиенту">
+                        </label>
+                    </div>
+                    <button class="rect-btn rect-btn--new-client white" type="submit">
+                        Сохранить изменения
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="mobile-overlay">
     </div>
 

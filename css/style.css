@@ -1919,6 +1919,18 @@ body.active {
     width: 80%;
 }
 
+.product-card__prices .product-card__price-block {
+    position: relative;
+    margin-top: 10px;
+}
+
+.product-card__prices .product-card__price-block .product-card__price-type {
+    position: absolute;
+    font-size: 12px;
+    top: -1em;
+    line-height: 1;
+}
+
 .product-card__price {
     font-size: 20px;
     line-height: 30px;
@@ -2724,7 +2736,9 @@ a.footer__nav-link--show {
 #authRegister,
 #complaintForm,
 #authLogin,
-#ceoForm {
+#ceoForm,
+#newClient,
+#selectClient {
     visibility: hidden;
     opacity: 0;
     transition: var(--alt-transition);
@@ -2737,7 +2751,9 @@ a.footer__nav-link--show {
 #authRegister.active,
 #complaintForm.active,
 #ceoForm.active,
-#authLogin.active {
+#authLogin.active,
+#newClient.active,
+#selectClient.active {
     visibility: visible;
     opacity: 1;
 }
@@ -2748,7 +2764,9 @@ a.footer__nav-link--show {
 #authLogin.active .auth__inner,
 #citySelect.active .city-select,
 #complaintForm.active .modal-container,
-#ceoForm.active .modal-container {
+#ceoForm.active .modal-container,
+#newClient.active .modal-container,
+#selectClient.active .modal-container {
     animation: zoomIn .3s;
 }
 
@@ -3349,7 +3367,8 @@ a.footer__nav-link--show {
 
 /* QUESTION FORM START */
 
-.question-form {
+.question-form,
+.new-client-form {
     max-width: 1280px;
     width: 100%;
     background-color: var(--button-blue);

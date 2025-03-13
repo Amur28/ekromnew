@@ -1818,7 +1818,7 @@ if (articleContent) {
 
 document.querySelectorAll('a[href^="#"').forEach(link => {
 
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
 
         let href = this.getAttribute('href').substring(1);
@@ -1836,3 +1836,89 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
         });
     });
 });
+
+const clientsRows = document.querySelectorAll('.clients__row');
+
+clientsRows.forEach(item => {
+    const button = item.querySelector('button.clients__title');
+    const dropdown = item.nextElementSibling;
+    button.addEventListener('click', function () {
+        toggleClass(dropdown, 'active');
+        toggleClass(this, 'active');
+        toggleClass(item, 'active');
+    })
+})
+
+const clientsDeleteBtn = document.querySelector('.clients__button-delete');
+const clientsEditBtn = document.querySelector('.clients__button-edit');
+const newClientBtn = document.querySelector('.clients__new');
+
+if (clientsDeleteBtn) {
+    clientsDeleteBtn.addEventListener('click', function () {
+        const rows = document.querySelectorAll('.clients__main-row');
+        rows.forEach(item => {
+            const checkbox = item.querySelector('input[type=checkbox]');
+            if (checkbox.checked) {
+                item.remove()
+            }
+        })
+    });
+}
+
+if (clientsEditBtn) {
+    clientsEditBtn.addEventListener('click', function() {
+        const rows = document.querySelectorAll('.clients__row');
+        if (clientsEditBtn.innerText == 'Сохранить') {
+            rows.forEach(item => {
+                const checkbox = item.querySelector('input[type=checkbox]');
+                const editFields = item.querySelectorAll('.can-edit');
+                editFields.forEach(item => {
+                    item.contentEditable = false;
+                })
+                checkbox.checked = false;
+                clientsEditBtn.innerText = 'Редактировать'
+            })
+        }
+        rows.forEach(item => {
+            const checkbox = item.querySelector('input[type=checkbox]');
+            if (checkbox.checked) {
+                const editFields = item.querySelectorAll('.can-edit');
+                editFields.forEach(item => {
+                    item.contentEditable = true;
+                })
+                clientsEditBtn.innerText = 'Сохранить'
+            }
+        })
+    })
+}
+
+const newClientForm = document.querySelector('#newClient');
+
+newClientBtn.addEventListener('click', function() {
+    addClass(newClientForm, 'active');
+    addClass(body, 'active');
+})
+
+const newClientToggle = document.querySelector('#new-client-type');
+
+if (newClientToggle) {
+    newClientToggle.addEventListener('itc.select.change', (e) => {
+        const btn = e.target.querySelector('.itc-select__toggle');
+        const personalForm = newClientForm.querySelector('.personal__form');
+        if (btn.value == 'individual') {
+            addClass(personalForm, 'individual')
+        } else {
+            removeClass(personalForm, 'individual')
+        }
+    })
+    
+}
+
+const pdfButton = document.querySelector('#print_order_button');
+
+pdfButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const selectClient = document.querySelector('#selectClient');
+    addClass(selectClient, 'active')
+    addClass(body, 'active')
+})

@@ -4296,6 +4296,10 @@
         color: var(--hover-blue);
     }
 
+    .clients__main-row .clients__row .clients__check button:hover {
+        color: var(--hover-blue);
+    }
+
     a:hover {
         color: var(--hover-blue);
     }
@@ -4626,17 +4630,20 @@
     }
 
     .personal__tile:hover,
-    .personal__tile-link:hover {
+    .personal__tile-link:hover,
+    .personal__tile-button:hover {
         background-color: var(--main-blue);
     }
 
     .personal__tile:hover svg path,
-    .personal__tile-link:hover svg path {
+    .personal__tile-link:hover svg path,
+    .personal__tile-button:hover svg path {
         fill: #fff;
     }
 
     .personal__tile:hover p,
-    .personal__tile-link:hover p {
+    .personal__tile-link:hover p,
+    .personal__tile-button:hover {
         color: #fff;
     }
 
