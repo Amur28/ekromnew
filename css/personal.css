@@ -99,6 +99,7 @@
 .personal__tile p,
 .personal__tile-link p,
 .personal__tile-button {
+    text-align: center;
     font-size: 20px;
     font-weight: 500;
     color: var(--main-blue);

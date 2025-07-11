@@ -556,9 +556,10 @@
     }
 
     .personal__tile svg,
-    .personal__tile-link svg {
-        width: 80px;
-        height: 80px;
+    .personal__tile-link svg,
+    .personal__tile-button svg {
+        width: 70px;
+        height: 70px;
     }
 
     .contacts-city__departments {
@@ -633,12 +634,21 @@
 
     .benefits-main__inner {
         flex-wrap: wrap;
-        padding: 30px;
-        gap: 20px 0;
+        gap: 20px;
     }
 
     .benefits-main__item {
-        flex-basis: 50%;
+        flex-basis: calc(50% - 20px);
+    }
+
+    .personal__tile p,
+    .personal__tile-link p,
+    .personal__tile-button {
+        font-size: 16px;
+    }
+    
+    .personal__aside {
+        max-width: 225px;
     }
 }
 
@@ -1359,7 +1369,8 @@
     }
 
     .personal__tile,
-    .personal__tile-link {
+    .personal__tile-link,
+    .personal__tile-button {
         border-color: #fff;
     }
 
@@ -1370,7 +1381,8 @@
     }
 
     .personal__tile svg path,
-    .personal__tile-link svg path {
+    .personal__tile-link svg path,
+    .personal__tile-button svg path {
         fill: #fff;
     }
 
@@ -1379,7 +1391,8 @@
     }
 
     .personal__tile p,
-    .personal__tile-link p {
+    .personal__tile-link p,
+    .personal__tile-button {
         color: #fff;
     }
 
@@ -1931,10 +1944,13 @@
     .advantages__items li {
         width: calc(50% - 25px);
     }
+
+    .personal__tiles {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-
     .title h2,
     .title h1 {
         font-size: 36px;

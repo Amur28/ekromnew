@@ -2,6 +2,10 @@
     padding-bottom: 50px;
 }
 
+.action {
+    position: relative;
+}
+
 .actions__header {
     display: flex;
     justify-content: space-between;
@@ -49,4 +53,121 @@
 
 .actions__footer {
     margin-top: 30px;
+}
+
+.promo-hint-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 999;
+    background: var(--main-blue);
+    cursor: pointer;
+}
+
+.promo-hint-button.active {
+    width: auto;
+    height: auto;
+    cursor: auto;
+}
+
+.promo-hint-button .close-btn {
+    display: none;
+}
+
+.promo-hint-button.active .close-btn {
+    display: block;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.promo-hint-button .promo-hint {
+    display: none;
+    visibility: hidden;
+}
+
+.promo-hint-button.active .promo-hint {
+    display: block;
+    visibility: visible;
+}
+
+.promo-hint {
+    background: #ccc;
+    padding: 30px 30px 15px 15px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.promo-hint__title {
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 350px;
+}
+
+.promo-hint__products {
+    margin-top: 10px;
+}
+
+.promo-hint__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.promo-hint__row:not(:first-child) {
+    margin-top: 10px;
+}
+
+.promo-hint__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.promo-hint__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.promo-hint__name {
+    font-weight: 500;
+}
+
+.promo-hint__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.promo-hint__old-price {
+    position: relative;
+    font-size: 14px;
+    color: var(--text-grey-color);
+    text-decoration: line-through;
+}
+
+.promo-hint__current-price {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.promo-hint__percent {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 2px;
+    background: var(--red-color);
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
 }

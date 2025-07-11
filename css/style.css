@@ -3981,19 +3981,31 @@ section.popular {
 .benefits-main__inner {
     display: flex;
     justify-content: space-between;
-    padding: 60px;
+    gap: 45px;
+}
+
+.benefits-main__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 68px 15px;
+    text-align: center;
+    flex-basis: 25%;
     background: #fff;
     border-radius: 10px;
 }
 
-.benefits-main__item {
-    text-align: center;
-    flex-basis: 25%;
+.benefits-main__item svg {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .benefits-main__item p:first-child {
     font-size: 42px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
     color: var(--text-black-color);
 }

@@ -1,0 +1,122 @@
+/* .visit__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 18px 20px 25px 20px;
+    margin-top: 35px;
+    background: #27282B;
+    border-radius: 10px;
+}
+
+.visit__inner-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.visit__inner-manager {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.visit__inner-manager-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ccc;
+}
+.visit__inner-manager-info {
+}
+
+.manager-info-name {
+    color: #fff;
+    font-size: 14px;
+}
+
+.manager-info-job-title {
+    color: #888;
+    font-size: 12px;
+}
+
+.visit-contact {
+    display: flex;
+    gap: 5px;
+}
+
+.visit-contact:not(:first-child) {
+    margin-top: 7px;
+}
+
+.visit-contact .name {
+    width: 65px;
+}
+
+.visit-contact .name,
+.visit-contact .value {
+    font-size: 14px;
+    color: #888;
+}
+.visit-contact .value {
+    color: #fff;
+}
+.visit__inner-right {
+    position: relative;
+    padding: 10px 16px 10px 13px;
+    background: #d9d9d9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cube-1,
+.cube-2 {
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.36;
+    z-index: 0;
+}
+
+.cube-1 {
+    left: 25px;
+    bottom: -14px;
+    width: 68px;
+    height: 68px;
+    transform: rotate(60deg);
+}
+
+.cube-2 {
+    top: -10px;
+    right: 3px;
+    width: 84px;
+    height: 84px;
+    transform: rotate(-60deg);
+}
+
+.visit__inner-city {
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 3px 5px;
+    font-weight: 500;
+    background: #0b4250;
+    color: #fff;
+}
+
+.visit__inner-right ul {
+    position: relative;
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.visit__inner-right ul li {
+    display: flex;
+    gap: 4px;
+}
+
+.visit__inner-right ul li:not(:first-child) {
+    margin-top: 7px;
+}
+
+.visit__inner-right ul li a {
+    font-size: 14px;
+    color: #052b34;
+} */

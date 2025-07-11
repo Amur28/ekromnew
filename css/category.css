@@ -585,8 +585,19 @@
 }
 
 .promo-banner.promo-banner--category {
+    background: url('../asko.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-color: #fff;
     max-height: none;
+}
+
+.promo-banner img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); 
 }
 
 .products__footer {

@@ -1,0 +1,104 @@
+body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* .shadow {
+    animation: neon-flicker 3s infinite alternate;
+}
+
+@keyframes neon-flicker {
+
+    0%,
+    19%,
+    21%,
+    55%,
+    57%,
+    100% {
+        filter: url(#neon-glow);
+        opacity: 1;
+    }
+
+    20%,
+    56% {
+        filter: none;
+        opacity: 0.2;
+    }
+
+    /* Имитация мерцания */
+/* } */
+
+svg path:not(:first-of-type) {
+    opacity: 0;
+    animation: fadeIn 0.1s forwards;
+}
+
+svg path:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+svg path:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+svg path:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+svg path:nth-child(5) {
+    animation-delay: 1.5s;
+}
+
+svg path:nth-child(6) {
+    animation-delay: 1.8s;
+}
+
+svg path:nth-child(7) {
+    animation-delay: 2.1s;
+}
+
+svg path:nth-child(8) {
+    animation-delay: 2.4s;
+}
+
+svg path:nth-child(9) {
+    animation-delay: 2.7s;
+}
+
+svg path:nth-child(10) {
+    animation-delay: 3.0s;
+}
+
+svg path:nth-child(11) {
+    animation-delay: 3.3s;
+}
+
+svg path:nth-child(12) {
+    animation-delay: 3.6s;
+}
+
+svg path:nth-child(13) {
+    animation-delay: 3.9s;
+}
+
+svg path:nth-child(14) {
+    animation-delay: 4.1s;
+}
+
+svg path:nth-child(15) {
+    animation-delay: 4.4s;
+}
+
+svg path:nth-child(16) {
+    animation-delay: 4.7s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
